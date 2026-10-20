@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "0.1.0",
+  "studyId": "HX-BTC-001",
+  "reportVersion": "0.16.0",
+  "scope": "BTCUSDT 币安现货日线，北京时间 00:00 日界；2021-01-01 至 2026-09-26 固定历史快照。",
+  "sharedLimits": "每年 1 月 1 日至 2 月 1 日隔离；缺行情、未知输入、跨年确认窗不评分。历史重建并非当时登记的预测；未定义价格失效阈值，也未执行交易回测。",
+  "rules": [
+    {"id":"BZ-DAY-METALWATER-UP","version":"0.16.0","family":"八字","name":"金水日干上涨","trigger":"北京时间目标日的日干属金或水（庚、辛、壬、癸）。仅看日干，未结合流月或其他五行关系。","knownAt":"目标日历日可预先计算；此报告按历史重建。","target":"目标日开盘到收盘上涨；1 日为主观察窗口。","scoring":"收盘高于开盘计符合；相等持平。与全部可评分日上涨比例对照。","invalidation":"未定义盘中失效阈值；历史未做动态撤销。","source":"exploration_generators.py / rule_events.py"},
+    {"id":"BZ-DAY-FIRE-DOWN","version":"0.16.0","family":"八字","name":"火日干下跌","trigger":"北京时间目标日的日干属火（丙、丁）。仅看日干，未结合流月或其他五行关系。","knownAt":"目标日历日可预先计算；此报告按历史重建。","target":"目标日开盘到收盘下跌；1 日为主观察窗口。","scoring":"收盘低于开盘计符合；相等持平。与全部可评分日下跌比例对照。","invalidation":"未定义盘中失效阈值；历史未做动态撤销。","source":"exploration_generators.py / rule_events.py"},
+    {"id":"GANN-EQUAL-INTERVAL","version":"0.16.0","family":"江恩","name":"相邻转点等距时间","trigger":"用左右各 2 日严格高低点确认转点；按时间顺序取相邻且高低类型交替的 A、B，A 在 B 确认前 90 日内；投射 B+(B−A)×1 或 ×2，合并同一规则。","knownAt":"B 后第 3 日 00:00（北京时间）才视为已知，且须严格早于目标日减 3 日的 00:00。","target":"中性时间点；仅观察目标日前后 ±3 日是否出现确认转点，不判断高低或涨跌。","scoring":"统计 ±3 日内匹配比例、覆盖日期、唯一转点召回，并与全部合格日及圆移对照并列。","invalidation":"未定义后续行情失效条件；历史未做动态撤销。","source":"exploration_generators.py / gann_timing.py"},
+    {"id":"ASTRO-MOON-PHASE","version":"0.16.0","family":"金融占星","name":"四种月相时间","trigger":"按星历生成四种月相事件，事件落在北京时间目标日即触发；四种月相合并计为一条规则。","knownAt":"星历可预先计算；历史报告以固定计算配置重建。","target":"中性时间点；仅观察目标日前后 ±3 日确认转点，不判断高低或涨跌。","scoring":"同一时间评分器；与全部合格日及圆移对照并列，需同时看日期覆盖率。","invalidation":"未定义价格失效条件；历史未做动态撤销。","source":"exploration_generators.py / astro_events.py"},
+    {"id":"ASTRO-NAKSHATRA-INGRESS","version":"0.16.0","family":"印度占星","name":"月亮换宿时间","trigger":"按固定恒星黄道设置计算月亮进入下一月宿的时刻；以北京时间事件日期触发。","knownAt":"星历可预先计算；历史报告以固定计算配置重建。","target":"中性时间点；仅观察目标日前后 ±3 日确认转点，不判断高低或涨跌。","scoring":"同一时间评分器；与全部合格日及圆移对照并列，需同时看日期覆盖率。","invalidation":"未定义价格失效条件；历史未做动态撤销。","source":"exploration_generators.py / astro_events.py"}
+  ]
+}

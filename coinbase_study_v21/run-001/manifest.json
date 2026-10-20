@@ -1,0 +1,12 @@
+{
+  "capturedAtUtc": "2026-10-17T05:47:58.522587+00:00",
+  "fileSha256": {
+    "details.json": "5978601bc348ebffec05874a90d496938ba12ac62d0d109523254833f14629a4",
+    "protocol.json": "961839fc412646922d2041b6bdec066d7d62d6a804b97884e7b99e1e7036abd9",
+    "raw-request-manifest.json": "18c4f19e7f08cf30f651be28900c815c34bbae42ce5fe7add0e6083b474e06fa",
+    "registration.json": "f0cd155f678c0841a6ad16e91e58ebbd2e9b6ac536fd506f75f011fffacb69c4",
+    "report.json": "e7aadd124406e47f11852f85de728bb54011db1fb723a49d19a065c026c56c41",
+    "snapshot.json": "537791fefe602f655ce9b5c172adc49640ada5a8abcc18fe10b00d477baf0cac"
+  },
+  "studyId": "CB-USD-HX-001"
+}

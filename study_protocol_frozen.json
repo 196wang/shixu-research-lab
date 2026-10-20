@@ -1,0 +1,228 @@
+{
+  "schemaVersion": "1.0",
+  "hypothesisId": "H-BZ-DAY-001",
+  "hypothesisVersion": "0.2.0",
+  "protocolId": "H-BZ-DAY-001-MASK-20260927",
+  "title": "完整小时日的金水日收益差异：保留缺失掩码的历史探索",
+  "status": "frozen_before_this_revision_first_scoring_after_prior_data_and_results_seen",
+  "proposedAtUtc": "2026-09-27T01:20:46Z",
+  "researchKind": "retrospective_observational_complete_day_price_difference",
+  "registeredForForwardTest": false,
+  "priorKnowledge": {
+    "oldProtocolVersion": "0.1.0",
+    "oldProtocolOutcome": "data_validation_failed",
+    "oldOutcomePreserved": true,
+    "resultsAlreadySeen": true,
+    "knownOldDeltaBp": {
+      "2020_2024": 26.4778,
+      "2025_2026": 18.0937
+    },
+    "amendmentReason": "Official-source recovery can repair the recent missing archive but does not supply 18 historical complete days. Introduce a separate calendar-mask exploratory estimator rather than rewriting the old gap-free gate.",
+    "registrationMeaning": "Freeze this revision, data hash and implementation hash before its first scoring run. This is an after-data-inspection amendment, not prospective preregistration.",
+    "unrecoveredDataCause": "Use verified gap records. An absent or partial official bar alone does not prove the precise exchange outage cause."
+  },
+  "immutableChoices": {
+    "exchange": "Binance",
+    "symbol": "BTCUSDT",
+    "marketType": "spot",
+    "rawInterval": "1h",
+    "timezone": "Asia/Shanghai",
+    "dayBoundary": "00:00",
+    "trueSolarTime": false,
+    "group1Stems": [
+      "庚",
+      "辛",
+      "壬",
+      "癸"
+    ],
+    "group0Stems": [
+      "甲",
+      "乙",
+      "丙",
+      "丁",
+      "戊",
+      "己"
+    ],
+    "returnDefinition": "r = final_hour_close / first_hour_open - 1",
+    "noPriceImputation": true,
+    "noExchangeSplicing": true,
+    "noParameterSearch": true,
+    "periods": [
+      {
+        "name": "historical_exploration",
+        "start": "2020-01-01",
+        "end": "2024-12-31"
+      },
+      {
+        "name": "contaminated_historical_review",
+        "start": "2025-01-01",
+        "end": "2026-09-26"
+      }
+    ]
+  },
+  "calendarGrid": {
+    "oneRecordPerExpectedDate": true,
+    "featuresComputedForMissingDates": true,
+    "recordFields": [
+      "date",
+      "dayGanzhi",
+      "group",
+      "mask",
+      "return",
+      "invalidReasons",
+      "sourceRefs"
+    ],
+    "mask1Definition": "Exactly 24 unique consecutive closed hourly bars with expected open/close timestamps, positive finite valid OHLC and verifiable same-exchange provenance; independently checked calendar label.",
+    "mask0Definition": "Any missing, conflicting, duplicate, partial, invalid or unverified constituent; retain the date and group, with return=null.",
+    "recoveryPolicy": "Identical duplicate copies may be de-duplicated only in an explicit provenance resolution step. Conflicting values are unresolved and mask=0; never prefer a source because its return is favourable.",
+    "estimand": "Delta_observed = mean(r | G=1, mask=1) - mean(r | G=0, mask=1). This is conditional on complete observed days; it does not estimate omitted-day returns without additional missingness assumptions.",
+    "exclusionsDependOnlyOnDataQuality": true
+  },
+  "qualityAndAvailability": {
+    "unknownOrWrongCalendarLabelBlocksInference": true,
+    "unassignableMalformedDateBlocksInference": true,
+    "maskAuditRequired": true,
+    "minimumCompleteDaysPerPeriod": 180,
+    "minimumCompleteDaysPerGroup": 60,
+    "minimumOverallCoverage": 0.99,
+    "coverageDenominator": "all expected calendar dates in the fixed period",
+    "oldGapFreeGatePassed": false,
+    "groupCoverageIsReportedNotTuned": true,
+    "reportMissingnessBy": [
+      "period",
+      "group",
+      "calendar_year",
+      "group_within_year",
+      "reason"
+    ],
+    "missingnessFields": [
+      "expectedDays",
+      "completeDays",
+      "missingDays",
+      "coverage",
+      "missingRate",
+      "missingRate_G1_minus_G0",
+      "consecutiveMissingRuns"
+    ],
+    "ifGatesFail": "Report descriptive quantities and exact failure reasons; CI unavailable. Never change the period or masks to reach a gate."
+  },
+  "bootstrap": {
+    "method": "moving_block_bootstrap_paired_calendar_G_mask_r",
+    "blockDays": 30,
+    "replicates": 10000,
+    "seed": 20260927,
+    "prng": "Python random.Random Mersenne Twister; actual interpreter version retained",
+    "resetSeedForEachFixedPeriod": true,
+    "N": "number of all expected calendar days, including mask=0 dates",
+    "candidateStartsInclusive": "0 through N-30",
+    "randomStartCall": "randrange(N-29)",
+    "blocksPerReplicate": "ceil(N/30)",
+    "sampleConstruction": "Sample starts uniformly with replacement; keep each 30-calendar-day block's ordered (G,mask,r) triples; concatenate and truncate to first N calendar rows. Never compress the input to complete days or require a block to be gap-free.",
+    "replicateStatistic": "Compute the two means using sampled rows with mask=1 only; mask=0 retains a calendar position and contributes neither return nor valid count.",
+    "invalidReplicate": "Either group's sampled valid count is zero; record invalid and do not redraw.",
+    "minimumValidReplicates": 9900,
+    "interval": "Two-sided 95% percentile interval; sorted (M-1)*p adjacent linear interpolation at p=0.025 and 0.975.",
+    "requiredAudit": [
+      "replicatesRequested",
+      "replicatesValid",
+      "replicatesInvalidMissingGroup",
+      "randomDrawCount",
+      "sampledValidCountRange",
+      "sampledGroupCountRanges",
+      "ci95",
+      "ci95Bp",
+      "availabilityReasons"
+    ],
+    "assumptionLimit": "Approximate resampling uncertainty for observed complete-day associations. Transporting the historical missingness pattern does not make missingness random or remove dependence/nonstationarity, selection bias or prior result knowledge."
+  },
+  "mandatorySensitivity": {
+    "annualRows": "Report every represented calendar year, marking 2026 as partial; group counts, expected/complete coverage, mean, median, sample sd, strictly-positive ratio, delta and deltaBp. Do not hide adverse years.",
+    "leaveOneYearOut": "For each fixed period remove each represented calendar year in turn and report descriptive delta using remaining complete days; no bootstrap, no choosing a best omission, no shortened dates relabelled as the primary result.",
+    "extremeDayAudit": "List 5 largest and 5 smallest valid daily returns per fixed period with date/group/source. This is influence inspection only; retain these days in every main estimate.",
+    "noExtraModels": "No added zodiac, branch, birth-chart, moving-average, optimized block-length, time-zone, return-window or asset variants in this revision."
+  },
+  "reporting": {
+    "screeningEffectThreshold": 0.001,
+    "screeningEffectThresholdBp": 10,
+    "thresholdRole": "Retain the old project's 10 bp screening reference as a descriptive arithmetic flag only, not an approved strategy or theory-validity status.",
+    "allowedStatuses": [
+      "exploratory_diagnostic",
+      "data_validation_failed",
+      "insufficient_sample",
+      "uncertainty_unavailable"
+    ],
+    "forbiddenStatuses": [
+      "exploratory_supported",
+      "forward_supported",
+      "validated_strategy"
+    ],
+    "marketValidated": false,
+    "marketExecutionEnabled": false,
+    "compareWithOldRun": "Display old gap-free v0.1 failure beside this separate v0.2 result. The changed sample definition must remain prominent.",
+    "cannotConclude": [
+      "all_calendar_day_effect",
+      "missing_at_random",
+      "causality",
+      "future_holdout_success",
+      "transaction_cost_adjusted_profit",
+      "complete_Bazi_theory_validity"
+    ]
+  },
+  "freezeAndRunManifest": {
+    "fields": [
+      "experimentId",
+      "registeredAtUtc",
+      "knownHistory",
+      "proposalSha256",
+      "implementationSha256",
+      "testReportSha256",
+      "inputSha256",
+      "featureAndMaskSha256",
+      "rawArchiveManifestSha256",
+      "recoveryAuditSha256",
+      "calendarValidationSha256",
+      "runtimeVersion",
+      "command",
+      "runStartedAtUtc",
+      "runCompletedAtUtc",
+      "outputSha256"
+    ],
+    "validationEvidence": "Resolve actual referenced hashes and tests; do not accept self-asserted boolean metadata as evidence.",
+    "revisionsAreAppendOnly": true
+  },
+  "reviewedFiles": [
+    {
+      "path": "outputs/理论规则库_v0.3/验证方案.md",
+      "sha256": "3cd642e23360305ebe136cddba1a226e6565dfd2133d6fd0ec594f36edb36760"
+    },
+    {
+      "path": "outputs/计算接入_v0.4/程序/score_hypothesis.py",
+      "sha256": "21aaebb5986f70d71695038512cc97fe25a2ab979ae28e688e1c456c6c901257"
+    },
+    {
+      "path": "outputs/计算接入_v0.4/程序/market_pipeline.py",
+      "sha256": "75b8a55d93f8eb93dea28fb3d3f82331d8cc98e8bc1fdffe24e31b2a4d973336"
+    }
+  ],
+  "periods": [
+    {
+      "name": "historical_exploration",
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "name": "contaminated_historical_review",
+      "start": "2025-01-01",
+      "end": "2026-09-26"
+    }
+  ],
+  "limitations": [
+    "研究对象为来源可核验且24小时完整日期的组均值差；不恢复被剔除日期的真实收益。",
+    "30日区块同时抽取分组、缺失标记与收益；不会证明缺失随机、平稳或因果。",
+    "已看过旧描述统计后新增此缺失数据方案，属于后验探索修订，不是事前预注册。",
+    "2025–2026已受案例阅读影响；2026仅到9月26日，不是干净样本外。",
+    "没有纳入费用、滑点、下单时点、杠杆或资产头寸；不是可执行交易策略回测。",
+    "原无缺口协议2020–2024依旧未通过；新结果不能覆写该历史记录。",
+    "单一日干分组不代表完整八字、占星或江恩体系；样本内差异不验证这些理论。"
+  ]
+}

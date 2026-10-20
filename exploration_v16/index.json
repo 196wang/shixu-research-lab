@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "details.json": "fea660e1af4ae94240e4ed9a57d2a25ea1ac733fb2baf8ddcd0e3a2e358be48d",
+    "protocol.json": "d3bbddf226365bd5a23feb9d23c160adeec5ee818db76e9ea4e5ff19c1776b42",
+    "registration.json": "fafe9f08c078de4136407b9615a6b91854a1ae3cfac4f9d267a6d408ad5c5f56",
+    "report.json": "94d57d2f39770d20a0bea042ed0c98126537555cc93d6c8750dcb67c34871a78",
+    "snapshot.json": "a1e0b03b00d738c15d833020689210fa4b04e44be3e6d80bdaad2f8d94b3c744"
+  },
+  "completedAtUtc": "2026-09-27T06:15:52.137652+00:00",
+  "run": "run-001",
+  "schemaVersion": 1
+}

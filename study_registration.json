@@ -1,0 +1,43 @@
+{
+  "experimentId": "EXP-BZ-DAY-001-20260927-MASK-02",
+  "registeredAtUtc": "2026-09-27T01:25:40.452261+00:00",
+  "registrationType": "post_inspection_retrospective_amendment_pre_this_run",
+  "notProspectivePreregistration": true,
+  "knownPriorResults": {
+    "oldProtocolVersion": "0.1.0",
+    "oldProtocolOutcome": "data_validation_failed",
+    "oldOutcomePreserved": true,
+    "resultsAlreadySeen": true,
+    "knownOldDeltaBp": {
+      "2020_2024": 26.4778,
+      "2025_2026": 18.0937
+    },
+    "amendmentReason": "Official-source recovery can repair the recent missing archive but does not supply 18 historical complete days. Introduce a separate calendar-mask exploratory estimator rather than rewriting the old gap-free gate.",
+    "registrationMeaning": "Freeze this revision, data hash and implementation hash before its first scoring run. This is an after-data-inspection amendment, not prospective preregistration.",
+    "unrecoveredDataCause": "Use verified gap records. An absent or partial official bar alone does not prove the precise exchange outage cause."
+  },
+  "inputHashes": {
+    "daily_input.json": "182a156b7aed3988d376f2656773cfb93caa8f1e66b613787deabdb7e0b6c0cc",
+    "study_protocol_proposal.json": "80c52af4ac3f6506b0e81b1a4adb5dc65fe32b1e5cf707ddd04628480498b43a",
+    "study_protocol_frozen.json": "07c0932bb394a8181900a26f74c654f9713f2588b122261aa99dc10f9d3f2c9f",
+    "masked_study.py": "b4751fe89b5cb00017af7cfad2a70b173f5e5dbade1c052f16a9ed063b194a7d",
+    "legacy_scorer.py": "21aaebb5986f70d71695038512cc97fe25a2ab979ae28e688e1c456c6c901257",
+    "recover_market.py": "1ad56aae5d449c3e1b88954ad2a7d10c01efea5b55d8893c0b014fb9647a887b",
+    "legacy_market.py": "75b8a55d93f8eb93dea28fb3d3f82331d8cc98e8bc1fdffe24e31b2a4d973336",
+    "calendar_adapter.py": "574f0bcf4a17f017db24ea6d8930b472b4b37b03f4f664a477e51f7eeb7c9f13",
+    "calendar_validation.py": "0864be54c7c4eaf5b3b70e4126728871d1ed8dc95c8b4d4f998712103bf5025d",
+    "calendar_reference.json": "d53fcc8d229e9be7acd1d2ac6c7cb47c885254f99d9b1bf53a05302cfffc70f3",
+    "bazi_engine.py": "7180fbb1a387797b3618d76ad6624734b994b6b9e7f33410af0764e98080f4a0",
+    "market_recovery.json": "87fca9768c62cc16146a0cb8770a0fafa78e2f97b58c485f17dbf856e56a9576",
+    "market_gap_audit.json": "1db0b0cac199062d992434bfe256c11e44e546669439aa94d872a4c08a29d316",
+    "calendar_validation_evidence.json": "4a06fc7dc347177ec18ce12e6f7a3b3e7529b28b88ac4880db09f0357093085a",
+    "unit_tests.json": "7c8d98dd59d11454f691457d2e24a677fe61f6cce9f9c594121b5a10228b57b9",
+    "test_research_v06.py": "1297627a2b8782ca2a7c8852c943275f574fc8e9568762ed4173673e3812f677",
+    "study_grid.json": "1b1ff256e356059acd8e8f718708395993029c3800fbf50a5ba142d09a86a80b",
+    "freeze_study.py": "b6d262195811708139565fbe4131a5fa0f9645f3e49dd12b48ea718172b0e3e8"
+  },
+  "python": "3.12.14",
+  "command": "python -B -X utf8 masked_study.py",
+  "forwardMonitoringStarted": false,
+  "marketExecutionEnabled": false
+}

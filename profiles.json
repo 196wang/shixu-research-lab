@@ -1,0 +1,76 @@
+{
+  "profiles": [
+    {
+      "id": "BTC-BZ-V01",
+      "entityType": "asset",
+      "pillars": {
+        "year": "戊子",
+        "month": "甲子",
+        "day": "戊申",
+        "hour": "辛酉"
+      },
+      "inputStatus": "known_pillars_not_recalculated_from_birth_datetime",
+      "evidenceRefs": [
+        "PROFILE-EV-01"
+      ],
+      "asset": "BTC",
+      "preferred": null
+    },
+    {
+      "id": "ETH-BAZI-A",
+      "entityType": "asset",
+      "pillars": {
+        "year": "乙未",
+        "month": "癸未",
+        "day": "戊申",
+        "hour": "壬子"
+      },
+      "inputStatus": "known_pillars_not_recalculated_from_birth_datetime",
+      "evidenceRefs": [
+        "PROFILE-EV-02"
+      ],
+      "asset": "ETH",
+      "preferred": null
+    },
+    {
+      "id": "ETH-BAZI-B",
+      "entityType": "asset",
+      "pillars": {
+        "year": "癸巳",
+        "month": "甲子",
+        "day": "辛未",
+        "hour": "癸巳"
+      },
+      "inputStatus": "known_pillars_not_recalculated_from_birth_datetime",
+      "evidenceRefs": [
+        "PROFILE-EV-03"
+      ],
+      "asset": "ETH",
+      "preferred": null
+    },
+    {
+      "id": "PERSON-BZ-H01",
+      "entityType": "person",
+      "pillars": {
+        "year": "癸酉",
+        "month": "乙丑",
+        "day": "丁巳",
+        "hour": "辛丑"
+      },
+      "inputStatus": "known_pillars_not_recalculated_from_birth_datetime",
+      "evidenceRefs": [
+        "PROFILE-EV-04"
+      ],
+      "hypothesis": "人物时辰假设；不代表资产盘；时辰尚未证实",
+      "preferred": null
+    }
+  ],
+  "preferredETHProfile": null,
+  "syntheticFlow": {
+    "year": "丙午",
+    "month": "甲午",
+    "day": "庚戌",
+    "hour": "丙子"
+  },
+  "note": "四份原局独立；两份ETH并行，人物盘保持独立实体"
+}

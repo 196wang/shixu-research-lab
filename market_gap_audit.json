@@ -1,0 +1,2316 @@
+{
+  "version": "0.6.0",
+  "auditedAtUtc": "2026-09-27T01:24:05.241928+00:00",
+  "frozenArchiveCountVerified": 106,
+  "sourceRecoveryReport": "work\\research_v06\\market_recovery.json",
+  "sourceRecoveryReportSha256": "87fca9768c62cc16146a0cb8770a0fafa78e2f97b58c485f17dbf856e56a9576",
+  "priorIncompleteDays": 19,
+  "remainingIncompleteDays": 18,
+  "priorUnqualifiedHours": 55,
+  "priorHourCategories": {
+    "absent_in_archive": 47,
+    "invalid_archive_close_timestamp": 8
+  },
+  "historicalUnqualifiedHours": 39,
+  "addedHours": 16,
+  "archiveApiRowDifferences": [
+    {
+      "localDate": "2020-12-21",
+      "openUtc": "2020-12-21T13:00:00+00:00",
+      "differentFields": [
+        "closeUtc",
+        "OHLC",
+        "volume",
+        "numberOfTrades"
+      ],
+      "differenceClass": "substantive_source_difference",
+      "archive": {
+        "openUtc": "2020-12-21T13:00:00+00:00",
+        "openUtcSeconds": 1608555600,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2020-12-21T13:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "22307.50000000",
+          "22665.35000000",
+          "22251.23000000",
+          "22646.53000000"
+        ],
+        "volume": "2830.34558700",
+        "numberOfTrades": 44795,
+        "archive": "BTCUSDT-1h-2020-12.zip",
+        "archiveRow": 494
+      },
+      "api": {
+        "openUtc": "2020-12-21T13:00:00+00:00",
+        "openUtcSeconds": 1608555600,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2020-12-21T13:47:20.521000+00:00",
+        "fullHourTimestamp": false,
+        "signedDurationSeconds": "2840.522",
+        "OHLC": [
+          "22307.50000000",
+          "22774.00000000",
+          "22251.23000000",
+          "22681.32000000"
+        ],
+        "volume": "3685.45440500",
+        "numberOfTrades": 62654
+      },
+      "apiSource": "BTCUSDT-1h-API-2020-12-21.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2021-12-24",
+      "openUtc": "2021-12-24T03:00:00+00:00",
+      "differentFields": [
+        "volume",
+        "numberOfTrades"
+      ],
+      "differenceClass": "substantive_source_difference",
+      "archive": {
+        "openUtc": "2021-12-24T03:00:00+00:00",
+        "openUtcSeconds": 1640314800,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2021-12-24T03:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "51044.02000000",
+          "51167.46000000",
+          "50851.02000000",
+          "51029.99000000"
+        ],
+        "volume": "1237.77455000",
+        "numberOfTrades": 42022,
+        "archive": "BTCUSDT-1h-2021-12.zip",
+        "archiveRow": 556
+      },
+      "api": {
+        "openUtc": "2021-12-24T03:00:00+00:00",
+        "openUtcSeconds": 1640314800,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2021-12-24T03:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "51044.02000000",
+          "51167.46000000",
+          "50851.02000000",
+          "51029.99000000"
+        ],
+        "volume": "1260.66778000",
+        "numberOfTrades": 42789
+      },
+      "apiSource": "BTCUSDT-1h-API-2021-12-24.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2021-12-24",
+      "openUtc": "2021-12-24T04:00:00+00:00",
+      "differentFields": [
+        "OHLC",
+        "volume",
+        "numberOfTrades"
+      ],
+      "differenceClass": "substantive_source_difference",
+      "archive": {
+        "openUtc": "2021-12-24T04:00:00+00:00",
+        "openUtcSeconds": 1640318400,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2021-12-24T04:59:54.362000+00:00",
+        "fullHourTimestamp": false,
+        "signedDurationSeconds": "3594.363",
+        "OHLC": [
+          "51030.00000000",
+          "51109.09000000",
+          "50926.55000000",
+          "50951.47000000"
+        ],
+        "volume": "560.59259000",
+        "numberOfTrades": 22379,
+        "archive": "BTCUSDT-1h-2021-12.zip",
+        "archiveRow": 557
+      },
+      "api": {
+        "openUtc": "2021-12-24T04:00:00+00:00",
+        "openUtcSeconds": 1640318400,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2021-12-24T04:59:54.362000+00:00",
+        "fullHourTimestamp": false,
+        "signedDurationSeconds": "3594.363",
+        "OHLC": [
+          "51030.00000000",
+          "51109.09000000",
+          "50926.55000000",
+          "50951.41000000"
+        ],
+        "volume": "560.62320000",
+        "numberOfTrades": 22381
+      },
+      "apiSource": "BTCUSDT-1h-API-2021-12-24.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2026-09-26",
+      "openUtc": "2026-09-25T16:00:00+00:00",
+      "differentFields": [
+        "closeUtc"
+      ],
+      "differenceClass": "timestamp_precision_only",
+      "archive": {
+        "openUtc": "2026-09-25T16:00:00+00:00",
+        "openUtcSeconds": 1790352000,
+        "timestampUnit": "microseconds",
+        "closeUtc": "2026-09-25T16:59:59.999999+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83796.01000000",
+          "84115.87000000",
+          "83720.00000000",
+          "83742.22000000"
+        ],
+        "volume": "787.15982000",
+        "numberOfTrades": 172808,
+        "archive": "BTCUSDT-1h-2026-09-25.zip",
+        "archiveRow": 17
+      },
+      "api": {
+        "openUtc": "2026-09-25T16:00:00+00:00",
+        "openUtcSeconds": 1790352000,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2026-09-25T16:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83796.01000000",
+          "84115.87000000",
+          "83720.00000000",
+          "83742.22000000"
+        ],
+        "volume": "787.15982000",
+        "numberOfTrades": 172808
+      },
+      "apiSource": "BTCUSDT-1h-API-2026-09-26.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2026-09-26",
+      "openUtc": "2026-09-25T17:00:00+00:00",
+      "differentFields": [
+        "closeUtc"
+      ],
+      "differenceClass": "timestamp_precision_only",
+      "archive": {
+        "openUtc": "2026-09-25T17:00:00+00:00",
+        "openUtcSeconds": 1790355600,
+        "timestampUnit": "microseconds",
+        "closeUtc": "2026-09-25T17:59:59.999999+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83742.23000000",
+          "83995.84000000",
+          "83628.00000000",
+          "83785.11000000"
+        ],
+        "volume": "596.02916000",
+        "numberOfTrades": 108969,
+        "archive": "BTCUSDT-1h-2026-09-25.zip",
+        "archiveRow": 18
+      },
+      "api": {
+        "openUtc": "2026-09-25T17:00:00+00:00",
+        "openUtcSeconds": 1790355600,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2026-09-25T17:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83742.23000000",
+          "83995.84000000",
+          "83628.00000000",
+          "83785.11000000"
+        ],
+        "volume": "596.02916000",
+        "numberOfTrades": 108969
+      },
+      "apiSource": "BTCUSDT-1h-API-2026-09-26.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2026-09-26",
+      "openUtc": "2026-09-25T18:00:00+00:00",
+      "differentFields": [
+        "closeUtc"
+      ],
+      "differenceClass": "timestamp_precision_only",
+      "archive": {
+        "openUtc": "2026-09-25T18:00:00+00:00",
+        "openUtcSeconds": 1790359200,
+        "timestampUnit": "microseconds",
+        "closeUtc": "2026-09-25T18:59:59.999999+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83785.11000000",
+          "84081.41000000",
+          "83785.11000000",
+          "83968.00000000"
+        ],
+        "volume": "341.90397000",
+        "numberOfTrades": 65530,
+        "archive": "BTCUSDT-1h-2026-09-25.zip",
+        "archiveRow": 19
+      },
+      "api": {
+        "openUtc": "2026-09-25T18:00:00+00:00",
+        "openUtcSeconds": 1790359200,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2026-09-25T18:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83785.11000000",
+          "84081.41000000",
+          "83785.11000000",
+          "83968.00000000"
+        ],
+        "volume": "341.90397000",
+        "numberOfTrades": 65530
+      },
+      "apiSource": "BTCUSDT-1h-API-2026-09-26.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2026-09-26",
+      "openUtc": "2026-09-25T19:00:00+00:00",
+      "differentFields": [
+        "closeUtc"
+      ],
+      "differenceClass": "timestamp_precision_only",
+      "archive": {
+        "openUtc": "2026-09-25T19:00:00+00:00",
+        "openUtcSeconds": 1790362800,
+        "timestampUnit": "microseconds",
+        "closeUtc": "2026-09-25T19:59:59.999999+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83968.01000000",
+          "84078.23000000",
+          "83934.00000000",
+          "84020.01000000"
+        ],
+        "volume": "328.96659000",
+        "numberOfTrades": 62947,
+        "archive": "BTCUSDT-1h-2026-09-25.zip",
+        "archiveRow": 20
+      },
+      "api": {
+        "openUtc": "2026-09-25T19:00:00+00:00",
+        "openUtcSeconds": 1790362800,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2026-09-25T19:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83968.01000000",
+          "84078.23000000",
+          "83934.00000000",
+          "84020.01000000"
+        ],
+        "volume": "328.96659000",
+        "numberOfTrades": 62947
+      },
+      "apiSource": "BTCUSDT-1h-API-2026-09-26.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2026-09-26",
+      "openUtc": "2026-09-25T20:00:00+00:00",
+      "differentFields": [
+        "closeUtc"
+      ],
+      "differenceClass": "timestamp_precision_only",
+      "archive": {
+        "openUtc": "2026-09-25T20:00:00+00:00",
+        "openUtcSeconds": 1790366400,
+        "timestampUnit": "microseconds",
+        "closeUtc": "2026-09-25T20:59:59.999999+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "84020.01000000",
+          "84193.39000000",
+          "83817.89000000",
+          "83886.00000000"
+        ],
+        "volume": "308.93872000",
+        "numberOfTrades": 55988,
+        "archive": "BTCUSDT-1h-2026-09-25.zip",
+        "archiveRow": 21
+      },
+      "api": {
+        "openUtc": "2026-09-25T20:00:00+00:00",
+        "openUtcSeconds": 1790366400,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2026-09-25T20:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "84020.01000000",
+          "84193.39000000",
+          "83817.89000000",
+          "83886.00000000"
+        ],
+        "volume": "308.93872000",
+        "numberOfTrades": 55988
+      },
+      "apiSource": "BTCUSDT-1h-API-2026-09-26.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2026-09-26",
+      "openUtc": "2026-09-25T21:00:00+00:00",
+      "differentFields": [
+        "closeUtc"
+      ],
+      "differenceClass": "timestamp_precision_only",
+      "archive": {
+        "openUtc": "2026-09-25T21:00:00+00:00",
+        "openUtcSeconds": 1790370000,
+        "timestampUnit": "microseconds",
+        "closeUtc": "2026-09-25T21:59:59.999999+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83886.01000000",
+          "83921.36000000",
+          "83632.03000000",
+          "83792.00000000"
+        ],
+        "volume": "365.84717000",
+        "numberOfTrades": 56557,
+        "archive": "BTCUSDT-1h-2026-09-25.zip",
+        "archiveRow": 22
+      },
+      "api": {
+        "openUtc": "2026-09-25T21:00:00+00:00",
+        "openUtcSeconds": 1790370000,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2026-09-25T21:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83886.01000000",
+          "83921.36000000",
+          "83632.03000000",
+          "83792.00000000"
+        ],
+        "volume": "365.84717000",
+        "numberOfTrades": 56557
+      },
+      "apiSource": "BTCUSDT-1h-API-2026-09-26.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2026-09-26",
+      "openUtc": "2026-09-25T22:00:00+00:00",
+      "differentFields": [
+        "closeUtc"
+      ],
+      "differenceClass": "timestamp_precision_only",
+      "archive": {
+        "openUtc": "2026-09-25T22:00:00+00:00",
+        "openUtcSeconds": 1790373600,
+        "timestampUnit": "microseconds",
+        "closeUtc": "2026-09-25T22:59:59.999999+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83792.00000000",
+          "84123.35000000",
+          "83765.26000000",
+          "84083.05000000"
+        ],
+        "volume": "367.91947000",
+        "numberOfTrades": 45404,
+        "archive": "BTCUSDT-1h-2026-09-25.zip",
+        "archiveRow": 23
+      },
+      "api": {
+        "openUtc": "2026-09-25T22:00:00+00:00",
+        "openUtcSeconds": 1790373600,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2026-09-25T22:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "83792.00000000",
+          "84123.35000000",
+          "83765.26000000",
+          "84083.05000000"
+        ],
+        "volume": "367.91947000",
+        "numberOfTrades": 45404
+      },
+      "apiSource": "BTCUSDT-1h-API-2026-09-26.json",
+      "disposition": "retain_both_do_not_override"
+    },
+    {
+      "localDate": "2026-09-26",
+      "openUtc": "2026-09-25T23:00:00+00:00",
+      "differentFields": [
+        "closeUtc"
+      ],
+      "differenceClass": "timestamp_precision_only",
+      "archive": {
+        "openUtc": "2026-09-25T23:00:00+00:00",
+        "openUtcSeconds": 1790377200,
+        "timestampUnit": "microseconds",
+        "closeUtc": "2026-09-25T23:59:59.999999+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "84083.05000000",
+          "84106.00000000",
+          "84020.00000000",
+          "84099.99000000"
+        ],
+        "volume": "387.53350000",
+        "numberOfTrades": 26603,
+        "archive": "BTCUSDT-1h-2026-09-25.zip",
+        "archiveRow": 24
+      },
+      "api": {
+        "openUtc": "2026-09-25T23:00:00+00:00",
+        "openUtcSeconds": 1790377200,
+        "timestampUnit": "milliseconds",
+        "closeUtc": "2026-09-25T23:59:59.999000+00:00",
+        "fullHourTimestamp": true,
+        "signedDurationSeconds": "3600",
+        "OHLC": [
+          "84083.05000000",
+          "84106.00000000",
+          "84020.00000000",
+          "84099.99000000"
+        ],
+        "volume": "387.53350000",
+        "numberOfTrades": 26603
+      },
+      "apiSource": "BTCUSDT-1h-API-2026-09-26.json",
+      "disposition": "retain_both_do_not_override"
+    }
+  ],
+  "substantiveSourceDifferenceRows": 3,
+  "timestampPrecisionOnlyRows": 8,
+  "keyConclusions": [
+    "原19天分为18个历史异常日、1个近期档案未发布/不可取日；本轮官方API恢复后剩18个历史日。",
+    "旧档案55个不合格时槽包含47个无行和8个closeTime不合格；47个无行中16个近期小时已恢复。",
+    "8个异常closeTime不能全称为短小时：2020-12-21 14:00 UTC旧行结束时间早于开始。",
+    "API与月档不是完全相同快照：2020-12-21 13:00 UTC即使旧行通过格式校验，仍与新API OHLC及收盘时间不同。两份都保留，不静默覆盖。",
+    "另有2021-12-24 03:00 UTC量/笔数差异，以及04:00 UTC无效小时末价和量/笔数差异。共3条实质来源差异；2026年8条完整小时的结束时间差999微秒仅是记录精度差别。",
+    "维护公告只作为发生中断的证据。无公告的缺口不能认定无成交或停市；有公告也不能据此造价格或改时间戳。",
+    "旧协议要求分段无缺口才可bootstrap；2020–2024仍不达标，不能删缺口拼接或改协议后称原试验通过。"
+  ],
+  "sources": [
+    {
+      "id": "DATA-FILES",
+      "url": "https://github.com/binance/binance-public-data/blob/master/README.md",
+      "verified": "official_body",
+      "summary": "官方档案分日/月，日档通常次日发布；2025年起现货档案采用微秒。每个ZIP有CHECKSUM；历史档案可更正。"
+    },
+    {
+      "id": "DATA-API",
+      "url": "https://developers.binance.com/en/docs/catalog/core-trading-spot-trading/api/rest-api/market",
+      "verified": "official_body",
+      "summary": "GET /api/v3/klines，open time为唯一键，limit最大1000；startTime/endTime始终解释为UTC；未传timeZone时按UTC。"
+    },
+    {
+      "id": "DATA-ONLY",
+      "url": "https://github.com/binance/binance-spot-api-docs/blob/master/faqs/market_data_only.md",
+      "verified": "official_body",
+      "summary": "data-api.binance.vision支持公开klines，不要求API key。"
+    },
+    {
+      "id": "M-20200219",
+      "url": "https://www.binance.com/en/support/announcement/detail/360039984971",
+      "verified": "official_body",
+      "summary": "2020-02-19临时维护，公告称17:30 UTC恢复交易。",
+      "utcDay": "2020-02-19"
+    },
+    {
+      "id": "M-20200304",
+      "url": "https://www.binance.com/en/support/announcement/detail/360040487771",
+      "verified": "official_body",
+      "summary": "2020-03-04临时维护，公告称11:30 UTC恢复交易。",
+      "utcDay": "2020-03-04"
+    },
+    {
+      "id": "M-20200628",
+      "url": "https://www.binance.com/en/support/announcement/detail/a9d34695cd9345c7a648a882fcd3bcc0",
+      "verified": "official_body",
+      "summary": "预告2020-06-28 02:00 UTC起升级约2小时，之后有30分钟交易恢复前窗口；预计时长不等于实际恢复时间。",
+      "utcDay": "2020-06-28"
+    },
+    {
+      "id": "M-20201221",
+      "url": "https://www.binance.com/en-ZA/support/announcement/detail/b026ae47a3ab4335990d1c2f92aaeb29",
+      "verified": "official_search_content",
+      "summary": "官方索引可读公告：2020-12-21 18:00 UTC恢复交易。英文通用URL本轮重定向至公告目录。",
+      "utcDay": "2020-12-21"
+    },
+    {
+      "id": "M-20210211",
+      "url": "https://www.binance.com/en/support/announcement/detail/aad7639a0ed9424bad585b508a61a433",
+      "verified": "official_search_title_only",
+      "summary": "官方索引显示当日临时维护完成公告；正文重定向，无法核对准确起止时间。",
+      "utcDay": "2021-02-11"
+    },
+    {
+      "id": "M-20210420",
+      "url": "https://www.binance.com/en/support/announcement/detail/1ff4855808344ad49265ea14a03b32bb",
+      "verified": "official_search_content",
+      "summary": "官方索引可读公告：2021-04-20 04:30 UTC恢复交易；正文重定向，证据级别低于本轮直接读取正文。",
+      "utcDay": "2021-04-20"
+    },
+    {
+      "id": "M-20210813",
+      "url": "https://www.binance.com/en/support/announcement/detail/92a9a5bc0129427f8e9928c9b7b09836",
+      "verified": "official_body",
+      "summary": "预告2021-08-13 02:00 UTC起升级约4小时，暂停现货，之后有30分钟交易恢复前窗口。该公告不解释01:00小时closeTime少999ms的原因。",
+      "utcDay": "2021-08-13"
+    },
+    {
+      "id": "M-20230324",
+      "url": "https://www.binance.com/en/blog/from-our-ceo/6789340645608890113",
+      "verified": "official_body",
+      "summary": "官方事后报告：追踪止损订单问题导致现货交易暂停，2023-03-24 14:00 UTC恢复。",
+      "utcDay": "2023-03-24"
+    }
+  ],
+  "days": [
+    {
+      "date": "2020-02-09",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 1,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-02-09T02:00:00+00:00",
+          "openLocal": "2020-02-09T10:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1581177600000&endTime=1581263999999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-02-09.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.404509+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4069,
+        "sha256": "b2d2bda98678e38dc624ea2bebd1057f5419dff74920d39ad03044e69e596d4f",
+        "localDate": "2020-02-09",
+        "requestedStartMs": 1581177600000,
+        "requestedEndMs": 1581263999999,
+        "returnedRows": 23,
+        "validRows": 23,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-02-09",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-02-09.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-02-09.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-02-19",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 5,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-02-19T11:00:00+00:00",
+          "openLocal": "2020-02-19T19:00:00+08:00",
+          "archiveState": "invalid_archive_close_timestamp",
+          "archiveRow": {
+            "openUtc": "2020-02-19T11:00:00+00:00",
+            "openUtcSeconds": 1582110000,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2020-02-19T11:35:32.286000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "2132.287",
+            "OHLC": [
+              "10125.00000000",
+              "10150.00000000",
+              "10117.66000000",
+              "10148.93000000"
+            ],
+            "volume": "405.96951100",
+            "numberOfTrades": 4680,
+            "archive": "BTCUSDT-1h-2020-02.zip",
+            "archiveRow": 443
+          },
+          "apiRow": {
+            "openUtc": "2020-02-19T11:00:00+00:00",
+            "openUtcSeconds": 1582110000,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2020-02-19T11:35:32.286000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "2132.287",
+            "OHLC": [
+              "10125.00000000",
+              "10150.00000000",
+              "10117.66000000",
+              "10148.93000000"
+            ],
+            "volume": "405.96951100",
+            "numberOfTrades": 4680
+          },
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-02-19T12:00:00+00:00",
+          "openLocal": "2020-02-19T20:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-02-19T13:00:00+00:00",
+          "openLocal": "2020-02-19T21:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-02-19T14:00:00+00:00",
+          "openLocal": "2020-02-19T22:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-02-19T15:00:00+00:00",
+          "openLocal": "2020-02-19T23:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1582041600000&endTime=1582127999999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-02-19.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.404509+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3563,
+        "sha256": "a669948005c6d4a5de9e359c5d25c0b8c2523e5c22f15d08801ae910011d3b14",
+        "localDate": "2020-02-19",
+        "requestedStartMs": 1582041600000,
+        "requestedEndMs": 1582127999999,
+        "returnedRows": 20,
+        "validRows": 19,
+        "invalidRows": [
+          {
+            "row": 20,
+            "rawOpen": 1582110000000,
+            "error": "invalid hourly close timestamp"
+          }
+        ]
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-02-19",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-02-19.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-02-19.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20200219"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-02-20",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 1,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-02-19T16:00:00+00:00",
+          "openLocal": "2020-02-20T00:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1582128000000&endTime=1582214399999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-02-20.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.405526+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4056,
+        "sha256": "61927f008fa67dcd8b167f2b9fde3380d1b3199a6cc1a6c297f02bf662127ee2",
+        "localDate": "2020-02-20",
+        "requestedStartMs": 1582128000000,
+        "requestedEndMs": 1582214399999,
+        "returnedRows": 23,
+        "validRows": 23,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-02-19",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-02-19.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-02-19.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20200219"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-03-04",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 2,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-03-04T09:00:00+00:00",
+          "openLocal": "2020-03-04T17:00:00+08:00",
+          "archiveState": "invalid_archive_close_timestamp",
+          "archiveRow": {
+            "openUtc": "2020-03-04T09:00:00+00:00",
+            "openUtcSeconds": 1583312400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2020-03-04T09:21:46.694000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "1306.695",
+            "OHLC": [
+              "8818.40000000",
+              "8820.68000000",
+              "8785.00000000",
+              "8795.06000000"
+            ],
+            "volume": "254.39256900",
+            "numberOfTrades": 3743,
+            "archive": "BTCUSDT-1h-2020-03.zip",
+            "archiveRow": 82
+          },
+          "apiRow": {
+            "openUtc": "2020-03-04T09:00:00+00:00",
+            "openUtcSeconds": 1583312400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2020-03-04T09:21:46.694000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "1306.695",
+            "OHLC": [
+              "8818.40000000",
+              "8820.68000000",
+              "8785.00000000",
+              "8795.06000000"
+            ],
+            "volume": "254.39256900",
+            "numberOfTrades": 3743
+          },
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-03-04T10:00:00+00:00",
+          "openLocal": "2020-03-04T18:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1583251200000&endTime=1583337599999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-03-04.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.697121+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4010,
+        "sha256": "88e9a3aaafbadf297f60bae9665e9a0856e6f89324ba3c973f8dc7cdbee80f0a",
+        "localDate": "2020-03-04",
+        "requestedStartMs": 1583251200000,
+        "requestedEndMs": 1583337599999,
+        "returnedRows": 23,
+        "validRows": 22,
+        "invalidRows": [
+          {
+            "row": 18,
+            "rawOpen": 1583312400000,
+            "error": "invalid hourly close timestamp"
+          }
+        ]
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-03-04",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-03-04.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-03-04.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20200304"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-04-25",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 2,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-04-25T02:00:00+00:00",
+          "openLocal": "2020-04-25T10:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-04-25T03:00:00+00:00",
+          "openLocal": "2020-04-25T11:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1587744000000&endTime=1587830399999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-04-25.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.700545+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3827,
+        "sha256": "89569c168b4b769f02d6971754f93facf70916dd0b230d290a67e5d710141a40",
+        "localDate": "2020-04-25",
+        "requestedStartMs": 1587744000000,
+        "requestedEndMs": 1587830399999,
+        "returnedRows": 22,
+        "validRows": 22,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-04-25",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-04-25.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-04-25.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-06-28",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 3,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-06-28T02:00:00+00:00",
+          "openLocal": "2020-06-28T10:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-06-28T03:00:00+00:00",
+          "openLocal": "2020-06-28T11:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-06-28T04:00:00+00:00",
+          "openLocal": "2020-06-28T12:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1593273600000&endTime=1593359999999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-06-28.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.711921+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3666,
+        "sha256": "019ac459af7e872800e09cdf8403fd7e6d42b346a1a35a6b44a600238fc295d3",
+        "localDate": "2020-06-28",
+        "requestedStartMs": 1593273600000,
+        "requestedEndMs": 1593359999999,
+        "returnedRows": 21,
+        "validRows": 21,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-06-28",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-06-28.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-06-28.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20200628"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-11-30",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 1,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-11-30T06:00:00+00:00",
+          "openLocal": "2020-11-30T14:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1606665600000&endTime=1606751999999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-11-30.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.985395+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4147,
+        "sha256": "126e286638d9f99a4a6e3f091575c260b5d2dc8124b883d5a3eb71ab64887242",
+        "localDate": "2020-11-30",
+        "requestedStartMs": 1606665600000,
+        "requestedEndMs": 1606751999999,
+        "returnedRows": 23,
+        "validRows": 23,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-11-30",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-11-30.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-11-30.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-12-21",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 2,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-12-21T14:00:00+00:00",
+          "openLocal": "2020-12-21T22:00:00+08:00",
+          "archiveState": "invalid_archive_close_timestamp",
+          "archiveRow": {
+            "openUtc": "2020-12-21T14:00:00+00:00",
+            "openUtcSeconds": 1608559200,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2020-12-21T13:47:20.521000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "-759.478",
+            "OHLC": [
+              "22646.53000000",
+              "22646.53000000",
+              "22646.53000000",
+              "22646.53000000"
+            ],
+            "volume": "0.00000000",
+            "numberOfTrades": 0,
+            "archive": "BTCUSDT-1h-2020-12.zip",
+            "archiveRow": 495
+          },
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-12-21T15:00:00+00:00",
+          "openLocal": "2020-12-21T23:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1608480000000&endTime=1608566399999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-12-21.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.986414+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3979,
+        "sha256": "6e86e1cac21ac28676d31360e39c59d9bbe19e1fe8171a2cdc9f7cdf4c6c98da",
+        "localDate": "2020-12-21",
+        "requestedStartMs": 1608480000000,
+        "requestedEndMs": 1608566399999,
+        "returnedRows": 22,
+        "validRows": 21,
+        "invalidRows": [
+          {
+            "row": 22,
+            "rawOpen": 1608555600000,
+            "error": "invalid hourly close timestamp"
+          }
+        ]
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-12-21",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-12-21.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-12-21.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20201221"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-12-22",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 2,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-12-21T16:00:00+00:00",
+          "openLocal": "2020-12-22T00:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2020-12-21T17:00:00+00:00",
+          "openLocal": "2020-12-22T01:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1608566400000&endTime=1608652799999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-12-22.json",
+        "fetchedAtUtc": "2026-09-27T01:20:11.991416+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3968,
+        "sha256": "a464e4bf755186fe0b1182113a8452c962e71a170e17316ba4541e40265e1d3f",
+        "localDate": "2020-12-22",
+        "requestedStartMs": 1608566400000,
+        "requestedEndMs": 1608652799999,
+        "returnedRows": 22,
+        "validRows": 22,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-12-21",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-12-21.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-12-21.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20201221"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2020-12-25",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 1,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2020-12-25T02:00:00+00:00",
+          "openLocal": "2020-12-25T10:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1608825600000&endTime=1608911999999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2020-12-25.json",
+        "fetchedAtUtc": "2026-09-27T01:20:12.267645+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4146,
+        "sha256": "cdac37e232ea3ec4b724605b1189da5d2ee6f5ea27b49c30e989764cb760c100",
+        "localDate": "2020-12-25",
+        "requestedStartMs": 1608825600000,
+        "requestedEndMs": 1608911999999,
+        "returnedRows": 23,
+        "validRows": 23,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2020-12-25",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-12-25.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2020-12-25.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2021-02-11",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 2,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2021-02-11T03:00:00+00:00",
+          "openLocal": "2021-02-11T11:00:00+08:00",
+          "archiveState": "invalid_archive_close_timestamp",
+          "archiveRow": {
+            "openUtc": "2021-02-11T03:00:00+00:00",
+            "openUtcSeconds": 1613012400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2021-02-11T03:40:54.773000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "2454.774",
+            "OHLC": [
+              "44582.07000000",
+              "44582.07000000",
+              "44582.07000000",
+              "44582.07000000"
+            ],
+            "volume": "0.00000000",
+            "numberOfTrades": 0,
+            "archive": "BTCUSDT-1h-2021-02.zip",
+            "archiveRow": 244
+          },
+          "apiRow": {
+            "openUtc": "2021-02-11T03:00:00+00:00",
+            "openUtcSeconds": 1613012400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2021-02-11T03:40:54.773000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "2454.774",
+            "OHLC": [
+              "44582.07000000",
+              "44582.07000000",
+              "44582.07000000",
+              "44582.07000000"
+            ],
+            "volume": "0.00000000",
+            "numberOfTrades": 0
+          },
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-02-11T04:00:00+00:00",
+          "openLocal": "2021-02-11T12:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1612972800000&endTime=1613059199999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2021-02-11.json",
+        "fetchedAtUtc": "2026-09-27T01:20:12.304428+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4148,
+        "sha256": "7627e990d912263daae149c54a1737735d0117e545547a0db5231966e696d6cb",
+        "localDate": "2021-02-11",
+        "requestedStartMs": 1612972800000,
+        "requestedEndMs": 1613059199999,
+        "returnedRows": 23,
+        "validRows": 22,
+        "invalidRows": [
+          {
+            "row": 12,
+            "rawOpen": 1613012400000,
+            "error": "invalid hourly close timestamp"
+          }
+        ]
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2021-02-11",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-02-11.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-02-11.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20210211"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2021-03-06",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 1,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2021-03-06T02:00:00+00:00",
+          "openLocal": "2021-03-06T10:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1614960000000&endTime=1615046399999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2021-03-06.json",
+        "fetchedAtUtc": "2026-09-27T01:20:12.553479+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4141,
+        "sha256": "165ff878090db38db1e1623fe306bbe09b126cfc2c17cad0977527fe8427b2b9",
+        "localDate": "2021-03-06",
+        "requestedStartMs": 1614960000000,
+        "requestedEndMs": 1615046399999,
+        "returnedRows": 23,
+        "validRows": 23,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2021-03-06",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-03-06.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-03-06.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2021-04-20",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 2,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2021-04-20T02:00:00+00:00",
+          "openLocal": "2021-04-20T10:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-04-20T03:00:00+00:00",
+          "openLocal": "2021-04-20T11:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1618848000000&endTime=1618934399999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2021-04-20.json",
+        "fetchedAtUtc": "2026-09-27T01:20:12.574915+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3995,
+        "sha256": "0744abb16c9681593685b26d5727d572555d07445486ed12847f0ba661fd843f",
+        "localDate": "2021-04-20",
+        "requestedStartMs": 1618848000000,
+        "requestedEndMs": 1618934399999,
+        "returnedRows": 22,
+        "validRows": 22,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2021-04-20",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-04-20.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-04-20.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20210420"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2021-04-25",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 4,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2021-04-25T04:00:00+00:00",
+          "openLocal": "2021-04-25T12:00:00+08:00",
+          "archiveState": "invalid_archive_close_timestamp",
+          "archiveRow": {
+            "openUtc": "2021-04-25T04:00:00+00:00",
+            "openUtcSeconds": 1619323200,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2021-04-25T04:00:58.146000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "58.147",
+            "OHLC": [
+              "49626.76000000",
+              "49705.04000000",
+              "49600.24000000",
+              "49683.94000000"
+            ],
+            "volume": "5.88703400",
+            "numberOfTrades": 224,
+            "archive": "BTCUSDT-1h-2021-04.zip",
+            "archiveRow": 579
+          },
+          "apiRow": {
+            "openUtc": "2021-04-25T04:00:00+00:00",
+            "openUtcSeconds": 1619323200,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2021-04-25T04:00:58.146000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "58.147",
+            "OHLC": [
+              "49626.76000000",
+              "49705.04000000",
+              "49600.24000000",
+              "49683.94000000"
+            ],
+            "volume": "5.88703400",
+            "numberOfTrades": 224
+          },
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-04-25T05:00:00+00:00",
+          "openLocal": "2021-04-25T13:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-04-25T06:00:00+00:00",
+          "openLocal": "2021-04-25T14:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-04-25T07:00:00+00:00",
+          "openLocal": "2021-04-25T15:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1619280000000&endTime=1619366399999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2021-04-25.json",
+        "fetchedAtUtc": "2026-09-27T01:20:12.580180+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3768,
+        "sha256": "d9f72b5e2fce2bc5b1df99d0f0fd91d28533e2c27775032ef6e8939683fb8d19",
+        "localDate": "2021-04-25",
+        "requestedStartMs": 1619280000000,
+        "requestedEndMs": 1619366399999,
+        "returnedRows": 21,
+        "validRows": 20,
+        "invalidRows": [
+          {
+            "row": 13,
+            "rawOpen": 1619323200000,
+            "error": "invalid hourly close timestamp"
+          }
+        ]
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2021-04-25",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-04-25.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-04-25.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2021-08-13",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 5,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2021-08-13T01:00:00+00:00",
+          "openLocal": "2021-08-13T09:00:00+08:00",
+          "archiveState": "invalid_archive_close_timestamp",
+          "archiveRow": {
+            "openUtc": "2021-08-13T01:00:00+00:00",
+            "openUtcSeconds": 1628816400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2021-08-13T01:59:59+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "3599.001",
+            "OHLC": [
+              "44493.69000000",
+              "44922.00000000",
+              "44455.00000000",
+              "44847.26000000"
+            ],
+            "volume": "1980.12661900",
+            "numberOfTrades": 135331,
+            "archive": "BTCUSDT-1h-2021-08.zip",
+            "archiveRow": 290
+          },
+          "apiRow": {
+            "openUtc": "2021-08-13T01:00:00+00:00",
+            "openUtcSeconds": 1628816400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2021-08-13T01:59:59+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "3599.001",
+            "OHLC": [
+              "44493.69000000",
+              "44922.00000000",
+              "44455.00000000",
+              "44847.26000000"
+            ],
+            "volume": "1980.12661900",
+            "numberOfTrades": 135331
+          },
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-08-13T02:00:00+00:00",
+          "openLocal": "2021-08-13T10:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-08-13T03:00:00+00:00",
+          "openLocal": "2021-08-13T11:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-08-13T04:00:00+00:00",
+          "openLocal": "2021-08-13T12:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-08-13T05:00:00+00:00",
+          "openLocal": "2021-08-13T13:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1628784000000&endTime=1628870399999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2021-08-13.json",
+        "fetchedAtUtc": "2026-09-27T01:20:12.841219+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3603,
+        "sha256": "2075cdd8b4464762873676c81763b5722e5bc5e36835a40006b3b40770e3c911",
+        "localDate": "2021-08-13",
+        "requestedStartMs": 1628784000000,
+        "requestedEndMs": 1628870399999,
+        "returnedRows": 20,
+        "validRows": 19,
+        "invalidRows": [
+          {
+            "row": 10,
+            "rawOpen": 1628816400000,
+            "error": "invalid hourly close timestamp"
+          }
+        ]
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2021-08-13",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-08-13.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-08-13.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20210813"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2021-09-29",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 2,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2021-09-29T07:00:00+00:00",
+          "openLocal": "2021-09-29T15:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        },
+        {
+          "openUtc": "2021-09-29T08:00:00+00:00",
+          "openLocal": "2021-09-29T16:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1632844800000&endTime=1632931199999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2021-09-29.json",
+        "fetchedAtUtc": "2026-09-27T01:20:12.861162+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 3940,
+        "sha256": "58ba59372bc1c019d113467e93cd55065e16a0a1efd89388bd1a43885c2f67b9",
+        "localDate": "2021-09-29",
+        "requestedStartMs": 1632844800000,
+        "requestedEndMs": 1632931199999,
+        "returnedRows": 22,
+        "validRows": 22,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2021-09-29",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-09-29.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-09-29.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2021-12-24",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 1,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2021-12-24T04:00:00+00:00",
+          "openLocal": "2021-12-24T12:00:00+08:00",
+          "archiveState": "invalid_archive_close_timestamp",
+          "archiveRow": {
+            "openUtc": "2021-12-24T04:00:00+00:00",
+            "openUtcSeconds": 1640318400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2021-12-24T04:59:54.362000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "3594.363",
+            "OHLC": [
+              "51030.00000000",
+              "51109.09000000",
+              "50926.55000000",
+              "50951.47000000"
+            ],
+            "volume": "560.59259000",
+            "numberOfTrades": 22379,
+            "archive": "BTCUSDT-1h-2021-12.zip",
+            "archiveRow": 557
+          },
+          "apiRow": {
+            "openUtc": "2021-12-24T04:00:00+00:00",
+            "openUtcSeconds": 1640318400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2021-12-24T04:59:54.362000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "3594.363",
+            "OHLC": [
+              "51030.00000000",
+              "51109.09000000",
+              "50926.55000000",
+              "50951.41000000"
+            ],
+            "volume": "560.62320000",
+            "numberOfTrades": 22381
+          },
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1640275200000&endTime=1640361599999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2021-12-24.json",
+        "fetchedAtUtc": "2026-09-27T01:20:12.863158+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4302,
+        "sha256": "ea8aee0427bfe5bf376697d0be469b98df9fc78976a9f5b6dd4895a8e9e9faec",
+        "localDate": "2021-12-24",
+        "requestedStartMs": 1640275200000,
+        "requestedEndMs": 1640361599999,
+        "returnedRows": 24,
+        "validRows": 23,
+        "invalidRows": [
+          {
+            "row": 13,
+            "rawOpen": 1640318400000,
+            "error": "invalid hourly close timestamp"
+          }
+        ]
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2021-12-24",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-12-24.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2021-12-24.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2023-03-24",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 2,
+      "recoveredHours": 0,
+      "hours": [
+        {
+          "openUtc": "2023-03-24T12:00:00+00:00",
+          "openLocal": "2023-03-24T20:00:00+08:00",
+          "archiveState": "invalid_archive_close_timestamp",
+          "archiveRow": {
+            "openUtc": "2023-03-24T12:00:00+00:00",
+            "openUtcSeconds": 1679659200,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2023-03-24T12:39:41.646000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "2381.647",
+            "OHLC": [
+              "28080.00000000",
+              "28080.00000000",
+              "28080.00000000",
+              "28080.00000000"
+            ],
+            "volume": "0.00000000",
+            "numberOfTrades": 0,
+            "archive": "BTCUSDT-1h-2023-03.zip",
+            "archiveRow": 565
+          },
+          "apiRow": {
+            "openUtc": "2023-03-24T12:00:00+00:00",
+            "openUtcSeconds": 1679659200,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2023-03-24T12:39:41.646000+00:00",
+            "fullHourTimestamp": false,
+            "signedDurationSeconds": "2381.647",
+            "OHLC": [
+              "28080.00000000",
+              "28080.00000000",
+              "28080.00000000",
+              "28080.00000000"
+            ],
+            "volume": "0.00000000",
+            "numberOfTrades": 0
+          },
+          "recovered": false
+        },
+        {
+          "openUtc": "2023-03-24T13:00:00+00:00",
+          "openLocal": "2023-03-24T21:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": null,
+          "recovered": false
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1679587200000&endTime=1679673599999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2023-03-24.json",
+        "fetchedAtUtc": "2026-09-27T01:20:13.122719+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4133,
+        "sha256": "0fa266a6fe2859b8f90c8833ff90faa17cdf3ba4b42d5e7dd378237e7fe8840f",
+        "localDate": "2023-03-24",
+        "requestedStartMs": 1679587200000,
+        "requestedEndMs": 1679673599999,
+        "returnedRows": 23,
+        "validRows": 22,
+        "invalidRows": [
+          {
+            "row": 21,
+            "rawOpen": 1679659200000,
+            "error": "invalid hourly close timestamp"
+          }
+        ]
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2023-03-24",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2023-03-24.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2023-03-24.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [
+        "M-20230324"
+      ],
+      "causeStatus": "maintenance_related_evidence_does_not_explain_every_row",
+      "repairStatus": "official_api_did_not_repair"
+    },
+    {
+      "date": "2026-09-26",
+      "timezone": "Asia/Shanghai",
+      "unqualifiedHoursBefore": 16,
+      "recoveredHours": 16,
+      "hours": [
+        {
+          "openUtc": "2026-09-26T00:00:00+00:00",
+          "openLocal": "2026-09-26T08:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T00:00:00+00:00",
+            "openUtcSeconds": 1790380800,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T00:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84100.00000000",
+              "84145.26000000",
+              "83798.00000000",
+              "83910.01000000"
+            ],
+            "volume": "384.81627000",
+            "numberOfTrades": 50730
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T01:00:00+00:00",
+          "openLocal": "2026-09-26T09:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T01:00:00+00:00",
+            "openUtcSeconds": 1790384400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T01:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "83910.01000000",
+              "84086.01000000",
+              "83906.72000000",
+              "84076.66000000"
+            ],
+            "volume": "380.38641000",
+            "numberOfTrades": 44570
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T02:00:00+00:00",
+          "openLocal": "2026-09-26T10:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T02:00:00+00:00",
+            "openUtcSeconds": 1790388000,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T02:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84076.67000000",
+              "84138.60000000",
+              "83996.00000000",
+              "84010.00000000"
+            ],
+            "volume": "353.25072000",
+            "numberOfTrades": 43716
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T03:00:00+00:00",
+          "openLocal": "2026-09-26T11:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T03:00:00+00:00",
+            "openUtcSeconds": 1790391600,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T03:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84010.00000000",
+              "84049.83000000",
+              "83909.98000000",
+              "83939.00000000"
+            ],
+            "volume": "235.38951000",
+            "numberOfTrades": 35737
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T04:00:00+00:00",
+          "openLocal": "2026-09-26T12:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T04:00:00+00:00",
+            "openUtcSeconds": 1790395200,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T04:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "83939.01000000",
+              "84045.65000000",
+              "83848.91000000",
+              "83976.00000000"
+            ],
+            "volume": "366.59190000",
+            "numberOfTrades": 45671
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T05:00:00+00:00",
+          "openLocal": "2026-09-26T13:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T05:00:00+00:00",
+            "openUtcSeconds": 1790398800,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T05:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "83976.01000000",
+              "84012.93000000",
+              "83891.27000000",
+              "83919.69000000"
+            ],
+            "volume": "196.54010000",
+            "numberOfTrades": 36202
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T06:00:00+00:00",
+          "openLocal": "2026-09-26T14:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T06:00:00+00:00",
+            "openUtcSeconds": 1790402400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T06:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "83919.69000000",
+              "83968.01000000",
+              "83876.58000000",
+              "83891.22000000"
+            ],
+            "volume": "292.11571000",
+            "numberOfTrades": 42208
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T07:00:00+00:00",
+          "openLocal": "2026-09-26T15:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T07:00:00+00:00",
+            "openUtcSeconds": 1790406000,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T07:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "83891.23000000",
+              "84134.01000000",
+              "83891.23000000",
+              "84116.80000000"
+            ],
+            "volume": "280.35605000",
+            "numberOfTrades": 34583
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T08:00:00+00:00",
+          "openLocal": "2026-09-26T16:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T08:00:00+00:00",
+            "openUtcSeconds": 1790409600,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T08:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84116.79000000",
+              "84336.96000000",
+              "84032.06000000",
+              "84220.01000000"
+            ],
+            "volume": "377.17990000",
+            "numberOfTrades": 44287
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T09:00:00+00:00",
+          "openLocal": "2026-09-26T17:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T09:00:00+00:00",
+            "openUtcSeconds": 1790413200,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T09:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84220.01000000",
+              "84220.01000000",
+              "83966.03000000",
+              "84021.95000000"
+            ],
+            "volume": "300.20233000",
+            "numberOfTrades": 57722
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T10:00:00+00:00",
+          "openLocal": "2026-09-26T18:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T10:00:00+00:00",
+            "openUtcSeconds": 1790416800,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T10:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84021.96000000",
+              "84184.95000000",
+              "84021.95000000",
+              "84179.92000000"
+            ],
+            "volume": "213.98608000",
+            "numberOfTrades": 38385
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T11:00:00+00:00",
+          "openLocal": "2026-09-26T19:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T11:00:00+00:00",
+            "openUtcSeconds": 1790420400,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T11:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84179.92000000",
+              "84199.97000000",
+              "84130.79000000",
+              "84176.00000000"
+            ],
+            "volume": "198.01949000",
+            "numberOfTrades": 31407
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T12:00:00+00:00",
+          "openLocal": "2026-09-26T20:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T12:00:00+00:00",
+            "openUtcSeconds": 1790424000,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T12:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84176.00000000",
+              "84204.88000000",
+              "84050.00000000",
+              "84051.90000000"
+            ],
+            "volume": "235.98415000",
+            "numberOfTrades": 32374
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T13:00:00+00:00",
+          "openLocal": "2026-09-26T21:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T13:00:00+00:00",
+            "openUtcSeconds": 1790427600,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T13:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84051.89000000",
+              "84125.45000000",
+              "83856.23000000",
+              "83939.10000000"
+            ],
+            "volume": "442.96191000",
+            "numberOfTrades": 46572
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T14:00:00+00:00",
+          "openLocal": "2026-09-26T22:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T14:00:00+00:00",
+            "openUtcSeconds": 1790431200,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T14:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "83939.11000000",
+              "84049.19000000",
+              "83919.10000000",
+              "84020.00000000"
+            ],
+            "volume": "252.95346000",
+            "numberOfTrades": 26679
+          },
+          "recovered": true
+        },
+        {
+          "openUtc": "2026-09-26T15:00:00+00:00",
+          "openLocal": "2026-09-26T23:00:00+08:00",
+          "archiveState": "absent_in_archive",
+          "archiveRow": null,
+          "apiRow": {
+            "openUtc": "2026-09-26T15:00:00+00:00",
+            "openUtcSeconds": 1790434800,
+            "timestampUnit": "milliseconds",
+            "closeUtc": "2026-09-26T15:59:59.999000+00:00",
+            "fullHourTimestamp": true,
+            "signedDurationSeconds": "3600",
+            "OHLC": [
+              "84020.01000000",
+              "84190.00000000",
+              "84010.49000000",
+              "84155.99000000"
+            ],
+            "volume": "441.81063000",
+            "numberOfTrades": 38407
+          },
+          "recovered": true
+        }
+      ],
+      "apiRequest": {
+        "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1790352000000&endTime=1790438399999&limit=1000",
+        "savedFile": "BTCUSDT-1h-API-2026-09-26.json",
+        "fetchedAtUtc": "2026-09-27T01:20:13.147391+00:00",
+        "method": "GET",
+        "requestTimestampUnit": "milliseconds",
+        "credentialsUsed": false,
+        "status": "downloaded",
+        "httpStatus": 200,
+        "bytes": 4270,
+        "sha256": "b55946d27f84f697419993ff7f226e420d34fb1b3d06e678a578065e12ca5df5",
+        "localDate": "2026-09-26",
+        "requestedStartMs": 1790352000000,
+        "requestedEndMs": 1790438399999,
+        "returnedRows": 24,
+        "validRows": 24,
+        "invalidRows": []
+      },
+      "dailyArchiveCandidates": [
+        {
+          "utcDate": "2026-09-26",
+          "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2026-09-26.zip",
+          "checksumUrl": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2026-09-26.zip.CHECKSUM",
+          "retrievalStatus": "not_requested_in_this_audit",
+          "purpose": "optional_daily_vs_monthly_revision_check_not_guaranteed_repair"
+        }
+      ],
+      "maintenanceEvidenceIds": [],
+      "causeStatus": "not_established",
+      "repairStatus": "recovered_by_official_api"
+    }
+  ],
+  "limits": {
+    "oldFilesModified": false,
+    "networkRequestsByAuditScript": 0,
+    "priceImputation": false,
+    "exchangeChanged": false,
+    "maintenanceCausalityForAllGapsVerified": false,
+    "newStatisticalProtocolRegistered": false
+  }
+}

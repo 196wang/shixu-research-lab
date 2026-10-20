@@ -1,0 +1,6 @@
+{
+  "hypothesisId": "H-BZ-STRUCT-002",
+  "startedAtUtc": "2026-09-27T01:56:33.791515+00:00",
+  "executionRegistrationSha256": "137f0c9950544df77bbfb99361a18a99e59c38cb2d1cfc606e64147096862030",
+  "stoppingRule": "single fixed execution; no overwrite or automatic retry"
+}

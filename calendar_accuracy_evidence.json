@@ -1,0 +1,3366 @@
+{
+  "schemaVersion": 1,
+  "validationVersion": "0.12.0",
+  "generatedAt": "2026-09-27T04:07:02.547839+00:00",
+  "status": "passed",
+  "referenceSha256": "849eff5b6a31805b73cb966465089488f76a1e169eb16b201f2d0aa498dae4de",
+  "dependencyError": null,
+  "summary": {
+    "executedChecks": 124,
+    "passed": 124,
+    "failed": 0,
+    "userScreenshotFullCharts": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "formulaFourPillarChecks": {
+      "total": 95,
+      "passed": 95,
+      "failed": 0
+    },
+    "boundaryContractChecks": {
+      "total": 27,
+      "passed": 27,
+      "failed": 0
+    },
+    "officialDayExamples": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "officialFullFourPillarSamples": 0,
+    "secondPrecisionSolarTermsVerified": 0,
+    "headline": "问真截图单例、独立四柱公式与边界检查分别核对",
+    "interpretation": "通过表示本轮所列样例符合既定口径；不表示所有排盘流派一致、资产原局已确认或行情可预测。"
+  },
+  "policy": {
+    "id": "BZ-CALENDAR-CIVIL-00-V01",
+    "timezone": "Asia/Shanghai",
+    "utcOffset": "+08:00",
+    "supportedYears": [
+      1992,
+      2099
+    ],
+    "yearBoundary": "exact_lichun",
+    "monthBoundary": "exact_jie_not_zhongqi",
+    "dayBoundary": "00:00",
+    "lateZiHourStemReference": "next_day_late_zi",
+    "trueSolarTime": false
+  },
+  "oldValidation": {
+    "executedChecks": 107,
+    "passed": 107,
+    "failed": 0,
+    "unchanged": true,
+    "evidenceSha256": "4a06fc7dc347177ec18ce12e6f7a3b3e7529b28b88ac4880db09f0357093085a",
+    "note": "旧107项原样保留；与本轮有重叠，不相加为独立样本数。"
+  },
+  "testedScope": {
+    "formulaPeriod": [
+      "2024-01-01T00:00:00+08:00",
+      "2025-02-04T00:00:00+08:00"
+    ],
+    "periodEndExclusive": true,
+    "selectedHours": [
+      0,
+      12,
+      23
+    ],
+    "fullSupportedRangeExhaustivelyVerified": false
+  },
+  "examples": [
+    {
+      "id": "V12-WZ-01",
+      "category": "userScreenshotFullCharts",
+      "evidenceTier": "user_screenshot_full_four_pillars_under_assumed_utc8",
+      "passed": true,
+      "label": "问真截图单例",
+      "sourceIds": [
+        "V12-USER-WENZHEN-01"
+      ],
+      "at": "2002-03-10T18:00:00+08:00",
+      "expected": {
+        "year": "壬午",
+        "month": "癸卯",
+        "day": "丁丑",
+        "hour": "己酉"
+      },
+      "actual": {
+        "year": "壬午",
+        "month": "癸卯",
+        "day": "丁丑",
+        "hour": "己酉"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "V12-USER-WENZHEN-01",
+      "title": "用户提供的问真八字基本排盘截图",
+      "kind": "user_supplied_screenshot",
+      "attachmentName": "499198ec5c61cb3eaf17bd3b967208dd.jpg",
+      "attachmentSha256": "469ccbd07bccc54b4840021afcf8020a7e9f35186ee94fc9f2eaf80f9a3ede53",
+      "note": "只记录可见公历时间与四柱；不导入截图姓名、不建个人档案。截图未显示时区/真太阳时设置，以本项目UTC+8解释。"
+    },
+    {
+      "id": "V12-HKO-STEMS",
+      "title": "香港天文台：天干和地支",
+      "url": "https://www.hko.gov.hk/tc/gts/time/stemsandbranches.htm",
+      "kind": "official_html_read",
+      "locator": "表二六十干支；表三时辰；表四年干月干；表五日干时干",
+      "readAt": "2026-09-27",
+      "note": "以公开表格独立编码月干、时干递推；不把官方表格解释为其认可本项目晚子时流派选择。"
+    },
+    {
+      "id": "V12-CWA-CAL24",
+      "title": "中央气象署：2024年日历资料表",
+      "url": "https://www.cwa.gov.tw/Data/astronomy/2024cal.pdf",
+      "kind": "official_pdf_text_read",
+      "locator": "第2页节气表，含2025年1月及立春",
+      "precision": "minute",
+      "readAt": "2026-09-27",
+      "note": "公布UTC+8分钟值；不提供完整四柱或秒级交节真值。"
+    },
+    {
+      "id": "V12-CWA-JDN16",
+      "title": "中央气象局：2016年天文日历求日名干支法",
+      "url": "https://www.cwa.gov.tw/Data/service/notice/download/publish_20151126104611.pdf",
+      "kind": "official_pdf_text_read",
+      "locator": "PDF第11页，印刷第6页；2016-10-10乙丑例题",
+      "precision": "day",
+      "readAt": "2026-09-27",
+      "note": "用公历ordinal换算JDN、再取六十甲子余数，独立于lunar-python。"
+    }
+  ],
+  "limitations": [
+    "完整四柱外部直接对照只有用户问真截图1例，按UTC+8解释；没有官方完整四柱样本。",
+    "公式对照覆盖所列2024/2025时点；不等于1992–2099所有日期、所有时辰已核验。",
+    "官方节气只到分钟，前后取3分钟并避开±120秒；这不是官方秒精度或天文误差保证。",
+    "库给出的交节秒仅用于检查前1秒/当秒/后1秒的程序切换，不独立证明该秒天文时刻正确。",
+    "采用00:00换日；23点后日柱仍当天，时干按次日日干起算。其他流派可能不同。",
+    "固定UTC+8，不处理真太阳时、出生地经度校正或历史夏令时。",
+    "BTC及ETH原局出生时地未确认；既定四柱与人物时辰假设未因本轮核验而确证。",
+    "不核验起运、大运、神煞、喜用、行情方向或预测有效性；不写入用户档案和历史评分。",
+    "旧107项证据独立保留，本轮与旧检查有重叠，不把两轮通过数相加成独立样本量。"
+  ],
+  "checks": [
+    {
+      "id": "V12-WZ-01",
+      "category": "userScreenshotFullCharts",
+      "evidenceTier": "user_screenshot_full_four_pillars_under_assumed_utc8",
+      "passed": true,
+      "label": "问真截图单例",
+      "sourceIds": [
+        "V12-USER-WENZHEN-01"
+      ],
+      "at": "2002-03-10T18:00:00+08:00",
+      "expected": {
+        "year": "壬午",
+        "month": "癸卯",
+        "day": "丁丑",
+        "hour": "己酉"
+      },
+      "actual": {
+        "year": "壬午",
+        "month": "癸卯",
+        "day": "丁丑",
+        "hour": "己酉"
+      }
+    },
+    {
+      "id": "V12-CWA-DAY-01",
+      "category": "officialDayExamples",
+      "evidenceTier": "direct_official_day_example_not_full_chart",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-JDN16"
+      ],
+      "date": "2016-10-10",
+      "expected": {
+        "jdn": 2457672,
+        "day": "乙丑"
+      },
+      "actual": {
+        "independentJdn": 2457672,
+        "independentDay": "乙丑",
+        "adapterDay": "乙丑"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-01",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-01-15T12:00:00+08:00",
+      "expected": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "戊寅",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "戊寅",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-02",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-02-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "己酉",
+        "hour": "庚午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "己酉",
+        "hour": "庚午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-03",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-03-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊寅",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊寅",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-04",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-04-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "己酉",
+        "hour": "庚午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "己酉",
+        "hour": "庚午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-05",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-05-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "己卯",
+        "hour": "庚午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "己卯",
+        "hour": "庚午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-06",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-06-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "庚戌",
+        "hour": "壬午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "庚戌",
+        "hour": "壬午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-07",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-07-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "庚辰",
+        "hour": "壬午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "庚辰",
+        "hour": "壬午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-08",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-08-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "辛亥",
+        "hour": "甲午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "辛亥",
+        "hour": "甲午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-09",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-09-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "壬午",
+        "hour": "丙午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "壬午",
+        "hour": "丙午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-10",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-10-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "壬子",
+        "hour": "丙午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "壬子",
+        "hour": "丙午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-11",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-11-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "癸未",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "癸未",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2024-12-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "癸丑",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "癸丑",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-ORDINARY-13",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ordinary_month_noon",
+      "at": "2025-01-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "甲申",
+        "hour": "庚午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "甲申",
+        "hour": "庚午"
+      }
+    },
+    {
+      "id": "V12-HOUR-00-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-10T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-HOUR-00-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-10T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "庚午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "庚午"
+      }
+    },
+    {
+      "id": "V12-HOUR-00-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-10T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "丙子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "丙子"
+      }
+    },
+    {
+      "id": "V12-HOUR-01-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-11T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "乙巳",
+        "hour": "丙子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "乙巳",
+        "hour": "丙子"
+      }
+    },
+    {
+      "id": "V12-HOUR-01-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-11T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "乙巳",
+        "hour": "壬午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "乙巳",
+        "hour": "壬午"
+      }
+    },
+    {
+      "id": "V12-HOUR-01-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-11T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "乙巳",
+        "hour": "戊子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "乙巳",
+        "hour": "戊子"
+      }
+    },
+    {
+      "id": "V12-HOUR-02-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-12T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丙午",
+        "hour": "戊子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丙午",
+        "hour": "戊子"
+      }
+    },
+    {
+      "id": "V12-HOUR-02-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-12T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丙午",
+        "hour": "甲午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丙午",
+        "hour": "甲午"
+      }
+    },
+    {
+      "id": "V12-HOUR-02-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-12T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丙午",
+        "hour": "庚子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丙午",
+        "hour": "庚子"
+      }
+    },
+    {
+      "id": "V12-HOUR-03-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-13T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丁未",
+        "hour": "庚子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丁未",
+        "hour": "庚子"
+      }
+    },
+    {
+      "id": "V12-HOUR-03-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-13T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丁未",
+        "hour": "丙午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丁未",
+        "hour": "丙午"
+      }
+    },
+    {
+      "id": "V12-HOUR-03-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-13T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丁未",
+        "hour": "壬子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "丁未",
+        "hour": "壬子"
+      }
+    },
+    {
+      "id": "V12-HOUR-04-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-14T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊申",
+        "hour": "壬子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊申",
+        "hour": "壬子"
+      }
+    },
+    {
+      "id": "V12-HOUR-04-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-14T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊申",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊申",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-HOUR-04-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-14T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊申",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊申",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-HOUR-05-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-15T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "己酉",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "己酉",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-HOUR-05-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-15T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "己酉",
+        "hour": "庚午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "己酉",
+        "hour": "庚午"
+      }
+    },
+    {
+      "id": "V12-HOUR-05-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-15T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "己酉",
+        "hour": "丙子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "己酉",
+        "hour": "丙子"
+      }
+    },
+    {
+      "id": "V12-HOUR-06-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-16T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "庚戌",
+        "hour": "丙子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "庚戌",
+        "hour": "丙子"
+      }
+    },
+    {
+      "id": "V12-HOUR-06-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-16T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "庚戌",
+        "hour": "壬午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "庚戌",
+        "hour": "壬午"
+      }
+    },
+    {
+      "id": "V12-HOUR-06-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-16T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "庚戌",
+        "hour": "戊子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "庚戌",
+        "hour": "戊子"
+      }
+    },
+    {
+      "id": "V12-HOUR-07-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-17T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "辛亥",
+        "hour": "戊子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "辛亥",
+        "hour": "戊子"
+      }
+    },
+    {
+      "id": "V12-HOUR-07-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-17T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "辛亥",
+        "hour": "甲午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "辛亥",
+        "hour": "甲午"
+      }
+    },
+    {
+      "id": "V12-HOUR-07-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-17T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "辛亥",
+        "hour": "庚子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "辛亥",
+        "hour": "庚子"
+      }
+    },
+    {
+      "id": "V12-HOUR-08-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-18T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "壬子",
+        "hour": "庚子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "壬子",
+        "hour": "庚子"
+      }
+    },
+    {
+      "id": "V12-HOUR-08-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-18T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "壬子",
+        "hour": "丙午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "壬子",
+        "hour": "丙午"
+      }
+    },
+    {
+      "id": "V12-HOUR-08-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-18T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "壬子",
+        "hour": "壬子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "壬子",
+        "hour": "壬子"
+      }
+    },
+    {
+      "id": "V12-HOUR-09-00",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-19T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "壬子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "壬子"
+      }
+    },
+    {
+      "id": "V12-HOUR-09-12",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-19T12:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-HOUR-09-23",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "ten_day_stems_selected_hours",
+      "at": "2024-02-19T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-JIE-01--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "小寒",
+      "publishedAt": "2024-01-06T04:49:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-01-06T04:46:00+08:00",
+      "expected": {
+        "year": "癸卯",
+        "month": "甲子",
+        "day": "己巳",
+        "hour": "丙寅"
+      },
+      "actual": {
+        "year": "癸卯",
+        "month": "甲子",
+        "day": "己巳",
+        "hour": "丙寅"
+      }
+    },
+    {
+      "id": "V12-JIE-01-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "小寒",
+      "publishedAt": "2024-01-06T04:49:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-01-06T04:52:00+08:00",
+      "expected": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "己巳",
+        "hour": "丙寅"
+      },
+      "actual": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "己巳",
+        "hour": "丙寅"
+      }
+    },
+    {
+      "id": "V12-JIE-02--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立春",
+      "publishedAt": "2024-02-04T16:27:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-02-04T16:24:00+08:00",
+      "expected": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "actual": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "戊戌",
+        "hour": "庚申"
+      }
+    },
+    {
+      "id": "V12-JIE-02-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立春",
+      "publishedAt": "2024-02-04T16:27:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-02-04T16:30:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊戌",
+        "hour": "庚申"
+      }
+    },
+    {
+      "id": "V12-JIE-03--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "惊蛰",
+      "publishedAt": "2024-03-05T10:23:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-03-05T10:20:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊辰",
+        "hour": "丁巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊辰",
+        "hour": "丁巳"
+      }
+    },
+    {
+      "id": "V12-JIE-03-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "惊蛰",
+      "publishedAt": "2024-03-05T10:23:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-03-05T10:26:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊辰",
+        "hour": "丁巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊辰",
+        "hour": "丁巳"
+      }
+    },
+    {
+      "id": "V12-JIE-04--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "清明",
+      "publishedAt": "2024-04-04T15:02:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-04-04T14:59:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊戌",
+        "hour": "己未"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊戌",
+        "hour": "己未"
+      }
+    },
+    {
+      "id": "V12-JIE-04-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "清明",
+      "publishedAt": "2024-04-04T15:02:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-04-04T15:05:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "戊戌",
+        "hour": "庚申"
+      }
+    },
+    {
+      "id": "V12-JIE-05--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立夏",
+      "publishedAt": "2024-05-05T08:10:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-05-05T08:07:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "己巳",
+        "hour": "戊辰"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "己巳",
+        "hour": "戊辰"
+      }
+    },
+    {
+      "id": "V12-JIE-05-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立夏",
+      "publishedAt": "2024-05-05T08:10:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-05-05T08:13:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "己巳",
+        "hour": "戊辰"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "己巳",
+        "hour": "戊辰"
+      }
+    },
+    {
+      "id": "V12-JIE-06--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "芒种",
+      "publishedAt": "2024-06-05T12:10:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-06-05T12:07:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "庚子",
+        "hour": "壬午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "庚子",
+        "hour": "壬午"
+      }
+    },
+    {
+      "id": "V12-JIE-06-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "芒种",
+      "publishedAt": "2024-06-05T12:10:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-06-05T12:13:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "庚子",
+        "hour": "壬午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "庚子",
+        "hour": "壬午"
+      }
+    },
+    {
+      "id": "V12-JIE-07--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "小暑",
+      "publishedAt": "2024-07-06T22:20:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-07-06T22:17:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "辛未",
+        "hour": "己亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "辛未",
+        "hour": "己亥"
+      }
+    },
+    {
+      "id": "V12-JIE-07-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "小暑",
+      "publishedAt": "2024-07-06T22:20:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-07-06T22:23:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "辛未",
+        "hour": "己亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "辛未",
+        "hour": "己亥"
+      }
+    },
+    {
+      "id": "V12-JIE-08--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立秋",
+      "publishedAt": "2024-08-07T08:09:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-08-07T08:06:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "癸卯",
+        "hour": "丙辰"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "癸卯",
+        "hour": "丙辰"
+      }
+    },
+    {
+      "id": "V12-JIE-08-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立秋",
+      "publishedAt": "2024-08-07T08:09:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-08-07T08:12:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "癸卯",
+        "hour": "丙辰"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "癸卯",
+        "hour": "丙辰"
+      }
+    },
+    {
+      "id": "V12-JIE-09--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "白露",
+      "publishedAt": "2024-09-07T11:11:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-09-07T11:08:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "甲戌",
+        "hour": "庚午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "甲戌",
+        "hour": "庚午"
+      }
+    },
+    {
+      "id": "V12-JIE-09-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "白露",
+      "publishedAt": "2024-09-07T11:11:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-09-07T11:14:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "甲戌",
+        "hour": "庚午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "甲戌",
+        "hour": "庚午"
+      }
+    },
+    {
+      "id": "V12-JIE-10--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "寒露",
+      "publishedAt": "2024-10-08T03:00:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-10-08T02:57:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "乙巳",
+        "hour": "丁丑"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "乙巳",
+        "hour": "丁丑"
+      }
+    },
+    {
+      "id": "V12-JIE-10-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "寒露",
+      "publishedAt": "2024-10-08T03:00:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-10-08T03:03:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "乙巳",
+        "hour": "戊寅"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "乙巳",
+        "hour": "戊寅"
+      }
+    },
+    {
+      "id": "V12-JIE-11--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立冬",
+      "publishedAt": "2024-11-07T06:20:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-11-07T06:17:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "乙亥",
+        "hour": "己卯"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "乙亥",
+        "hour": "己卯"
+      }
+    },
+    {
+      "id": "V12-JIE-11-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立冬",
+      "publishedAt": "2024-11-07T06:20:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-11-07T06:23:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "乙亥",
+        "hour": "己卯"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "乙亥",
+        "hour": "己卯"
+      }
+    },
+    {
+      "id": "V12-JIE-12--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "大雪",
+      "publishedAt": "2024-12-06T23:17:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-12-06T23:14:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "甲辰",
+        "hour": "丙子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "甲辰",
+        "hour": "丙子"
+      }
+    },
+    {
+      "id": "V12-JIE-12-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "大雪",
+      "publishedAt": "2024-12-06T23:17:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-12-06T23:20:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "甲辰",
+        "hour": "丙子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "甲辰",
+        "hour": "丙子"
+      }
+    },
+    {
+      "id": "V12-JIE-13--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "小寒",
+      "publishedAt": "2025-01-05T10:33:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2025-01-05T10:30:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "甲戌",
+        "hour": "己巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "甲戌",
+        "hour": "己巳"
+      }
+    },
+    {
+      "id": "V12-JIE-13-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "小寒",
+      "publishedAt": "2025-01-05T10:33:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2025-01-05T10:36:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "甲戌",
+        "hour": "己巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "甲戌",
+        "hour": "己巳"
+      }
+    },
+    {
+      "id": "V12-JIE-14--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立春",
+      "publishedAt": "2025-02-03T22:10:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2025-02-03T22:07:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "癸卯",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-JIE-14-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "jie_year_month_transition",
+      "term": "立春",
+      "publishedAt": "2025-02-03T22:10:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2025-02-03T22:13:00+08:00",
+      "expected": {
+        "year": "乙巳",
+        "month": "戊寅",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "乙巳",
+        "month": "戊寅",
+        "day": "癸卯",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-ZQ-01--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "大寒",
+      "publishedAt": "2024-01-20T22:07:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-01-20T22:04:00+08:00",
+      "expected": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "癸未",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "癸未",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-ZQ-01-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "大寒",
+      "publishedAt": "2024-01-20T22:07:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-01-20T22:10:00+08:00",
+      "expected": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "癸未",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "癸未",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-ZQ-02--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "雨水",
+      "publishedAt": "2024-02-19T12:13:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-02-19T12:10:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-ZQ-02-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "雨水",
+      "publishedAt": "2024-02-19T12:13:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-02-19T12:16:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸丑",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-ZQ-03--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "春分",
+      "publishedAt": "2024-03-20T11:06:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-03-20T11:03:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "癸未",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "癸未",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-ZQ-03-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "春分",
+      "publishedAt": "2024-03-20T11:06:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-03-20T11:09:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "癸未",
+        "hour": "戊午"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "癸未",
+        "hour": "戊午"
+      }
+    },
+    {
+      "id": "V12-ZQ-04--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "谷雨",
+      "publishedAt": "2024-04-19T22:00:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-04-19T21:57:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "癸丑",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "癸丑",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-ZQ-04-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "谷雨",
+      "publishedAt": "2024-04-19T22:00:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-04-19T22:03:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "癸丑",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "戊辰",
+        "day": "癸丑",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-ZQ-05--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "小满",
+      "publishedAt": "2024-05-20T20:59:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-05-20T20:56:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "甲申",
+        "hour": "甲戌"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "甲申",
+        "hour": "甲戌"
+      }
+    },
+    {
+      "id": "V12-ZQ-05-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "小满",
+      "publishedAt": "2024-05-20T20:59:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-05-20T21:02:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "甲申",
+        "hour": "乙亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "己巳",
+        "day": "甲申",
+        "hour": "乙亥"
+      }
+    },
+    {
+      "id": "V12-ZQ-06--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "夏至",
+      "publishedAt": "2024-06-21T04:51:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-06-21T04:48:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "丙辰",
+        "hour": "庚寅"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "丙辰",
+        "hour": "庚寅"
+      }
+    },
+    {
+      "id": "V12-ZQ-06-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "夏至",
+      "publishedAt": "2024-06-21T04:51:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-06-21T04:54:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "丙辰",
+        "hour": "庚寅"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "庚午",
+        "day": "丙辰",
+        "hour": "庚寅"
+      }
+    },
+    {
+      "id": "V12-ZQ-07--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "大暑",
+      "publishedAt": "2024-07-22T15:44:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-07-22T15:41:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "丁亥",
+        "hour": "戊申"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "丁亥",
+        "hour": "戊申"
+      }
+    },
+    {
+      "id": "V12-ZQ-07-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "大暑",
+      "publishedAt": "2024-07-22T15:44:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-07-22T15:47:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "丁亥",
+        "hour": "戊申"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "辛未",
+        "day": "丁亥",
+        "hour": "戊申"
+      }
+    },
+    {
+      "id": "V12-ZQ-08--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "处暑",
+      "publishedAt": "2024-08-22T22:55:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-08-22T22:52:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "戊午",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "戊午",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-ZQ-08-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "处暑",
+      "publishedAt": "2024-08-22T22:55:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-08-22T22:58:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "戊午",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "壬申",
+        "day": "戊午",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-ZQ-09--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "秋分",
+      "publishedAt": "2024-09-22T20:44:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-09-22T20:41:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "己丑",
+        "hour": "甲戌"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "己丑",
+        "hour": "甲戌"
+      }
+    },
+    {
+      "id": "V12-ZQ-09-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "秋分",
+      "publishedAt": "2024-09-22T20:44:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-09-22T20:47:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "己丑",
+        "hour": "甲戌"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "癸酉",
+        "day": "己丑",
+        "hour": "甲戌"
+      }
+    },
+    {
+      "id": "V12-ZQ-10--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "霜降",
+      "publishedAt": "2024-10-23T06:15:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-10-23T06:12:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "庚申",
+        "hour": "己卯"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "庚申",
+        "hour": "己卯"
+      }
+    },
+    {
+      "id": "V12-ZQ-10-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "霜降",
+      "publishedAt": "2024-10-23T06:15:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-10-23T06:18:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "庚申",
+        "hour": "己卯"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "甲戌",
+        "day": "庚申",
+        "hour": "己卯"
+      }
+    },
+    {
+      "id": "V12-ZQ-11--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "小雪",
+      "publishedAt": "2024-11-22T03:56:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-11-22T03:53:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "庚寅",
+        "hour": "戊寅"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "庚寅",
+        "hour": "戊寅"
+      }
+    },
+    {
+      "id": "V12-ZQ-11-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "小雪",
+      "publishedAt": "2024-11-22T03:56:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-11-22T03:59:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "庚寅",
+        "hour": "戊寅"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "乙亥",
+        "day": "庚寅",
+        "hour": "戊寅"
+      }
+    },
+    {
+      "id": "V12-ZQ-12--1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "冬至",
+      "publishedAt": "2024-12-21T17:21:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-12-21T17:18:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "己未",
+        "hour": "癸酉"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "己未",
+        "hour": "癸酉"
+      }
+    },
+    {
+      "id": "V12-ZQ-12-+1",
+      "category": "formulaFourPillarChecks",
+      "evidenceTier": "independent_formula_with_official_minute_inputs",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "zhongqi_month_unchanged",
+      "term": "冬至",
+      "publishedAt": "2024-12-21T17:21:00+08:00",
+      "sourcePrecision": "minute",
+      "secondPrecisionExternallyVerified": false,
+      "at": "2024-12-21T17:24:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "己未",
+        "hour": "癸酉"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "己未",
+        "hour": "癸酉"
+      }
+    },
+    {
+      "id": "V12-CLOCK-01",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "independent_formula_plus_chosen_clock_convention",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "civil_midnight_late_zi",
+      "at": "2024-02-09T22:59:59+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "癸亥"
+      }
+    },
+    {
+      "id": "V12-CLOCK-02",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "independent_formula_plus_chosen_clock_convention",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "civil_midnight_late_zi",
+      "at": "2024-02-09T23:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-CLOCK-03",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "independent_formula_plus_chosen_clock_convention",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "civil_midnight_late_zi",
+      "at": "2024-02-09T23:00:01+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-CLOCK-04",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "independent_formula_plus_chosen_clock_convention",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "civil_midnight_late_zi",
+      "at": "2024-02-09T23:59:59+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-CLOCK-05",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "independent_formula_plus_chosen_clock_convention",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "civil_midnight_late_zi",
+      "at": "2024-02-10T00:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-CLOCK-06",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "independent_formula_plus_chosen_clock_convention",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "civil_midnight_late_zi",
+      "at": "2024-02-10T00:00:01+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-CLOCK-07",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "independent_formula_plus_chosen_clock_convention",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "civil_midnight_late_zi",
+      "at": "2024-02-10T00:59:59+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-CLOCK-08",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "independent_formula_plus_chosen_clock_convention",
+      "passed": true,
+      "sourceIds": [
+        "V12-CWA-CAL24",
+        "V12-HKO-STEMS",
+        "V12-CWA-JDN16"
+      ],
+      "subkind": "civil_midnight_late_zi",
+      "at": "2024-02-10T01:00:00+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "乙丑"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "乙丑"
+      }
+    },
+    {
+      "id": "V12-JIE-02-SECOND--1",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "立春",
+      "subkind": "exact_library_boundary",
+      "at": "2024-02-04T16:27:06+08:00",
+      "expected": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "actual": {
+        "year": "癸卯",
+        "month": "乙丑",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "libraryBoundaryAt": "2024-02-04T16:27:07+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-02-SECOND-+0",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "立春",
+      "subkind": "exact_library_boundary",
+      "at": "2024-02-04T16:27:07+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "libraryBoundaryAt": "2024-02-04T16:27:07+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-02-SECOND-+1",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "立春",
+      "subkind": "exact_library_boundary",
+      "at": "2024-02-04T16:27:08+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊戌",
+        "hour": "庚申"
+      },
+      "libraryBoundaryAt": "2024-02-04T16:27:07+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-03-SECOND--1",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "惊蛰",
+      "subkind": "exact_library_boundary",
+      "at": "2024-03-05T10:22:44+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊辰",
+        "hour": "丁巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "戊辰",
+        "hour": "丁巳"
+      },
+      "libraryBoundaryAt": "2024-03-05T10:22:45+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-03-SECOND-+0",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "惊蛰",
+      "subkind": "exact_library_boundary",
+      "at": "2024-03-05T10:22:45+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊辰",
+        "hour": "丁巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊辰",
+        "hour": "丁巳"
+      },
+      "libraryBoundaryAt": "2024-03-05T10:22:45+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-03-SECOND-+1",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "惊蛰",
+      "subkind": "exact_library_boundary",
+      "at": "2024-03-05T10:22:46+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊辰",
+        "hour": "丁巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊辰",
+        "hour": "丁巳"
+      },
+      "libraryBoundaryAt": "2024-03-05T10:22:45+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-13-SECOND--1",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "小寒",
+      "subkind": "exact_library_boundary",
+      "at": "2025-01-05T10:32:46+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "甲戌",
+        "hour": "己巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丙子",
+        "day": "甲戌",
+        "hour": "己巳"
+      },
+      "libraryBoundaryAt": "2025-01-05T10:32:47+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-13-SECOND-+0",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "小寒",
+      "subkind": "exact_library_boundary",
+      "at": "2025-01-05T10:32:47+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "甲戌",
+        "hour": "己巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "甲戌",
+        "hour": "己巳"
+      },
+      "libraryBoundaryAt": "2025-01-05T10:32:47+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-13-SECOND-+1",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "小寒",
+      "subkind": "exact_library_boundary",
+      "at": "2025-01-05T10:32:48+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "甲戌",
+        "hour": "己巳"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "甲戌",
+        "hour": "己巳"
+      },
+      "libraryBoundaryAt": "2025-01-05T10:32:47+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-14-SECOND--1",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "立春",
+      "subkind": "exact_library_boundary",
+      "at": "2025-02-03T22:10:27+08:00",
+      "expected": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "甲辰",
+        "month": "丁丑",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "libraryBoundaryAt": "2025-02-03T22:10:28+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-14-SECOND-+0",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "立春",
+      "subkind": "exact_library_boundary",
+      "at": "2025-02-03T22:10:28+08:00",
+      "expected": {
+        "year": "乙巳",
+        "month": "戊寅",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "乙巳",
+        "month": "戊寅",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "libraryBoundaryAt": "2025-02-03T22:10:28+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-JIE-14-SECOND-+1",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "internal_second_boundary_contract_not_external_time_verification",
+      "passed": true,
+      "term": "立春",
+      "subkind": "exact_library_boundary",
+      "at": "2025-02-03T22:10:29+08:00",
+      "expected": {
+        "year": "乙巳",
+        "month": "戊寅",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "actual": {
+        "year": "乙巳",
+        "month": "戊寅",
+        "day": "癸卯",
+        "hour": "癸亥"
+      },
+      "libraryBoundaryAt": "2025-02-03T22:10:28+08:00",
+      "boundaryTimeOrigin": "system_under_test",
+      "secondPrecisionExternallyVerified": false
+    },
+    {
+      "id": "V12-UTC-2024-02-09T23:00:00+08:00",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "same_instant_input_contract",
+      "passed": true,
+      "subkind": "timezone_equivalence",
+      "at": "2024-02-09T23:00:00+08:00",
+      "utcAt": "2024-02-09T15:00:00+00:00",
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "癸卯",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-UTC-2024-02-10T00:00:00+08:00",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "same_instant_input_contract",
+      "passed": true,
+      "subkind": "timezone_equivalence",
+      "at": "2024-02-10T00:00:00+08:00",
+      "utcAt": "2024-02-09T16:00:00+00:00",
+      "actual": {
+        "year": "甲辰",
+        "month": "丙寅",
+        "day": "甲辰",
+        "hour": "甲子"
+      }
+    },
+    {
+      "id": "V12-UTC-2024-03-05T10:26:00+08:00",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "same_instant_input_contract",
+      "passed": true,
+      "subkind": "timezone_equivalence",
+      "at": "2024-03-05T10:26:00+08:00",
+      "utcAt": "2024-03-05T02:26:00+00:00",
+      "actual": {
+        "year": "甲辰",
+        "month": "丁卯",
+        "day": "戊辰",
+        "hour": "丁巳"
+      }
+    },
+    {
+      "id": "V12-RANGE-1992-01-01T00:00:00+08:00",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "supported_input_range_only",
+      "passed": true,
+      "subkind": "input_range",
+      "at": "1992-01-01T00:00:00+08:00",
+      "expectedAccepted": true,
+      "actualAccepted": true,
+      "fullPillarsAtRangeEndpointVerified": false
+    },
+    {
+      "id": "V12-RANGE-2099-12-31T23:59:59+08:00",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "supported_input_range_only",
+      "passed": true,
+      "subkind": "input_range",
+      "at": "2099-12-31T23:59:59+08:00",
+      "expectedAccepted": true,
+      "actualAccepted": true,
+      "fullPillarsAtRangeEndpointVerified": false
+    },
+    {
+      "id": "V12-RANGE-1991-12-31T23:59:59+08:00",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "supported_input_range_only",
+      "passed": true,
+      "subkind": "input_range",
+      "at": "1991-12-31T23:59:59+08:00",
+      "expectedAccepted": false,
+      "actualAccepted": false,
+      "fullPillarsAtRangeEndpointVerified": false
+    },
+    {
+      "id": "V12-RANGE-2100-01-01T00:00:00+08:00",
+      "category": "boundaryContractChecks",
+      "evidenceTier": "supported_input_range_only",
+      "passed": true,
+      "subkind": "input_range",
+      "at": "2100-01-01T00:00:00+08:00",
+      "expectedAccepted": false,
+      "actualAccepted": false,
+      "fullPillarsAtRangeEndpointVerified": false
+    }
+  ],
+  "artifacts": {
+    "inputSha256": {
+      "calendar_accuracy.py": "e8768e821bbabaa58864a457bf0a5164c4bb38e0224c3b3fadd660c31d965da7",
+      "calendar_accuracy_reference.json": "849eff5b6a31805b73cb966465089488f76a1e169eb16b201f2d0aa498dae4de",
+      "calendar_adapter.py": "574f0bcf4a17f017db24ea6d8930b472b4b37b03f4f664a477e51f7eeb7c9f13",
+      "bazi_engine.py": "7180fbb1a387797b3618d76ad6624734b994b6b9e7f33410af0764e98080f4a0",
+      "calendar_reference.json": "d53fcc8d229e9be7acd1d2ac6c7cb47c885254f99d9b1bf53a05302cfffc70f3",
+      "calendar_validation.py": "0864be54c7c4eaf5b3b70e4126728871d1ed8dc95c8b4d4f998712103bf5025d",
+      "calendar_validation_evidence.json": "4a06fc7dc347177ec18ce12e6f7a3b3e7529b28b88ac4880db09f0357093085a",
+      "profiles.json": "6df88964a89cab7af741576752099ddcba4fcf27762b46585c3c2082e653d153"
+    },
+    "lunarPythonSourceTreeSha256": "cc932900fd5ed4b4b44faa9f14675bd3c798d7030ab73216f6e371109d67f69e"
+  },
+  "marketPredictionValidated": false,
+  "assetNatalProfilesValidated": false
+}

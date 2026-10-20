@@ -1,0 +1,655 @@
+{
+  "version": "0.6.0",
+  "checkedAtUtc": "2026-09-27T01:22:31.492265+00:00",
+  "oldDailySha256": "f3fdabcad695ffbb13f26a569f09b35c24e8b0872587c02c94fe8e721423e590",
+  "oldHourlySha256": "663cfdc9367ef1790ded9780a94c04e24ac85c59f4948ea60d60566c06ee5d1a",
+  "expectedDays": 2461,
+  "completeDays": 2443,
+  "missingDays": [
+    {
+      "date": "2020-02-09",
+      "errors": [
+        "missing_hours:1"
+      ],
+      "hourCount": 23
+    },
+    {
+      "date": "2020-02-19",
+      "errors": [
+        "missing_hours:5"
+      ],
+      "hourCount": 19
+    },
+    {
+      "date": "2020-02-20",
+      "errors": [
+        "missing_hours:1"
+      ],
+      "hourCount": 23
+    },
+    {
+      "date": "2020-03-04",
+      "errors": [
+        "missing_hours:2"
+      ],
+      "hourCount": 22
+    },
+    {
+      "date": "2020-04-25",
+      "errors": [
+        "missing_hours:2"
+      ],
+      "hourCount": 22
+    },
+    {
+      "date": "2020-06-28",
+      "errors": [
+        "missing_hours:3"
+      ],
+      "hourCount": 21
+    },
+    {
+      "date": "2020-11-30",
+      "errors": [
+        "missing_hours:1"
+      ],
+      "hourCount": 23
+    },
+    {
+      "date": "2020-12-21",
+      "errors": [
+        "missing_hours:2",
+        "official_source_revision_conflict"
+      ],
+      "hourCount": 22
+    },
+    {
+      "date": "2020-12-22",
+      "errors": [
+        "missing_hours:2"
+      ],
+      "hourCount": 22
+    },
+    {
+      "date": "2020-12-25",
+      "errors": [
+        "missing_hours:1"
+      ],
+      "hourCount": 23
+    },
+    {
+      "date": "2021-02-11",
+      "errors": [
+        "missing_hours:2"
+      ],
+      "hourCount": 22
+    },
+    {
+      "date": "2021-03-06",
+      "errors": [
+        "missing_hours:1"
+      ],
+      "hourCount": 23
+    },
+    {
+      "date": "2021-04-20",
+      "errors": [
+        "missing_hours:2"
+      ],
+      "hourCount": 22
+    },
+    {
+      "date": "2021-04-25",
+      "errors": [
+        "missing_hours:4"
+      ],
+      "hourCount": 20
+    },
+    {
+      "date": "2021-08-13",
+      "errors": [
+        "missing_hours:5"
+      ],
+      "hourCount": 19
+    },
+    {
+      "date": "2021-09-29",
+      "errors": [
+        "missing_hours:2"
+      ],
+      "hourCount": 22
+    },
+    {
+      "date": "2021-12-24",
+      "errors": [
+        "missing_hours:1"
+      ],
+      "hourCount": 23
+    },
+    {
+      "date": "2023-03-24",
+      "errors": [
+        "missing_hours:2"
+      ],
+      "hourCount": 22
+    }
+  ],
+  "addedHours": [
+    {
+      "openTimeUtc": "2026-09-26T00:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T01:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T02:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T03:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T04:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T05:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T06:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T07:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T08:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T09:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T10:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T11:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T12:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T13:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T14:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    },
+    {
+      "openTimeUtc": "2026-09-26T15:00:00+00:00",
+      "source": "BTCUSDT-1h-API-2026-09-26.json"
+    }
+  ],
+  "sourceConflicts": [
+    {
+      "type": "rejected_api_candidate_vs_accepted_archive",
+      "openTimeUtc": "2020-12-21T13:00:00+00:00",
+      "differentFields": [
+        "high",
+        "close",
+        "rawCloseTimestamp"
+      ],
+      "existing": {
+        "openTimeUtcSeconds": 1608555600,
+        "rawOpenTimestamp": 1608555600000,
+        "rawCloseTimestamp": 1608559199999,
+        "openTimeUtc": "2020-12-21T13:00:00+00:00",
+        "closeTimeUtc": "2020-12-21T13:59:59.999000+00:00",
+        "open": "22307.50000000",
+        "high": "22665.35000000",
+        "low": "22251.23000000",
+        "close": "22646.53000000",
+        "source": "BTCUSDT-1h-2020-12.zip",
+        "sourceRow": 494,
+        "sourceTimestampUnit": "milliseconds",
+        "errors": [
+          "official_source_revision_conflict"
+        ]
+      },
+      "candidateRawRow": [
+        1608555600000,
+        "22307.50000000",
+        "22774.00000000",
+        "22251.23000000",
+        "22681.32000000",
+        "3685.45440500",
+        1608558440521,
+        "83180713.81558070",
+        62654,
+        "1815.00048700",
+        "40955894.79935769",
+        "0"
+      ],
+      "candidateSource": "BTCUSDT-1h-API-2020-12-21.json",
+      "candidateRejection": "invalid hourly close timestamp",
+      "resolution": "preserve original value; reject conflicting day from complete-day study"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2026-09-26.zip.CHECKSUM",
+      "savedFile": "BTCUSDT-1h-2026-09-26.zip.CHECKSUM",
+      "fetchedAtUtc": "2026-09-27T01:22:28.545011+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "unavailable",
+      "error": "HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1581177600000&endTime=1581263999999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-02-09.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.404509+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4069,
+      "sha256": "b2d2bda98678e38dc624ea2bebd1057f5419dff74920d39ad03044e69e596d4f",
+      "localDate": "2020-02-09",
+      "requestedStartMs": 1581177600000,
+      "requestedEndMs": 1581263999999,
+      "returnedRows": 23,
+      "validRows": 23,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1582041600000&endTime=1582127999999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-02-19.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.404509+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3563,
+      "sha256": "a669948005c6d4a5de9e359c5d25c0b8c2523e5c22f15d08801ae910011d3b14",
+      "localDate": "2020-02-19",
+      "requestedStartMs": 1582041600000,
+      "requestedEndMs": 1582127999999,
+      "returnedRows": 20,
+      "validRows": 19,
+      "invalidRows": [
+        {
+          "row": 20,
+          "rawOpen": 1582110000000,
+          "error": "invalid hourly close timestamp"
+        }
+      ]
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1582128000000&endTime=1582214399999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-02-20.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.405526+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4056,
+      "sha256": "61927f008fa67dcd8b167f2b9fde3380d1b3199a6cc1a6c297f02bf662127ee2",
+      "localDate": "2020-02-20",
+      "requestedStartMs": 1582128000000,
+      "requestedEndMs": 1582214399999,
+      "returnedRows": 23,
+      "validRows": 23,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1583251200000&endTime=1583337599999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-03-04.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.697121+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4010,
+      "sha256": "88e9a3aaafbadf297f60bae9665e9a0856e6f89324ba3c973f8dc7cdbee80f0a",
+      "localDate": "2020-03-04",
+      "requestedStartMs": 1583251200000,
+      "requestedEndMs": 1583337599999,
+      "returnedRows": 23,
+      "validRows": 22,
+      "invalidRows": [
+        {
+          "row": 18,
+          "rawOpen": 1583312400000,
+          "error": "invalid hourly close timestamp"
+        }
+      ]
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1587744000000&endTime=1587830399999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-04-25.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.700545+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3827,
+      "sha256": "89569c168b4b769f02d6971754f93facf70916dd0b230d290a67e5d710141a40",
+      "localDate": "2020-04-25",
+      "requestedStartMs": 1587744000000,
+      "requestedEndMs": 1587830399999,
+      "returnedRows": 22,
+      "validRows": 22,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1593273600000&endTime=1593359999999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-06-28.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.711921+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3666,
+      "sha256": "019ac459af7e872800e09cdf8403fd7e6d42b346a1a35a6b44a600238fc295d3",
+      "localDate": "2020-06-28",
+      "requestedStartMs": 1593273600000,
+      "requestedEndMs": 1593359999999,
+      "returnedRows": 21,
+      "validRows": 21,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1606665600000&endTime=1606751999999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-11-30.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.985395+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4147,
+      "sha256": "126e286638d9f99a4a6e3f091575c260b5d2dc8124b883d5a3eb71ab64887242",
+      "localDate": "2020-11-30",
+      "requestedStartMs": 1606665600000,
+      "requestedEndMs": 1606751999999,
+      "returnedRows": 23,
+      "validRows": 23,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1608480000000&endTime=1608566399999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-12-21.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.986414+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3979,
+      "sha256": "6e86e1cac21ac28676d31360e39c59d9bbe19e1fe8171a2cdc9f7cdf4c6c98da",
+      "localDate": "2020-12-21",
+      "requestedStartMs": 1608480000000,
+      "requestedEndMs": 1608566399999,
+      "returnedRows": 22,
+      "validRows": 21,
+      "invalidRows": [
+        {
+          "row": 22,
+          "rawOpen": 1608555600000,
+          "error": "invalid hourly close timestamp"
+        }
+      ]
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1608566400000&endTime=1608652799999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-12-22.json",
+      "fetchedAtUtc": "2026-09-27T01:20:11.991416+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3968,
+      "sha256": "a464e4bf755186fe0b1182113a8452c962e71a170e17316ba4541e40265e1d3f",
+      "localDate": "2020-12-22",
+      "requestedStartMs": 1608566400000,
+      "requestedEndMs": 1608652799999,
+      "returnedRows": 22,
+      "validRows": 22,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1608825600000&endTime=1608911999999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2020-12-25.json",
+      "fetchedAtUtc": "2026-09-27T01:20:12.267645+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4146,
+      "sha256": "cdac37e232ea3ec4b724605b1189da5d2ee6f5ea27b49c30e989764cb760c100",
+      "localDate": "2020-12-25",
+      "requestedStartMs": 1608825600000,
+      "requestedEndMs": 1608911999999,
+      "returnedRows": 23,
+      "validRows": 23,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1612972800000&endTime=1613059199999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2021-02-11.json",
+      "fetchedAtUtc": "2026-09-27T01:20:12.304428+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4148,
+      "sha256": "7627e990d912263daae149c54a1737735d0117e545547a0db5231966e696d6cb",
+      "localDate": "2021-02-11",
+      "requestedStartMs": 1612972800000,
+      "requestedEndMs": 1613059199999,
+      "returnedRows": 23,
+      "validRows": 22,
+      "invalidRows": [
+        {
+          "row": 12,
+          "rawOpen": 1613012400000,
+          "error": "invalid hourly close timestamp"
+        }
+      ]
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1614960000000&endTime=1615046399999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2021-03-06.json",
+      "fetchedAtUtc": "2026-09-27T01:20:12.553479+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4141,
+      "sha256": "165ff878090db38db1e1623fe306bbe09b126cfc2c17cad0977527fe8427b2b9",
+      "localDate": "2021-03-06",
+      "requestedStartMs": 1614960000000,
+      "requestedEndMs": 1615046399999,
+      "returnedRows": 23,
+      "validRows": 23,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1618848000000&endTime=1618934399999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2021-04-20.json",
+      "fetchedAtUtc": "2026-09-27T01:20:12.574915+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3995,
+      "sha256": "0744abb16c9681593685b26d5727d572555d07445486ed12847f0ba661fd843f",
+      "localDate": "2021-04-20",
+      "requestedStartMs": 1618848000000,
+      "requestedEndMs": 1618934399999,
+      "returnedRows": 22,
+      "validRows": 22,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1619280000000&endTime=1619366399999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2021-04-25.json",
+      "fetchedAtUtc": "2026-09-27T01:20:12.580180+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3768,
+      "sha256": "d9f72b5e2fce2bc5b1df99d0f0fd91d28533e2c27775032ef6e8939683fb8d19",
+      "localDate": "2021-04-25",
+      "requestedStartMs": 1619280000000,
+      "requestedEndMs": 1619366399999,
+      "returnedRows": 21,
+      "validRows": 20,
+      "invalidRows": [
+        {
+          "row": 13,
+          "rawOpen": 1619323200000,
+          "error": "invalid hourly close timestamp"
+        }
+      ]
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1628784000000&endTime=1628870399999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2021-08-13.json",
+      "fetchedAtUtc": "2026-09-27T01:20:12.841219+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3603,
+      "sha256": "2075cdd8b4464762873676c81763b5722e5bc5e36835a40006b3b40770e3c911",
+      "localDate": "2021-08-13",
+      "requestedStartMs": 1628784000000,
+      "requestedEndMs": 1628870399999,
+      "returnedRows": 20,
+      "validRows": 19,
+      "invalidRows": [
+        {
+          "row": 10,
+          "rawOpen": 1628816400000,
+          "error": "invalid hourly close timestamp"
+        }
+      ]
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1632844800000&endTime=1632931199999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2021-09-29.json",
+      "fetchedAtUtc": "2026-09-27T01:20:12.861162+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 3940,
+      "sha256": "58ba59372bc1c019d113467e93cd55065e16a0a1efd89388bd1a43885c2f67b9",
+      "localDate": "2021-09-29",
+      "requestedStartMs": 1632844800000,
+      "requestedEndMs": 1632931199999,
+      "returnedRows": 22,
+      "validRows": 22,
+      "invalidRows": []
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1640275200000&endTime=1640361599999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2021-12-24.json",
+      "fetchedAtUtc": "2026-09-27T01:20:12.863158+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4302,
+      "sha256": "ea8aee0427bfe5bf376697d0be469b98df9fc78976a9f5b6dd4895a8e9e9faec",
+      "localDate": "2021-12-24",
+      "requestedStartMs": 1640275200000,
+      "requestedEndMs": 1640361599999,
+      "returnedRows": 24,
+      "validRows": 23,
+      "invalidRows": [
+        {
+          "row": 13,
+          "rawOpen": 1640318400000,
+          "error": "invalid hourly close timestamp"
+        }
+      ]
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1679587200000&endTime=1679673599999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2023-03-24.json",
+      "fetchedAtUtc": "2026-09-27T01:20:13.122719+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4133,
+      "sha256": "0fa266a6fe2859b8f90c8833ff90faa17cdf3ba4b42d5e7dd378237e7fe8840f",
+      "localDate": "2023-03-24",
+      "requestedStartMs": 1679587200000,
+      "requestedEndMs": 1679673599999,
+      "returnedRows": 23,
+      "validRows": 22,
+      "invalidRows": [
+        {
+          "row": 21,
+          "rawOpen": 1679659200000,
+          "error": "invalid hourly close timestamp"
+        }
+      ]
+    },
+    {
+      "url": "https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&startTime=1790352000000&endTime=1790438399999&limit=1000",
+      "savedFile": "BTCUSDT-1h-API-2026-09-26.json",
+      "fetchedAtUtc": "2026-09-27T01:20:13.147391+00:00",
+      "method": "GET",
+      "requestTimestampUnit": "milliseconds",
+      "credentialsUsed": false,
+      "status": "downloaded",
+      "httpStatus": 200,
+      "bytes": 4270,
+      "sha256": "b55946d27f84f697419993ff7f226e420d34fb1b3d06e678a578065e12ca5df5",
+      "localDate": "2026-09-26",
+      "requestedStartMs": 1790352000000,
+      "requestedEndMs": 1790438399999,
+      "returnedRows": 24,
+      "validRows": 24,
+      "invalidRows": []
+    }
+  ],
+  "priorIncompleteDays": 19,
+  "remainingIncompleteDays": 18,
+  "priceImputationUsed": false,
+  "exchangeChanged": false,
+  "originalFilesModified": false
+}

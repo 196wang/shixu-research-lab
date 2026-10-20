@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 2,
+  "version": "0.3.0",
+  "updatedAtUtc": "2026-09-27T00:20:42.768987+00:00",
+  "organization": "theory_first",
+  "rules": [
+    {
+      "id": "BZ-001",
+      "version": "0.3.0",
+      "module": "BAZI",
+      "title": "岁运背景与喜忌适用条件",
+      "entryType": "theory_candidate",
+      "statement": "研究大运、流年、流月与日时背景如何改变某一命盘下的喜忌解释；覆盖条件与例外须明确。",
+      "requiredInputs": [
+        "命盘版本",
+        "喜忌判断方法与来源",
+        "岁运及年月日时特征",
+        "解释版本生效时间"
+      ],
+      "proposedProcedure": [
+        "分别计算基础关系和各时间层特征",
+        "按预先定义的条件决定是否覆盖",
+        "条件冲突或不足时输出未定"
+      ],
+      "missingDefinitions": [
+        "旺衰/格局/调候等取法选择",
+        "覆盖与救应条件",
+        "日界、时区和生效窗口",
+        "输出方向与幅度的独立定义"
+      ],
+      "limits": [
+        "不内置任何资产永久喜某五行",
+        "不把某年的案例判断当成跨年份公理",
+        "不使用后来解释回填早期预测"
+      ],
+      "evidenceRefs": [
+        "EV-R001"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "traditional_interpretation",
+        "market_hypothesis"
+      ],
+      "knowledgeRefs": [
+        "BZ-K-002",
+        "RES-K-001"
+      ],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "bad380339f933363f5c8ef98272aa4797dc70112e4cd87b30cda29628bb760fd",
+      "researchUpdateV03": {
+        "detailFile": "研究说明/八字基础与条件.md",
+        "status": "definitions_partly_refined_market_effect_unverified"
+      }
+    },
+    {
+      "id": "BZ-002",
+      "version": "0.3.0",
+      "module": "BAZI",
+      "title": "干支、旬与节气窗口组合",
+      "entryType": "theory_candidate",
+      "statement": "将预先定义的干支特征、旬界与节气事件作为独立时间特征，研究其窗口重叠与行情表现的关系。",
+      "requiredInputs": [
+        "历法配置",
+        "各特征判定式",
+        "事件时刻",
+        "窗口长度",
+        "组合与否决条件"
+      ],
+      "proposedProcedure": [
+        "生成各项特征及来源",
+        "按明确的时间容差比较窗口",
+        "输出特征命中与未定项，不预设涨跌"
+      ],
+      "missingDefinitions": [
+        "天干/地支/合局判定范围",
+        "日界与精确节气时刻",
+        "窗口与重叠阈值",
+        "行情结果与基准定义"
+      ],
+      "limits": [
+        "相关时间特征重合不等于独立证据增加",
+        "干支或节气本身不直接决定价格方向"
+      ],
+      "evidenceRefs": [
+        "EV-R002"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "calendar_features",
+        "combination_hypothesis"
+      ],
+      "knowledgeRefs": [
+        "CAL-K-002",
+        "RES-K-001"
+      ],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "da3d383e9c61b164241bcbf43646b68e050626ee0d5765f330018a3a5e6279ab",
+      "researchUpdateV03": {
+        "detailFile": "研究说明/八字基础与条件.md",
+        "status": "definitions_partly_refined_market_effect_unverified"
+      }
+    },
+    {
+      "id": "BZ-003",
+      "version": "0.3.0",
+      "module": "BAZI",
+      "title": "墓库、刑冲与财星条件",
+      "entryType": "theory_candidate",
+      "statement": "先确定命盘中的财星与墓库关系，再研究刑冲、透干、旺衰和合绊条件下的解释及市场映射。",
+      "requiredInputs": [
+        "命盘版本",
+        "十神与藏干关系",
+        "墓库取法",
+        "流入干支",
+        "旺衰与透干条件"
+      ],
+      "proposedProcedure": [
+        "确定墓库取自原局、岁运还是抽象关系表",
+        "核对冲合是否存在及其成立条件",
+        "将传统解释与待验证的行情假说分别输出"
+      ],
+      "missingDefinitions": [
+        "墓库流派与成局条件",
+        "冲开或冲坏的区分",
+        "生克合冲优先级",
+        "日月尺度转换",
+        "波动或方向评分"
+      ],
+      "limits": [
+        "不简化为某地支日/月必涨或必跌",
+        "旧例的财星、库位与数字只保存在证据层"
+      ],
+      "evidenceRefs": [
+        "EV-R003"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "traditional_conditions",
+        "market_mapping_hypothesis"
+      ],
+      "knowledgeRefs": [
+        "BZ-K-001",
+        "BZ-K-003"
+      ],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "303c15b2a90bce3caf6c882cca96fd39aac3611693e2fba32778e719bef8c879",
+      "researchUpdateV03": {
+        "detailFile": "研究说明/八字基础与条件.md",
+        "status": "definitions_partly_refined_market_effect_unverified"
+      }
+    },
+    {
+      "id": "GN-001",
+      "version": "0.3.0",
+      "module": "GANN",
+      "title": "同周期波段时间对称",
+      "entryType": "theory_candidate",
+      "statement": "以已确认波段的K线长度作为另一波段候选持续时间，检验时间对称假说。",
+      "requiredInputs": [
+        "行情源与周期",
+        "在当时可确认的锚点",
+        "K线计数口径",
+        "候选比例",
+        "时间容差"
+      ],
+      "proposedProcedure": [
+        "按固定口径测量参考段长度N",
+        "按预设比例生成候选长度",
+        "映射至带时区的时间窗口并记录失效"
+      ],
+      "missingDefinitions": [
+        "锚点选择和重设",
+        "首尾计数与未闭合K处理",
+        "缺口处理",
+        "候选比例与容差选择",
+        "转折定义"
+      ],
+      "limits": [
+        "特定根数和小时数属于实例参数",
+        "等长假说不保证转折或方向"
+      ],
+      "evidenceRefs": [
+        "EV-R005"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "time_measurement",
+        "symmetry_hypothesis"
+      ],
+      "knowledgeRefs": [
+        "GN-K-001"
+      ],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "1cfee5c8930b04f2269f5e6fc32f3ca1ded6eb760676a86b66336a583ff7194a",
+      "researchUpdateV03": {
+        "detailFile": "研究说明/江恩计算规范.md",
+        "status": "definitions_partly_refined_market_effect_unverified"
+      }
+    },
+    {
+      "id": "TA-001",
+      "version": "0.3.0",
+      "module": "TECHNICAL",
+      "title": "时间窗口内的价格突破确认",
+      "entryType": "theory_candidate",
+      "statement": "将时间候选与明确的价格确认条件组合，分别记录时间到达、突破成立及失效。",
+      "requiredInputs": [
+        "时间窗口",
+        "价格阈值的生成方法",
+        "交易对",
+        "盘中/收盘口径",
+        "确认根数"
+      ],
+      "proposedProcedure": [
+        "提前固定阈值与窗口",
+        "判断价格条件是否触发",
+        "未触发和反向失效独立记录"
+      ],
+      "missingDefinitions": [
+        "阈值如何产生",
+        "多标的同时/独立关系",
+        "站稳、容差与截止时间",
+        "与其他信号冲突规则"
+      ],
+      "limits": [
+        "历史价格不写成未来固定阈值",
+        "窗口到达不等于突破已发生"
+      ],
+      "evidenceRefs": [
+        "EV-R006"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "technical_confirmation"
+      ],
+      "knowledgeRefs": [],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "68a461e0d417492768e1946011a80f719429e5cfd57cebf61a282f0b6809c282"
+    },
+    {
+      "id": "TA-002",
+      "version": "0.3.0",
+      "module": "TECHNICAL",
+      "title": "结构划分与条件情景",
+      "entryType": "theory_candidate",
+      "statement": "按明确的分型、笔段、中枢与背驰定义建立条件情景，并记录分支触发和失效顺序。",
+      "requiredInputs": [
+        "行情源",
+        "多级别K线",
+        "结构定义版本",
+        "背驰指标",
+        "分支条件"
+      ],
+      "proposedProcedure": [
+        "仅用当时可用K线确认结构",
+        "生成带条件的互斥或可并行情景",
+        "按预定顺序裁决并记录未知"
+      ],
+      "missingDefinitions": [
+        "笔段与中枢算法",
+        "背驰指标与阈值",
+        "跨级别确认",
+        "分支冲突与截止期"
+      ],
+      "limits": [
+        "不同技术流派保留各自定义",
+        "不把事后重画的结构当成事前信号"
+      ],
+      "evidenceRefs": [
+        "EV-R007"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "technical_structure",
+        "conditional_scenarios"
+      ],
+      "knowledgeRefs": [],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "dca868f689d9ce0acf9d4bedf80000d36c234d3fc4ef10e638208bb218992fc1"
+    },
+    {
+      "id": "GN-002",
+      "version": "0.3.0",
+      "module": "GANN",
+      "title": "K线计数倍率递推",
+      "entryType": "theory_candidate",
+      "statement": "在已选起点与倍率制度下，用N候选=N基准×r^k生成候选时间计数。",
+      "requiredInputs": [
+        "基准计数N",
+        "倍率r",
+        "迭代次数k",
+        "舍入规则",
+        "周期与锚点"
+      ],
+      "proposedProcedure": [
+        "保留完整精度逐步计算",
+        "按固定规则处理取整",
+        "单独映射日历，不由乘法产生涨跌方向"
+      ],
+      "missingDefinitions": [
+        "基准与倍率的选取依据",
+        "迭代次数的事前规则",
+        "中间与最终舍入方式",
+        "完整日期映射"
+      ],
+      "limits": [
+        "具体倍率仅为案例线索，不宣称是江恩通用常数",
+        "算术吻合不等于预测有效"
+      ],
+      "evidenceRefs": [
+        "EV-R009"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "arithmetic_operator",
+        "parameter_selection_hypothesis"
+      ],
+      "knowledgeRefs": [
+        "GN-K-001"
+      ],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "1bc4cb1720940c5384143b72aabd1bebf54b5c26ae38b86dd4eb5af851ef0d06",
+      "researchUpdateV03": {
+        "detailFile": "研究说明/江恩计算规范.md",
+        "status": "definitions_partly_refined_market_effect_unverified"
+      }
+    },
+    {
+      "id": "GN-003",
+      "version": "0.3.0",
+      "module": "GANN",
+      "title": "多周期时间窗口对齐",
+      "entryType": "theory_candidate",
+      "statement": "把不同K线周期的候选计数映射到同一时间标准，检验窗口重叠是否提供额外信息。",
+      "requiredInputs": [
+        "各周期计数与锚点",
+        "K线切分规则",
+        "时区",
+        "窗口容差",
+        "组合判据"
+      ],
+      "proposedProcedure": [
+        "分别映射每个周期到日历",
+        "保留各分支原始窗口",
+        "检验重叠与不重叠结果"
+      ],
+      "missingDefinitions": [
+        "各计数的产生路径",
+        "周线开收边界",
+        "容差与失效规则",
+        "相关特征的依赖处理"
+      ],
+      "limits": [
+        "相同数字计数不一定对应同一天",
+        "多周期重合不自动增加命中率"
+      ],
+      "evidenceRefs": [
+        "EV-R010"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "calendar_mapping",
+        "combination_hypothesis"
+      ],
+      "knowledgeRefs": [
+        "GN-K-001"
+      ],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "441a05900127a59b314f23c942c467e8b0583abe3e69f385be7881d276ef6654",
+      "researchUpdateV03": {
+        "detailFile": "研究说明/江恩计算规范.md",
+        "status": "definitions_partly_refined_market_effect_unverified"
+      }
+    },
+    {
+      "id": "IA-001",
+      "version": "0.3.0",
+      "module": "INDIAN_ASTROLOGY",
+      "title": "运限与行运状态组合",
+      "entryType": "theory_candidate",
+      "statement": "按固定的本命与运限算法生成主限、子限及行运状态，再研究其与市场窗口的对应。",
+      "requiredInputs": [
+        "事件盘与时地",
+        "黄道及岁差",
+        "分盘版本",
+        "运限流派与年长",
+        "行星状态定义"
+      ],
+      "proposedProcedure": [
+        "先复现基础星盘与运限起止",
+        "分别提取行运或分盘特征",
+        "将状态解释与行情假说独立登记"
+      ],
+      "missingDefinitions": [
+        "资产事件定义与时刻",
+        "月亮经度及初始余期",
+        "算法流派与软件参数",
+        "相位/力量判据",
+        "方向映射与容差"
+      ],
+      "limits": [
+        "个别星体组合不被预设为必涨或必跌",
+        "不混用不同大限流派",
+        "不与八字大运共用算法"
+      ],
+      "evidenceRefs": [
+        "EV-R011"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "astrological_calculation",
+        "market_interpretation_hypothesis"
+      ],
+      "knowledgeRefs": [
+        "IA-K-001",
+        "IA-K-002",
+        "WA-K-001"
+      ],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "5cb59dc5fabe5bb1b5f0153af7273ea3781eea97c267c9b2f88725d20dc79951",
+      "researchUpdateV03": {
+        "detailFile": "研究说明/金融占星基础与演算.md",
+        "status": "definitions_partly_refined_market_effect_unverified"
+      }
+    },
+    {
+      "id": "GN-004",
+      "version": "0.3.0",
+      "module": "GANN",
+      "title": "时间价格几何交点",
+      "entryType": "theory_candidate",
+      "statement": "在给定锚点、价格时间单位和坐标系下，重建几何线及交点，形成带有效期的候选价位。",
+      "requiredInputs": [
+        "锚点时间和价格",
+        "计价币",
+        "线性/对数坐标",
+        "缩放及角度定义",
+        "计算窗口"
+      ],
+      "proposedProcedure": [
+        "冻结锚点与坐标设定",
+        "按明确线方程重画并计算交点",
+        "登记目标容差、截止期及失效"
+      ],
+      "missingDefinitions": [
+        "完整几何生成法",
+        "锚点事前可用性",
+        "比例尺与角度单位",
+        "触及/收盘评分"
+      ],
+      "limits": [
+        "示例目标价不迁移为其他资产常数",
+        "不同矩阵或几何工具不能仅凭外观合并"
+      ],
+      "evidenceRefs": [
+        "EV-R012"
+      ],
+      "derivation": "case_derived_research_hypothesis",
+      "status": "needs_definition",
+      "theoryReview": "partial_context_only_not_complete_derivation",
+      "theoryAttribution": "按研究问题归入本模块；案例算法的原典归属仍须逐条查证。",
+      "executionEnabled": false,
+      "marketValidated": false,
+      "componentTypes": [
+        "geometry_reconstruction",
+        "price_target_hypothesis"
+      ],
+      "knowledgeRefs": [
+        "GN-K-002"
+      ],
+      "knowledgeSupportNote": "关联基础定义或输入条件；不表示知识卡证明该市场假说。",
+      "contentSha256": "c166bd875bd67152419551b2084b82e1a69c86dbc0925e92924c8af648cfea36",
+      "researchUpdateV03": {
+        "detailFile": "研究说明/江恩计算规范.md",
+        "status": "definitions_partly_refined_market_effect_unverified"
+      }
+    }
+  ],
+  "executionEnabled": false,
+  "marketBacktestRun": false
+}

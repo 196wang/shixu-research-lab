@@ -1,0 +1,340 @@
+{
+  "version": "0.7.0",
+  "profileAudit": {
+    "profiles": [
+      {
+        "label": "BTC 版本 01",
+        "pillars": "戊子 甲子 戊申 辛酉",
+        "status": "原始时间、时区、日界均未核定",
+        "nextEvidence": "对应原图的出生输入、地点与设置栏"
+      },
+      {
+        "label": "ETH 版本 A",
+        "pillars": "乙未 癸未 戊申 壬子",
+        "status": "原始时间、时区、日界均未核定",
+        "nextEvidence": "对应原图的出生输入、地点与设置栏"
+      },
+      {
+        "label": "ETH 版本 B",
+        "pillars": "癸巳 甲子 辛未 癸巳",
+        "status": "原始时间、时区、日界均未核定",
+        "nextEvidence": "对应原图的出生输入、地点与设置栏"
+      }
+    ],
+    "clues": []
+  },
+  "boundaryComparison": [
+    {
+      "label": "BTC 创世块头时间",
+      "eventAtUtc": "2009-01-03T18:15:05Z",
+      "atResearchTimezone": "2009-01-04T02:15:05+08:00",
+      "midnight": {
+        "year": "戊子",
+        "month": "甲子",
+        "day": "己酉",
+        "hour": "乙丑"
+      },
+      "zi23": {
+        "year": "戊子",
+        "month": "甲子",
+        "day": "己酉",
+        "hour": "乙丑"
+      },
+      "sourceRefs": [
+        "BIRTH-SRC-BTC-CORE"
+      ],
+      "trueSolarTime": false,
+      "note": "两种日界此时相同；仍与给定原局不符。",
+      "sourceSettingConfirmed": false
+    },
+    {
+      "label": "BTC 白皮书公布邮件",
+      "eventAtUtc": "2008-10-31T18:10:00Z",
+      "atResearchTimezone": "2008-11-01T02:10:00+08:00",
+      "midnight": {
+        "year": "戊子",
+        "month": "壬戌",
+        "day": "乙巳",
+        "hour": "丁丑"
+      },
+      "zi23": {
+        "year": "戊子",
+        "month": "壬戌",
+        "day": "乙巳",
+        "hour": "丁丑"
+      },
+      "sourceRefs": [
+        "BIRTH-SRC-BTC-MAIL"
+      ],
+      "trueSolarTime": false,
+      "note": "两种日界此时相同；仍与给定原局不符。",
+      "sourceSettingConfirmed": false
+    },
+    {
+      "label": "ETH Frontier 官方时间线",
+      "eventAtUtc": "2015-07-30T15:26:13Z",
+      "atResearchTimezone": "2015-07-30T23:26:13+08:00",
+      "midnight": {
+        "year": "乙未",
+        "month": "癸未",
+        "day": "丁未",
+        "hour": "壬子"
+      },
+      "zi23": {
+        "year": "乙未",
+        "month": "癸未",
+        "day": "戊申",
+        "hour": "壬子"
+      },
+      "sourceRefs": [
+        "BIRTH-SRC-ETH-TIMELINE",
+        "BIRTH-SRC-ETH-LAUNCH",
+        "BIRTH-SRC-ETH-RELEASE-PROCESS"
+      ],
+      "trueSolarTime": false,
+      "note": "仅日界改变即与 ETH A 四柱相符；原始设置仍待证。",
+      "sourceSettingConfirmed": false
+    }
+  ],
+  "featureDefinitions": [
+    {
+      "id": "BZ-S01",
+      "title": "原局与流日六合",
+      "predicate": "原局四支逐一与流日支查六合表，保留位置；日级布尔结果取 any。",
+      "failure": "查表无匹配即未触发；重复位置不增加独立日样本，不判合化。"
+    },
+    {
+      "id": "BZ-S02",
+      "title": "原局与流日六冲",
+      "predicate": "原局四支逐一与流日支查六冲表，保留全部位置。",
+      "failure": "无对冲即未触发；不能由流年与流日的冲代替原局与流日的冲。"
+    },
+    {
+      "id": "BZ-S03",
+      "title": "三合支齐全",
+      "predicate": "原局四柱＋流年月日内三种成员都存在；区分原局自有、流入补齐、流日必要、纯流动及跨层实例。",
+      "failure": "重复支不能代替缺支；原局已齐或流月已补齐时，流日不是必需；支齐不判化局。"
+    },
+    {
+      "id": "BZ-S04",
+      "title": "三会支齐全",
+      "predicate": "同一七柱范围检查三会表，完整成员与跨层实例单列。",
+      "failure": "不能用三合表代替；没有任意合冲优先级；只靠流时补齐不触发。"
+    },
+    {
+      "id": "BZ-S05",
+      "title": "原局含财五行对应墓库支",
+      "predicate": "财为原局日主所克；水辰、木未、火戌、金丑，再查原局四支。",
+      "failure": "土财库未定义输出 null；已定义但原局没有该支输出 false。本项是静态背景。"
+    },
+    {
+      "id": "BZ-S06",
+      "title": "原局墓库支与流日对冲",
+      "predicate": "先满足 BZ-S05，再检查该原局位置与流日支是否六冲。",
+      "failure": "BTC 无辰，即便流年有辰仍无原局辰戌冲。匹配也不代表开库、生财或价格方向。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "BZ07-S01",
+      "title": "6tail lunar-python 藏干常量",
+      "url": "https://raw.githubusercontent.com/6tail/lunar-python/master/lunar_python/util/LunarUtil.py",
+      "section": "LunarUtil.ZHI_HIDE_GAN",
+      "evidenceType": "official_source_code",
+      "readStatus": "web_constant_and_pinned_local_file_read",
+      "localVersion": "1.4.8",
+      "localPath": "outputs/时序研究室_v0.6/vendor/lunar_python/util/LunarUtil.py",
+      "localLineRange": [
+        656,
+        669
+      ],
+      "localFileSha256": "87a84818a3ddd10925cbb28ec04a048b27e1ac46f291ff4d9a861f15fb59aa00",
+      "shortExcerpt": "ZHI_HIDE_GAN",
+      "supports": [
+        "12支藏干成员",
+        "保留依赖库顺序"
+      ],
+      "limits": [
+        "线上master会变化",
+        "顺序不自动等于气势排序或权重",
+        "不提供传统解释正确性的验证"
+      ]
+    },
+    {
+      "id": "BZ07-S02",
+      "title": "三命通会四库本卷五",
+      "url": "https://zh.wikisource.org/wiki/三命通會_(四庫全書本)/卷05",
+      "section": "论古人立印食官财名义；论正官；论杂气",
+      "readLocator": "本轮网页提取行116、120、251至255",
+      "evidenceType": "primary_text_transcription",
+      "readStatus": "selected_passages_read_not_image_collated",
+      "shortExcerpt": "支藏干透",
+      "supports": [
+        "财以日主所克定义",
+        "水辰火戌金丑木未墓库关联",
+        "透出看具体干字",
+        "刑冲并非不附条件的充分判据"
+      ],
+      "limits": [
+        "部分巳己等疑似转录错字，藏干表不据此单独逐字抄入",
+        "包含传统汇录不同说法",
+        "论杂气有水土库说法，不强并他书观点"
+      ]
+    },
+    {
+      "id": "BZ07-S03",
+      "title": "命理约言原文转录",
+      "url": "https://www.dearmoney.com.tw/paper/menu_paperlist/?ID=74",
+      "section": "看杂气墓库法；支三合论；支六合论；支方论；支冲论",
+      "readLocator": "本轮网页提取行234至235、386至396",
+      "evidenceType": "primary_text_transcription_on_secondary_host",
+      "readStatus": "selected_original_text_passages_read_not_image_collated",
+      "shortExcerpt": "墓神強旺",
+      "supports": [
+        "本气所藏墓神区别",
+        "透出与刑冲的条件",
+        "强弱改变开库解释",
+        "方局完整三字",
+        "合冲解释含位置与冲破条件"
+      ],
+      "limits": [
+        "网页夹注不归给原作者",
+        "土无库墓是本书立场而非跨书统一公理",
+        "文字强弱尚未成为本项目算法"
+      ]
+    },
+    {
+      "id": "BZ07-S04",
+      "title": "三命通会卷二",
+      "url": "https://zh.wikisource.org/zh-hant/三命通會/卷二#論支元三合",
+      "secondarySectionUrl": "https://zh.wikisource.org/zh-hant/三命通會/卷二#論衝擊",
+      "section": "论支元三合；论冲击",
+      "readLocator": "本轮网页提取行405至411、472至481",
+      "evidenceType": "primary_text_transcription",
+      "readStatus": "selected_passages_read_not_image_collated",
+      "shortExcerpt": "三字缺一",
+      "supports": [
+        "完整三合成员",
+        "六冲对位与包括起点的七位计数",
+        "关系出现与解释效果有别"
+      ],
+      "limits": [
+        "不据成员齐备自动判成化",
+        "有巳已等转录字形问题，使用已交叉核对成员表"
+      ]
+    }
+  ],
+  "nextStudy": {
+    "title": "原局与流日六冲，是否与 BTC 收开绝对净变动有关",
+    "statusLabel": "规格已固定 · 本轮未运行行情评分",
+    "summary": "先研究一个结构，保留给定 BTC 盘的不确定性；未来评分不预设上涨或下跌。",
+    "protocol": {
+      "id": "H-BZ-STRUCT-002",
+      "version": "0.1.0",
+      "status": "specification_frozen_not_run",
+      "registeredAtUtc": "2026-09-27T01:41:14.033304+00:00",
+      "registrationType": "retrospective_specification_after_prior_market_inspection",
+      "notProspectivePreregistration": true,
+      "scoringRun": false,
+      "reasonChosen": "单一可审计布尔结构；本轮未查看该分组的行情结果。历史行情和金水日结果已看过。",
+      "profile": "BTC-BZ-V01",
+      "profileUncertainty": "给定四柱条件研究，原始出生设置未核定",
+      "featureId": "BZ-S02",
+      "featureVersion": "0.1.0",
+      "featureAliasInProposal": "BZ-F02",
+      "asset": "BTC",
+      "symbol": "BTCUSDT",
+      "venue": "Binance spot",
+      "grouping": "在每日00:00+08:00计算原局四支与流日的六冲；存在至少一条为G1，否则G0；每日只一行",
+      "window": "[当日00:00+08:00,次日00:00+08:00)",
+      "calendarPolicyId": "BZ-CALENDAR-CIVIL-00-V01",
+      "outcome": "y = abs(close / open - 1)",
+      "outcomeMeaning": "收开绝对净变动，不是日内振幅或波动率",
+      "estimand": "(mean(y[G1]) - mean(y[G0])) * 10000，单位bp；双侧，不预设价格方向",
+      "periods": [
+        {
+          "start": "2020-01-01",
+          "end": "2024-12-31"
+        },
+        {
+          "start": "2025-01-01",
+          "end": "2026-09-26"
+        }
+      ],
+      "independentHoldout": false,
+      "data": {
+        "file": "daily_input.json",
+        "sha256": "182a156b7aed3988d376f2656773cfb93caa8f1e66b613787deabdb7e0b6c0cc",
+        "require": "沿用v0.6完整24小时且有效OHLC的日样本；不插值、不前填，未完成/异常日结果为null",
+        "perPeriodMinimumCoverage": 0.95,
+        "minimumObservedDaysPerGroup": 100,
+        "failure": "任一组未达100个完整日或完整日覆盖低于95%则该期数据不足，不计算效果支持状态"
+      },
+      "inference": {
+        "method": "paired moving block bootstrap on full calendar, retain missing mask",
+        "referenceImplementation": "masked_study.py v0.6块抽样方式；新评分代码实施前另附哈希",
+        "blockLengthCalendarDays": 30,
+        "replicates": 10000,
+        "seedResetEachPeriod": 20260927,
+        "lastBlock": "truncate to original calendar length",
+        "ci": "percentile 2.5%/97.5%, linear interpolation",
+        "invalidReplicate": "一组有效样本为空则该抽样无效；有效抽样少于9900则区间不可判定",
+        "sensitivityGrid": false
+      },
+      "practicalMarginBp": 10,
+      "marginReason": "人为预设研究门槛0.10个百分点；未按本结构结果调参，也不等同交易成本门槛",
+      "decisions": {
+        "supportedPositiveDifference": "95%区间下界 > +10bp",
+        "supportedNegativeDifference": "95%区间上界 < -10bp",
+        "noMaterialDifferenceAtChosenMargin": "95%区间整体落在[-10,+10]bp",
+        "otherwise": "未获支持/不确定；不得当成确定无效",
+        "acrossPeriods": "仅两期均越过同侧门槛可称分段一致；仍是探索结果，不构成独立验证"
+      },
+      "stoppingRule": "每个固定区间仅运行本规格一次，无提前停止；错误修复须新版本并保留原结果",
+      "multiplicity": "仅评分本项；其他四草案、其他盘、日界和参数不参与并行挑选",
+      "marketDirection": null,
+      "marketValidated": false,
+      "marketExecutionEnabled": false,
+      "forwardMonitoringStarted": false,
+      "automationCreated": false
+    },
+    "rows": [
+      [
+        "触发",
+        "在每日00:00+08:00计算原局四支与流日的六冲；存在至少一条为G1，否则G0；每日只一行"
+      ],
+      [
+        "窗口",
+        "[当日00:00+08:00,次日00:00+08:00)"
+      ],
+      [
+        "研究量",
+        "(mean(y[G1]) - mean(y[G0])) * 10000，单位bp；双侧，不预设价格方向；收开绝对净变动不等于日内振幅。"
+      ],
+      [
+        "样本",
+        "2020–2024；2025–2026-09-26。每组至少100个完整日，覆盖至少95%；均非独立样本外。"
+      ],
+      [
+        "不支持 / 无法判定",
+        "区间未整体越过±10bp门槛：未获支持或无实质差异；数据不足单列，未触发不算预测错误。"
+      ],
+      [
+        "固定方法",
+        "保留缺失日期位置；30日块、10,000次抽样、固定种子；不扫描参数或挑最好盘。"
+      ],
+      [
+        "原盘限制",
+        "条件成立仅针对给定四柱；不能由差异结果确认资产真实出生盘。"
+      ]
+    ]
+  },
+  "proposalAlias": {
+    "BZ-F01": "BZ-S01",
+    "BZ-F02": "BZ-S02",
+    "BZ-F03": "BZ-S03",
+    "BZ-F04": "BZ-S04",
+    "BZ-F05": "BZ-S05",
+    "BZ-F06": "BZ-S06"
+  }
+}

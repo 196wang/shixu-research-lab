@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "version": "0.1.0",
+  "profile": "BTC-BZ-V01",
+  "title": "八字规则事件 · 首批固定定义",
+  "sourcePolicy": "规则以技术条件命名，原材料作者与修订历史仍保存在来源档案。案例、传统符号定义、工程判定和行情结果分别记录。",
+  "profileUncertainty": "沿用给定四柱戊子、甲子、戊申、辛酉；原始出生时地设置尚未核定。",
+  "rules": [
+    {
+      "id": "BZ-E01",
+      "version": "0.1.0",
+      "title": "日干属金水",
+      "definition": "流日日干为庚、辛、壬、癸之一即触发；其他日干不触发。",
+      "scope": "BTC-BZ-V01；北京时间UTC+8，每日00:00；事件当天计为窗口第1天。",
+      "sourceRefs": [
+        "EVSRC-STEMS",
+        "EVSRC-CASES",
+        "EVSRC-TG",
+        "EVSRC-OLD-DAY",
+        "EVSRC-ENGINE"
+      ],
+      "sourceEvidence": "TG578提出金水窗口，TG767另提出2026流年覆盖；H-BZ-DAY-001 v0.2.0已将日干分组固定为庚辛壬癸。",
+      "interpretation": "观察这些日干之后的收益和回撤分布；金水利多是待检验的案例解释，未编码为方向。",
+      "limits": [
+        "这是日干特征，不包含地支、藏干、旺衰、旬界和流年覆盖。",
+        "本轮不以2026修订内容反向改写此前预测，也不将此条件冒充案例提供者的完整算法。"
+      ],
+      "parentIds": [
+        "BZ-001",
+        "BZ-002",
+        "H-BZ-DAY-001"
+      ],
+      "status": "exploratory_feature",
+      "marketValidated": false,
+      "marketDirection": null,
+      "triggerGranularity": "day",
+      "parameterSearch": false
+    },
+    {
+      "id": "BZ-E02",
+      "version": "0.1.0",
+      "title": "日干属火",
+      "definition": "流日日干为丙、丁之一即触发；其他日干不触发。",
+      "scope": "BTC-BZ-V01；北京时间UTC+8，每日00:00；事件当天计为窗口第1天。",
+      "sourceRefs": [
+        "EVSRC-STEMS",
+        "EVSRC-ENGINE"
+      ],
+      "sourceEvidence": "丙丁属火来自基础五行映射；把它单列成市场观察分组是本项目本轮的定义。",
+      "interpretation": "用于观察火日干分组的后续表现，方向未判定。",
+      "limits": [
+        "日干属火不等于火旺、开火库、火局或全年火运；不能替代月份与原局关系。",
+        "没有找到能证明“丙丁日必跌”的完整原始算法；本项不作该归因。"
+      ],
+      "parentIds": [
+        "BZ-002"
+      ],
+      "status": "exploratory_feature",
+      "marketValidated": false,
+      "marketDirection": null,
+      "triggerGranularity": "day",
+      "parameterSearch": false
+    },
+    {
+      "id": "BZ-E03",
+      "version": "0.1.0",
+      "title": "原局与流日六冲",
+      "definition": "原局四柱地支逐一与流日支查六冲表，有至少一条关系即触发；同日多处匹配只记一次。",
+      "scope": "BTC-BZ-V01；北京时间UTC+8，每日00:00；事件当天计为窗口第1天。",
+      "sourceRefs": [
+        "EVSRC-STRUCTURE",
+        "EVSRC-ENGINE",
+        "EVSRC-FEATURES",
+        "EVSRC-OLD-CLASH"
+      ],
+      "sourceEvidence": "沿用BZ-S02的六冲关系表与范围，具体支字和原局位置随触发日显示。",
+      "interpretation": "观察该关系出现后的市场表现；六冲本身不指定上涨、下跌或波动增加。",
+      "limits": [
+        "只检查原局与流日；流年和流日的六冲不能替代。",
+        "既有检验的绝对净变动结论保留；本轮多日描述不能视为该结论被更新。"
+      ],
+      "parentIds": [
+        "BZ-S02",
+        "H-BZ-STRUCT-002"
+      ],
+      "status": "exploratory_feature",
+      "marketValidated": false,
+      "marketDirection": null,
+      "triggerGranularity": "day",
+      "parameterSearch": false
+    },
+    {
+      "id": "BZ-E04",
+      "version": "0.1.0",
+      "title": "原局与流日六合",
+      "definition": "原局四柱地支逐一与流日支查六合表，有至少一条关系即触发；同日多处匹配只记一次。",
+      "scope": "BTC-BZ-V01；北京时间UTC+8，每日00:00；事件当天计为窗口第1天。",
+      "sourceRefs": [
+        "EVSRC-STRUCTURE",
+        "EVSRC-ENGINE",
+        "EVSRC-FEATURES"
+      ],
+      "sourceEvidence": "沿用definition_catalog.json的特征BZ-S01；精确六合配对来源见来源溯源/v0.3/bazi_sources.json的来源BZ-S05与relationTables.liuHe，原典章节不提供市场效果验证。",
+      "interpretation": "观察六合出现后的收益与回撤分布，方向未判定。",
+      "limits": [
+        "出现六合关系不等于合化成功，也不自动代表利多。",
+        "本项未实现强弱、合绊、冲破优先级和其他解救条件。"
+      ],
+      "parentIds": [
+        "BZ-S01"
+      ],
+      "status": "exploratory_feature",
+      "marketValidated": false,
+      "marketDirection": null,
+      "triggerGranularity": "day",
+      "parameterSearch": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "EVSRC-STEMS",
+      "title": "十干五行归属 · 已存原典章节笔记",
+      "path": "来源溯源/v0.3/bazi_sources.json",
+      "support": "只支持干字五行归属；不支持收益方向或市场有效性。",
+      "sha256": "52747793964847fcc865568775c23a7fc7f2872f23f4abb62ab7da26945284ef",
+      "reviewStatus": "existing_local_evidence_reused_no_new_web_verification",
+      "selector": "sources[id=BZ-S01]",
+      "url": "https://zh.wikisource.org/zh-hant/三命通會/卷二#論天干陰陽生死"
+    },
+    {
+      "id": "EVSRC-CASES",
+      "title": "金水时间窗口与流年条件 · 案例证据",
+      "path": "来源溯源/规则证据.json",
+      "support": "EV-R001/002保留通常喜金水、2026又提出流年覆盖的分歧；原材料未定义单看日干的完整规则。",
+      "sha256": "2f350948ed8a18b85f99030e9a18dfea72a028cd10f011e0e0981666e060b191",
+      "reviewStatus": "existing_local_evidence_reused_no_new_web_verification",
+      "selector": "evidence[id=EV-R001 or EV-R002]"
+    },
+    {
+      "id": "EVSRC-TG",
+      "title": "时间窗口与修订条件 · 留档原文",
+      "path": "来源溯源/首轮来源原记录.json",
+      "support": "TG578和TG767分别提供原始语境；后发表的条件不能回填为早期已知预测。",
+      "sha256": "6a8a48d451e8af03b73003442e8563cb065e63fb914a4be0c92e060b2e6283b0",
+      "reviewStatus": "existing_local_evidence_reused_no_new_web_verification",
+      "selector": "sources[id=TG578 or TG767]"
+    },
+    {
+      "id": "EVSRC-OLD-DAY",
+      "title": "既有金水日研究定义 0.2.0",
+      "path": "study_protocol_frozen.json",
+      "support": "复用庚辛壬癸日干分组。旧研究仅日内收开收益，本轮1/3/7/30日与回撤是独立描述协议。",
+      "sha256": "07c0932bb394a8181900a26f74c654f9713f2588b122261aa99dc10f9d3f2c9f",
+      "reviewStatus": "existing_local_evidence_reused_no_new_web_verification",
+      "selector": "immutableChoices.group1Stems"
+    },
+    {
+      "id": "EVSRC-STRUCTURE",
+      "title": "已定义六合与六冲特征",
+      "path": "definition_catalog.json",
+      "support": "BZ-S01/02定义原局四支与流日的范围、查表、去重；只登记关系。",
+      "sha256": "637bc32b5e5fa3376ea5b7375c3cd1f9a66f93e0eec1cb1eaae7726e6af85399",
+      "reviewStatus": "existing_local_evidence_reused_no_new_web_verification",
+      "selector": "featureDefinitions[id=BZ-S01 or BZ-S02]; sources[id=BZ07-S03 or BZ07-S04]"
+    },
+    {
+      "id": "EVSRC-ENGINE",
+      "title": "基础关系表与天干五行映射 0.4.0",
+      "path": "bazi_engine.py",
+      "support": "stem_info与PAIR_TABLES实现；匹配不判断合化、开库或方向。",
+      "sha256": "7180fbb1a387797b3618d76ad6624734b994b6b9e7f33410af0764e98080f4a0",
+      "reviewStatus": "existing_local_evidence_reused_no_new_web_verification"
+    },
+    {
+      "id": "EVSRC-FEATURES",
+      "title": "原局与流日结构判定 0.1.0",
+      "path": "bazi_features.py",
+      "support": "pair_edges/calculate_features保留位置；多条关系按同一日一个样本去重。",
+      "sha256": "cf180b174ea3adf7a1d98f4d0db559d6a78fbc2b6f1835b2ee8a584045cb381b",
+      "reviewStatus": "existing_local_evidence_reused_no_new_web_verification"
+    },
+    {
+      "id": "EVSRC-OLD-CLASH",
+      "title": "既有六冲研究规格 0.1.0",
+      "path": "structure_study_protocol.json",
+      "support": "复用原局与流日六冲的日初分组；旧研究量为日内收开绝对净变动，不等于本轮多日收益。",
+      "sha256": "b25eccd445374f81f47b9798b233b893e3ef7a5ab02ccf731b7b732c946a3bd6",
+      "reviewStatus": "existing_local_evidence_reused_no_new_web_verification"
+    }
+  ],
+  "changePolicy": "0.1.0目录随协议与数据哈希冻结；修订须新版本，保留已有结果和文件，不按已看到的涨跌改标签。"
+}

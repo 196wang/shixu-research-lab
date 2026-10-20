@@ -1,0 +1,2810 @@
+[
+  {
+    "body_sha256": "cbc97183815455c8d17d403539052ddd58ef3c4c4a87a6c4c9169a45868ed10d",
+    "end_utc": "2022-01-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ea0fed97-378f-4440-9798-7aa0c8840cac",
+    "start_utc": "2021-12-31T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "08fb07619a2ca80736da0fd7118993dabf5c4a9eb22c4a59a40bd95ac9e24e05",
+    "end_utc": "2022-01-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ce9c6a86-961c-47ca-86cb-c4ee25d836fc",
+    "start_utc": "2022-01-10T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "c86045f679630f15b325cce5f35bf0fb9db726ea9573bd1d551335e94c419c3d",
+    "end_utc": "2022-01-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "3cc74f44-0fe9-4bf4-a1e7-6aaed86c17e7",
+    "start_utc": "2022-01-20T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "0510661cf4bfd92932b8984fc12e727d77bcba6fa6021faac2df4063cbb6765d",
+    "end_utc": "2022-02-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d1ed2c12-2a1a-431f-8ef4-7d60cd0dcf17",
+    "start_utc": "2022-01-30T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "629ee0a96e3dfba33af1a2a9c264af81d1f7b251db4c75a68b2a7dad520dc0ce",
+    "end_utc": "2022-02-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d5ef36c2-c503-4242-97a5-33a3a03b6cfc",
+    "start_utc": "2022-02-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "c16ece0c88e27c5f124b97ddf38eb3a696deed5c7afcc09fed6749d2c46c8766",
+    "end_utc": "2022-03-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5bf5d012-e14e-4b2c-9283-ee6ee82f6242",
+    "start_utc": "2022-02-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "2bc791e41a6d539d470006d936f50a0ed35585932cdda87c7ec4791d67d0abbb",
+    "end_utc": "2022-03-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f8443180-1262-4c64-af9c-073f506e2708",
+    "start_utc": "2022-03-01T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "c93d8ca2fb5fce8fbceabbf878abc83b4e1656bebc515cad8091e09b1a2c4bf0",
+    "end_utc": "2022-03-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "380504fa-1665-4770-8c46-e9ccea208cc8",
+    "start_utc": "2022-03-11T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "5a1bf8f4a36140a28315ab54bbf7c1afce445e171d3079809bccae3e453f591b",
+    "end_utc": "2022-03-31T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5b4e49bf-5fa8-44a9-ae69-18ae9866d4b2",
+    "start_utc": "2022-03-21T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "186de43f475a338283caf0d39ea7bfd0a37fc2962a50ce5032a284fafdce62a0",
+    "end_utc": "2022-04-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7c3cf030-77e6-4b72-bde3-3076c6af0863",
+    "start_utc": "2022-03-31T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "5ea4ada99334e0a8db6fe6bc7ef8499d6e32ad8e6030562f470ac7981df0a24d",
+    "end_utc": "2022-04-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9ec2dfb6-ec5b-46e2-b537-a9f21c0d6555",
+    "start_utc": "2022-04-10T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "0a711b9f6cb906d74c48db116e44776fec2593a47c2d8c3991713a4c7d91e3eb",
+    "end_utc": "2022-04-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "78e61b1f-9793-40c7-be20-3bca2cb588a8",
+    "start_utc": "2022-04-20T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "6cb822b80f8a98878898510e297789d1150df164e68b0d2a5d9f7bac76e2016a",
+    "end_utc": "2022-05-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bf162e31-7bde-4c6d-af3b-29aa7d5ac1d0",
+    "start_utc": "2022-04-30T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e991631b8775df2249b6a8382b8017cde4fc7055dbee6169be9a5ea763553363",
+    "end_utc": "2022-05-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "eb2481c3-7555-49a4-9a26-64a4a387b592",
+    "start_utc": "2022-05-10T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "16a6a78e46bff86515ce7b264b39b39ba30b098a49a362737bd3cab1b436274a",
+    "end_utc": "2022-05-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0b038ea1-76c0-4897-b0ed-697b947f8846",
+    "start_utc": "2022-05-20T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "bd425e300c8a211b607f579bfbad70af5f63cb11453f70e3770895dba3c36b8d",
+    "end_utc": "2022-06-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2bbee33e-511b-4cf7-8afd-739fa9242bcd",
+    "start_utc": "2022-05-30T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "a960d86a81daed8947fdd88cf090372dcc013af2db65d0c7f9a4acbb4c75e861",
+    "end_utc": "2022-06-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5ba3e247-213d-45a2-aa0c-3edf859a2c7c",
+    "start_utc": "2022-06-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3b01969499139282814b7d396b56d4161eaca1b115af8ca97937ce6dcc13199c",
+    "end_utc": "2022-06-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a51cfa12-bd45-45f0-a7bf-7d4cea323ac9",
+    "start_utc": "2022-06-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "bb976a39164bef73bfbfdb30ae226f9a69e03bd80caecdbfec2f879b61595f14",
+    "end_utc": "2022-07-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e63fc065-eb37-40ab-8664-0292a6a3e6ce",
+    "start_utc": "2022-06-29T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "fe45f755bd8f72d9728097ca2d8bb159cd707d84e179d3b1e2a2ed3ce23a211b",
+    "end_utc": "2022-07-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bfe1b0e2-cff0-4576-9417-1911f7d34fd7",
+    "start_utc": "2022-07-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "0cfc6264b03a3e249a50b87451cc8fe52681c5a31045da269416f511e7997abf",
+    "end_utc": "2022-07-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "48ee271f-30ca-4d4a-aea0-32f3bf4d1286",
+    "start_utc": "2022-07-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "fde3744de4efe33361fded42d767c7b2c86e230586e49f7809a3add2b9ae80c1",
+    "end_utc": "2022-08-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4d042df9-4b30-491f-938b-90cc05a2a408",
+    "start_utc": "2022-07-29T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "304715b80f8e3823fcec9d5dfc9b90a2bc75ae81b74d371172f1d3adc15ed72d",
+    "end_utc": "2022-08-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9b53f558-3260-42be-9be0-7ab8cf55b772",
+    "start_utc": "2022-08-08T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "bec43933cbf31791f25e403a78af1e1685b69df09b5df6426e7fee4ec96f6817",
+    "end_utc": "2022-08-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "630130cd-41bb-4078-a501-b57b4308d3dc",
+    "start_utc": "2022-08-18T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "bea8805cfa895241cb21d1043376f0016ab9ab8244c41c881bc721bf1781fe6e",
+    "end_utc": "2022-09-07T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c6260d54-c955-494c-a7c6-e5892aaaf1ba",
+    "start_utc": "2022-08-28T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "28659983c50aee8c49a027f258467bea8eb33d16350268ec57616bab474b0a76",
+    "end_utc": "2022-09-17T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1dbc7a93-48db-47cd-84d8-390b2fc9d9fa",
+    "start_utc": "2022-09-07T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "fe35e3f2ca105194f3139d0ad783a90dce613e705058961f28210bf8739249dd",
+    "end_utc": "2022-09-27T16:00:00+00:00",
+    "http_status": 200,
+    "id": "3dba665b-324d-49b9-9cee-4cb7488f74ad",
+    "start_utc": "2022-09-17T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "230f4d3e11d507b26d5924facb2e1268cb8b74e9cc3fd2d45051cc20948cafd0",
+    "end_utc": "2022-10-07T16:00:00+00:00",
+    "http_status": 200,
+    "id": "122765d2-d2ee-4d37-ac69-e23fe0fcdf81",
+    "start_utc": "2022-09-27T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "ed13e48e6b85aa57317a7ccc405ff76768c951f71f051eb5535333be0dcde376",
+    "end_utc": "2022-10-17T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0712e58f-dcf9-4b81-a339-c3274da7f173",
+    "start_utc": "2022-10-07T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "50c4351a5f52de0649aca700dd7a8c4fba3a8db93a9d546a4aa0bb87c082ea86",
+    "end_utc": "2022-10-27T16:00:00+00:00",
+    "http_status": 200,
+    "id": "83c2117a-6cc7-4118-b1eb-c06e5a9b2c39",
+    "start_utc": "2022-10-17T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "f7f69e4ab6b76a7801c8f261303e68cd3b3d5770fe1ccd17f981216953e93f10",
+    "end_utc": "2022-11-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5a592a75-dcfb-4e8e-bd9e-c5c3f9fa9062",
+    "start_utc": "2022-10-27T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e02b20c25e99d425b060245ed92d29ce52ef83d83473a77848e3097f2705559b",
+    "end_utc": "2022-11-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "dcf3641f-0a5f-475d-a956-10ec1e10b4c8",
+    "start_utc": "2022-11-06T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "1706b994d32c49374fdb1f44e33bf0d27a426ae455bb242e718a38f9eb8ec346",
+    "end_utc": "2022-11-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "704f511e-94f7-43f5-865e-90c68c675a36",
+    "start_utc": "2022-11-16T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "63b0d8ab6a97f4e2c5f9ba111b1c3065b23d9f29aa70ba2ad2a78f4fa6a8cf78",
+    "end_utc": "2022-12-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "6a0d03f4-e015-4fb4-afe3-5f6d1a20b07a",
+    "start_utc": "2022-11-26T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "85ceb1c00586c2606c20dc984663380f4c8fd2c2e1b5886ea669d2c8d5fb9163",
+    "end_utc": "2022-12-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "dba00c5e-78ba-4440-b029-5911c50005fd",
+    "start_utc": "2022-12-06T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b631af4e8368ba514e57a3ad2451a21d8cedc6f8d2929d83be0a102f3a695c49",
+    "end_utc": "2022-12-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "47c43c83-02a5-40b2-8342-30fd64dab2ed",
+    "start_utc": "2022-12-16T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "49cb8e7911396fa0d23f802865982c6ad0813800be870d22c5ba862a73bde940",
+    "end_utc": "2023-01-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "57399162-6b34-4be9-b4b3-597cfd7c07da",
+    "start_utc": "2022-12-26T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "d6c1b4398d3b3a38484f51a850a8698a942eaa5a9d31d6e15849bce5a87e05a1",
+    "end_utc": "2023-01-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "46ef867c-1ec9-483a-bc6d-76ee7a592357",
+    "start_utc": "2023-01-05T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b2e7ad9b515db6835dafb538a00dd78683e3dbf831f4808d70dfcce2f7fcd085",
+    "end_utc": "2023-01-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "343c4cc7-f91e-46d2-9863-d913fce0d93a",
+    "start_utc": "2023-01-15T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "d697b44e3239aca4832ca5f830424efde75c8bf72e5f6c78c427aebb7a1b4d69",
+    "end_utc": "2023-02-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2c130efd-9e7c-4715-ba03-37654b475def",
+    "start_utc": "2023-01-25T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "a3c2e6fcaa463e20dfb449803f71816aaae3ccc1e1a3a6ae6eb867d2f1168520",
+    "end_utc": "2023-02-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fbde4d41-bca4-467c-a6f5-a487071f69f0",
+    "start_utc": "2023-02-04T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "f7ec193adc236bbb0de4670c69347b6e6ad9d060a494e7938a9cfb7c42344900",
+    "end_utc": "2023-02-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "149b3165-b253-485c-9c93-01a78085ddc9",
+    "start_utc": "2023-02-14T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3aa66815b88c0c6012af472a5c877d13cf3c314dae091d8a821ee5af29d73269",
+    "end_utc": "2023-03-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "75592c76-1eb9-49c7-86f8-4343c489bc33",
+    "start_utc": "2023-02-24T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "5993d10b90019e8363d421523941a5ab1ac4cf10ee5dc27faf60aceb4d6435e8",
+    "end_utc": "2023-03-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ba2e1fc9-53a6-42e0-96ee-69cca071df8b",
+    "start_utc": "2023-03-06T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b09b5626e4a99fb793835a82399136564205dfc0911476e4a4c6402371b53c8a",
+    "end_utc": "2023-03-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "52ecb030-2d34-430a-b6eb-2a7850a81528",
+    "start_utc": "2023-03-16T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "f2fb72eb9aa75a32be288eea808d193aec3de27bd2202bbf115042af587bb9fe",
+    "end_utc": "2023-04-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "358edbf5-2cf3-4426-86dc-e4e5336ddcb2",
+    "start_utc": "2023-03-26T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3bc048f954cf3a4b21da152b5b864c39c40a28901857acc53077082f3c2110a1",
+    "end_utc": "2023-04-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b01a29af-c230-44eb-b0a8-e1430478a8bf",
+    "start_utc": "2023-04-05T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b9b1bc8b493eb08382c4372f53a0acb6add4333c05abdc7ee99e220489951e78",
+    "end_utc": "2023-04-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4421c9fa-2959-4ba4-ba8a-4db93aeec660",
+    "start_utc": "2023-04-15T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3b8b2bb68072a6894e709851a7faacc997b54e97dad276faaf04eec7da698b20",
+    "end_utc": "2023-05-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "3c0dc21a-8129-4960-9240-c94d33443d4f",
+    "start_utc": "2023-04-25T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "118477832942f31d72f9f7ad529ced13a20e10a7ed95cbdc2b60c9cb0f466210",
+    "end_utc": "2023-05-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5f34339b-7b1c-4a8e-b981-c527bfbcef05",
+    "start_utc": "2023-05-05T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "4fbbb12f91328436b90a15eb4265adaf27b673428bd3dc5281aaa785c139cb4f",
+    "end_utc": "2023-05-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4ca91f50-a720-4125-abf6-83fef9fa93d5",
+    "start_utc": "2023-05-15T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "8a9088ed270380a8f40fd9ec3b73063d80d7f727180981be957ce86c24c8783d",
+    "end_utc": "2023-06-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "3621b426-f748-43ab-8fcb-c3f720ffa144",
+    "start_utc": "2023-05-25T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "d92ea5dffbc9f7eeb835785fccd2516484c5313a301384ada591350deac54507",
+    "end_utc": "2023-06-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "895f8347-22c1-4d84-a6af-971e4f3df29e",
+    "start_utc": "2023-06-04T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "caebbf036c58335743f69697277779cc0e436ff093b0af834fa47c6935901eeb",
+    "end_utc": "2023-06-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a8c73e9e-7c18-44f6-a421-c29196d11e99",
+    "start_utc": "2023-06-14T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "bfb329544f59bed7f47ace48b4639fcf9be866c1d7bff5ff52cc4b895c9597ce",
+    "end_utc": "2023-07-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "05968ec4-e987-41f9-93b3-bf418e31d422",
+    "start_utc": "2023-06-24T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "cd519e0567bee9c8d0a87a86c101bb525830fcb4fb294272ed5066d4a78d933c",
+    "end_utc": "2023-07-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "01074371-da79-442d-9dd9-0a7c7502a6a1",
+    "start_utc": "2023-07-04T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "169ff2c6b0176a62dbe26d3ac76630fa50752cc7cecf9cf7cc3f9187b435b040",
+    "end_utc": "2023-07-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d98c0065-8908-48b0-8084-30b2340b380b",
+    "start_utc": "2023-07-14T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "fe98c3a4fb4b6fd4c9d7fa150563ce7ae5df2def226561840d840c818db5fb9c",
+    "end_utc": "2023-08-03T16:00:00+00:00",
+    "http_status": 200,
+    "id": "adfad709-2c22-42a7-950e-0da18001e9ed",
+    "start_utc": "2023-07-24T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "17c35437c9747848ddcd74ed79246ce618b2e017688c09504fcb8f59f0f45969",
+    "end_utc": "2023-08-13T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9d794cfa-3521-4413-a8bc-80e82c4a0c4d",
+    "start_utc": "2023-08-03T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "5562c86c70e11033809d8f0927942bccecf50b386a8927b6b1862fad2b4043db",
+    "end_utc": "2023-08-23T16:00:00+00:00",
+    "http_status": 200,
+    "id": "34a503ec-aef0-4b82-9a76-de28490a20de",
+    "start_utc": "2023-08-13T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "33f0bd4325ae1f0bd1479c119624b48954ccee5acc1fe9a1c72f94d2ee8dd8ea",
+    "end_utc": "2023-09-02T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bd2ef197-e2fc-40e6-a58a-71571d79c69a",
+    "start_utc": "2023-08-23T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "5ad893e3a25f8363f6a39804d6e8c576c4fca59b742f088f1674d4d7d8cbe275",
+    "end_utc": "2023-09-12T16:00:00+00:00",
+    "http_status": 200,
+    "id": "faead730-db13-4f02-aa53-5bb6f630de8a",
+    "start_utc": "2023-09-02T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "a33e6b6d162da75b4152ecab5e9c7a4b1de6750a20058fe96c8744733956a10b",
+    "end_utc": "2023-09-22T16:00:00+00:00",
+    "http_status": 200,
+    "id": "383089b9-b3b1-4197-b3bd-861acde2fff4",
+    "start_utc": "2023-09-12T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e8a4fb5dd6fcb4e93aadfd27f85780449d578796113196eb48dc26c4dd16e721",
+    "end_utc": "2023-10-02T16:00:00+00:00",
+    "http_status": 200,
+    "id": "837a2be1-dbdb-4478-b2e2-3887ca0844f7",
+    "start_utc": "2023-09-22T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "91798f3aef3473605c2381d907328f70715a216fc095ebee1fa3dc32780ddbae",
+    "end_utc": "2023-10-12T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b85e1a5a-c179-4906-bda7-95ba1e82c76b",
+    "start_utc": "2023-10-02T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "a85db3e487d49b3cfd99aa4a74ae6a1f7414307e8274552db20925750d6fa1ac",
+    "end_utc": "2023-10-22T16:00:00+00:00",
+    "http_status": 200,
+    "id": "78c9018e-337f-4da4-a7bd-61c6dde344d7",
+    "start_utc": "2023-10-12T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "2400b0bccabef2e8db5bd20e4b0078e668ec14d4b383dba5530d0f84901c780c",
+    "end_utc": "2023-11-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "391b0f4c-e17f-4c4a-a798-9e2d37897daa",
+    "start_utc": "2023-10-22T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b6ec537cfcf0cfc7285a6fb613a5728fb13d18b3c0c55de00c4ed61720e5b0dc",
+    "end_utc": "2023-11-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "87a218a8-0e17-45e5-a19b-a434f26d44e5",
+    "start_utc": "2023-11-01T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "8003177f95fd669048f39a587a9a17d2def19d4246c4a670092010f7945885df",
+    "end_utc": "2023-11-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "12e8841d-ca76-48fd-aad3-b8a4705ab96f",
+    "start_utc": "2023-11-11T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "119faa0d5ff28922d3d1e6fec1e94f3c753bae4a0ff9f67796e1261eafed8055",
+    "end_utc": "2023-12-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2f762e17-f98e-446a-8209-7ba25da4bdc2",
+    "start_utc": "2023-11-21T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b59ca249827a3b44f2d7b64e398b8a10d9f380af4f94bbe1bd6f9f0ac7b28d25",
+    "end_utc": "2023-12-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fc9396a2-5df5-4a87-b7d0-648421ac10ce",
+    "start_utc": "2023-12-01T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "05afe30648ea7dbc1786e26991521db512162581083fe111e79ca01668ba0060",
+    "end_utc": "2023-12-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4392c546-eaa3-466b-847c-c96ef8aeaa00",
+    "start_utc": "2023-12-11T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e3eee60d5dffab7f5c022da66083a20e41bb0c6480cae5dfafa42554b6b3ad25",
+    "end_utc": "2023-12-31T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d1edfb50-0fc9-4e5c-8c0c-4d96bae46c22",
+    "start_utc": "2023-12-21T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "c883e3be39c9a93e5cf613565fcace589c1413c2dfa91d14b0d9a3d219ec4a2e",
+    "end_utc": "2024-01-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c3367c1f-298a-4d6b-90ef-230dcd786260",
+    "start_utc": "2023-12-31T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b54d0601395773c4fad64befc2dc21689ade573dbab4bd3bca83ffa985c4f1b9",
+    "end_utc": "2024-01-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "48a2467f-e166-4b74-8a87-28a70fccae31",
+    "start_utc": "2024-01-10T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "5c5f857290c2146e45d0ebfbe490a1e6f106f544efec9fc4af16faa3d9aebe18",
+    "end_utc": "2024-01-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8a45512d-61b4-4d45-a630-7ac7f0ea596a",
+    "start_utc": "2024-01-20T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "f4da3ded18e6e8baf60268774c9cdbe1dda8d820e3c9c2e2c1bc0491c3e0a1a9",
+    "end_utc": "2024-02-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "31557040-751f-4515-b728-a8216de5bdab",
+    "start_utc": "2024-01-30T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "a1b29808398be62f17503d4064a2dcdb4a3cb87ea214e18992cbaa19ff2b798b",
+    "end_utc": "2024-02-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1b2c1a73-fb90-4fa6-936e-e6bd46d4fa07",
+    "start_utc": "2024-02-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b7b4c539812f882cb1f73a9ba509b2ed1d4968f1fdd1168989274c904c5e7bf9",
+    "end_utc": "2024-02-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0a61ce62-9f9e-411e-af37-87403900e18c",
+    "start_utc": "2024-02-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "6d5b2cfc601b27819bebe397887f39c5f1a9323a6eae05d1a68902374fd48d4b",
+    "end_utc": "2024-03-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "6504f744-af2e-403a-84b7-2c1d6bec08dd",
+    "start_utc": "2024-02-29T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "37b30004f5006b8d08ebd7214527523d681910d2ab525b888f37f706f3d101c9",
+    "end_utc": "2024-03-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ac63f029-c6c1-4c5c-841f-ec939d8b7d37",
+    "start_utc": "2024-03-10T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "4b726f96d9c90b6c00fd732a3959a059c78a4f4b7303cb7deeaa6faffd7f7c6d",
+    "end_utc": "2024-03-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1f860ded-93dc-4c46-b4f9-9aa6c7eb1753",
+    "start_utc": "2024-03-20T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "1fe1a1b13160a5c213a739415e573385caf08e7d704a19f62febee8521a47f1a",
+    "end_utc": "2024-04-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "54dd5e6c-5b97-4060-8d53-7f076a85df79",
+    "start_utc": "2024-03-30T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "23cb42f15f3cc5a5008ed092bf588f7bbfac4c9c5e4ba0a80b91df6fecd763b2",
+    "end_utc": "2024-04-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "33e5a63b-e3dc-4865-80af-94c1644f3133",
+    "start_utc": "2024-04-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "121d6376535ebe44ab5fb7e9cd7953fedd7b8ed341837452f5db276184d7c18e",
+    "end_utc": "2024-04-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d5d07264-4162-4c39-943d-28729470e8ef",
+    "start_utc": "2024-04-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "bc5a5c057edc35cf88a52db55d7bc4c1287797325b3d49ee31533e4df0c748cd",
+    "end_utc": "2024-05-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "dd2d3e5b-80ee-43c7-968f-3d9bb37e0d76",
+    "start_utc": "2024-04-29T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "cb7cc78e772683363dd86702fdae8f61b3ef5f697f5e52c89f83b578a6dee958",
+    "end_utc": "2024-05-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "94298568-d701-46f3-a948-e4479cb2709d",
+    "start_utc": "2024-05-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "2f3e2705d5680e9fff3c6cdd2a9534ce6c2e170fd2f75e3d7917842d010f44d2",
+    "end_utc": "2024-05-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "19623ef0-690f-4a3a-ab2a-3437b6fb9dc0",
+    "start_utc": "2024-05-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "0445191618b99be0781f86cffabbee9150ce244d6e06d9880d0b1e947b6b49cb",
+    "end_utc": "2024-06-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0c00468e-7de5-4c51-9cc2-062a536c8136",
+    "start_utc": "2024-05-29T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "6bed204e6873d647cebe1aacb7ce5aea9cee3a2a229a82433ab0522e90e080aa",
+    "end_utc": "2024-06-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "20874739-9ac8-4f5c-a3a1-9b0e4b2bf687",
+    "start_utc": "2024-06-08T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "9253722eec8b53475cdf236b606a4ea33c44d916b26f005b03137847cd726f83",
+    "end_utc": "2024-06-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c4fc1c7b-6250-4047-832a-6be64b4afacc",
+    "start_utc": "2024-06-18T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "efeaa9431c37bf5d72a782f6acf9d22e3f8519e9e5b70bbd7d39253be46da24d",
+    "end_utc": "2024-07-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "41498128-14f4-4b48-8391-5e2d3bbab66a",
+    "start_utc": "2024-06-28T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "4d6c1ffae389e145328d8870328db333ed785f67d847fb1b25cad486e453fea5",
+    "end_utc": "2024-07-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "524bb537-9052-4094-b5fe-c7afe6ce66be",
+    "start_utc": "2024-07-08T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "ba353f7efc145450fde3d50d7e176dd1b5e9a6977767fa77b5fdc40ff018be75",
+    "end_utc": "2024-07-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7b82582d-f519-4785-9797-35780bb381cb",
+    "start_utc": "2024-07-18T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "a2ca970a8601ddfe23287e03e8897728d17e9da9b2046c201d57473dfdab13d9",
+    "end_utc": "2024-08-07T16:00:00+00:00",
+    "http_status": 200,
+    "id": "19573012-1865-45b9-94f1-ea39fba65126",
+    "start_utc": "2024-07-28T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "80f210c3ff850c6744ee4c97e733734ca128a0ecec8431d2ea6a575c69846c6c",
+    "end_utc": "2024-08-17T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c912ee31-1914-4b12-aea7-4b7275215333",
+    "start_utc": "2024-08-07T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "1692ffe156177e2fd033de5aa0fa20516fb8bf70ddc87127ee433400ca09ef6a",
+    "end_utc": "2024-08-27T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a3a09623-094a-4a8c-83c9-d7317a2b5e86",
+    "start_utc": "2024-08-17T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "5efb627d74e673042de9e130c99afc3f974e9d58da28fe759ffad336e64ded19",
+    "end_utc": "2024-09-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f33fe5cd-ea85-4f94-9d51-daa4a7597c73",
+    "start_utc": "2024-08-27T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "923c0e81c7aed4306ec9267513338b7e25725eb392ae992648870a825ced6843",
+    "end_utc": "2024-09-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0b92be75-d19a-4fd1-be8f-8237ef9c9942",
+    "start_utc": "2024-09-06T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "f9d3e3a47104555365624cad065f9a6d138358e1aafdd862471e847cb078d03e",
+    "end_utc": "2024-09-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e5b93c26-5eb4-42ca-8c60-689fa09189ef",
+    "start_utc": "2024-09-16T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "597920e9e247a0ad7e2f1353d52fa0844ed669de382427318d171a3a25ec2a1f",
+    "end_utc": "2024-10-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9867ca28-afe9-42cb-a095-b3d5caec7f71",
+    "start_utc": "2024-09-26T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "1852109fbdcc368082ca0c123ca16f1b60e971c518d826b00295e863a6c5ff5a",
+    "end_utc": "2024-10-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4a713e68-2da9-4f32-8c5c-bf5ba69751c6",
+    "start_utc": "2024-10-06T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e50fc6c66ced99a5f6fde45d9742755ea654ed1c86ede6da9b7ef4ea98bbc9bd",
+    "end_utc": "2024-10-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "60cdb0d2-d8a9-4bb3-97a3-8ad6cef591f4",
+    "start_utc": "2024-10-16T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3944b36aa59c99cdb0b306ba47b615ccb52f114693b44ccac243de2ad9e6561d",
+    "end_utc": "2024-11-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "44c0d0da-5297-4940-a158-b2ed0802d801",
+    "start_utc": "2024-10-26T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "f8f78405e6834db1339f4d53d9d05d64703ad05b7d3ba15244e8a481b49444ed",
+    "end_utc": "2024-11-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bd4e8fda-a824-45c2-b833-242328ed664a",
+    "start_utc": "2024-11-05T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "0f104addbaa4263ea3710308d4f662d3f0a6ca63961ae107747162330e31e24b",
+    "end_utc": "2024-11-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1132f144-6d94-4663-b2d9-e34693211db4",
+    "start_utc": "2024-11-15T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "a5bf559d6c56a5290e86c0986f076af4921628ec3b66e9a2d43b010976d60296",
+    "end_utc": "2024-12-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ddfa8261-b5e8-4a5a-b563-c50ed1ba0179",
+    "start_utc": "2024-11-25T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "291889cd555b492c1119ffa77106d05c89d6822255a2153ac27ad0a701597f25",
+    "end_utc": "2024-12-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "3a1c929c-93f0-46d1-8305-4de3c9c88e4c",
+    "start_utc": "2024-12-05T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "fa5cac1ed190048879080c5d5d70e4ffb4527b4846af39e40d47c3d281e7be92",
+    "end_utc": "2024-12-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8302d09c-e79f-4a45-8693-dde8adbc793b",
+    "start_utc": "2024-12-15T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b2d6b12f34a875c41943823fa20e1ccecf036b98efa431ecf8c35db489a64394",
+    "end_utc": "2025-01-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b86a6b6c-af05-4ad4-9102-cc18ee20a7c3",
+    "start_utc": "2024-12-25T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "6ae277fecfa93d5e09dc85b0f26f67d81037442c5694321d15e337f21782d549",
+    "end_utc": "2025-01-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "cc6efa5f-9000-4e0a-9623-a2ada027770c",
+    "start_utc": "2025-01-04T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "c8596a6e36ca5b000c6957ec58be76e821d4763023809193d834b4a18ee8d9b4",
+    "end_utc": "2025-01-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d995fa69-a4ed-412b-8309-6f27c0383467",
+    "start_utc": "2025-01-14T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "125730aea9590228aa88303eb48c837aceda1319cfafc1bec01d4a2310f1155f",
+    "end_utc": "2025-02-03T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1ddc7d7b-9e1f-4450-b6c9-28996254c9ef",
+    "start_utc": "2025-01-24T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "491b39db763703fcc1d2bf892fbb39ab2dd400e2091e9ed0c71397091f6870fe",
+    "end_utc": "2025-02-13T16:00:00+00:00",
+    "http_status": 200,
+    "id": "eb914d0a-409b-46a0-88f3-a774c1ed0abf",
+    "start_utc": "2025-02-03T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e0009a9210b44f14cfd75240ce9f1a88afaa72fa515e3dfefed4d1284c29e015",
+    "end_utc": "2025-02-23T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a15f2d4a-3457-47a3-ad13-b388ce9e2e26",
+    "start_utc": "2025-02-13T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "ca76b0f1cc1ce4d63ea9b70b4bb5b611f6895a9991e7bb61706ccba43a080102",
+    "end_utc": "2025-03-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a089a520-05e7-449c-8ac5-2a76a0d32a4c",
+    "start_utc": "2025-02-23T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "92d941e8e4bb9c218522b4edcb9655b7a962ffe88e91c27aaf0955406b485e7c",
+    "end_utc": "2025-03-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7307f0cc-3d65-4cea-921b-a2437682360e",
+    "start_utc": "2025-03-05T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "911d541a96d3288848a6ca3e2c3b92c0d36bf8ca11147cf0bb7ba7749c9ae96c",
+    "end_utc": "2025-03-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a68eac89-44f8-484f-ab84-94f7a2c743d7",
+    "start_utc": "2025-03-15T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "51fafd061dc53005432296be314045b79c227340df653fee3db55b3f05a9bb0a",
+    "end_utc": "2025-04-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "cb198297-e433-4ed5-a567-c549a461abdf",
+    "start_utc": "2025-03-25T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "f7e42001b7a5b94bea8c464b03fcd76745e9a98d33084de9753164313c51cc85",
+    "end_utc": "2025-04-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0e26e892-a59e-4daa-97f2-de74534bda9b",
+    "start_utc": "2025-04-04T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "cd3a1e5c5bd904242bbb7bb59078caf982814a8d946611c56676b9eab5f22abf",
+    "end_utc": "2025-04-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a0b066fa-d930-4a9c-8baa-2072a160111e",
+    "start_utc": "2025-04-14T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "59b9fadf43eae3d5da93e07331fe294db76741135d6e7aa3ffbc8a5f75bdfc7c",
+    "end_utc": "2025-05-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a2f4ad78-9991-4882-b5a6-5da23d5a27d8",
+    "start_utc": "2025-04-24T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "9629561921919d84782e3d9db992c67dcf7f8fadbe6851e7fce6458d6d505b43",
+    "end_utc": "2025-05-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "347bf604-08c6-4743-af6c-990c4175fe94",
+    "start_utc": "2025-05-04T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "c0d3c8bb6169961d4b0728d58d7d0e4b42e209afb986231360f2647321c216c0",
+    "end_utc": "2025-05-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a040c388-4cb2-4d2e-b62b-c366cc63dfe5",
+    "start_utc": "2025-05-14T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3a3d9c6ee30e09a96368dae3ab730dcd63f3eb54187aa0bb8c0ce4538c5c8150",
+    "end_utc": "2025-06-03T16:00:00+00:00",
+    "http_status": 200,
+    "id": "406d0c9b-cf1f-4307-abb6-20fa0649b258",
+    "start_utc": "2025-05-24T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "2b7a7b5e830b90b2769a34333e60a28d633cd6ec511ba845db182290a0d830d9",
+    "end_utc": "2025-06-13T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2aa07aa2-fc29-4e5b-b36f-0e73d8965f62",
+    "start_utc": "2025-06-03T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3ebb97387b1b3e4dab39ab0a8bd502e501080957ae98d68f9504b18515021146",
+    "end_utc": "2025-06-23T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d5d9b8d4-9790-40d1-9dd5-50891be24fcc",
+    "start_utc": "2025-06-13T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "9bf44ff1687cc1da41d35dc92b5ba83bc95c9caa7c8184bbd1850896bf4d95bb",
+    "end_utc": "2025-07-03T16:00:00+00:00",
+    "http_status": 200,
+    "id": "79a73ebd-5a8b-4120-a5fb-e3ac6128bce9",
+    "start_utc": "2025-06-23T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "95219d415b960cef10d9babd10a7ffb77fd0b6667509968481fd60b1b50d0bbe",
+    "end_utc": "2025-07-13T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4c6d8479-efd6-4420-90c4-c4d934a634e1",
+    "start_utc": "2025-07-03T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "dde1461daf12c81588056f6b71ed3fbac8368cda0367047b697899210d9473eb",
+    "end_utc": "2025-07-23T16:00:00+00:00",
+    "http_status": 200,
+    "id": "6b67c63e-f9df-4fb3-b781-4ccb00806d40",
+    "start_utc": "2025-07-13T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "dbfc7806d252167245ab2a44cc310d6f7948cd32f11c189614fa38eea5ffbcc2",
+    "end_utc": "2025-08-02T16:00:00+00:00",
+    "http_status": 200,
+    "id": "cd2732de-f7a7-4edb-8704-3aade54ddf0f",
+    "start_utc": "2025-07-23T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e7840c65a7c97c06ab61f3e96da749e170178c154f7c01eccacdca9a310c4398",
+    "end_utc": "2025-08-12T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e4fc4497-95e5-4af5-bd6a-a4f375587cb2",
+    "start_utc": "2025-08-02T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "ade73ca200065934efc2e99a5c78b9946e561b4f9e65251f1ffec8efe76b780f",
+    "end_utc": "2025-08-22T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0082fd73-fc81-492a-8c3b-629777157cf5",
+    "start_utc": "2025-08-12T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "d22e216081cf1f422a8412daa7aff0bb19a643f8f5da8aebc8c9c13544295122",
+    "end_utc": "2025-09-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ba19ce94-5efa-4feb-b826-35263c715823",
+    "start_utc": "2025-08-22T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "b71ccc71a6ecdd2559f138b630776947a1032184b6f182ebb5c149ca7f7e36e3",
+    "end_utc": "2025-09-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1cfde296-3be4-480d-bc08-764207e90912",
+    "start_utc": "2025-09-01T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "82af43cf3d4eed8d5a7b0a934419f83a4763a76f00b59d243dbdb3259dfef085",
+    "end_utc": "2025-09-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f78acd9e-64c8-41c5-8a78-6a0c451acc62",
+    "start_utc": "2025-09-11T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3087bba11bd05bd553f8753be6d05947540bade5c6987ad103e88ea1e6d6b814",
+    "end_utc": "2025-10-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f5847f2d-6232-47a1-9808-3b8c848de556",
+    "start_utc": "2025-09-21T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3418ca363ade79235562b1fcc8ee0c458f97e01f3a1f224c8987c85a2e79c31d",
+    "end_utc": "2025-10-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a797ba4f-079c-4bca-b9fa-9598234d7e8f",
+    "start_utc": "2025-10-01T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "08a1cae581bebe0332aad67aae0a637f160343784c55e383c9400f978aff6c51",
+    "end_utc": "2025-10-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7100bdef-e2e6-4393-bccb-5be6447a494f",
+    "start_utc": "2025-10-11T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "41238dddb8e29ee24066c338c590a6b332d035e3f4caa54e6c102c51e482816a",
+    "end_utc": "2025-10-31T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1eefafa7-bde7-4a0b-a073-0b4c37935c1a",
+    "start_utc": "2025-10-21T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "1f8bd7ab29713fe37c3d589c25cb346985b238fe3e32910b6f97d286af8fc195",
+    "end_utc": "2025-11-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d1e15730-1135-4b8d-b99b-00e02c50eb3f",
+    "start_utc": "2025-10-31T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "929a752a68537895238da14b2ee47a9c37e4fb9803ba4a920b0ac047b5701aea",
+    "end_utc": "2025-11-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7fe23bd6-0c91-4c17-9b87-e6f058aa33e0",
+    "start_utc": "2025-11-10T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "1477e50fc20d30271074ddc3799c1b77664b8f6517437b0d07d1a665a3fd1bfe",
+    "end_utc": "2025-11-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c32ae4d5-070a-4739-a5e4-89e0ccb257a2",
+    "start_utc": "2025-11-20T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "7028f940236632377f9026f939e0167b3891120d1d8cc5d80697a8de008d404f",
+    "end_utc": "2025-12-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7c7e332e-cec0-43b2-a579-7979c1d3154c",
+    "start_utc": "2025-11-30T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "92af7f2221755e3d392dbd5dea7b21f6310108a7454e17aeb8d2687cd933dcc4",
+    "end_utc": "2025-12-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "35a33969-1f0a-4ee9-b4ec-2d2c4682254b",
+    "start_utc": "2025-12-10T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "02bb844a5a3f1c406c474d4523c73439dcbeda36abb41a641907069fbe7fa91e",
+    "end_utc": "2025-12-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "75863cb6-f2cd-42d7-8461-5da933b6302d",
+    "start_utc": "2025-12-20T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "3bf92719fd6381efb3b54180697dd6fc7cab87ed8624ba691f39974f9f1d7ca5",
+    "end_utc": "2026-01-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9233b41a-4780-4da3-ae31-2b3165635616",
+    "start_utc": "2025-12-30T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "669551d2f3be4d83a5e64282af33b9f2335af5cdd838f958e0b0ab4999557787",
+    "end_utc": "2026-01-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fbf92b1a-b813-41a3-ae01-fa47c824d143",
+    "start_utc": "2026-01-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "33d28448ca342cc90ce46f4d2bf418cec3ba2fae6e3c3a73ba887fb66ec7088b",
+    "end_utc": "2026-01-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8cc31736-fb80-4d2b-8f27-99b0d2276107",
+    "start_utc": "2026-01-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "62f05bde1ffc955b72b7392ee53501b9763bf9dbcec2fa4e3db5c460c1c76f0d",
+    "end_utc": "2026-02-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9443016f-1c43-4c31-8132-5af11f71371a",
+    "start_utc": "2026-01-29T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "12164d616eeec794271c03c884ffd87eb5bd30006249796866c67dc9fb57c2b3",
+    "end_utc": "2026-02-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c46c351b-b880-4154-bb2e-64d067100308",
+    "start_utc": "2026-02-08T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "7df1b76b94b2e4bf6a0c0ad5818365e43442e8ac7eed989ae23bc7cad7580381",
+    "end_utc": "2026-02-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "529c42a5-7fc0-46db-9a17-45c9df262d69",
+    "start_utc": "2026-02-18T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e021afc1cebff93c130ed95d6dcc71f9c256797106e04df11aac22c7e2d43c87",
+    "end_utc": "2026-03-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "12e52ded-d0dc-4f7c-9015-88c85ac52da4",
+    "start_utc": "2026-02-28T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "14ad3090e1b415a59fc2f03147250caac94ea5d01a00f5a5bdfb044d05001683",
+    "end_utc": "2026-03-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bf3dafb4-bf8f-4c21-a964-35f0b35f89b2",
+    "start_utc": "2026-03-10T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e62ebc79ac91c1d4fa7cff9e16fb89dd88dfee20d014516c5e76dfb3a1ffc054",
+    "end_utc": "2026-03-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f94d7568-b3a4-4c12-b020-5f09dc7b3aa4",
+    "start_utc": "2026-03-20T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "7a5dcc84fabb3c695138a19d6b8c0cd5dc5e3e27634a516b32a1864a9565a7d2",
+    "end_utc": "2026-04-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4b36a594-698d-4325-b908-365673dc512b",
+    "start_utc": "2026-03-30T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "310f37d69b478f4787301c4a01507c216e68443626985b6f1d101d920a398390",
+    "end_utc": "2026-04-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9d80de6a-1999-42b3-8b06-290afbb55d48",
+    "start_utc": "2026-04-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "4a20ffbefb2957e530381622db2909240db905c11093eb3776c669b1a01cf7d7",
+    "end_utc": "2026-04-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "63a61898-3e79-4c84-9a89-820d9dbc3e50",
+    "start_utc": "2026-04-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "102907cbbdfe2b89f8759060c1a07e3ee8aad2f78e1a4892ac128992869ed083",
+    "end_utc": "2026-05-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b03f0cab-eb17-4f3a-a346-c50c6b766d8e",
+    "start_utc": "2026-04-29T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "621d32ba6939fb07cfc895a830b73e0fab022d06ab5fbc264b3c00858f77652e",
+    "end_utc": "2026-05-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "caab677e-2cc7-4baf-afb3-f6cee9d475f5",
+    "start_utc": "2026-05-09T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "ef2d4ca3859628ef5e27077fc84379a99715bb391b4864731ba96f33089be3a4",
+    "end_utc": "2026-05-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8fd7318f-23c6-4b91-9c5d-0048de2726e0",
+    "start_utc": "2026-05-19T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "cf454c9125d741e51f3997be7dbc04588c2d57a41e7af2e92110006b02a70e0a",
+    "end_utc": "2026-06-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "41e06480-d044-47a0-9653-7bdb68743a83",
+    "start_utc": "2026-05-29T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "177f36f2c6b6952b2c0d4bb3ac42bdbccc341aa11aeb4a647e1ed986b01f4a46",
+    "end_utc": "2026-06-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "01270e31-d924-43f8-9c6a-732d3185eb5b",
+    "start_utc": "2026-06-08T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "d820962f6857d924026dd237578e31570cc34e4253e9aacf9cfad4894f980834",
+    "end_utc": "2026-06-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d828c7f3-157d-4f90-aa26-6fb550f70b70",
+    "start_utc": "2026-06-18T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "8650e922a3a1700b9dd80e0d22a5d6792f6d8c96cef14c77b5c1b42f4cfc906d",
+    "end_utc": "2026-07-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a5370eae-8fdb-467b-955b-9ff24ffdfbbd",
+    "start_utc": "2026-06-28T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "ee3764559bbbbf3b9d523b304dcd1aa5b4ebf435ced9fd97bfd3a053c8ff2b77",
+    "end_utc": "2026-07-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c1d6e391-75ae-4c96-b26b-8340c049cb72",
+    "start_utc": "2026-07-08T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "e10f2ac524cef2e6f217426ebe4b7b1100978b50962b80748b38a454fe58380c",
+    "end_utc": "2026-07-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "71bfd458-5200-4f33-b91b-e24b4cc63862",
+    "start_utc": "2026-07-18T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "0b44d717191c2f8f21fedbb31f586feb2ebb39479195f649f387af2418fc870d",
+    "end_utc": "2026-08-07T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2091ff18-a65f-4ec7-8e52-44539caa54a9",
+    "start_utc": "2026-07-28T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "34b10092be24fad505d2305b777ed91dc70f6aa407f995b373e275961470f69b",
+    "end_utc": "2026-08-17T16:00:00+00:00",
+    "http_status": 200,
+    "id": "cb8396b3-9d29-40cb-af29-9b153093398f",
+    "start_utc": "2026-08-07T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "9517786511e932d29c49932e10f365ea007be0e786da4d5b706d05453c3d11d5",
+    "end_utc": "2026-08-27T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bf61c1ae-abf7-442c-99cd-ddba428503a7",
+    "start_utc": "2026-08-17T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "1995813f5a2c18a1b5ceb0fc0ecbbe077c2a5c316c808fbcd64b8436137e8385",
+    "end_utc": "2026-09-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "532071fc-bee3-4247-ba7d-d63f9876079d",
+    "start_utc": "2026-08-27T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "c0546bc76cd558ac61d47899d89d9df8b06817b3daba1005fbb0742493e29686",
+    "end_utc": "2026-09-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9b09b383-8de0-4da5-8a33-8575c8c1c337",
+    "start_utc": "2026-09-06T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "76697a92fc9925ee39695370c08fb97f805baf577b49e7a8dd0889dd7934181d",
+    "end_utc": "2026-09-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2eeff112-d836-42c2-96b9-3e5a62b3ffff",
+    "start_utc": "2026-09-16T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "22f9f057fd31186968c749bc9edce914f1096ad6c2d64e9d51633e96a40bcf9d",
+    "end_utc": "2026-10-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "cf313706-a2f0-49bf-b891-e2fe6050f2d7",
+    "start_utc": "2026-09-26T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "788aff91c3d6813b410b494e66f16896996af8b2d280ba4151f654265d98bce1",
+    "end_utc": "2026-10-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ed5b3ea6-445a-4972-8f88-0829137e7a4a",
+    "start_utc": "2026-10-06T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "c1dc6738b3ff52e6d6e597da1e16c98dc28875175961b27c7463ed301dd34f95",
+    "end_utc": "2026-10-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "589af380-6f40-4f94-9385-3d9b46176443",
+    "start_utc": "2026-10-15T16:00:00+00:00",
+    "symbol": "BTCUSD"
+  },
+  {
+    "body_sha256": "fd99e3c040c8df99e5a8a6abf9070b7f6c8282176a76eaafe57ee47ad9c57a48",
+    "end_utc": "2022-01-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b31bb8da-a778-4be7-99bd-1b56bb4a0b21",
+    "start_utc": "2021-12-31T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2da91902538d4c3abb0c7d949c4a679de487f43f48b2e1a2b98603136404219d",
+    "end_utc": "2022-01-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "43cd35bb-acb0-42c7-a13b-563fccb229bb",
+    "start_utc": "2022-01-10T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "12a464892d41dbb86a7be2237379fc5806b5ea9a1842e032df227d1226d4e97d",
+    "end_utc": "2022-01-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "723f05ee-eb0a-490b-9b22-d6f8bbc428a4",
+    "start_utc": "2022-01-20T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4683e8e5878e73de73912adbab40be4a550cb67d81d146a71985805c54562b9b",
+    "end_utc": "2022-02-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a1c21d0f-1efe-4968-9426-f82e3b086d6b",
+    "start_utc": "2022-01-30T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "b7e0c0643430a871e75d73d880903d5a315efea150428c50d47769f18a3e3727",
+    "end_utc": "2022-02-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f9f54398-e968-45f9-ae6a-f25e38f119a1",
+    "start_utc": "2022-02-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "53fcd3516c03fa9e12efc27cc94a69dfb4340ef8cf9f41c447a8a10f08f386cd",
+    "end_utc": "2022-03-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8cf3b882-1460-478b-88d9-e169ba6640d9",
+    "start_utc": "2022-02-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6e763cad5bb034251d1de4f241237a38831df9450146498e3f5082a830ce7935",
+    "end_utc": "2022-03-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c4c8f3fc-c326-4974-8f11-72867e50d7d8",
+    "start_utc": "2022-03-01T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "04b9b82951668ee965b00e517db1c404e56cea921e7280b1e17cd03e7cb8937d",
+    "end_utc": "2022-03-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ef8b7e79-32ef-46ad-af77-4c51cc1f4836",
+    "start_utc": "2022-03-11T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "5a864c14c1416bbd6e7424d18dd33728ce20256c3d26544ac25f134d5d7c585a",
+    "end_utc": "2022-03-31T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d5136f1e-0500-48b4-b5eb-2d4505e3d047",
+    "start_utc": "2022-03-21T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "74a0f120adc60fafbb713355cacd24465d13a17b8067da2923f7f2142395a9ff",
+    "end_utc": "2022-04-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e9dbad30-7cc5-4d0f-88fe-8d7a39524700",
+    "start_utc": "2022-03-31T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "0a9a86882b84dafd1ce27afa9902356767e2b1e7246c13980dbc11b5399fac9c",
+    "end_utc": "2022-04-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "28ac166f-ca6f-4d2a-a41a-237637ea7183",
+    "start_utc": "2022-04-10T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "646342a0b5ddd9da08a641c8563ad331c731bab8dcc5c717495afac3461141e8",
+    "end_utc": "2022-04-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "6c5cf2d8-2374-4a34-a44a-a15bbec29975",
+    "start_utc": "2022-04-20T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "d0e5a6119068b9b8af822f030c3ac4fe98beb7a7cd4a66d668e6b33f2fc79d7c",
+    "end_utc": "2022-05-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9e9c56b7-31c6-4765-988c-f1700b8d9451",
+    "start_utc": "2022-04-30T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "89a797d45cb66a9db41a06a668e5459f9568c0bc6ed9ad4821db8a66b36e5d43",
+    "end_utc": "2022-05-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "3f300333-31dc-41b9-b783-ca8da86e16b3",
+    "start_utc": "2022-05-10T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6edbfc8ffb43f4b3d18d7859307e6b49441ed1137934754d420806919424e96f",
+    "end_utc": "2022-05-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "54abba75-723b-4982-ae35-0f0e41762d9f",
+    "start_utc": "2022-05-20T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "a5644f17a6413552dd4bdbe34d7b5e29124c7953bfe6f97f743d68024d7c0f3d",
+    "end_utc": "2022-06-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a99ddf36-f541-4bf6-8359-2aeba77ea2a6",
+    "start_utc": "2022-05-30T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "f0e2666d2f712850f457fbe6ec6069069c57ee11af234ba542272c8713503d1d",
+    "end_utc": "2022-06-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b60a588e-ee6a-434c-af6a-382a37e0a6de",
+    "start_utc": "2022-06-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "bd2e411f821ec2efb2e6054f403967ffbc1d074c3e73ff8e526253d38928d453",
+    "end_utc": "2022-06-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f561cd5a-4fb2-4755-bb6a-2c2345121d04",
+    "start_utc": "2022-06-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "49b1519fa36110b308c1e3ddce73e7f47a40b00f2958e816daa01af8ea7712e1",
+    "end_utc": "2022-07-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fe8b45ba-c15b-4606-a5e6-aca708b19b2a",
+    "start_utc": "2022-06-29T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "a261a7fa5264b460aa67721b9521d3cb38da45bab6423636fa56ca7d08f94fb2",
+    "end_utc": "2022-07-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c5baa35a-2279-4b4d-a182-346dce580a86",
+    "start_utc": "2022-07-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4487d2157207e95e80badee9eea036f833ff5561918c04981603769821dda0f4",
+    "end_utc": "2022-07-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5000ded4-747f-4e19-8cfc-8aff29905685",
+    "start_utc": "2022-07-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c0d3116d19c6a586a21318ff6bf8ea5df1609217c3e88f07921f7d20fd8627e7",
+    "end_utc": "2022-08-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e4ef133d-0713-4327-bba6-cd2f89f6bd64",
+    "start_utc": "2022-07-29T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "143a8c0306b719d41e989e99133035cbec143fa8fb92e6be38f0f08d49fb8b36",
+    "end_utc": "2022-08-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fbda7006-bf9f-4646-b845-c47633edae45",
+    "start_utc": "2022-08-08T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6cabd4ee738633fbc88919d37ccf3f83ca356d46b9885f61a8d81acfd1385741",
+    "end_utc": "2022-08-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1bdaecce-5fbf-4615-84a1-148d6bb86a47",
+    "start_utc": "2022-08-18T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "8f6eeceb53956cc486077279b2a150f9190b2bb3ce01d9a098642397163bc525",
+    "end_utc": "2022-09-07T16:00:00+00:00",
+    "http_status": 200,
+    "id": "34e0df5b-276a-4346-91f5-6b9b2368e55d",
+    "start_utc": "2022-08-28T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ffc6ed19f3c97931c65abbabe54da337cb24dcce54605efb2bbe2cfe9191ab63",
+    "end_utc": "2022-09-17T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a7a4cc74-e1b3-4547-bdf0-3654d095188f",
+    "start_utc": "2022-09-07T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6d369ca821d5620f38acbf1625884070c926e39a647eac50deb5eab112dd0ce5",
+    "end_utc": "2022-09-27T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fbb2460c-7731-471b-8684-2dc8131c6ed0",
+    "start_utc": "2022-09-17T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "3379e656084435ac74c48bf4a771760b27eb6f11344789ca7415584068cc0a3f",
+    "end_utc": "2022-10-07T16:00:00+00:00",
+    "http_status": 200,
+    "id": "06f3baba-fd06-4011-b515-3ff01ccf8328",
+    "start_utc": "2022-09-27T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4154068dd04a9bbc9a3a9ad8c86037a323526ab00586ca05a9da8f46a34177f7",
+    "end_utc": "2022-10-17T16:00:00+00:00",
+    "http_status": 200,
+    "id": "aa481e24-efe3-4ce1-b35d-501ac3a4bf1f",
+    "start_utc": "2022-10-07T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2177d276e9009f055f67da635df31f7fa24d602f623a42680c60882dbfc94a68",
+    "end_utc": "2022-10-27T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bfb73dcc-93d7-40ef-83b6-a549aca8d8ed",
+    "start_utc": "2022-10-17T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "460af84a2fdea66fb5d3966fec48ef08b23748ae221969fe05ab1894bc083cef",
+    "end_utc": "2022-11-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b69b1069-4a84-44f3-a2b7-a7ea2301077d",
+    "start_utc": "2022-10-27T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "9f0bffeef85b165bafd94dd620f0db30b3dec965f336911da7ce46edee028cb5",
+    "end_utc": "2022-11-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b67f10d4-041b-460e-9d87-30a16f6a57fd",
+    "start_utc": "2022-11-06T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "328e370622cace5ce41d281312f427258488cd735928c474448a0a9cd393c8ba",
+    "end_utc": "2022-11-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5518f686-a101-46eb-a01f-735dd83c4e1b",
+    "start_utc": "2022-11-16T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "69c157d59b4531604370f5494bd7e11d5cec362a00a51e7ef2cc08036642d7ea",
+    "end_utc": "2022-12-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "605b3f73-7de3-418a-bee0-c13bb727ab36",
+    "start_utc": "2022-11-26T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "d8f0a52dd03e0954e194b33a369c72e12365f71335c84deaa7b4dd91773cbcaf",
+    "end_utc": "2022-12-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "04d3747d-56c9-448b-a4e5-46a340cf52e2",
+    "start_utc": "2022-12-06T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "0c8c490e480c980867e4400d1d8ccd0430f798ad37bf424f1c0be5e5134e8db1",
+    "end_utc": "2022-12-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "481d4951-0ec4-44b1-93ef-a7c85c717976",
+    "start_utc": "2022-12-16T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c6faa86d11eeb02c17de97b778dd84b69942686093c21dc14a55a68a5a854813",
+    "end_utc": "2023-01-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "20e93b1c-f2ee-4531-90c2-0d50201064b6",
+    "start_utc": "2022-12-26T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "00a73028d4d6ed3d8e4b96bcd8be704c80fce257c6fd68594382f01bb3b7c853",
+    "end_utc": "2023-01-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c8bab6d5-6151-4a3d-8349-77fbb50b157b",
+    "start_utc": "2023-01-05T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4af770fe50bb146c9b2a3bff91a108373193855c248240da2e588baad02d905f",
+    "end_utc": "2023-01-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1bf311a4-1974-42df-bdfd-5a9b9a083d95",
+    "start_utc": "2023-01-15T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "e2b9f0145005186390427f5cb3065aa73f95be5aab7c650d4e81e0895081128e",
+    "end_utc": "2023-02-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a67fd382-48e6-4734-af99-61e16f3be60f",
+    "start_utc": "2023-01-25T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "1b0f7a61194a3ee42dec83f4d15cc9091ebaef712632751d83d477b809b5cdef",
+    "end_utc": "2023-02-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c1e3b53a-5b3a-4539-8cda-847cf4d55ad9",
+    "start_utc": "2023-02-04T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "e5a16520e8ef4223b4bcd603fb58cca3ec0a723626d2311f29b82c6117537df3",
+    "end_utc": "2023-02-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "3f115f56-21a7-4858-9304-805234213ec6",
+    "start_utc": "2023-02-14T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "d54c5ce8b4b87ca5c142fe8b536470f6ff056615148a0c0ceeacc5018f470e83",
+    "end_utc": "2023-03-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "dd484abb-851f-4059-9ff2-b7d8f3fff69b",
+    "start_utc": "2023-02-24T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "911fb2c17b5afa8f5986351c4fcd6bcf016385c1333162bfe3fb6cc8b2a8cfe5",
+    "end_utc": "2023-03-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "33352efc-b773-476e-ae84-700a4f502b83",
+    "start_utc": "2023-03-06T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "e4e34772094311c5b04f4c0c8feb27735cfe9cfacf8c2ac8a0d6df225f67b435",
+    "end_utc": "2023-03-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "71aa538e-752a-4bf9-9829-6b2832afe145",
+    "start_utc": "2023-03-16T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4b6a4fa76df7b17d628cc959dc1ff47c68007ad00d6d1f38f9893e1b23af0a62",
+    "end_utc": "2023-04-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "07ce753e-edf3-407b-9992-13640c150c38",
+    "start_utc": "2023-03-26T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "cbc9aab41751caf84b03a90a233e16339e35eb5c6efd725f11b98719550254aa",
+    "end_utc": "2023-04-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "593e63cf-a81e-4623-a3d5-e80d2e155fb2",
+    "start_utc": "2023-04-05T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "017d247f68b9ee8cf8bb03afa2ba7b7e8911e0ee7220fc05cdad7a606f12579d",
+    "end_utc": "2023-04-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e4f37fef-4fb9-463b-b6fa-0c4431225de3",
+    "start_utc": "2023-04-15T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "b94c8a3eb1c8cc0c0454ed3558a074ad5c39692335771d7063789fe29ac054c0",
+    "end_utc": "2023-05-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fd36f614-0441-4720-9d83-202a31590233",
+    "start_utc": "2023-04-25T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "316c03ba3cfc428fe8db7e6b7217d3fd039c6049d197429521ed37f0e50d2e09",
+    "end_utc": "2023-05-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "6ad2bb3e-edba-4396-83c2-ffc131940125",
+    "start_utc": "2023-05-05T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "7bb48d10f044619f1e18bd4c0a6ce9589731a9169e3d0a188b2ae32dca6aa1c0",
+    "end_utc": "2023-05-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "dff8f8ab-65db-45bb-802d-ba652455dec6",
+    "start_utc": "2023-05-15T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ab7254390f93dbc0475c65a1bdf27f9b88a208aa33670312c7c669e34ae8047d",
+    "end_utc": "2023-06-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "72866091-1152-474d-8113-f168550effe5",
+    "start_utc": "2023-05-25T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "9429cf0f6edf8065876202f56e71c0e2dd63b9ddfd028cbf1fc8e276f5122144",
+    "end_utc": "2023-06-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9259ef03-590e-4a4a-b009-695ddf27ba9c",
+    "start_utc": "2023-06-04T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "698d6e2441861dbefa03d246f753f244bf220401d7705d43350ae52ea1c6b9ee",
+    "end_utc": "2023-06-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8410996f-c474-4e28-9fbe-bacb3e38a0cd",
+    "start_utc": "2023-06-14T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "1d12c37fb074bdd0706dd5fd2e17bd4b762ca849ad53030eb9e674ae468f771b",
+    "end_utc": "2023-07-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "642166fc-35f5-47c1-9924-a77e05d5d869",
+    "start_utc": "2023-06-24T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "038ee5465cefede24b0ba3a2a77ba33d2971f94377a59f1612cd361b5eea9450",
+    "end_utc": "2023-07-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "6c5c6d8c-7e7e-4353-9f7c-efe82c5b2838",
+    "start_utc": "2023-07-04T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "a81ede25bf2d1822564c366cd7c8a036ab189b666def7f8e4197b6c639cabd4c",
+    "end_utc": "2023-07-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b2bd72bd-4ef4-4d65-ba17-c45fe3a005b9",
+    "start_utc": "2023-07-14T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6741526b52e513266d5543b9366a9d98f5b8a751b7ba28e7691b90852846ebe3",
+    "end_utc": "2023-08-03T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9dfbfc84-3a2c-4108-a392-07051e822777",
+    "start_utc": "2023-07-24T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "315418de7de6828948bb45818dc5e969ff9d8a76bc3c35432329ffebe51fa632",
+    "end_utc": "2023-08-13T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c06402ef-1600-4dc8-99cd-0523f189f597",
+    "start_utc": "2023-08-03T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ee24d729f7cb4993e20b8c531c429f4d606403b41264503c854bd9c43a5b8bbe",
+    "end_utc": "2023-08-23T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d851caf5-4e52-4a70-abb1-33ee541e68f4",
+    "start_utc": "2023-08-13T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "eb45e5c58dd413bfbbbd2f3220cb92ffbf14075ce122f60f9e4db6002384bdb1",
+    "end_utc": "2023-09-02T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7e809b52-7991-4a73-8015-0fe37c158f5f",
+    "start_utc": "2023-08-23T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "22542f0ae1a8cb5692b89e6d0e92dd3317bddba96de68529c28c365d5dfbf324",
+    "end_utc": "2023-09-12T16:00:00+00:00",
+    "http_status": 200,
+    "id": "3910c3e7-5c0a-4afa-b443-4d64ef885eef",
+    "start_utc": "2023-09-02T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "114340a423f938c36a46bc1a6f32fecc028bc7cd5cefb5ca1d3031ddbf13d380",
+    "end_utc": "2023-09-22T16:00:00+00:00",
+    "http_status": 200,
+    "id": "315f80b8-8dec-4ea9-9473-5f77d834193d",
+    "start_utc": "2023-09-12T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "00ed076476288f9fc8222d6a7181ce4d923224b895460248fc62dfae9e9fc260",
+    "end_utc": "2023-10-02T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a95552a4-3cd9-48ff-9e6c-e6b5bcea7322",
+    "start_utc": "2023-09-22T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "45bfe6dcb2804ef9bc84116ea876e675f50d7d8630ce6cf1d93e4e1a33a1f3e8",
+    "end_utc": "2023-10-12T16:00:00+00:00",
+    "http_status": 200,
+    "id": "c0989f19-8d36-40f3-b7d6-b6773906f4ed",
+    "start_utc": "2023-10-02T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "79e52c5601cdc12cb1e4fab6601b71e78baf784a39af31312112be5aea0b4463",
+    "end_utc": "2023-10-22T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d1d57e4c-da38-47f3-b59d-bb0cfbd7a21f",
+    "start_utc": "2023-10-12T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "b7fe0cf20eabf85453a7852723943ff923cb15f4080b5a9da4d9de2c7b99ecc5",
+    "end_utc": "2023-11-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "06d77d9c-2e80-4c25-b5cd-c8f65be18a6f",
+    "start_utc": "2023-10-22T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2dab4ddaf337d978ec2fe97257fc4418a3c3c82268f3e79b214ae2aa23434106",
+    "end_utc": "2023-11-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1686144e-8457-4c5c-a6e7-3a0a983386f4",
+    "start_utc": "2023-11-01T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "e496ee8bd0ce466e59adb97d56f7a9c307f3afbb3c7275d64086611372759ebc",
+    "end_utc": "2023-11-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "240974c5-5f41-4778-bbc5-b4babf19530a",
+    "start_utc": "2023-11-11T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2d79b2daf9e2f35a77ae3432aa88a5957b954ca5262b8b1c95d1ca83cc4bba84",
+    "end_utc": "2023-12-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "efd42826-31d2-4776-abf0-30a022ad4097",
+    "start_utc": "2023-11-21T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "bcb86960148f204aed73c91e2efb10ec6a8356a34a640c8383d85ff862e6ed7d",
+    "end_utc": "2023-12-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fb36c163-f656-4b08-993f-7a5a1bbada81",
+    "start_utc": "2023-12-01T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "8fcda3855ce4be0aa7fc5a259f54e31a5e9bd2594df26b2dd2fe211dc4d27ab4",
+    "end_utc": "2023-12-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d888cfd2-c111-4d35-a61b-476a90a2b223",
+    "start_utc": "2023-12-11T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "139bbe065d0238efaa94740f7bb7cdb823c1ba25844564a7e04927ce466cdf92",
+    "end_utc": "2023-12-31T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0c53c70c-c61d-4999-b373-0fc7e7c30330",
+    "start_utc": "2023-12-21T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "824096315d2e159f135628cf0411d7d3a1889aef9452189595f58dae1628c236",
+    "end_utc": "2024-01-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ec72f6fe-e584-4ac7-9918-cdda83df21c8",
+    "start_utc": "2023-12-31T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c9461707fc8f3d25150b3b1410faf7075e42f4388b428f41bb13653ae066cf58",
+    "end_utc": "2024-01-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e5d28599-2561-49ea-a6c6-4deae94558c2",
+    "start_utc": "2024-01-10T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "fe95d4fb684e9d1e20f3223b1f17fe5daf9a9842dc3a45003112fd06a957df6a",
+    "end_utc": "2024-01-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ced81612-b91a-4514-b2f3-05781e1124c7",
+    "start_utc": "2024-01-20T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2d18d8dbb02780de89a2d1fb18ab3f6d894e23daceb85dff86090d8ac4594a2d",
+    "end_utc": "2024-02-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "053cfe0a-2370-4631-b897-fb47fdef1be8",
+    "start_utc": "2024-01-30T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6a43782785250dd4ba08d7f70e1128b2090a1ebf87b0c29ecc820fd8f17df9cb",
+    "end_utc": "2024-02-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "019eb792-45ce-4e64-a4d8-6261f9237261",
+    "start_utc": "2024-02-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "703a80cf708d48854294547624df7c2fe65444468ada2bf68b2985e5d1046005",
+    "end_utc": "2024-02-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "236466d0-0cd5-47b0-a201-9578cc9734f4",
+    "start_utc": "2024-02-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "60335258a2b052d3294051d4dff514e24470795d98ef5b79111b339c4b5302cb",
+    "end_utc": "2024-03-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2cb22878-e10b-4ecf-89a9-d37e90336e1d",
+    "start_utc": "2024-02-29T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "1a32b40e7ca46d29a1764b8cd408c66f649208ddf4b86887cf80c5e9413698fa",
+    "end_utc": "2024-03-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e9bbfa59-b5bd-42dd-aae6-7beb75cb524c",
+    "start_utc": "2024-03-10T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "23c9098de284b1fa1a0e6ab645909679f3572369dd6690823a78f9a75017dd3b",
+    "end_utc": "2024-03-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "25f970c9-f2a1-4756-864c-fdea67461074",
+    "start_utc": "2024-03-20T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "d5718f7c0aa04aa0ee118191a560705fba319616bea23b754a6d574db953d47c",
+    "end_utc": "2024-04-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b1ace48e-9988-4777-b892-bb8d6c15e2f2",
+    "start_utc": "2024-03-30T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "cb09367278eae13ceae18f54d54892bb74884b611a5098426befa4684f43698e",
+    "end_utc": "2024-04-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a4fec946-db31-4bfd-a3d0-4c1e6d77cfc5",
+    "start_utc": "2024-04-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4279b5d7587c3b81544166bd1007f83b3243a767f357855991d0cd5f9e3ba7fb",
+    "end_utc": "2024-04-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7a09d8d8-bee5-404a-b5fc-89fc35b9d615",
+    "start_utc": "2024-04-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "0cce210bed56dbbdee415f2cc6f1dbd1cb2fe788e4401cd4b0de3441fa50d119",
+    "end_utc": "2024-05-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "eecedf26-3e3d-4f32-b079-3269695a43e8",
+    "start_utc": "2024-04-29T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "5fcbdb02076a9278bdcfd1d86d0fa7236f16434baebc439e72f39b2abad7494c",
+    "end_utc": "2024-05-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "cdf7258d-d2e4-4879-b7f9-fcaa38ed0ad3",
+    "start_utc": "2024-05-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "1963c997252a84a56eeb837dcd1fd025f4b235d7aa715808b96af175dcf10b28",
+    "end_utc": "2024-05-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "54a22b93-9281-4ebd-bf68-d67548b2a31c",
+    "start_utc": "2024-05-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "7fb013df06946e38d22a310210b598f5a46367ffaa489e706204fa8bad564c57",
+    "end_utc": "2024-06-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ce6c69e4-b1c9-4f24-9521-e545309e5341",
+    "start_utc": "2024-05-29T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "3abfdc5387d31a5b4f9dcc1bc011a02fd74f8cb1bcea8529ac8670d3e9fb11c9",
+    "end_utc": "2024-06-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "38d49041-b143-4014-9a5f-15fb70cfe6b4",
+    "start_utc": "2024-06-08T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c05046783007ff5d3461ded901fbfe8179eb79b1ba68a3938c73d8aad948d5fc",
+    "end_utc": "2024-06-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e7db79be-2643-4a22-b102-e38c6445612b",
+    "start_utc": "2024-06-18T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "552e281386a98f2719b559c3d14529da31496ab9d580682c49aa11f18b2ff091",
+    "end_utc": "2024-07-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f0bc358d-1b4f-4fd4-9a18-d7ae72ff1a3b",
+    "start_utc": "2024-06-28T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "dbc697773b6550c5c18300747659ab71d9b38b0f5b4c6275af07fe413add6c73",
+    "end_utc": "2024-07-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "be09b749-f062-4f9b-b4c2-38c24d65bef9",
+    "start_utc": "2024-07-08T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "315bc27ac56a202ce8f0f0b417e47ec5701d351a828500b35fb5a8c5f92e542a",
+    "end_utc": "2024-07-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "59854750-c0d5-455e-9cec-2c057545c7b2",
+    "start_utc": "2024-07-18T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ca67ba19118a9ab6f92a6ae0c20ed3b9232bfca5b52c4ba7583ba6c12d92236a",
+    "end_utc": "2024-08-07T16:00:00+00:00",
+    "http_status": 200,
+    "id": "56cebe41-617f-486f-8137-79e35e02106f",
+    "start_utc": "2024-07-28T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4d79909841bd418f79fcb659e5d0ce705766bc4e503b3ac152c01b13184ea99e",
+    "end_utc": "2024-08-17T16:00:00+00:00",
+    "http_status": 200,
+    "id": "56578c60-e7a4-466d-81b9-ddb304fa262f",
+    "start_utc": "2024-08-07T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2005360bd5c5f443331d475566cd7a4d0edbd0c7d7f940896380d342b66141aa",
+    "end_utc": "2024-08-27T16:00:00+00:00",
+    "http_status": 200,
+    "id": "87a60902-0494-4da1-9975-7b10224e6650",
+    "start_utc": "2024-08-17T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "49370f6a750ea0d0f20742616303c5db134f3912aa93aa531ba9fd6142195431",
+    "end_utc": "2024-09-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7e4f57ca-0d15-47d8-b008-efb99ec35d65",
+    "start_utc": "2024-08-27T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "936c30d02b6bbb8938bbce31ab82b61f8fcd8ed6d447a6153025c4fb2aeb893a",
+    "end_utc": "2024-09-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "6e116ee3-4323-43af-93ae-52e0c9f8536e",
+    "start_utc": "2024-09-06T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "38ad67980b97a3d9b1ab254999dd60e5c40499169645283fa4bd6a5cd80bfe9b",
+    "end_utc": "2024-09-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d69da6b8-8615-438e-a953-13f374807b9f",
+    "start_utc": "2024-09-16T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "73a4012d3b4049a561f2a49bde5725ad9b238c087759af3f3c7f10975a2e9435",
+    "end_utc": "2024-10-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "cf921564-4998-4629-9058-aa875dd838f3",
+    "start_utc": "2024-09-26T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "fbfb5276ba9cc4ade20c7fb345110b8f38c6247b94b766f47bb484be67712591",
+    "end_utc": "2024-10-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "22a8f8c6-12f0-459c-bb63-dabca8c2aa2a",
+    "start_utc": "2024-10-06T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "55dec78a5188e1fb856ba9fa659370bb1b5c269e830daba324d3c422d2a6f686",
+    "end_utc": "2024-10-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "271dedb9-f354-4116-8213-a8c1bd68f31d",
+    "start_utc": "2024-10-16T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "1c268c170b7816bafe5418c8c7d583b97eecbb141c3b3472fd1e58c407d09add",
+    "end_utc": "2024-11-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "9d4b54dd-ab5a-4760-8813-ad08a792e19d",
+    "start_utc": "2024-10-26T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4b2201eea58a0854ff0426a770eda48ae71a0ef33f7585652d27bc537d0c64be",
+    "end_utc": "2024-11-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d9f8ec20-bc7b-430c-91e5-b643f95949da",
+    "start_utc": "2024-11-05T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "5f7bc7895067dc919ee26c7ffb82278cdb2d46486680c0c375768790589f6c48",
+    "end_utc": "2024-11-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e7c04352-d655-4584-a2b5-59bc80c5d06d",
+    "start_utc": "2024-11-15T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "887e315817144b581a6b7cf34a86a25bd02b6c05737cab48435a0f8c3c39af2d",
+    "end_utc": "2024-12-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8c4c280b-194f-44cc-8253-1a90b9c832f3",
+    "start_utc": "2024-11-25T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "3d17db4699d5488783b5987c58ab0a34c2739148599776826beb924932736b58",
+    "end_utc": "2024-12-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b3b1edb5-621b-496c-9be6-571dc7aa8477",
+    "start_utc": "2024-12-05T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "bd79e5e699ea914772f9ac8b7015aeb3b8f3bba4514e6986397d407a629caa7a",
+    "end_utc": "2024-12-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "6dfbbf90-0994-4a8a-8dbd-bfc2e25fde4d",
+    "start_utc": "2024-12-15T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6e66512894ac7f512fd5d80fc6b14e6d7393304a0a303069e53d9549b6d7c9e5",
+    "end_utc": "2025-01-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "48380e4b-fbe5-4c30-a4e1-7671d26e648f",
+    "start_utc": "2024-12-25T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "54a565bb3f9108c141d2a59d4cdde1f3f1db67825bf4df9cc67f2504f976d459",
+    "end_utc": "2025-01-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "183f34b5-37e0-4ed3-85bf-223c5f5b1474",
+    "start_utc": "2025-01-04T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "0310030b539a4efb9dd92116c4866aa29479bfb25bd47955d25bdd3f89ef6883",
+    "end_utc": "2025-01-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5d0ee09b-73e9-4044-abe3-9ab51a959891",
+    "start_utc": "2025-01-14T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c6377c1f7107548342e0019066ae2a35810cced242060e53747f28a45cb3cca0",
+    "end_utc": "2025-02-03T16:00:00+00:00",
+    "http_status": 200,
+    "id": "aea8c519-aa8e-48d4-8932-ce8a0c767e05",
+    "start_utc": "2025-01-24T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "909fd570cb15df0c1881539c69c9d48ad1f7a10e9340600d12984fd99b754217",
+    "end_utc": "2025-02-13T16:00:00+00:00",
+    "http_status": 200,
+    "id": "eae20ce6-8700-4224-b082-9d60fa403418",
+    "start_utc": "2025-02-03T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c3ec99be45bda7a5d431191a2050b30efd9028ad31829fc1d8dff4b6ec9b4abc",
+    "end_utc": "2025-02-23T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b1f07939-bf5c-426d-a61a-5b5e21889fef",
+    "start_utc": "2025-02-13T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "d3fd4f1247287954affb2873545e4beb6226b7d4c4793eb8d0f99e04b6eb51c0",
+    "end_utc": "2025-03-05T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d3db12f7-ccd3-4045-832c-fcba38f1c7cc",
+    "start_utc": "2025-02-23T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "705ae456863c3cbcb925216f047477a6384dfc07d5b675c0cd2b38d3c688c687",
+    "end_utc": "2025-03-15T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bd617b33-4372-4771-8c0e-1ba3e05d43cf",
+    "start_utc": "2025-03-05T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "7c5827c4f6d1f9d4e3504c984895043c1fec6f30cdcdaa417e069dc619d75d76",
+    "end_utc": "2025-03-25T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bd6dcd38-9674-4844-93d4-7f1772e38bf6",
+    "start_utc": "2025-03-15T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2f9b30fc4eb76f92c953349f6a78e9c7f0379856afa3e18b15f6355160581333",
+    "end_utc": "2025-04-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5689a7c4-2919-47dd-9de8-dd49a13aaa32",
+    "start_utc": "2025-03-25T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "05ded14fb7db7e889956c568166fe41fc05f22fc4e445b79f369abaee7170bd4",
+    "end_utc": "2025-04-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "65d75da1-f8c7-4e83-af56-ba865279cf65",
+    "start_utc": "2025-04-04T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "e0b9c8c7cc23c9848c4a126ca52eee9eff744478b288f023b6c2eade2e7a40a2",
+    "end_utc": "2025-04-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a02abf3c-caf5-4c39-ab65-f67c7a3f12f0",
+    "start_utc": "2025-04-14T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "0a6a588a8d2f22d0dbdd924f150a4f786f3c1fd1636a1b8830e653414cff3b8d",
+    "end_utc": "2025-05-04T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e7e2d5e7-6e87-4493-9d8b-370c5f0f5954",
+    "start_utc": "2025-04-24T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "465aa14a89eef9d19816afe29b90dbc578796af479744e97a428e6cdc82a3fa7",
+    "end_utc": "2025-05-14T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f3d0b466-c39f-4bff-83c5-5ec81dfd1b6c",
+    "start_utc": "2025-05-04T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "a5652bdf646b900df7f1253e3cdf28dba510fa4182c53936c8112407eedd8ffd",
+    "end_utc": "2025-05-24T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7f2e98d1-a416-4d53-882d-501de1ce5204",
+    "start_utc": "2025-05-14T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "90bcce4ccde737de6c9cab091cdbd38e5f405459ca90084a91e2bba9df548a92",
+    "end_utc": "2025-06-03T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d4c472d8-84b1-4f00-b624-5d4f145172b2",
+    "start_utc": "2025-05-24T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ca494f4a3ce3a11fbe38891d2939384654fb35358c287a6fef3c17ade54452c1",
+    "end_utc": "2025-06-13T16:00:00+00:00",
+    "http_status": 200,
+    "id": "21093f31-68d5-4ec8-947a-8a1ca6bea286",
+    "start_utc": "2025-06-03T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "a84a3b4921b3b47d9af9824bb5a703de0bbdbf9df126e86e1017745ea38e9499",
+    "end_utc": "2025-06-23T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d7834d87-cc6a-49c1-872b-6fe7bfb60647",
+    "start_utc": "2025-06-13T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "659b8b5b996795394ae7bcf48db41ce1f6386ff9bc05417e1583ac5c881f4ceb",
+    "end_utc": "2025-07-03T16:00:00+00:00",
+    "http_status": 200,
+    "id": "36f3dcc1-0159-4753-9f39-aa6684fffa90",
+    "start_utc": "2025-06-23T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4d95b74301e6aa6d8e383435a2aa275556b28fc8d3b1f39237d60f585480360d",
+    "end_utc": "2025-07-13T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8cc66840-0e13-4f77-a0ff-f3aae6f9895f",
+    "start_utc": "2025-07-03T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ff1d77d1a4a0cbb1f96719968f8f7ec51085a94b59854977fe838cad20a8050b",
+    "end_utc": "2025-07-23T16:00:00+00:00",
+    "http_status": 200,
+    "id": "5aa5bda4-4486-4be5-a0c6-11fc9b8e795b",
+    "start_utc": "2025-07-13T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "80ef4c63e1e5ca84b71bb3349273b75df6178d7f76b8b91620550841e97d67e0",
+    "end_utc": "2025-08-02T16:00:00+00:00",
+    "http_status": 200,
+    "id": "da1e3fb9-22c9-460e-ad21-3108ffe2525a",
+    "start_utc": "2025-07-23T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "7d098ae9104d185d516afc5a141189e8cb5b84d3cfb4a6051e1ffc1e61d4e7b7",
+    "end_utc": "2025-08-12T16:00:00+00:00",
+    "http_status": 200,
+    "id": "180bfbf7-bc80-4cb2-b98c-1771847f284a",
+    "start_utc": "2025-08-02T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "71116076f78e4d9f961a08c907ddba135ff85d68cc6ecc823fa4060a43402db7",
+    "end_utc": "2025-08-22T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1e4e0685-7fc1-4427-928e-66f7a4a3abaa",
+    "start_utc": "2025-08-12T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "baab8470fec3f16ae7f15a911fba70365a0d82a20e678ee065c03ed7f0e7fa08",
+    "end_utc": "2025-09-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "20602d97-feac-411c-b728-8d78df09314f",
+    "start_utc": "2025-08-22T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "a2f0af936372616fb04516a6b6e28c5987972143b5567f89418a633b424ff6b7",
+    "end_utc": "2025-09-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0cfcd487-51a7-4ed6-a3b0-7a6406b952fd",
+    "start_utc": "2025-09-01T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "06c0508724b01d60f5845534818315a48f744dde9e343b1d3d56ca49aac1257b",
+    "end_utc": "2025-09-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "78bfb1c6-0b8c-44e0-9949-28ce2c068c3d",
+    "start_utc": "2025-09-11T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "b072c9012af3bfa6ab9515628ebe9ab7a69ea8cf83e9d3e2b431655774032bc4",
+    "end_utc": "2025-10-01T16:00:00+00:00",
+    "http_status": 200,
+    "id": "75ce5e48-c848-4a10-9dd6-912caeb57961",
+    "start_utc": "2025-09-21T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "e868d35de34412803f065e7d68ef039f5859f02e6f8daa3793dc18143e9005d9",
+    "end_utc": "2025-10-11T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8c5dbe30-ab18-415c-913f-8a4dcb190ba4",
+    "start_utc": "2025-10-01T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c72050ff7a1f5c84431a27facbf3cb895111d2b5a6bca0ba8d658a06653d6300",
+    "end_utc": "2025-10-21T16:00:00+00:00",
+    "http_status": 200,
+    "id": "d2dfe97e-74c6-48a5-9b41-6078d3b0d47f",
+    "start_utc": "2025-10-11T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "b41582b29dcbbb29a843d57ff0c6a2b662cd824b5ab3f2b924c9a549da668a81",
+    "end_utc": "2025-10-31T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b5b2b3d4-37a5-4ab4-b69a-95681818b360",
+    "start_utc": "2025-10-21T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2ebd18ef46a43656f3d3e06b169dc3a4e5148de3efec601d86cb70dfff3c33c4",
+    "end_utc": "2025-11-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "0240bbb4-6751-4e03-9424-c56e0011dec2",
+    "start_utc": "2025-10-31T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "897e8e8d08e8724c352e58f4dcd1aed552dcd24b2ac6a1ba15ea0413b9b8ad93",
+    "end_utc": "2025-11-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f8fcb1b2-5b75-4151-b6e0-61e1aba4a3fb",
+    "start_utc": "2025-11-10T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ac6fc42c8d33e536c5dd9c490c479d9826a0a7ac7f762c0ed013678f3061fc60",
+    "end_utc": "2025-11-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "bac5c459-0fc3-4559-832a-29729aead359",
+    "start_utc": "2025-11-20T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "fb7ebfa1d63130809efde4e5b4441e2cc421cf55b756e7a597a234502053b955",
+    "end_utc": "2025-12-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fddae072-0712-4723-8c57-2a7443ca621c",
+    "start_utc": "2025-11-30T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "cb59ba6cb62e1329a54a9b1a9d6b6a3b653c30cdf38f90053137f114b68fa13e",
+    "end_utc": "2025-12-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e01b6822-b210-434e-b267-0dfbec6aed46",
+    "start_utc": "2025-12-10T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "fe25e00821513427f377e630905c4fda8b2f20ea58c22deb8613a36e99ecbe1f",
+    "end_utc": "2025-12-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "60bb9447-9c64-4857-abac-dd5d4f31aa88",
+    "start_utc": "2025-12-20T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "30ca692154296497772295efc70194a2f531e806437f9405845e0a49a2ff3a10",
+    "end_utc": "2026-01-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "76041432-5457-47bb-a500-47bcb375a4e2",
+    "start_utc": "2025-12-30T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6beae21e65da3596bc9bb6a1f4db2edc08d2f6c7cab2b7257bd4d669b327ae52",
+    "end_utc": "2026-01-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "76cf2751-1e02-4e6f-8e4d-2b60cb9c3eed",
+    "start_utc": "2026-01-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6218981effc937ee29fb97bd69ca51ed56a40ce899150adb682d61edf39b8a6e",
+    "end_utc": "2026-01-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4f6e3cda-eacf-4c13-871b-678a92f1ddb2",
+    "start_utc": "2026-01-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "819bb8a3e58475c004bbc567daba278471efc1a9213fb610355d5201e010b4a3",
+    "end_utc": "2026-02-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "92ee6b9d-11ac-41e8-bca4-2629c7120e1c",
+    "start_utc": "2026-01-29T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "38911f3a8814aa5f3f501206f751c0e53d790464c3657565b101c3c1a2a275b7",
+    "end_utc": "2026-02-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1a02df42-4061-4e2c-9c87-5e6fe3789dd5",
+    "start_utc": "2026-02-08T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "65c62f4fcf958790bc79905cf420a4c25669720074c02c61630507d08c4bdfef",
+    "end_utc": "2026-02-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1e8056fc-2df0-475f-9f2d-df3ff9057d83",
+    "start_utc": "2026-02-18T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "66c1edcd5181c617808abedf1f3bd8d611852ba26c3a46fa856a883162d74075",
+    "end_utc": "2026-03-10T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2672fc39-560b-46f8-a959-f989fbe5f570",
+    "start_utc": "2026-02-28T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "f1e57f7ec01b177a0bae7965aac4b7a3ee11ecb9985a0803daad4f86a7934505",
+    "end_utc": "2026-03-20T16:00:00+00:00",
+    "http_status": 200,
+    "id": "44ffa545-f53b-40d5-bb31-8ae743ff3515",
+    "start_utc": "2026-03-10T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "3556972537a53f8e2a875fc187058f7ae10dd7845297ab6a7772bbcc1ed5827c",
+    "end_utc": "2026-03-30T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a0dc245c-a22d-44cf-955d-7d8f67aa0aa5",
+    "start_utc": "2026-03-20T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c57702c8c851fa6f4b486003f33179905c3edb04c7af505239367cf0a1ad2a39",
+    "end_utc": "2026-04-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "351a5ee5-7162-4038-afa3-50025c6bd25c",
+    "start_utc": "2026-03-30T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "fc1da3ce7e6876540a6852dd885f8bce82364928b2ca2c6cabd1c4d9b2b6e2b6",
+    "end_utc": "2026-04-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "7883c9f4-b9b0-493b-a6c8-6e35cb37f30d",
+    "start_utc": "2026-04-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "4172b468c14300df7a27f82c9d10ce228d78ac2b084fbc960c50fceaed39986b",
+    "end_utc": "2026-04-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "e99e3b9b-6459-49d3-b4b0-9fd6afaf00e4",
+    "start_utc": "2026-04-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6eabf12772471775dda873f4590fd662c3eeff982c5af254bdc40ede05d16ca2",
+    "end_utc": "2026-05-09T16:00:00+00:00",
+    "http_status": 200,
+    "id": "66210111-2bae-400a-a946-28781a3cc4f3",
+    "start_utc": "2026-04-29T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "194897dbd4bf8c4161786fa3e3830b83e44f2bbb288cf0b5b89b115afd8749a0",
+    "end_utc": "2026-05-19T16:00:00+00:00",
+    "http_status": 200,
+    "id": "ec0ac7b8-2188-4037-b30f-73f39e91353e",
+    "start_utc": "2026-05-09T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "2a0b6cae5ff1df414d155aabec81d9d3374976828b40b4b6bcfaf58c4e935dd6",
+    "end_utc": "2026-05-29T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f5bca308-02d2-4d51-8617-b0fb3e32eab3",
+    "start_utc": "2026-05-19T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ac8977424b04c872a91c4e2385ba670a7ff1179fae7be8bfbf644d12cb6dbad4",
+    "end_utc": "2026-06-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "503f8dfb-5391-41dc-a5b0-2e288ef20827",
+    "start_utc": "2026-05-29T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "cf8a98f23a49b63faaf71408871d0e57e1dc75966ef5e64726d68dd1cf8dd28d",
+    "end_utc": "2026-06-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "337aa20a-0e89-4c4b-a880-6cb6dce5f626",
+    "start_utc": "2026-06-08T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "1d978f9d8aa440261cb85e85bf1679cb55038f0a36eaff6c2452b1633927b360",
+    "end_utc": "2026-06-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "f7b2fd91-dbc9-4113-ad50-c8d89b16f898",
+    "start_utc": "2026-06-18T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "abd14853c7efc371fc7561dcac7849c0e849c898566d15097c7ce3c16336bde5",
+    "end_utc": "2026-07-08T16:00:00+00:00",
+    "http_status": 200,
+    "id": "1c0b58f9-1472-474e-90b4-1b4d3dd9e3ec",
+    "start_utc": "2026-06-28T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "6790b87dd7b505e75ee645a5e67875830c2b8e7cee97faa15e14342114dbde8e",
+    "end_utc": "2026-07-18T16:00:00+00:00",
+    "http_status": 200,
+    "id": "fa6ac7c8-2004-4a25-ad4a-7dfb6fc7c76b",
+    "start_utc": "2026-07-08T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "523b7ed0ac52abb396bf8198e9260fdc57ae42ca8782906e6378d0f912ad80d4",
+    "end_utc": "2026-07-28T16:00:00+00:00",
+    "http_status": 200,
+    "id": "85f74be8-6ade-4e8b-9252-c9933dd5437f",
+    "start_utc": "2026-07-18T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "cc7be52bd36dc5c8fd7b513a8de1f7606a72091626908606784e784aa6b0e6e0",
+    "end_utc": "2026-08-07T16:00:00+00:00",
+    "http_status": 200,
+    "id": "4b1424f5-84b6-4cbf-8bbf-e71e510cd9ba",
+    "start_utc": "2026-07-28T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "3f5327a4239e5f949bc709ab043a021b0ceeb7b2a3f8dc88b3c79e7b1fcfcef4",
+    "end_utc": "2026-08-17T16:00:00+00:00",
+    "http_status": 200,
+    "id": "b0ef7552-157a-44c7-b993-b83e9ca905ba",
+    "start_utc": "2026-08-07T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "8b4330f7fdde8310fa7a700475801757786060c84564bc350eac8f8829e0c5bf",
+    "end_utc": "2026-08-27T16:00:00+00:00",
+    "http_status": 200,
+    "id": "8e405bbd-735c-4040-b185-0fd0cc727cca",
+    "start_utc": "2026-08-17T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "ac55339e098cec501cec91a91cc59dbe88207b02cd0fe670d070916f12d40118",
+    "end_utc": "2026-09-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "89737ba0-f626-4e1b-afe2-07c4071be556",
+    "start_utc": "2026-08-27T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "30313433bc0d4b67a93d1e69676b10abf3ae59a14d64299be49cf4d8d0462ffe",
+    "end_utc": "2026-09-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "dc663860-adf3-4e9f-b75d-ef738bdaaf29",
+    "start_utc": "2026-09-06T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "201c797086948af11de480733531a8ddb4331cdc6834dff8b6f08fc97195211f",
+    "end_utc": "2026-09-26T16:00:00+00:00",
+    "http_status": 200,
+    "id": "df5082fe-55b5-4ad5-aafe-86f78f0cfda6",
+    "start_utc": "2026-09-16T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "f6e8c430c4991b05f19bacf1104d73f1de75cbc02719694a22ac857396f50502",
+    "end_utc": "2026-10-06T16:00:00+00:00",
+    "http_status": 200,
+    "id": "2009a26f-d6eb-4622-8986-efc3b8e78c6e",
+    "start_utc": "2026-09-26T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  },
+  {
+    "body_sha256": "c2596644161d16451cc51a7c2ed55d2041b2c343344d8178667e301488fefc8a",
+    "end_utc": "2026-10-16T16:00:00+00:00",
+    "http_status": 200,
+    "id": "a5648d2e-847b-4cff-950b-065388614302",
+    "start_utc": "2026-10-06T16:00:00+00:00",
+    "symbol": "ETHUSD"
+  }
+]

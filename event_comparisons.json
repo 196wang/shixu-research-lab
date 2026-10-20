@@ -1,0 +1,2174 @@
+{
+  "generatedAtUtc": "2026-09-27T01:24:27.313313+00:00",
+  "candidatesSha256": "ded52829d532cb7489ccdf13fa73600c7565c8c8aa7e2d920cd739e6e75806ac",
+  "profilesSha256": "6df88964a89cab7af741576752099ddcba4fcf27762b46585c3c2082e653d153",
+  "computations": [
+    {
+      "candidateId": "BTC-EVENT-GENESIS-HEADER",
+      "label": "BTC 创世块头时间",
+      "asset": "BTC",
+      "eventAtUtc": "2009-01-03T18:15:05Z",
+      "atResearchTimezone": "2009-01-04T02:15:05+08:00",
+      "recordPrecision": "1 second",
+      "sourceRefs": [
+        "BIRTH-SRC-BTC-CORE"
+      ],
+      "calendar": {
+        "schemaVersion": 1,
+        "adapterVersion": "0.5.0",
+        "inputAt": "2009-01-03T18:15:05Z",
+        "atUtc": "2009-01-03T18:15:05+00:00",
+        "atResearchTimezone": "2009-01-04T02:15:05+08:00",
+        "policy": {
+          "id": "BZ-CALENDAR-CIVIL-00-V01",
+          "timezone": "Asia/Shanghai",
+          "utcOffset": "+08:00",
+          "supportedYears": [
+            1992,
+            2099
+          ],
+          "yearBoundary": "exact_lichun",
+          "monthBoundary": "exact_jie_not_zhongqi",
+          "dayBoundary": "00:00",
+          "trueSolarTime": false,
+          "lateZiHourStemReference": "next_day_late_zi",
+          "calendarEngine": "lunar-python",
+          "calendarVersion": "1.4.8",
+          "note": "采用该库sect2日柱与晚子时干约定；日柱仍当天，23点后的时干以次日日干起算。"
+        },
+        "pillars": {
+          "year": "戊子",
+          "month": "甲子",
+          "day": "己酉",
+          "hour": "乙丑"
+        },
+        "lunarDate": {
+          "year": 2008,
+          "month": 12,
+          "day": 9
+        },
+        "lunarCalendarYear": "戊子",
+        "hourStemReference": "same_day",
+        "nearBoundaryWarnings": [],
+        "inputPolicySha256": "a7ed1ac930efb1255fb7d7d8e752c782e0d6cd76303d1543d04a06628ae21f4a",
+        "limits": [
+          "真实本命时地未知的资产不自动套用该时刻作出生盘",
+          "当前输出是指定研究时刻的干支，不含起运/喜用/行情方向",
+          "农历年字段按春节，八字年柱按立春，两者不能互换"
+        ]
+      },
+      "indian": {
+        "available": true,
+        "adapterVersion": "0.5.0",
+        "configurationId": "IA-LAHIRI1-MOSHIER-GEOCENTRIC-V05",
+        "inputAt": "2009-01-03T18:15:05Z",
+        "snapshotType": "transit_at_supplied_instant",
+        "engine": {
+          "name": "Swiss Ephemeris",
+          "version": "2.10.03",
+          "wrapper": "pysweph",
+          "wrapperVersion": "2.10.3.6",
+          "wrapperProvenance": "community_fork_not_Astrodienst_Python_binding",
+          "backendRequested": "Moshier",
+          "externalEphemerisFiles": [],
+          "license": "AGPL-3.0",
+          "binarySha256": "b484671f2e10eecb912c6d1281006d82542c7f4bbd5f4191ad70c38e1bf6a302"
+        },
+        "time": {
+          "atUtc": "2009-01-03T18:15:05+00:00",
+          "jdTT": 2454835.2612405554,
+          "jdUT1": 2454835.260479215,
+          "deltaTSeconds": 65.77980816364288,
+          "conversion": "Swiss utc_to_jd; built-in leap seconds and Delta-T; no live EOP/updated leap table"
+        },
+        "settings": {
+          "origin": "geocentric",
+          "zodiac": "sidereal",
+          "ayanamsaMode": "Lahiri",
+          "ayanamsaModeNumber": 1,
+          "ayanamsaExtraBits": 0,
+          "positionFlagsRequested": 65796,
+          "nodeType": "mean",
+          "housesEnabled": false,
+          "nonutNote": "SIDEREAL automatically adds NONUT to returned flags per Swiss documentation",
+          "resetPolicy": "swe_close then set_sid_mode(LAHIRI,0,0) under adapter lock",
+          "displayAyanamsa": "including_nutation_from_get_ayanamsa_ex_ut; not_manually_subtracted",
+          "D9": "Parashara_standard_element_start",
+          "yearLengthDays": 365.2425,
+          "boundaryPolicy": "unrounded_longitude_to_exact_decimal_fraction_left_closed_right_open",
+          "annualLengthStatus": "project_candidate_not_only_traditional_choice",
+          "SBC": false,
+          "Latta": false
+        },
+        "ayanamsaDeg": 23.986611904063064,
+        "ayanamsaReturnedFlags": 4,
+        "meanAyanamsaDeg": 23.982929895963935,
+        "meanAyanamsaReturnedFlags": 68,
+        "positions": [
+          {
+            "body": "Sun",
+            "longitudeDeg": 259.52759957367203,
+            "latitudeDeg": 2.9247878848472068e-05,
+            "distanceAu": 0.9832750060929903,
+            "longitudeSpeedDegPerDay": 1.0193297108595434,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "25952759957367203/100000000000000",
+                "longitudeDegApprox": 259.52759957367203,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 8,
+                "signNumber": 9,
+                "sign": "Sagittarius",
+                "signZh": "射手",
+                "degreeInSignExact": "1952759957367203/100000000000000",
+                "degreeInSignApprox": 19.52759957367203,
+                "element": "fire"
+              },
+              "nakshatra": {
+                "index": 19,
+                "number": 20,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "1858279872101609/300000000000000",
+                "fractionElapsedExact": "1858279872101609/4000000000000000",
+                "fractionRemainingExact": "2141720127898391/4000000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Venus"
+              },
+              "d9": {
+                "signIndex": 5,
+                "signNumber": 6,
+                "sign": "Virgo",
+                "signZh": "处女",
+                "degreeInSignExact": "2574839616304827/100000000000000",
+                "degreeInSignApprox": 25.74839616304827,
+                "longitudeDegExact": "17574839616304827/100000000000000",
+                "longitudeDegApprox": 175.74839616304828,
+                "partIndexWithinD1": 5,
+                "partNumberWithinD1": 6,
+                "elementStartSign": "Aries",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Purva Ashadha",
+            "nearestPadaBoundaryArcseconds": 1700.6415347805728
+          },
+          {
+            "body": "Moon",
+            "longitudeDeg": 340.56665602191845,
+            "latitudeDeg": 4.305917990980224,
+            "distanceAu": 0.0025771042761433766,
+            "longitudeSpeedDegPerDay": 13.037489555934282,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "6811333120438369/20000000000000",
+                "longitudeDegApprox": 340.56665602191845,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 11,
+                "signNumber": 12,
+                "sign": "Pisces",
+                "signZh": "双鱼",
+                "degreeInSignExact": "211333120438369/20000000000000",
+                "degreeInSignApprox": 10.56665602191845,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 25,
+                "number": 26,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "433999361315107/60000000000000",
+                "fractionElapsedExact": "433999361315107/800000000000000",
+                "fractionRemainingExact": "366000638684893/800000000000000",
+                "padaIndex": 2,
+                "padaNumber": 3,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Saturn"
+              },
+              "d9": {
+                "signIndex": 6,
+                "signNumber": 7,
+                "sign": "Libra",
+                "signZh": "天秤",
+                "degreeInSignExact": "101998083945321/20000000000000",
+                "degreeInSignApprox": 5.09990419726605,
+                "longitudeDegExact": "3701998083945321/20000000000000",
+                "longitudeDegApprox": 185.09990419726606,
+                "partIndexWithinD1": 3,
+                "partNumberWithinD1": 4,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Uttara Bhadrapada",
+            "nearestPadaBoundaryArcseconds": 2039.9616789063089
+          },
+          {
+            "body": "Mercury",
+            "longitudeDeg": 278.8076944474516,
+            "latitudeDeg": -1.1541861068994719,
+            "distanceAu": 1.0092389631458185,
+            "longitudeSpeedDegPerDay": 1.101562462316872,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "697019236118629/2500000000000",
+                "longitudeDegApprox": 278.8076944474516,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "22019236118629/2500000000000",
+                "degreeInSignApprox": 8.8076944474516,
+                "element": "earth"
+              },
+              "nakshatra": {
+                "index": 20,
+                "number": 21,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "91057708355887/7500000000000",
+                "fractionElapsedExact": "91057708355887/100000000000000",
+                "fractionRemainingExact": "8942291644113/100000000000000",
+                "padaIndex": 3,
+                "padaNumber": 4,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Sun"
+              },
+              "d9": {
+                "signIndex": 11,
+                "signNumber": 12,
+                "sign": "Pisces",
+                "signZh": "双鱼",
+                "degreeInSignExact": "48173125067661/2500000000000",
+                "degreeInSignApprox": 19.2692500270644,
+                "longitudeDegExact": "873173125067661/2500000000000",
+                "longitudeDegApprox": 349.2692500270644,
+                "partIndexWithinD1": 2,
+                "partNumberWithinD1": 3,
+                "elementStartSign": "Capricorn",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Uttara Ashadha",
+            "nearestPadaBoundaryArcseconds": 4292.299989174409
+          },
+          {
+            "body": "Venus",
+            "longitudeDeg": 306.26891948192383,
+            "latitudeDeg": -1.298309663823982,
+            "distanceAu": 0.7676692200517538,
+            "longitudeSpeedDegPerDay": 1.0829762095814672,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "30626891948192383/100000000000000",
+                "longitudeDegApprox": 306.26891948192383,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 10,
+                "signNumber": 11,
+                "sign": "Aquarius",
+                "signZh": "水瓶",
+                "degreeInSignExact": "626891948192383/100000000000000",
+                "degreeInSignApprox": 6.26891948192383,
+                "element": "air"
+              },
+              "nakshatra": {
+                "index": 22,
+                "number": 23,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "3880675844577149/300000000000000",
+                "fractionElapsedExact": "3880675844577149/4000000000000000",
+                "fractionRemainingExact": "119324155422851/4000000000000000",
+                "padaIndex": 3,
+                "padaNumber": 4,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Mars"
+              },
+              "d9": {
+                "signIndex": 7,
+                "signNumber": 8,
+                "sign": "Scorpio",
+                "signZh": "天蝎",
+                "degreeInSignExact": "2642027533731447/100000000000000",
+                "degreeInSignApprox": 26.42027533731447,
+                "longitudeDegExact": "23642027533731447/100000000000000",
+                "longitudeDegApprox": 236.42027533731448,
+                "partIndexWithinD1": 1,
+                "partNumberWithinD1": 2,
+                "elementStartSign": "Libra",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Dhanishtha",
+            "nearestPadaBoundaryArcseconds": 1431.8898650743108
+          },
+          {
+            "body": "Mars",
+            "longitudeDeg": 251.61422398945652,
+            "latitudeDeg": -0.7235760661930866,
+            "distanceAu": 2.4224318466265347,
+            "longitudeSpeedDegPerDay": 0.7545850944871203,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "6290355599736413/25000000000000",
+                "longitudeDegApprox": 251.61422398945652,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 8,
+                "signNumber": 9,
+                "sign": "Sagittarius",
+                "signZh": "射手",
+                "degreeInSignExact": "290355599736413/25000000000000",
+                "degreeInSignApprox": 11.61422398945652,
+                "element": "fire"
+              },
+              "nakshatra": {
+                "index": 18,
+                "number": 19,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "290355599736413/25000000000000",
+                "fractionElapsedExact": "871066799209239/1000000000000000",
+                "fractionRemainingExact": "128933200790761/1000000000000000",
+                "padaIndex": 3,
+                "padaNumber": 4,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Ketu"
+              },
+              "d9": {
+                "signIndex": 3,
+                "signNumber": 4,
+                "sign": "Cancer",
+                "signZh": "巨蟹",
+                "degreeInSignExact": "363200397627717/25000000000000",
+                "degreeInSignApprox": 14.52801590510868,
+                "longitudeDegExact": "2613200397627717/25000000000000",
+                "longitudeDegApprox": 104.52801590510867,
+                "partIndexWithinD1": 3,
+                "partNumberWithinD1": 4,
+                "elementStartSign": "Aries",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Mula",
+            "nearestPadaBoundaryArcseconds": 5811.206362043436
+          },
+          {
+            "body": "Jupiter",
+            "longitudeDeg": 275.5741848571619,
+            "latitudeDeg": -0.41312304055979543,
+            "distanceAu": 6.050924038108732,
+            "longitudeSpeedDegPerDay": 0.23149402952428116,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "2755741848571619/10000000000000",
+                "longitudeDegApprox": 275.5741848571619,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "55741848571619/10000000000000",
+                "degreeInSignApprox": 5.5741848571619,
+                "element": "earth"
+              },
+              "nakshatra": {
+                "index": 20,
+                "number": 21,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "267225545714857/30000000000000",
+                "fractionElapsedExact": "267225545714857/400000000000000",
+                "fractionRemainingExact": "132774454285143/400000000000000",
+                "padaIndex": 2,
+                "padaNumber": 3,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Sun"
+              },
+              "d9": {
+                "signIndex": 10,
+                "signNumber": 11,
+                "sign": "Aquarius",
+                "signZh": "水瓶",
+                "degreeInSignExact": "201676637144571/10000000000000",
+                "degreeInSignApprox": 20.1676637144571,
+                "longitudeDegExact": "3201676637144571/10000000000000",
+                "longitudeDegApprox": 320.1676637144571,
+                "partIndexWithinD1": 1,
+                "partNumberWithinD1": 2,
+                "elementStartSign": "Capricorn",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Uttara Ashadha",
+            "nearestPadaBoundaryArcseconds": 3932.934514217038
+          },
+          {
+            "body": "Saturn",
+            "longitudeDeg": 147.77195524245937,
+            "latitudeDeg": 2.061373947734498,
+            "distanceAu": 8.95895422713784,
+            "longitudeSpeedDegPerDay": -0.005573109213570493,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "14777195524245937/100000000000000",
+                "longitudeDegApprox": 147.77195524245937,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 4,
+                "signNumber": 5,
+                "sign": "Leo",
+                "signZh": "狮子",
+                "degreeInSignExact": "2777195524245937/100000000000000",
+                "degreeInSignApprox": 27.77195524245937,
+                "element": "fire"
+              },
+              "nakshatra": {
+                "index": 11,
+                "number": 12,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "331586572737811/300000000000000",
+                "fractionElapsedExact": "331586572737811/4000000000000000",
+                "fractionRemainingExact": "3668413427262189/4000000000000000",
+                "padaIndex": 0,
+                "padaNumber": 1,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Sun"
+              },
+              "d9": {
+                "signIndex": 8,
+                "signNumber": 9,
+                "sign": "Sagittarius",
+                "signZh": "射手",
+                "degreeInSignExact": "994759718213433/100000000000000",
+                "degreeInSignApprox": 9.94759718213433,
+                "longitudeDegExact": "24994759718213433/100000000000000",
+                "longitudeDegApprox": 249.94759718213433,
+                "partIndexWithinD1": 8,
+                "partNumberWithinD1": 9,
+                "elementStartSign": "Aries",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Uttara Phalguni",
+            "nearestPadaBoundaryArcseconds": 3979.0388728537496
+          },
+          {
+            "body": "Rahu",
+            "longitudeDeg": 286.8299170255184,
+            "latitudeDeg": 0.0,
+            "distanceAu": 0.0025695552897999903,
+            "longitudeSpeedDegPerDay": -0.05299201240721983,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": "mean_ascending_node",
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "179268698140949/625000000000",
+                "longitudeDegApprox": 286.8299170255184,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "10518698140949/625000000000",
+                "degreeInSignApprox": 16.8299170255184,
+                "element": "earth"
+              },
+              "nakshatra": {
+                "index": 21,
+                "number": 22,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "4268698140949/625000000000",
+                "fractionElapsedExact": "12806094422847/25000000000000",
+                "fractionRemainingExact": "12193905577153/25000000000000",
+                "padaIndex": 2,
+                "padaNumber": 3,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Moon"
+              },
+              "d9": {
+                "signIndex": 2,
+                "signNumber": 3,
+                "sign": "Gemini",
+                "signZh": "双子",
+                "degreeInSignExact": "918283268541/625000000000",
+                "degreeInSignApprox": 1.4692532296656,
+                "longitudeDegExact": "38418283268541/625000000000",
+                "longitudeDegApprox": 61.4692532296656,
+                "partIndexWithinD1": 5,
+                "partNumberWithinD1": 6,
+                "elementStartSign": "Capricorn",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Shravana",
+            "nearestPadaBoundaryArcseconds": 587.7012918662672
+          },
+          {
+            "body": "Ketu",
+            "longitudeDeg": 106.8299170255184,
+            "latitudeDeg": -0.0,
+            "distanceAu": 0.0025695552897999903,
+            "longitudeSpeedDegPerDay": -0.05299201240721983,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": "mean_descending_node_derived_opposite_Rahu",
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "66768698140949/625000000000",
+                "longitudeDegApprox": 106.8299170255184,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 3,
+                "signNumber": 4,
+                "sign": "Cancer",
+                "signZh": "巨蟹",
+                "degreeInSignExact": "10518698140949/625000000000",
+                "degreeInSignApprox": 16.8299170255184,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 8,
+                "number": 9,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "306094422847/1875000000000",
+                "fractionElapsedExact": "306094422847/25000000000000",
+                "fractionRemainingExact": "24693905577153/25000000000000",
+                "padaIndex": 0,
+                "padaNumber": 1,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Mercury"
+              },
+              "d9": {
+                "signIndex": 8,
+                "signNumber": 9,
+                "sign": "Sagittarius",
+                "signZh": "射手",
+                "degreeInSignExact": "918283268541/625000000000",
+                "degreeInSignApprox": 1.4692532296656,
+                "longitudeDegExact": "150918283268541/625000000000",
+                "longitudeDegApprox": 241.4692532296656,
+                "partIndexWithinD1": 5,
+                "partNumberWithinD1": 6,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Ashlesha",
+            "nearestPadaBoundaryArcseconds": 587.7012918661819
+          }
+        ],
+        "boundaryWarnings": [],
+        "vimshottari": null,
+        "natal": {
+          "assetBirthTime": null,
+          "assetBirthPlace": null,
+          "assetNatalDasaAvailable": false
+        },
+        "validation": {
+          "externalEphemerisPrecisionValidated": false,
+          "JHoraRunVerified": false,
+          "marketValidated": false,
+          "note": "公开例题和同引擎岁差回归不构成独立星历精度验证"
+        },
+        "marketDirection": null
+      },
+      "existingProfileComparisons": [
+        {
+          "profileId": "BTC-BZ-V01",
+          "givenPillars": {
+            "year": "戊子",
+            "month": "甲子",
+            "day": "戊申",
+            "hour": "辛酉"
+          },
+          "differentPillars": [
+            "day",
+            "hour"
+          ]
+        }
+      ],
+      "sameFourPillarsUnderResearchConvention": [],
+      "candidateSelectedAsDefault": false,
+      "assetNatalVerified": false,
+      "housesEnabled": false,
+      "note": "计算相符也不是出生依据核定；不替换原四柱，不把UTC+8当出生地。"
+    },
+    {
+      "candidateId": "BTC-EVENT-WHITEPAPER-MAIL",
+      "label": "BTC 白皮书公布邮件",
+      "asset": "BTC",
+      "eventAtUtc": "2008-10-31T18:10:00Z",
+      "atResearchTimezone": "2008-11-01T02:10:00+08:00",
+      "recordPrecision": "page displays seconds; underlying clock accuracy unknown",
+      "sourceRefs": [
+        "BIRTH-SRC-BTC-MAIL"
+      ],
+      "calendar": {
+        "schemaVersion": 1,
+        "adapterVersion": "0.5.0",
+        "inputAt": "2008-10-31T18:10:00Z",
+        "atUtc": "2008-10-31T18:10:00+00:00",
+        "atResearchTimezone": "2008-11-01T02:10:00+08:00",
+        "policy": {
+          "id": "BZ-CALENDAR-CIVIL-00-V01",
+          "timezone": "Asia/Shanghai",
+          "utcOffset": "+08:00",
+          "supportedYears": [
+            1992,
+            2099
+          ],
+          "yearBoundary": "exact_lichun",
+          "monthBoundary": "exact_jie_not_zhongqi",
+          "dayBoundary": "00:00",
+          "trueSolarTime": false,
+          "lateZiHourStemReference": "next_day_late_zi",
+          "calendarEngine": "lunar-python",
+          "calendarVersion": "1.4.8",
+          "note": "采用该库sect2日柱与晚子时干约定；日柱仍当天，23点后的时干以次日日干起算。"
+        },
+        "pillars": {
+          "year": "戊子",
+          "month": "壬戌",
+          "day": "乙巳",
+          "hour": "丁丑"
+        },
+        "lunarDate": {
+          "year": 2008,
+          "month": 10,
+          "day": 4
+        },
+        "lunarCalendarYear": "戊子",
+        "hourStemReference": "same_day",
+        "nearBoundaryWarnings": [],
+        "inputPolicySha256": "a7ed1ac930efb1255fb7d7d8e752c782e0d6cd76303d1543d04a06628ae21f4a",
+        "limits": [
+          "真实本命时地未知的资产不自动套用该时刻作出生盘",
+          "当前输出是指定研究时刻的干支，不含起运/喜用/行情方向",
+          "农历年字段按春节，八字年柱按立春，两者不能互换"
+        ]
+      },
+      "indian": {
+        "available": true,
+        "adapterVersion": "0.5.0",
+        "configurationId": "IA-LAHIRI1-MOSHIER-GEOCENTRIC-V05",
+        "inputAt": "2008-10-31T18:10:00Z",
+        "snapshotType": "transit_at_supplied_instant",
+        "engine": {
+          "name": "Swiss Ephemeris",
+          "version": "2.10.03",
+          "wrapper": "pysweph",
+          "wrapperVersion": "2.10.3.6",
+          "wrapperProvenance": "community_fork_not_Astrodienst_Python_binding",
+          "backendRequested": "Moshier",
+          "externalEphemerisFiles": [],
+          "license": "AGPL-3.0",
+          "binarySha256": "b484671f2e10eecb912c6d1281006d82542c7f4bbd5f4191ad70c38e1bf6a302"
+        },
+        "time": {
+          "atUtc": "2008-10-31T18:10:00+00:00",
+          "jdTT": 2454771.257698889,
+          "jdUT1": 2454771.256938186,
+          "deltaTSeconds": 65.72472900152206,
+          "conversion": "Swiss utc_to_jd; built-in leap seconds and Delta-T; no live EOP/updated leap table"
+        },
+        "settings": {
+          "origin": "geocentric",
+          "zodiac": "sidereal",
+          "ayanamsaMode": "Lahiri",
+          "ayanamsaModeNumber": 1,
+          "ayanamsaExtraBits": 0,
+          "positionFlagsRequested": 65796,
+          "nodeType": "mean",
+          "housesEnabled": false,
+          "nonutNote": "SIDEREAL automatically adds NONUT to returned flags per Swiss documentation",
+          "resetPolicy": "swe_close then set_sid_mode(LAHIRI,0,0) under adapter lock",
+          "displayAyanamsa": "including_nutation_from_get_ayanamsa_ex_ut; not_manually_subtracted",
+          "D9": "Parashara_standard_element_start",
+          "yearLengthDays": 365.2425,
+          "boundaryPolicy": "unrounded_longitude_to_exact_decimal_fraction_left_closed_right_open",
+          "annualLengthStatus": "project_candidate_not_only_traditional_choice",
+          "SBC": false,
+          "Latta": false
+        },
+        "ayanamsaDeg": 23.983416763047302,
+        "ayanamsaReturnedFlags": 4,
+        "meanAyanamsaDeg": 23.98048200322893,
+        "meanAyanamsaReturnedFlags": 68,
+        "positions": [
+          {
+            "body": "Sun",
+            "longitudeDeg": 194.7111810641381,
+            "latitudeDeg": -0.00016625018697806067,
+            "distanceAu": 0.9925790690592269,
+            "longitudeSpeedDegPerDay": 1.0006272199204163,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "1947111810641381/10000000000000",
+                "longitudeDegApprox": 194.7111810641381,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 6,
+                "signNumber": 7,
+                "sign": "Libra",
+                "signZh": "天秤",
+                "degreeInSignExact": "147111810641381/10000000000000",
+                "degreeInSignApprox": 14.7111810641381,
+                "element": "air"
+              },
+              "nakshatra": {
+                "index": 14,
+                "number": 15,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "241335431924143/30000000000000",
+                "fractionElapsedExact": "241335431924143/400000000000000",
+                "fractionRemainingExact": "158664568075857/400000000000000",
+                "padaIndex": 2,
+                "padaNumber": 3,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Rahu"
+              },
+              "d9": {
+                "signIndex": 10,
+                "signNumber": 11,
+                "sign": "Aquarius",
+                "signZh": "水瓶",
+                "degreeInSignExact": "124006295772429/10000000000000",
+                "degreeInSignApprox": 12.4006295772429,
+                "longitudeDegExact": "3124006295772429/10000000000000",
+                "longitudeDegApprox": 312.4006295772429,
+                "partIndexWithinD1": 4,
+                "partNumberWithinD1": 5,
+                "elementStartSign": "Libra",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Swati",
+            "nearestPadaBoundaryArcseconds": 4960.25183089705
+          },
+          {
+            "body": "Moon",
+            "longitudeDeg": 225.74115428101845,
+            "latitudeDeg": -4.51959766698187,
+            "distanceAu": 0.0027055968411155594,
+            "longitudeSpeedDegPerDay": 11.929607457561085,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "4514823085620369/20000000000000",
+                "longitudeDegApprox": 225.74115428101845,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 7,
+                "signNumber": 8,
+                "sign": "Scorpio",
+                "signZh": "天蝎",
+                "degreeInSignExact": "314823085620369/20000000000000",
+                "degreeInSignApprox": 15.74115428101845,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 16,
+                "number": 17,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "744469256861107/60000000000000",
+                "fractionElapsedExact": "744469256861107/800000000000000",
+                "fractionRemainingExact": "55530743138893/800000000000000",
+                "padaIndex": 3,
+                "padaNumber": 4,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Saturn"
+              },
+              "d9": {
+                "signIndex": 7,
+                "signNumber": 8,
+                "sign": "Scorpio",
+                "signZh": "天蝎",
+                "degreeInSignExact": "433407770583321/20000000000000",
+                "degreeInSignApprox": 21.67038852916605,
+                "longitudeDegExact": "4633407770583321/20000000000000",
+                "longitudeDegApprox": 231.67038852916605,
+                "partIndexWithinD1": 4,
+                "partNumberWithinD1": 5,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Anuradha",
+            "nearestPadaBoundaryArcseconds": 3331.844588333638
+          },
+          {
+            "body": "Mercury",
+            "longitudeDeg": 179.7968551300975,
+            "latitudeDeg": 1.9561500254143864,
+            "distanceAu": 1.2074283603104652,
+            "longitudeSpeedDegPerDay": 1.559055405835124,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "71918742052039/400000000000",
+                "longitudeDegApprox": 179.7968551300975,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 5,
+                "signNumber": 6,
+                "sign": "Virgo",
+                "signZh": "处女",
+                "degreeInSignExact": "11918742052039/400000000000",
+                "degreeInSignApprox": 29.7968551300975,
+                "element": "earth"
+              },
+              "nakshatra": {
+                "index": 13,
+                "number": 14,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "7756226156117/1200000000000",
+                "fractionElapsedExact": "7756226156117/16000000000000",
+                "fractionRemainingExact": "8243773843883/16000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Mars"
+              },
+              "d9": {
+                "signIndex": 5,
+                "signNumber": 6,
+                "sign": "Virgo",
+                "signZh": "处女",
+                "degreeInSignExact": "11268678468351/400000000000",
+                "degreeInSignApprox": 28.1716961708775,
+                "longitudeDegExact": "71268678468351/400000000000",
+                "longitudeDegApprox": 178.1716961708775,
+                "partIndexWithinD1": 8,
+                "partNumberWithinD1": 9,
+                "elementStartSign": "Capricorn",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Chitra",
+            "nearestPadaBoundaryArcseconds": 731.3215316490584
+          },
+          {
+            "body": "Venus",
+            "longitudeDeg": 231.72507077935467,
+            "latitudeDeg": -1.6600870970661061,
+            "distanceAu": 1.2078515626404023,
+            "longitudeSpeedDegPerDay": 1.2065163455484746,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "23172507077935467/100000000000000",
+                "longitudeDegApprox": 231.72507077935467,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 7,
+                "signNumber": 8,
+                "sign": "Scorpio",
+                "signZh": "天蝎",
+                "degreeInSignExact": "2172507077935467/100000000000000",
+                "degreeInSignApprox": 21.72507077935467,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 17,
+                "number": 18,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "1517521233806401/300000000000000",
+                "fractionElapsedExact": "1517521233806401/4000000000000000",
+                "fractionRemainingExact": "2482478766193599/4000000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Mercury"
+              },
+              "d9": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "1552563701419203/100000000000000",
+                "degreeInSignApprox": 15.52563701419203,
+                "longitudeDegExact": "28552563701419203/100000000000000",
+                "longitudeDegApprox": 285.52563701419206,
+                "partIndexWithinD1": 6,
+                "partNumberWithinD1": 7,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Jyeshtha",
+            "nearestPadaBoundaryArcseconds": 5789.745194323132
+          },
+          {
+            "body": "Mars",
+            "longitudeDeg": 204.9819696108082,
+            "latitudeDeg": -0.11790121343827138,
+            "distanceAu": 2.503352209427251,
+            "longitudeSpeedDegPerDay": 0.7006349635049239,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "1024909848054041/5000000000000",
+                "longitudeDegApprox": 204.9819696108082,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 6,
+                "signNumber": 7,
+                "sign": "Libra",
+                "signZh": "天秤",
+                "degreeInSignExact": "124909848054041/5000000000000",
+                "degreeInSignApprox": 24.9819696108082,
+                "element": "air"
+              },
+              "nakshatra": {
+                "index": 15,
+                "number": 16,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "24909848054041/5000000000000",
+                "fractionElapsedExact": "74729544162123/200000000000000",
+                "fractionRemainingExact": "125270455837877/200000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Jupiter"
+              },
+              "d9": {
+                "signIndex": 1,
+                "signNumber": 2,
+                "sign": "Taurus",
+                "signZh": "金牛",
+                "degreeInSignExact": "74188632486369/5000000000000",
+                "degreeInSignApprox": 14.8377264972738,
+                "longitudeDegExact": "224188632486369/5000000000000",
+                "longitudeDegApprox": 44.8377264972738,
+                "partIndexWithinD1": 7,
+                "partNumberWithinD1": 8,
+                "elementStartSign": "Libra",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Vishakha",
+            "nearestPadaBoundaryArcseconds": 5935.090598909511
+          },
+          {
+            "body": "Jupiter",
+            "longitudeDeg": 262.82062096704345,
+            "latitudeDeg": -0.35177275940836544,
+            "distanceAu": 5.422897576772002,
+            "longitudeSpeedDegPerDay": 0.1494333890416687,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "5256412419340869/20000000000000",
+                "longitudeDegApprox": 262.82062096704345,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 8,
+                "signNumber": 9,
+                "sign": "Sagittarius",
+                "signZh": "射手",
+                "degreeInSignExact": "456412419340869/20000000000000",
+                "degreeInSignApprox": 22.82062096704345,
+                "element": "fire"
+              },
+              "nakshatra": {
+                "index": 19,
+                "number": 20,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "569237258022607/60000000000000",
+                "fractionElapsedExact": "569237258022607/800000000000000",
+                "fractionRemainingExact": "230762741977393/800000000000000",
+                "padaIndex": 2,
+                "padaNumber": 3,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Venus"
+              },
+              "d9": {
+                "signIndex": 6,
+                "signNumber": 7,
+                "sign": "Libra",
+                "signZh": "天秤",
+                "degreeInSignExact": "507711774067821/20000000000000",
+                "degreeInSignApprox": 25.38558870339105,
+                "longitudeDegExact": "4107711774067821/20000000000000",
+                "longitudeDegApprox": 205.38558870339105,
+                "partIndexWithinD1": 6,
+                "partNumberWithinD1": 7,
+                "elementStartSign": "Aries",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Purva Ashadha",
+            "nearestPadaBoundaryArcseconds": 1845.764518643534
+          },
+          {
+            "body": "Saturn",
+            "longitudeDeg": 144.62143453008795,
+            "latitudeDeg": 1.7948448044771859,
+            "distanceAu": 9.954978799786513,
+            "longitudeSpeedDegPerDay": 0.09536027920102044,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "2892428690601759/20000000000000",
+                "longitudeDegApprox": 144.62143453008795,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 4,
+                "signNumber": 5,
+                "sign": "Leo",
+                "signZh": "狮子",
+                "degreeInSignExact": "492428690601759/20000000000000",
+                "degreeInSignApprox": 24.62143453008795,
+                "element": "fire"
+              },
+              "nakshatra": {
+                "index": 10,
+                "number": 11,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "677286071805277/60000000000000",
+                "fractionElapsedExact": "677286071805277/800000000000000",
+                "fractionRemainingExact": "122713928194723/800000000000000",
+                "padaIndex": 3,
+                "padaNumber": 4,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Venus"
+              },
+              "d9": {
+                "signIndex": 7,
+                "signNumber": 8,
+                "sign": "Scorpio",
+                "signZh": "天蝎",
+                "degreeInSignExact": "231858215415831/20000000000000",
+                "degreeInSignApprox": 11.59291077079155,
+                "longitudeDegExact": "4431858215415831/20000000000000",
+                "longitudeDegApprox": 221.59291077079155,
+                "partIndexWithinD1": 7,
+                "partNumberWithinD1": 8,
+                "elementStartSign": "Aries",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Purva Phalguni",
+            "nearestPadaBoundaryArcseconds": 4637.164308316613
+          },
+          {
+            "body": "Rahu",
+            "longitudeDeg": 290.22159286097803,
+            "latitudeDeg": 0.0,
+            "distanceAu": 0.0025695552897999903,
+            "longitudeSpeedDegPerDay": -0.052992012503043036,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": "mean_ascending_node",
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "29022159286097803/100000000000000",
+                "longitudeDegApprox": 290.22159286097803,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "2022159286097803/100000000000000",
+                "degreeInSignApprox": 20.22159286097803,
+                "element": "earth"
+              },
+              "nakshatra": {
+                "index": 21,
+                "number": 22,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "1022159286097803/100000000000000",
+                "fractionElapsedExact": "3066477858293409/4000000000000000",
+                "fractionRemainingExact": "933522141706591/4000000000000000",
+                "padaIndex": 3,
+                "padaNumber": 4,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Moon"
+              },
+              "d9": {
+                "signIndex": 3,
+                "signNumber": 4,
+                "sign": "Cancer",
+                "signZh": "巨蟹",
+                "degreeInSignExact": "199433574880227/100000000000000",
+                "degreeInSignApprox": 1.99433574880227,
+                "longitudeDegExact": "9199433574880227/100000000000000",
+                "longitudeDegApprox": 91.99433574880227,
+                "partIndexWithinD1": 6,
+                "partNumberWithinD1": 7,
+                "elementStartSign": "Capricorn",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Shravana",
+            "nearestPadaBoundaryArcseconds": 797.7342995209256
+          },
+          {
+            "body": "Ketu",
+            "longitudeDeg": 110.22159286097803,
+            "latitudeDeg": -0.0,
+            "distanceAu": 0.0025695552897999903,
+            "longitudeSpeedDegPerDay": -0.052992012503043036,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": "mean_descending_node_derived_opposite_Rahu",
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "11022159286097803/100000000000000",
+                "longitudeDegApprox": 110.22159286097803,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 3,
+                "signNumber": 4,
+                "sign": "Cancer",
+                "signZh": "巨蟹",
+                "degreeInSignExact": "2022159286097803/100000000000000",
+                "degreeInSignApprox": 20.22159286097803,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 8,
+                "number": 9,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "1066477858293409/300000000000000",
+                "fractionElapsedExact": "1066477858293409/4000000000000000",
+                "fractionRemainingExact": "2933522141706591/4000000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Mercury"
+              },
+              "d9": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "199433574880227/100000000000000",
+                "degreeInSignApprox": 1.99433574880227,
+                "longitudeDegExact": "27199433574880227/100000000000000",
+                "longitudeDegApprox": 271.99433574880226,
+                "partIndexWithinD1": 6,
+                "partNumberWithinD1": 7,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Ashlesha",
+            "nearestPadaBoundaryArcseconds": 797.7342995209256
+          }
+        ],
+        "boundaryWarnings": [],
+        "vimshottari": null,
+        "natal": {
+          "assetBirthTime": null,
+          "assetBirthPlace": null,
+          "assetNatalDasaAvailable": false
+        },
+        "validation": {
+          "externalEphemerisPrecisionValidated": false,
+          "JHoraRunVerified": false,
+          "marketValidated": false,
+          "note": "公开例题和同引擎岁差回归不构成独立星历精度验证"
+        },
+        "marketDirection": null
+      },
+      "existingProfileComparisons": [
+        {
+          "profileId": "BTC-BZ-V01",
+          "givenPillars": {
+            "year": "戊子",
+            "month": "甲子",
+            "day": "戊申",
+            "hour": "辛酉"
+          },
+          "differentPillars": [
+            "month",
+            "day",
+            "hour"
+          ]
+        }
+      ],
+      "sameFourPillarsUnderResearchConvention": [],
+      "candidateSelectedAsDefault": false,
+      "assetNatalVerified": false,
+      "housesEnabled": false,
+      "note": "计算相符也不是出生依据核定；不替换原四柱，不把UTC+8当出生地。"
+    },
+    {
+      "candidateId": "ETH-EVENT-FRONTIER-TIMELINE",
+      "label": "ETH Frontier 官方时间线",
+      "asset": "ETH",
+      "eventAtUtc": "2015-07-30T15:26:13Z",
+      "atResearchTimezone": "2015-07-30T23:26:13+08:00",
+      "recordPrecision": "1 second as displayed in official timeline",
+      "sourceRefs": [
+        "BIRTH-SRC-ETH-TIMELINE",
+        "BIRTH-SRC-ETH-LAUNCH",
+        "BIRTH-SRC-ETH-RELEASE-PROCESS"
+      ],
+      "calendar": {
+        "schemaVersion": 1,
+        "adapterVersion": "0.5.0",
+        "inputAt": "2015-07-30T15:26:13Z",
+        "atUtc": "2015-07-30T15:26:13+00:00",
+        "atResearchTimezone": "2015-07-30T23:26:13+08:00",
+        "policy": {
+          "id": "BZ-CALENDAR-CIVIL-00-V01",
+          "timezone": "Asia/Shanghai",
+          "utcOffset": "+08:00",
+          "supportedYears": [
+            1992,
+            2099
+          ],
+          "yearBoundary": "exact_lichun",
+          "monthBoundary": "exact_jie_not_zhongqi",
+          "dayBoundary": "00:00",
+          "trueSolarTime": false,
+          "lateZiHourStemReference": "next_day_late_zi",
+          "calendarEngine": "lunar-python",
+          "calendarVersion": "1.4.8",
+          "note": "采用该库sect2日柱与晚子时干约定；日柱仍当天，23点后的时干以次日日干起算。"
+        },
+        "pillars": {
+          "year": "乙未",
+          "month": "癸未",
+          "day": "丁未",
+          "hour": "壬子"
+        },
+        "lunarDate": {
+          "year": 2015,
+          "month": 6,
+          "day": 15
+        },
+        "lunarCalendarYear": "乙未",
+        "hourStemReference": "next_day_late_zi",
+        "nearBoundaryWarnings": [],
+        "inputPolicySha256": "a7ed1ac930efb1255fb7d7d8e752c782e0d6cd76303d1543d04a06628ae21f4a",
+        "limits": [
+          "真实本命时地未知的资产不自动套用该时刻作出生盘",
+          "当前输出是指定研究时刻的干支，不含起运/喜用/行情方向",
+          "农历年字段按春节，八字年柱按立春，两者不能互换"
+        ]
+      },
+      "indian": {
+        "available": true,
+        "adapterVersion": "0.5.0",
+        "configurationId": "IA-LAHIRI1-MOSHIER-GEOCENTRIC-V05",
+        "inputAt": "2015-07-30T15:26:13Z",
+        "snapshotType": "transit_at_supplied_instant",
+        "engine": {
+          "name": "Swiss Ephemeris",
+          "version": "2.10.03",
+          "wrapper": "pysweph",
+          "wrapperVersion": "2.10.3.6",
+          "wrapperProvenance": "community_fork_not_Astrodienst_Python_binding",
+          "backendRequested": "Moshier",
+          "externalEphemerisFiles": [],
+          "license": "AGPL-3.0",
+          "binarySha256": "b484671f2e10eecb912c6d1281006d82542c7f4bbd5f4191ad70c38e1bf6a302"
+        },
+        "time": {
+          "atUtc": "2015-07-30T15:26:13+00:00",
+          "jdTT": 2457234.1439951854,
+          "jdUT1": 2457234.143209327,
+          "deltaTSeconds": 67.89816319942474,
+          "conversion": "Swiss utc_to_jd; built-in leap seconds and Delta-T; no live EOP/updated leap table"
+        },
+        "settings": {
+          "origin": "geocentric",
+          "zodiac": "sidereal",
+          "ayanamsaMode": "Lahiri",
+          "ayanamsaModeNumber": 1,
+          "ayanamsaExtraBits": 0,
+          "positionFlagsRequested": 65796,
+          "nodeType": "mean",
+          "housesEnabled": false,
+          "nonutNote": "SIDEREAL automatically adds NONUT to returned flags per Swiss documentation",
+          "resetPolicy": "swe_close then set_sid_mode(LAHIRI,0,0) under adapter lock",
+          "displayAyanamsa": "including_nutation_from_get_ayanamsa_ex_ut; not_manually_subtracted",
+          "D9": "Parashara_standard_element_start",
+          "yearLengthDays": 365.2425,
+          "boundaryPolicy": "unrounded_longitude_to_exact_decimal_fraction_left_closed_right_open",
+          "annualLengthStatus": "project_candidate_not_only_traditional_choice",
+          "SBC": false,
+          "Latta": false
+        },
+        "ayanamsaDeg": 24.075366021238857,
+        "ayanamsaReturnedFlags": 4,
+        "meanAyanamsaDeg": 24.074679423606653,
+        "meanAyanamsaReturnedFlags": 68,
+        "positions": [
+          {
+            "body": "Sun",
+            "longitudeDeg": 103.08631551213206,
+            "latitudeDeg": 0.00023759465147430475,
+            "distanceAu": 1.0151835780431329,
+            "longitudeSpeedDegPerDay": 0.9557681662303926,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "5154315775606603/50000000000000",
+                "longitudeDegApprox": 103.08631551213206,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 3,
+                "signNumber": 4,
+                "sign": "Cancer",
+                "signZh": "巨蟹",
+                "degreeInSignExact": "654315775606603/50000000000000",
+                "degreeInSignApprox": 13.08631551213206,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 7,
+                "number": 8,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "1462947326819809/150000000000000",
+                "fractionElapsedExact": "1462947326819809/2000000000000000",
+                "fractionRemainingExact": "537052673180191/2000000000000000",
+                "padaIndex": 2,
+                "padaNumber": 3,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Saturn"
+              },
+              "d9": {
+                "signIndex": 6,
+                "signNumber": 7,
+                "sign": "Libra",
+                "signZh": "天秤",
+                "degreeInSignExact": "1388841980459427/50000000000000",
+                "degreeInSignApprox": 27.77683960918854,
+                "longitudeDegExact": "10388841980459427/50000000000000",
+                "longitudeDegApprox": 207.77683960918853,
+                "partIndexWithinD1": 3,
+                "partNumberWithinD1": 4,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Pushya",
+            "nearestPadaBoundaryArcseconds": 889.2641563245576
+          },
+          {
+            "body": "Moon",
+            "longitudeDeg": 272.1652895335019,
+            "latitudeDeg": 4.669540241315907,
+            "distanceAu": 0.0024596713092837927,
+            "longitudeSpeedDegPerDay": 14.440480601756313,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "2721652895335019/10000000000000",
+                "longitudeDegApprox": 272.1652895335019,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "21652895335019/10000000000000",
+                "degreeInSignApprox": 2.1652895335019,
+                "element": "earth"
+              },
+              "nakshatra": {
+                "index": 20,
+                "number": 21,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "164958686005057/30000000000000",
+                "fractionElapsedExact": "164958686005057/400000000000000",
+                "fractionRemainingExact": "235041313994943/400000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Sun"
+              },
+              "d9": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "194876058015171/10000000000000",
+                "degreeInSignApprox": 19.4876058015171,
+                "longitudeDegExact": "2894876058015171/10000000000000",
+                "longitudeDegApprox": 289.4876058015171,
+                "partIndexWithinD1": 0,
+                "partNumberWithinD1": 1,
+                "elementStartSign": "Capricorn",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Uttara Ashadha",
+            "nearestPadaBoundaryArcseconds": 4204.95767939326
+          },
+          {
+            "body": "Mercury",
+            "longitudeDeg": 110.62310056413843,
+            "latitudeDeg": 1.7742123519835662,
+            "distanceAu": 1.3353521455630302,
+            "longitudeSpeedDegPerDay": 1.9821604421707804,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "11062310056413843/100000000000000",
+                "longitudeDegApprox": 110.62310056413843,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 3,
+                "signNumber": 4,
+                "sign": "Cancer",
+                "signZh": "巨蟹",
+                "degreeInSignExact": "2062310056413843/100000000000000",
+                "degreeInSignApprox": 20.62310056413843,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 8,
+                "number": 9,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "1186930169241529/300000000000000",
+                "fractionElapsedExact": "1186930169241529/4000000000000000",
+                "fractionRemainingExact": "2813069830758471/4000000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Mercury"
+              },
+              "d9": {
+                "signIndex": 9,
+                "signNumber": 10,
+                "sign": "Capricorn",
+                "signZh": "摩羯",
+                "degreeInSignExact": "560790507724587/100000000000000",
+                "degreeInSignApprox": 5.60790507724587,
+                "longitudeDegExact": "27560790507724587/100000000000000",
+                "longitudeDegApprox": 275.60790507724585,
+                "partIndexWithinD1": 6,
+                "partNumberWithinD1": 7,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Ashlesha",
+            "nearestPadaBoundaryArcseconds": 2243.162030898333
+          },
+          {
+            "body": "Venus",
+            "longitudeDeg": 126.15313948153647,
+            "latitudeDeg": -4.907481140964797,
+            "distanceAu": 0.3260407318156375,
+            "longitudeSpeedDegPerDay": -0.2085663827232373,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "12615313948153647/100000000000000",
+                "longitudeDegApprox": 126.15313948153647,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 4,
+                "signNumber": 5,
+                "sign": "Leo",
+                "signZh": "狮子",
+                "degreeInSignExact": "615313948153647/100000000000000",
+                "degreeInSignApprox": 6.15313948153647,
+                "element": "fire"
+              },
+              "nakshatra": {
+                "index": 9,
+                "number": 10,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "615313948153647/100000000000000",
+                "fractionElapsedExact": "1845941844460941/4000000000000000",
+                "fractionRemainingExact": "2154058155539059/4000000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Ketu"
+              },
+              "d9": {
+                "signIndex": 1,
+                "signNumber": 2,
+                "sign": "Taurus",
+                "signZh": "金牛",
+                "degreeInSignExact": "2537825533382823/100000000000000",
+                "degreeInSignApprox": 25.37825533382823,
+                "longitudeDegExact": "5537825533382823/100000000000000",
+                "longitudeDegApprox": 55.37825533382823,
+                "partIndexWithinD1": 1,
+                "partNumberWithinD1": 2,
+                "elementStartSign": "Aries",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Magha",
+            "nearestPadaBoundaryArcseconds": 1848.6978664686544
+          },
+          {
+            "body": "Mars",
+            "longitudeDeg": 89.85329018928006,
+            "latitudeDeg": 0.9547402757137838,
+            "distanceAu": 2.5765270656854478,
+            "longitudeSpeedDegPerDay": 0.6525437056541036,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "4492664509464003/50000000000000",
+                "longitudeDegApprox": 89.85329018928006,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 2,
+                "signNumber": 3,
+                "sign": "Gemini",
+                "signZh": "双子",
+                "degreeInSignExact": "1492664509464003/50000000000000",
+                "degreeInSignApprox": 29.85329018928006,
+                "element": "air"
+              },
+              "nakshatra": {
+                "index": 6,
+                "number": 7,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "492664509464003/50000000000000",
+                "fractionElapsedExact": "1477993528392009/2000000000000000",
+                "fractionRemainingExact": "522006471607991/2000000000000000",
+                "padaIndex": 2,
+                "padaNumber": 3,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Jupiter"
+              },
+              "d9": {
+                "signIndex": 2,
+                "signNumber": 3,
+                "sign": "Gemini",
+                "signZh": "双子",
+                "degreeInSignExact": "1433980585176027/50000000000000",
+                "degreeInSignApprox": 28.67961170352054,
+                "longitudeDegExact": "4433980585176027/50000000000000",
+                "longitudeDegApprox": 88.67961170352054,
+                "partIndexWithinD1": 8,
+                "partNumberWithinD1": 9,
+                "elementStartSign": "Libra",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Punarvasu",
+            "nearestPadaBoundaryArcseconds": 528.1553185917858
+          },
+          {
+            "body": "Jupiter",
+            "longitudeDeg": 123.4055264345699,
+            "latitudeDeg": 0.857310293236264,
+            "distanceAu": 6.3216904153071205,
+            "longitudeSpeedDegPerDay": 0.21033293985012394,
+            "retrograde": false,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "1234055264345699/10000000000000",
+                "longitudeDegApprox": 123.4055264345699,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 4,
+                "signNumber": 5,
+                "sign": "Leo",
+                "signZh": "狮子",
+                "degreeInSignExact": "34055264345699/10000000000000",
+                "degreeInSignApprox": 3.4055264345699,
+                "element": "fire"
+              },
+              "nakshatra": {
+                "index": 9,
+                "number": 10,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "34055264345699/10000000000000",
+                "fractionElapsedExact": "102165793037097/400000000000000",
+                "fractionRemainingExact": "297834206962903/400000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Ketu"
+              },
+              "d9": {
+                "signIndex": 1,
+                "signNumber": 2,
+                "sign": "Taurus",
+                "signZh": "金牛",
+                "degreeInSignExact": "6497379111291/10000000000000",
+                "degreeInSignApprox": 0.6497379111291,
+                "longitudeDegExact": "306497379111291/10000000000000",
+                "longitudeDegApprox": 30.6497379111291,
+                "partIndexWithinD1": 1,
+                "partNumberWithinD1": 2,
+                "elementStartSign": "Aries",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Magha",
+            "nearestPadaBoundaryArcseconds": 259.89516445164895
+          },
+          {
+            "body": "Saturn",
+            "longitudeDeg": 214.21253491332195,
+            "latitudeDeg": 1.9880794013915295,
+            "distanceAu": 9.578541444313268,
+            "longitudeSpeedDegPerDay": -0.004203587013273599,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": null,
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "4284250698266439/20000000000000",
+                "longitudeDegApprox": 214.21253491332195,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 7,
+                "signNumber": 8,
+                "sign": "Scorpio",
+                "signZh": "天蝎",
+                "degreeInSignExact": "84250698266439/20000000000000",
+                "degreeInSignApprox": 4.21253491332195,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 16,
+                "number": 17,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "52752094799317/60000000000000",
+                "fractionElapsedExact": "52752094799317/800000000000000",
+                "fractionRemainingExact": "747247905200683/800000000000000",
+                "padaIndex": 0,
+                "padaNumber": 1,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Saturn"
+              },
+              "d9": {
+                "signIndex": 4,
+                "signNumber": 5,
+                "sign": "Leo",
+                "signZh": "狮子",
+                "degreeInSignExact": "158256284397951/20000000000000",
+                "degreeInSignApprox": 7.91281421989755,
+                "longitudeDegExact": "2558256284397951/20000000000000",
+                "longitudeDegApprox": 127.91281421989756,
+                "partIndexWithinD1": 1,
+                "partNumberWithinD1": 2,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Anuradha",
+            "nearestPadaBoundaryArcseconds": 3165.125687959005
+          },
+          {
+            "body": "Rahu",
+            "longitudeDeg": 159.70832408178433,
+            "latitudeDeg": 0.0,
+            "distanceAu": 0.00256955528979999,
+            "longitudeSpeedDegPerDay": -0.052992006108357914,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": "mean_ascending_node",
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "15970832408178433/100000000000000",
+                "longitudeDegApprox": 159.70832408178433,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 5,
+                "signNumber": 6,
+                "sign": "Virgo",
+                "signZh": "处女",
+                "degreeInSignExact": "970832408178433/100000000000000",
+                "degreeInSignApprox": 9.70832408178433,
+                "element": "earth"
+              },
+              "nakshatra": {
+                "index": 11,
+                "number": 12,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "3912497224535299/300000000000000",
+                "fractionElapsedExact": "3912497224535299/4000000000000000",
+                "fractionRemainingExact": "87502775464701/4000000000000000",
+                "padaIndex": 3,
+                "padaNumber": 4,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Sun"
+              },
+              "d9": {
+                "signIndex": 11,
+                "signNumber": 12,
+                "sign": "Pisces",
+                "signZh": "双鱼",
+                "degreeInSignExact": "2737491673605897/100000000000000",
+                "degreeInSignApprox": 27.37491673605897,
+                "longitudeDegExact": "35737491673605897/100000000000000",
+                "longitudeDegApprox": 357.374916736059,
+                "partIndexWithinD1": 2,
+                "partNumberWithinD1": 3,
+                "elementStartSign": "Capricorn",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Uttara Phalguni",
+            "nearestPadaBoundaryArcseconds": 1050.0333055763917
+          },
+          {
+            "body": "Ketu",
+            "longitudeDeg": 339.7083240817843,
+            "latitudeDeg": -0.0,
+            "distanceAu": 0.00256955528979999,
+            "longitudeSpeedDegPerDay": -0.052992006108357914,
+            "retrograde": true,
+            "requestedFlags": 65796,
+            "returnedFlags": 65860,
+            "engineMessage": "",
+            "nodeDefinition": "mean_descending_node_derived_opposite_Rahu",
+            "divisions": {
+              "schemaVersion": "1.0",
+              "moduleVersion": "0.5.0",
+              "configurationId": "IA-PARASHARA-D9-EXACT-01",
+              "input": {
+                "longitudeDegExact": "3397083240817843/10000000000000",
+                "longitudeDegApprox": 339.7083240817843,
+                "coordinateAssumption": "caller_supplied_sidereal_ecliptic_longitude",
+                "ayanamsa": "already_applied_by_caller; not_selected_here"
+              },
+              "boundaryPolicy": "exact_rational_left_closed_right_open; no_epsilon_snapping",
+              "d1": {
+                "signIndex": 11,
+                "signNumber": 12,
+                "sign": "Pisces",
+                "signZh": "双鱼",
+                "degreeInSignExact": "97083240817843/10000000000000",
+                "degreeInSignApprox": 9.7083240817843,
+                "element": "water"
+              },
+              "nakshatra": {
+                "index": 25,
+                "number": 26,
+                "widthDegExact": "40/3",
+                "degreeWithinExact": "191249722453529/30000000000000",
+                "fractionElapsedExact": "191249722453529/400000000000000",
+                "fractionRemainingExact": "208750277546471/400000000000000",
+                "padaIndex": 1,
+                "padaNumber": 2,
+                "padaWidthDegExact": "10/3",
+                "vimshottariLord": "Saturn"
+              },
+              "d9": {
+                "signIndex": 5,
+                "signNumber": 6,
+                "sign": "Virgo",
+                "signZh": "处女",
+                "degreeInSignExact": "273749167360587/10000000000000",
+                "degreeInSignApprox": 27.3749167360587,
+                "longitudeDegExact": "1773749167360587/10000000000000",
+                "longitudeDegApprox": 177.3749167360587,
+                "partIndexWithinD1": 2,
+                "partNumberWithinD1": 3,
+                "elementStartSign": "Cancer",
+                "variant": "Parashara_element_starts_Aries_Capricorn_Libra_Cancer_9_equal_parts",
+                "equivalentFormula": "D9 longitude = (9 * supplied sidereal longitude) mod 360"
+              },
+              "financialPrediction": null,
+              "marketValidated": false
+            },
+            "nakshatraName": "Uttara Bhadrapada",
+            "nearestPadaBoundaryArcseconds": 1050.0333055763917
+          }
+        ],
+        "boundaryWarnings": [],
+        "vimshottari": null,
+        "natal": {
+          "assetBirthTime": null,
+          "assetBirthPlace": null,
+          "assetNatalDasaAvailable": false
+        },
+        "validation": {
+          "externalEphemerisPrecisionValidated": false,
+          "JHoraRunVerified": false,
+          "marketValidated": false,
+          "note": "公开例题和同引擎岁差回归不构成独立星历精度验证"
+        },
+        "marketDirection": null
+      },
+      "existingProfileComparisons": [
+        {
+          "profileId": "ETH-BAZI-A",
+          "givenPillars": {
+            "year": "乙未",
+            "month": "癸未",
+            "day": "戊申",
+            "hour": "壬子"
+          },
+          "differentPillars": [
+            "day"
+          ]
+        },
+        {
+          "profileId": "ETH-BAZI-B",
+          "givenPillars": {
+            "year": "癸巳",
+            "month": "甲子",
+            "day": "辛未",
+            "hour": "癸巳"
+          },
+          "differentPillars": [
+            "year",
+            "month",
+            "day",
+            "hour"
+          ]
+        }
+      ],
+      "sameFourPillarsUnderResearchConvention": [],
+      "candidateSelectedAsDefault": false,
+      "assetNatalVerified": false,
+      "housesEnabled": false,
+      "note": "计算相符也不是出生依据核定；不替换原四柱，不把UTC+8当出生地。"
+    }
+  ],
+  "calculableEvents": 3,
+  "dateOnlyEventsSkipped": 1,
+  "defaultCandidate": null,
+  "housesEnabled": false,
+  "natalDasaEnabled": false
+}

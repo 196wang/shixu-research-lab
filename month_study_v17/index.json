@@ -1,0 +1,11 @@
+{
+  "artifacts": {
+    "details.json": "e4f02cd64f4eef9a13c89353b8194eae8f80b6ca8984cc8019a88257dd66c544",
+    "protocol.json": "5e14fe2505434da8c6bc75d52328fe2a71ae4dd6dacab875f7be76e873333b21",
+    "registration.json": "284cf7b44ac9e25a65845b20548c91229d5b113f7633d836d5d4f6848e3fdca0",
+    "report.json": "e241f07c84a3da9c5dd4b3c77dc30a8f6a2e1e699eb0f31073fcdc54ae4170a1"
+  },
+  "completedAtUtc": "2026-09-27T06:36:56.252474+00:00",
+  "run": "run-001",
+  "schemaVersion": 1
+}

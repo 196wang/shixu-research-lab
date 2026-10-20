@@ -1,0 +1,102 @@
+'use strict';
+/* Two independent, read-only time calculators. Queries never fetch new market bars or save research. */
+(() => {
+ const DAY=86400000,ASSETS={'BTC-BZ-V01':'BTCUSDT','ETH-BAZI-A':'ETHUSDT','ETH-BAZI-B':'ETHUSDT'};
+ const E=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const n=v=>typeof v==='number'&&Number.isFinite(v)?v:0;
+ const dateOffset=(date,offset)=>new Date(Date.parse(date+'T00:00:00Z')+offset*DAY).toISOString().slice(0,10);
+ const localTime=v=>{const d=new Date(v);return v&&Number.isFinite(d.getTime())?new Date(d.getTime()+8*3600000).toISOString().slice(0,19).replace('T',' '):'尚无';};
+ const eventTime=v=>String(v||'').slice(0,19).replace('T',' ');
+ const kinds={gann:'江恩时间投影',astro:'星象日历'};
+ class TimingStudy{
+  constructor(options){this.options=options;this.host=document.getElementById('timing-study');this.active='gann';this.visible=false;this.syncing=false;this.states=Object.fromEntries(['gann','astro'].map(kind=>[kind,{result:null,loading:false,request:0,page:0,type:'all',date:'',status:kind==='gann'?'future_candidate':'all'}]));this.createUI();this.bind();this.updateContext();}
+  el(id){return document.getElementById(id);}
+  createUI(){
+   this.host.innerHTML=`<div class="section-title"><h2>时间研究</h2><span class="tag gray">只读计算 · 尚未验证</span></div><p class="muted timing-intro">算法由我们明确定义；尚未证明这些日期存在行情优势。这里的日期计算与已登记的 BTC 前瞻协议分开，所有结果都没有涨跌方向。</p><div class="timing-mode" role="group" aria-label="时间研究工具"><button type="button" id="timing-mode-gann" class="quiet" aria-pressed="true" aria-controls="timing-section-gann">江恩时间投影</button><button type="button" id="timing-mode-astro" class="quiet" aria-pressed="false" aria-controls="timing-section-astro">星象日历</button></div><section id="timing-section-gann" aria-label="江恩时间投影"><p class="timing-description">从所选资产的本地日线缓存寻找高低点候选。相邻两锚点的间隔向后投影 1 倍、2 倍；缺口会打断配对，区间外的邻居不会补入。</p><form id="timing-gann-form" class="timing-query"><label>独立行情对象<select id="timing-gann-symbol"><option value="BTCUSDT">BTCUSDT</option><option value="ETHUSDT">ETHUSDT</option></select></label><label>起始日期<input id="timing-gann-start" type="date" min="2020-01-01" max="2099-12-31" required></label><label>结束日期<input id="timing-gann-end" type="date" min="2020-01-01" max="2099-12-31" required></label><button id="timing-gann-calculate" class="primary" type="submit">计算时间投影</button></form><p class="muted timing-range-note">北京时间公历日，首尾包含，最多 180 天。不会联网更新行情；需要时先到“K 线与时间”手动更新对应资产。</p>${this.sectionBody('gann')}</section><section id="timing-section-astro" aria-label="星象日历" hidden><p class="timing-description">月相与恒星月宿分别列出：月相按日月角距计算，恒星月宿沿用印度占星 27 宿名。它们是时间事件，不是买卖信号。</p><form id="timing-astro-form" class="timing-query timing-astro-query"><label>起始日期<input id="timing-astro-start" type="date" min="1992-01-01" max="2099-12-31" required></label><label>结束日期<input id="timing-astro-end" type="date" min="1992-01-01" max="2099-12-31" required></label><button id="timing-astro-calculate" class="primary" type="submit">计算星象日历</button></form><p class="muted timing-range-note">北京时间公历日，首尾包含，最多 62 天。事件原始时刻与联动排盘的整秒时刻分开保留。</p>${this.sectionBody('astro')}</section>`;
+   const today=new Date(Date.now()+8*3600000).toISOString().slice(0,10);
+   this.el('timing-gann-status').value='future_candidate';this.el('timing-gann-symbol').value='BTCUSDT';this.el('timing-gann-start').value=dateOffset(today,-89);this.el('timing-gann-end').value=today;
+   this.el('timing-astro-start').value=today;this.el('timing-astro-end').value=dateOffset(today,29);
+  }
+  sectionBody(kind){return `<p id="timing-${kind}-notice" class="timing-notice" role="status" aria-live="polite">尚未计算。选择范围后点击计算按钮。</p><p id="timing-${kind}-sync-context" class="muted timing-sync-context"></p><div id="timing-${kind}-overview"></div><div id="timing-${kind}-filters" class="timing-filters" hidden><label>${kind==='gann'?'投影类型':'事件类型'}<select id="timing-${kind}-type">${kind==='gann'?'<option value="all">1 倍与 2 倍</option><option value="1">仅 1 倍</option><option value="2">仅 2 倍</option>':'<option value="all">全部事件</option><option value="moon_phase">月相</option><option value="nakshatra_ingress">恒星月宿交接</option>'}</select></label><label>仅看日期<input id="timing-${kind}-date" type="date" aria-label="${kinds[kind]}结果日期筛选"></label>${kind==='gann'?'<label>候选状态<select id="timing-gann-status"><option value="all">全部状态</option><option value="future_candidate" selected>未来候选</option><option value="past">既往目标</option></select></label>':''}<button type="button" id="timing-${kind}-clear" class="quiet">清除筛选</button><button type="button" id="timing-${kind}-export" class="quiet" disabled>导出结果 JSON ↓</button></div><div id="timing-${kind}-results"></div><div id="timing-${kind}-pagination" class="timing-pagination" hidden><button type="button" id="timing-${kind}-prev" class="quiet" disabled>← 上一页</button><span id="timing-${kind}-page" class="muted"></span><button type="button" id="timing-${kind}-next" class="quiet" disabled>下一页 →</button></div><details id="timing-${kind}-details" class="timing-details" hidden><summary>${kind==='gann'?'锚点确认、排除日期与计算依据':'数值精度、配置与来源'}</summary><div id="timing-${kind}-audit"></div></details>`;}
+  bind(){
+   for(const kind of ['gann','astro']){
+    this.el('timing-mode-'+kind).addEventListener('click',()=>this.setMode(kind));
+    this.el('timing-'+kind+'-form').addEventListener('submit',e=>{e.preventDefault();this.calculate(kind);});
+    for(const key of kind==='gann'?['symbol','start','end']:['start','end'])this.el('timing-'+kind+'-'+key).addEventListener('input',()=>this.invalidate(kind));
+    this.el('timing-'+kind+'-type').addEventListener('change',e=>{this.states[kind].type=e.target.value;this.states[kind].page=0;this.renderList(kind);});
+    this.el('timing-'+kind+'-date').addEventListener('input',e=>{this.states[kind].date=e.target.value;this.states[kind].page=0;this.renderList(kind);});
+    this.el('timing-'+kind+'-clear').addEventListener('click',()=>{const s=this.states[kind];s.type='all';s.date='';s.status='all';s.page=0;this.el('timing-'+kind+'-type').value='all';this.el('timing-'+kind+'-date').value='';if(kind==='gann')this.el('timing-gann-status').value='all';this.renderList(kind);});
+    this.el('timing-'+kind+'-prev').addEventListener('click',()=>{if(this.states[kind].page>0){this.states[kind].page--;this.renderList(kind);}});
+    this.el('timing-'+kind+'-next').addEventListener('click',()=>{const s=this.states[kind];if((s.page+1)*10<this.filtered(kind).length){s.page++;this.renderList(kind);}});
+    this.el('timing-'+kind+'-export').addEventListener('click',()=>this.export(kind));
+   }
+   this.el('timing-gann-status').addEventListener('change',e=>{this.states.gann.status=e.target.value;this.states.gann.page=0;this.renderList('gann');});
+   this.host.addEventListener('click',e=>{const button=e.target.closest('[data-timing-select]');if(button)this.select(button.dataset.timingSelect,button.dataset.timingId);});
+  }
+  setVisible(value){this.visible=value;if(value)this.updateContext();}
+  setMode(kind){if(!this.states[kind])return;this.active=kind;for(const k of ['gann','astro']){this.el('timing-section-'+k).hidden=k!==kind;this.el('timing-mode-'+k).setAttribute('aria-pressed',String(k===kind));}this.updateContext();}
+  context(){return this.options.getContext()||{};}
+  compatible(kind){const profile=this.context().profile;return kind==='astro'?[...Object.keys(ASSETS),'PERSON-BZ-H01'].includes(profile):Boolean(ASSETS[profile]&&ASSETS[profile]===this.el('timing-gann-symbol').value);}
+  updateContext(){const c=this.context();for(const kind of ['gann','astro']){this.el('timing-'+kind+'-sync-context').textContent=(kind==='gann'&&!this.compatible(kind)?'时间投影对象与顶部盘不一致，需先选择匹配资产的顶部盘才能联动。':'日期联动仅更新顶部当前盘「'+(c.label||c.profile||'未选择')+'」的分析时刻，不自动保存研究笔记。')+(kind==='astro'?' 星象事件没有独立行情资产。':'');if(this.visible&&this.active===kind)this.renderList(kind);}}
+  announce(kind,message,error=false){const node=this.el('timing-'+kind+'-notice');node.textContent=message;node.classList.toggle('error',error);}
+  invalidate(kind){const s=this.states[kind];++s.request;s.controller?.abort();s.loading=false;s.result=null;s.page=0;this.el('timing-'+kind+'-calculate').disabled=false;this.clearResult(kind);this.announce(kind,'范围或对象已改变，请重新计算。');this.updateContext();}
+  clearResult(kind){for(const suffix of ['overview','results','audit'])this.el('timing-'+kind+'-'+suffix).innerHTML='';for(const suffix of ['filters','pagination','details'])this.el('timing-'+kind+'-'+suffix).hidden=true;this.el('timing-'+kind+'-export').disabled=true;}
+  parameters(kind){
+   const start=this.el('timing-'+kind+'-start').value,end=this.el('timing-'+kind+'-end').value;
+   const valid=date=>/^\d{4}-\d{2}-\d{2}$/.test(date)&&Number.isFinite(Date.parse(date+'T00:00:00Z'))&&new Date(date+'T00:00:00Z').toISOString().slice(0,10)===date;
+   if(!valid(start)||!valid(end))throw new Error('请填写有效的起止日期');const days=(Date.parse(end)-Date.parse(start))/DAY+1,limit=kind==='gann'?180:62;
+   if(days<1)throw new Error('结束日期不能早于起始日期');if(days>limit)throw new Error('所选范围超过 '+limit+' 天，请缩小范围');
+   const min=kind==='gann'?'2020-01-01':'1992-01-01';if(start<min||end>'2099-12-31')throw new Error('日期超出此计算器支持范围');
+   const result={start,end};if(kind==='gann'){result.symbol=this.el('timing-gann-symbol').value;if(!['BTCUSDT','ETHUSDT'].includes(result.symbol))throw new Error('请选择 BTCUSDT 或 ETHUSDT');}return result;
+  }
+  async calculate(kind){
+   const s=this.states[kind];if(!s)return;const ticket=++s.request;s.controller?.abort();s.loading=false;s.result=null;this.el('timing-'+kind+'-calculate').disabled=false;this.clearResult(kind);
+   let params;try{params=this.parameters(kind);if(!this.el('timing-'+kind+'-form').reportValidity())return;}catch(error){this.announce(kind,error.message,true);this.el('timing-'+kind+'-calculate').disabled=false;return;}
+   const controller=new AbortController();s.controller=controller;s.loading=true;this.el('timing-'+kind+'-calculate').disabled=true;this.announce(kind,kind==='gann'?'正在从本地缓存计算全部符合条件的锚点与投影…':'正在计算月相与恒星月宿交接时刻…');
+   try{const response=await fetch((kind==='gann'?'/api/gann-timing?':'/api/astro-events?')+new URLSearchParams(params),{signal:controller.signal});const data=await response.json();if(ticket!==s.request)return;if(!response.ok)throw new Error(data.error||'本地时间计算服务暂不可用');
+    if(kind==='gann'&&(data.symbol!==params.symbol||data.range?.start!==params.start||data.range?.end!==params.end||!Array.isArray(data.projections)||!Array.isArray(data.anchors)||!Array.isArray(data.pairs)))throw new Error('时间投影返回的资产或范围与请求不一致');
+    if(kind==='astro'&&(!data.available||data.range?.startDate!==params.start||data.range?.endDate!==params.end||!Array.isArray(data.events)))throw new Error('星象日历返回的范围或状态无效');
+    s.result=data;s.params=params;s.page=0;this.render(kind);this.announce(kind,'计算完成。结果只供时间研究，未登记预测、执行评分或保存研究笔记。');
+   }catch(error){if(error.name==='AbortError'||ticket!==s.request)return;s.result=null;this.clearResult(kind);this.announce(kind,'计算未完成：'+error.message,true);}
+   finally{if(ticket===s.request){s.loading=false;this.el('timing-'+kind+'-calculate').disabled=false;this.el('timing-'+kind+'-export').disabled=!s.result;}}
+  }
+  render(kind){if(!this.states[kind].result)return;this.el('timing-'+kind+'-filters').hidden=false;this.el('timing-'+kind+'-details').hidden=false;kind==='gann'?this.renderGann():this.renderAstro();this.renderList(kind);}
+  renderGann(){
+   const d=this.states.gann.result,q=d.dataQuality||{},source=(d.sources||[]).find(s=>s.kind==='market_snapshot');
+   this.el('timing-gann-overview').innerHTML=`<div class="timing-result-heading"><h3>${E(d.symbol)} · ${E(d.range.start)} — ${E(d.range.end)}</h3><span class="tag gray">方向为空</span></div><div class="timing-counts"><article><strong>${n(q.validDays)} / ${n(q.requestedDays)}</strong><span>有效日线 / 请求日期</span></article><article><strong>${d.anchors.length}</strong><span>高低点候选（含歧义）</span></article><article><strong>${d.pairs.length} / ${d.projections.length}</strong><span>锚点对 / 时间投影</span></article></div><p class="muted timing-meta">本次计算 ${E(localTime(d.generatedAtUtc))}（北京时间）；缓存取回 ${E(localTime(source?.marketAsOfUtc))}。缓存日期不是预测发布时间。</p><div class="timing-caution">“最早确认”指右侧第 2 日结束后的次日零点，不代表当时实际计算或发布。所有投影均由本次计算生成；既往目标为事后查看，未来目标也只是未登记候选。</div>${!q.validDays?'<p class="timing-empty">所选范围没有可用完整日线。请先检查并更新对应资产缓存；无数据不等于没有触发。</p>':''}`;
+   const labels={high:'高点候选',low:'低点候选',ambiguous:'同日高低歧义'};
+   this.el('timing-gann-audit').innerHTML=`<p>严格比较左右各 2 根完整日线。并列高低点不取为锚点；同日高低歧义、缺口会中断配对。每段头尾各 2 根无法确认，不从查询范围外补邻居。相邻候选同类型时不跳过、不择优替换。</p><p>算法 ${E(d.settings?.algorithmId)} · v${E(d.settings?.algorithmVersion)}。此工具不包含评分。</p><details><summary>全部锚点候选（${d.anchors.length}）</summary><div class="table-wrap"><table class="data-table timing-anchor-table"><thead><tr><th>日期</th><th>类型</th><th>价格</th><th>最早确认（北京时间）</th><th>配对资格</th></tr></thead><tbody>${d.anchors.map(a=>`<tr><td>${E(a.date)}</td><td>${E(labels[a.type]||a.type)}</td><td>${a.price===null?'—':E(a.price)}</td><td>${E(localTime(a.knownAt))}</td><td>${a.eligibleForPairing?'可参与':'中断配对'}</td></tr>`).join('')}</tbody></table></div></details><details><summary>排除日期与原始原因（${n(q.excludedDays)}）</summary><ul>${(q.excluded||[]).map(e=>`<li>${E(e.date)} · ${E(this.excludedReason(e.reasons))}<small>${E((e.reasons||[]).join('、'))}</small></li>`).join('')}</ul></details><details><summary>设置与来源摘要</summary><pre>${E(JSON.stringify({settings:d.settings,settingsSha256:d.settingsSha256,codeSha256:d.codeSha256,sources:d.sources,dataQuality:{...q,excluded:undefined},generatedAtUtc:d.generatedAtUtc},null,2))}</pre></details>`;
+  }
+  excludedReason(reasons){const text=(reasons||[]).join(' ');if(/future|not_yet_closed|not_confirmed_closed/.test(text))return '尚未确认完整收盘';if(/conflict/.test(text))return '源数据冲突';if(/boundary/.test(text))return '不符合北京时间完整日';if(/missing/.test(text))return '缺少日线';if(/invalid/.test(text))return '价格或时段校验不通过';return '数据未满足完整性要求';}
+  renderAstro(){
+   const d=this.states.astro.result;
+   this.el('timing-astro-overview').innerHTML=`<div class="timing-result-heading"><h3>${E(d.range.startDate)} — ${E(d.range.endDate)}</h3><span class="tag gray">北京时间事件</span></div><div class="timing-counts"><article><strong>${n(d.counts?.moon_phase)}</strong><span>月相事件</span></article><article><strong>${n(d.counts?.nakshatra_ingress)}</strong><span>恒星月宿交接</span></article><article><strong>${d.events.length}</strong><span>事件总数</span></article></div><p class="muted timing-meta">${d.generatedAtUtc?'本次计算 '+E(localTime(d.generatedAtUtc))+'（北京时间）。':''}列表显示至秒，原始数值精度保留在 JSON；联动排盘采用向上取整的整秒时刻，避免落在交接前一侧。两种时刻均以北京时间展示。</p><div class="timing-caution">本版 v0.14 月相 8 个样例与 <a href="https://aa.usno.navy.mil/calculated/moon/phases?date=2026-09-01&amp;nump=8" target="_blank" rel="noopener noreferrer">USNO 分钟表</a> 相差最多约 80 秒；月宿尚无第二套独立星历对照。数值求根精度不等于天文准确度。</div>`;
+   this.el('timing-astro-audit').innerHTML=`<p>月相与恒星月宿采用各自算法口径；27 宿名使用返回的印度占星名称，不替换为中国二十八宿。月宿交接的 from／to 为相邻宿位。</p><p>全范围外部星历精度${d.precision?.externalEphemerisPrecisionValidated?'已有核验记录（详见返回资料）':'尚未完成独立验证'}；8 个有限月相样例不外推为全范围或月宿验证，也没有为这些事件设定行情方向。</p><p>${E(d.precision?.note||'数值精度与外部参考对照分别记录。')}</p>${(d.limits||[]).length?`<ul>${d.limits.map(x=>`<li>${E(x)}</li>`).join('')}</ul>`:''}<details><summary>配置、引擎与来源摘要</summary><pre>${E(JSON.stringify({generatedAtUtc:d.generatedAtUtc,range:d.range,configuration:d.configuration,engines:d.engines,precision:d.precision,configurationSha256:d.configurationSha256,sourceHashes:d.sourceHashes,sources:d.sources},null,2))}</pre></details>`;
+  }
+  filtered(kind){const s=this.states[kind],all=kind==='gann'?s.result?.projections:s.result?.events;return (all||[]).filter(x=>{
+   const type=s.type==='all'||(kind==='gann'?String(x.multiplier):x.kind)===s.type,date=kind==='gann'?x.targetDate:String(x.atLocal).slice(0,10);
+   const status=kind!=='gann'||s.status==='all'||(s.status==='past'?x.status!=='future_candidate':x.status===s.status);return type&&(!s.date||s.date===date)&&status;
+  });}
+  projectionStatus(x){return x.status==='future_candidate'?'未来候选 · 未登记':x.status==='retrospective'?'事后投影 · 当时尚不可知':'既往目标 · 本次事后投影';}
+  renderList(kind){
+   const s=this.states[kind];if(!s.result)return;const all=this.filtered(kind);s.page=Math.min(s.page,Math.max(0,Math.ceil(all.length/10)-1));const offset=s.page*10,rows=all.slice(offset,offset+10),disabled=!this.compatible(kind)||this.syncing;
+   if(kind==='gann'){
+    const d=s.result,anchors=new Map(d.anchors.map(a=>[a.id,a])),pairs=new Map(d.pairs.map(p=>[p.id,p]));
+    const anchor=(id,date,type)=>{const a=anchors.get(id);return `<strong>${E(a?.date||date)}</strong><small>${E(({high:'高点',low:'低点',ambiguous:'歧义'})[a?.type||type]||'候选')} · ${a?.price==null?'—':E(a.price)}</small><small>最早确认 ${E(localTime(a?.knownAt))}</small>`;};
+    this.el('timing-gann-results').innerHTML=rows.length?`<div class="table-wrap"><table class="data-table timing-projection-table"><thead><tr><th scope="col">锚点 A</th><th scope="col">锚点 B</th><th scope="col">间隔 / 倍数</th><th scope="col">投影目标</th><th scope="col">候选状态</th><th scope="col">时间联动</th></tr></thead><tbody>${rows.map(x=>{const pair=pairs.get(x.pairId);return `<tr data-projection-id="${E(x.id)}"><td>${anchor(x.anchorAId,x.anchorADate,pair?.anchorAType)}</td><td>${anchor(x.anchorBId,x.anchorBDate,pair?.anchorBType)}</td><td>${n(x.intervalDays)} 日 × ${n(x.multiplier)}<small>从锚点 B 起算</small></td><td><strong>${E(x.targetDate)}</strong><small>00:00 北京时间</small></td><td>${this.projectionStatus(x)}<small>此对最早确认<br>${E(localTime(x.knownAt))}</small></td><td><button type="button" class="quiet timing-select" data-timing-select="gann" data-timing-id="${E(x.id)}" ${disabled?'disabled':''}>同步此日排盘</button></td></tr>`;}).join('')}</tbody></table></div>`:`<p class="timing-empty">${d.projections.length?'当前筛选没有投影目标；可改为查看全部或既往目标。':'所选范围没有符合配对条件的时间投影；可展开锚点及排除日期检查原因。'}</p>`;
+   }else this.el('timing-astro-results').innerHTML=rows.length?`<div class="table-wrap"><table class="data-table timing-events-table"><thead><tr><th scope="col">类型 / 事件</th><th scope="col">事件时刻（北京时间）</th><th scope="col">月相角距 / 月宿交接</th><th scope="col">时间联动</th></tr></thead><tbody>${rows.map(x=>`<tr data-event-id="${E(x.id)}"><td><span class="tag ${x.kind==='moon_phase'?'gray':'amber'}">${x.kind==='moon_phase'?'月相':'恒星月宿'}</span><strong>${E(x.label)}</strong></td><td>${E(eventTime(x.atLocal))}<small>联动用 ${E(localTime(x.analysisAtLocal))}</small></td><td>${x.kind==='moon_phase'?E(x.phaseAngleDeg)+'°':E(x.from?.name||'—')+' → '+E(x.to?.name||'—')}</td><td><button type="button" class="quiet timing-select" data-timing-select="astro" data-timing-id="${E(x.id)}" ${disabled?'disabled':''}>同步整秒排盘</button></td></tr>`).join('')}</tbody></table></div>`:'<p class="timing-empty">当前范围或筛选没有星象事件；此结果不表示缺少运行依赖。</p>';
+   this.el('timing-'+kind+'-pagination').hidden=all.length===0;this.el('timing-'+kind+'-page').textContent=(kind==='gann'?'当前筛选：'+({all:'全部状态',future_candidate:'未来候选',past:'既往目标'}[s.status]||'全部状态')+' · ':'')+(all.length?`${offset+1}–${offset+rows.length} / ${all.length} 项`:'0 项');this.el('timing-'+kind+'-prev').disabled=s.page===0;this.el('timing-'+kind+'-next').disabled=offset+10>=all.length;
+  }
+  async select(kind,id){
+   const s=this.states[kind];if(!s?.result||s.loading||this.syncing||kind!==this.active)return;
+   if(!this.compatible(kind)){this.announce(kind,'请先在顶部选择与时间投影一致的资产盘。',true);return;}
+   const row=(kind==='gann'?s.result.projections:s.result.events).find(x=>x.id===id);if(!row)return;
+   const at=kind==='gann'?row.targetAtLocal:row.analysisAtLocal,profile=this.context().profile;this.syncing=true;this.renderList(kind);
+   try{const selected=await this.options.selectAt(at,kind==='gann'?s.result.symbol:null);if(selected&&this.context().profile===profile)this.announce(kind,'已把顶部当前盘更新至 '+localTime(at)+'（北京时间）；未保存笔记或更改已登记协议。');}
+   catch(error){this.announce(kind,'排盘联动未完成：'+error.message,true);}
+   finally{this.syncing=false;this.renderList(kind);}
+  }
+  export(kind){const s=this.states[kind];if(!s?.result||s.loading)return;const value=s.result,url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download=(kind==='gann'?'gann-'+value.symbol:'astro-events')+'-'+s.params.start+'-'+s.params.end+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);this.announce(kind,'已生成导出文件，请查看浏览器下载。');}
+ }
+ window.createTimingStudy=options=>new TimingStudy(options);
+})();

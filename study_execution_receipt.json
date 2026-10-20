@@ -1,0 +1,12 @@
+{
+  "completedAtUtc": "2026-09-27T01:25:49.869538+00:00",
+  "outputSha256": "3c0b089f9f78857ddda31057b92e0ba4bdbef55f98a6544d0a3a8fdb481d9544",
+  "registrationSha256": "991019de83aa3f9f65259d2c75f27a554b90e02165d2cbd62ee38ef41314b4e1",
+  "periods": 2,
+  "realReplicatesPerPeriod": [
+    10000,
+    10000
+  ],
+  "tests": 13,
+  "marketValidated": false
+}

@@ -1,0 +1,1161 @@
+{
+  "schemaVersion": "1.0",
+  "researchVersion": "0.4",
+  "researchDate": "2026-09-27",
+  "scope": "独立历法参考资料，未调用lunar-python或lunar-javascript生成预期值",
+  "timePolicy": {
+    "timeZone": "Asia/Shanghai",
+    "testYearsUtcOffset": "+08:00",
+    "civilDayBoundary": "00:00:00",
+    "birthPlaceOrTrueSolarTimeApplied": false,
+    "note": "现代2024/2025样本在香港、台湾、上海均UTC+8；不推广到历史夏令时或地方真太阳时。",
+    "yearFieldsMustBeSeparate": [
+      "officialLunarYearGanZhi_at_lunarNewYear",
+      "baziYearGanZhi_at_lichun"
+    ],
+    "monthFieldsMustBeSeparate": [
+      "lunarCalendarMonth",
+      "solarTermBaziMonth"
+    ]
+  },
+  "sources": [
+    {
+      "id": "HKO-ST24",
+      "institution": "香港天文台",
+      "title": "2024年二十四节气：十二中气表",
+      "url": "https://www.hko.gov.hk/tc/gts/astron2024/files/2024SolarTerms24.pdf",
+      "locator": "PDF第1页；网页抽取行23–164",
+      "readStatus": "official_pdf_text_read",
+      "precision": "minute",
+      "note": "本页实际列十二中气，不是十二月节交接。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "CWA-CAL24",
+      "institution": "中央气象署（编表时为中央气象局）",
+      "title": "中华民国113年日历资料表",
+      "url": "https://www.cwa.gov.tw/Data/astronomy/2024cal.pdf",
+      "locator": "PDF第1页公农历，第2页节气表；注明世界时+8",
+      "readStatus": "official_pdf_text_read",
+      "precision": "minute",
+      "note": "2023年2月出版；PDF后两页重复前两页，不作独立来源。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "CWA-CAL25",
+      "institution": "中央气象署",
+      "title": "中华民国114年日历资料表",
+      "url": "https://www.cwa.gov.tw/Data/astronomy/2025cal.pdf",
+      "locator": "PDF第1页公农历，第2页节气表",
+      "readStatus": "official_pdf_text_read",
+      "precision": "minute",
+      "note": "2024年2月出版；标准时UTC+8。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "CWA-JDN16",
+      "institution": "交通部中央气象局",
+      "title": "2016年天文日历：儒略日说明、求日名干支法",
+      "url": "https://www.cwa.gov.tw/Data/service/notice/download/publish_20151126104611.pdf",
+      "locator": "PDF页索引10（第11个PDF页面），印刷第6页；抽取行487–515",
+      "readStatus": "official_pdf_text_read",
+      "precision": "day",
+      "note": "列2016每月首日JDN，并举2016-10-10 JDN2457672为乙丑。日名余数1甲子、0对应60癸亥。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "HKO-ALM24-IDX",
+      "institution": "香港天文台",
+      "title": "香港天文台年历2024：一月、二月日表",
+      "url": "https://www.hko.gov.hk/tc/gts/astron2024/files/HKO_almanac_2024.pdf",
+      "locator": "搜索工具索引抽取的一月与二月日表（印刷页5–8）",
+      "readStatus": "official_pdf_indexed_text_read_not_full_fetch",
+      "precision": "day",
+      "note": "整本24,063,191 bytes超过web.open大小上限；只读到了官方文件的搜索索引表文。未冒称已打开整本或视觉校勘。节气文字在索引中存在行归属错位，日值需后续原页视觉复核。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "HKO-CONV24",
+      "institution": "香港天文台",
+      "title": "2024公历与农历日期对照表",
+      "url": "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2024.pdf",
+      "locator": "PDF第1页",
+      "readStatus": "official_pdf_text_read",
+      "precision": "day",
+      "note": "仅公农历及节气日期，不能单独验证日干支或交接时刻。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "HKO-YEAR",
+      "institution": "香港天文台",
+      "title": "今夕是何年？",
+      "url": "https://www.weather.gov.hk/sc/education/astronomy-and-time/time-service/00506-what-year-is-it-today.html",
+      "locator": "正文第15行起",
+      "readStatus": "official_html_read",
+      "precision": "convention",
+      "note": "官方农历年于正月初一香港标准时00:00换年，文中区分术数立春年界。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "HKO-STEMS",
+      "institution": "香港天文台",
+      "title": "天干和地支",
+      "url": "https://www.weather.gov.hk/tc/gts/time/stemsandbranches.htm",
+      "locator": "已读取搜索工具原站抽取：六十干支、子时23至01时",
+      "readStatus": "official_indexed_text_read",
+      "precision": "convention",
+      "note": "子时范围不能证明所有命理流派都以23:00换日；本项目另定00:00民用日界。",
+      "accessedAt": "2026-09-27"
+    }
+  ],
+  "solarTerms": [
+    {
+      "id": "EXT-ST-01",
+      "kind": "solar_term_observation",
+      "term": "大寒",
+      "termClass": "中气",
+      "gregorianDate": "2024-01-20",
+      "apparentSolarLongitudeDegrees": 300,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-01-20T22:07",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-01-20T22:07",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-02",
+      "kind": "solar_term_observation",
+      "term": "雨水",
+      "termClass": "中气",
+      "gregorianDate": "2024-02-19",
+      "apparentSolarLongitudeDegrees": 330,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-02-19T12:13",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-02-19T12:13",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-03",
+      "kind": "solar_term_observation",
+      "term": "春分",
+      "termClass": "中气",
+      "gregorianDate": "2024-03-20",
+      "apparentSolarLongitudeDegrees": 0,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-03-20T11:06",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-03-20T11:06",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-04",
+      "kind": "solar_term_observation",
+      "term": "谷雨",
+      "termClass": "中气",
+      "gregorianDate": "2024-04-19",
+      "apparentSolarLongitudeDegrees": 30,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-04-19T22:00",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-04-19T22:00",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-05",
+      "kind": "solar_term_observation",
+      "term": "小满",
+      "termClass": "中气",
+      "gregorianDate": "2024-05-20",
+      "apparentSolarLongitudeDegrees": 60,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-05-20T21:00",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-05-20T20:59",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "published_values_differ_by_one_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-06",
+      "kind": "solar_term_observation",
+      "term": "夏至",
+      "termClass": "中气",
+      "gregorianDate": "2024-06-21",
+      "apparentSolarLongitudeDegrees": 90,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-06-21T04:51",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-06-21T04:51",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-07",
+      "kind": "solar_term_observation",
+      "term": "大暑",
+      "termClass": "中气",
+      "gregorianDate": "2024-07-22",
+      "apparentSolarLongitudeDegrees": 120,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-07-22T15:44",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-07-22T15:44",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-08",
+      "kind": "solar_term_observation",
+      "term": "处暑",
+      "termClass": "中气",
+      "gregorianDate": "2024-08-22",
+      "apparentSolarLongitudeDegrees": 150,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-08-22T22:55",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-08-22T22:55",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-09",
+      "kind": "solar_term_observation",
+      "term": "秋分",
+      "termClass": "中气",
+      "gregorianDate": "2024-09-22",
+      "apparentSolarLongitudeDegrees": 180,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-09-22T20:44",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-09-22T20:44",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-10",
+      "kind": "solar_term_observation",
+      "term": "霜降",
+      "termClass": "中气",
+      "gregorianDate": "2024-10-23",
+      "apparentSolarLongitudeDegrees": 210,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-10-23T06:15",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-10-23T06:15",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-11",
+      "kind": "solar_term_observation",
+      "term": "小雪",
+      "termClass": "中气",
+      "gregorianDate": "2024-11-22",
+      "apparentSolarLongitudeDegrees": 240,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-11-22T03:56",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-11-22T03:56",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-ST-12",
+      "kind": "solar_term_observation",
+      "term": "冬至",
+      "termClass": "中气",
+      "gregorianDate": "2024-12-21",
+      "apparentSolarLongitudeDegrees": 270,
+      "baziMonthBoundary": false,
+      "observations": [
+        {
+          "sourceId": "HKO-ST24",
+          "localDateTime": "2024-12-21T17:21",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        },
+        {
+          "sourceId": "CWA-CAL24",
+          "localDateTime": "2024-12-21T17:21",
+          "utcOffset": "+08:00",
+          "precision": "minute",
+          "seconds": null
+        }
+      ],
+      "comparison": "same_published_minute",
+      "externalSample": true,
+      "fullFourPillarsVerified": false
+    }
+  ],
+  "jieBoundaryInputs": [
+    {
+      "id": "EXT-JIE-01",
+      "kind": "solar_term_observation",
+      "term": "小寒",
+      "termClass": "节",
+      "gregorianDate": "2024-01-06",
+      "localDateTime": "2024-01-06T04:49",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-02",
+      "kind": "solar_term_observation",
+      "term": "立春",
+      "termClass": "节",
+      "gregorianDate": "2024-02-04",
+      "localDateTime": "2024-02-04T16:27",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "作为八字立春年界的天文时刻输入；官方农历年另算。"
+    },
+    {
+      "id": "EXT-JIE-03",
+      "kind": "solar_term_observation",
+      "term": "惊蛰",
+      "termClass": "节",
+      "gregorianDate": "2024-03-05",
+      "localDateTime": "2024-03-05T10:23",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-04",
+      "kind": "solar_term_observation",
+      "term": "清明",
+      "termClass": "节",
+      "gregorianDate": "2024-04-04",
+      "localDateTime": "2024-04-04T15:02",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-05",
+      "kind": "solar_term_observation",
+      "term": "立夏",
+      "termClass": "节",
+      "gregorianDate": "2024-05-05",
+      "localDateTime": "2024-05-05T08:10",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-06",
+      "kind": "solar_term_observation",
+      "term": "芒种",
+      "termClass": "节",
+      "gregorianDate": "2024-06-05",
+      "localDateTime": "2024-06-05T12:10",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-07",
+      "kind": "solar_term_observation",
+      "term": "小暑",
+      "termClass": "节",
+      "gregorianDate": "2024-07-06",
+      "localDateTime": "2024-07-06T22:20",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-08",
+      "kind": "solar_term_observation",
+      "term": "立秋",
+      "termClass": "节",
+      "gregorianDate": "2024-08-07",
+      "localDateTime": "2024-08-07T08:09",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-09",
+      "kind": "solar_term_observation",
+      "term": "白露",
+      "termClass": "节",
+      "gregorianDate": "2024-09-07",
+      "localDateTime": "2024-09-07T11:11",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-10",
+      "kind": "solar_term_observation",
+      "term": "寒露",
+      "termClass": "节",
+      "gregorianDate": "2024-10-08",
+      "localDateTime": "2024-10-08T03:00",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-11",
+      "kind": "solar_term_observation",
+      "term": "立冬",
+      "termClass": "节",
+      "gregorianDate": "2024-11-07",
+      "localDateTime": "2024-11-07T06:20",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-12",
+      "kind": "solar_term_observation",
+      "term": "大雪",
+      "termClass": "节",
+      "gregorianDate": "2024-12-06",
+      "localDateTime": "2024-12-06T23:17",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "本版节气月边界约定的天文输入，未直接验证完整月柱。"
+    },
+    {
+      "id": "EXT-JIE-13",
+      "kind": "solar_term_observation",
+      "term": "立春",
+      "termClass": "节",
+      "gregorianDate": "2025-02-03",
+      "localDateTime": "2025-02-03T22:10",
+      "utcOffset": "+08:00",
+      "precision": "minute",
+      "seconds": null,
+      "baziMonthBoundary": true,
+      "sourceIds": [
+        "CWA-CAL25"
+      ],
+      "independentPublishedMinuteSourcesVerified": 1,
+      "externalSample": true,
+      "fullFourPillarsVerified": false,
+      "note": "作为八字立春年界的天文时刻输入；官方农历年另算。"
+    }
+  ],
+  "dayAnchors": [
+    {
+      "id": "EXT-DAY-01",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-01-01",
+      "dayGanZhi": "甲子",
+      "lunarDate": {
+        "year": 2023,
+        "month": 11,
+        "day": 20,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460311,
+        "calculatedDayGanZhi": "甲子",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-02",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-01-06",
+      "dayGanZhi": "己巳",
+      "lunarDate": {
+        "year": 2023,
+        "month": 11,
+        "day": 25,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460316,
+        "calculatedDayGanZhi": "己巳",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-03",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-01-10",
+      "dayGanZhi": "癸酉",
+      "lunarDate": {
+        "year": 2023,
+        "month": 11,
+        "day": 29,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460320,
+        "calculatedDayGanZhi": "癸酉",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-04",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-01-11",
+      "dayGanZhi": "甲戌",
+      "lunarDate": {
+        "year": 2023,
+        "month": 12,
+        "day": 1,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460321,
+        "calculatedDayGanZhi": "甲戌",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-05",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-01-31",
+      "dayGanZhi": "甲午",
+      "lunarDate": {
+        "year": 2023,
+        "month": 12,
+        "day": 21,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460341,
+        "calculatedDayGanZhi": "甲午",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-06",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-02-05",
+      "dayGanZhi": "己亥",
+      "lunarDate": {
+        "year": 2023,
+        "month": 12,
+        "day": 26,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460346,
+        "calculatedDayGanZhi": "己亥",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-07",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-02-06",
+      "dayGanZhi": "庚子",
+      "lunarDate": {
+        "year": 2023,
+        "month": 12,
+        "day": 27,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460347,
+        "calculatedDayGanZhi": "庚子",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-08",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-02-07",
+      "dayGanZhi": "辛丑",
+      "lunarDate": {
+        "year": 2023,
+        "month": 12,
+        "day": 28,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460348,
+        "calculatedDayGanZhi": "辛丑",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-09",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-02-08",
+      "dayGanZhi": "壬寅",
+      "lunarDate": {
+        "year": 2023,
+        "month": 12,
+        "day": 29,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460349,
+        "calculatedDayGanZhi": "壬寅",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-10",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-02-09",
+      "dayGanZhi": "癸卯",
+      "lunarDate": {
+        "year": 2023,
+        "month": 12,
+        "day": 30,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460350,
+        "calculatedDayGanZhi": "癸卯",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-11",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-02-10",
+      "dayGanZhi": "甲辰",
+      "lunarDate": {
+        "year": 2024,
+        "month": 1,
+        "day": 1,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460351,
+        "calculatedDayGanZhi": "甲辰",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    },
+    {
+      "id": "EXT-DAY-12",
+      "kind": "day_name_anchor",
+      "gregorianDate": "2024-02-11",
+      "dayGanZhi": "乙巳",
+      "lunarDate": {
+        "year": 2024,
+        "month": 1,
+        "day": 2,
+        "isLeapMonth": false
+      },
+      "observationSourceId": "HKO-ALM24-IDX",
+      "observationStatus": "indexed_official_table_pending_visual_confirmation",
+      "lunarCrossCheckSourceIds": [
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "independentAlgorithmCheck": {
+        "sourceId": "CWA-JDN16",
+        "algorithm": "0-based sexagenary index=(civilDateJDN-11) mod60",
+        "civilDateJDN": 2460352,
+        "calculatedDayGanZhi": "乙巳",
+        "matches": true
+      },
+      "externalSample": true,
+      "secondIndependentDirectDayTable": false,
+      "fullFourPillarsVerified": false
+    }
+  ],
+  "officialDayWorkedExample": {
+    "id": "EXT-CWA-ANCHOR",
+    "gregorianDate": "2016-10-10",
+    "civilDateJDN": 2457672,
+    "dayGanZhi": "乙丑",
+    "sourceIds": [
+      "CWA-JDN16"
+    ],
+    "status": "direct_official_worked_example",
+    "crossCheckedByOwnFormula": true
+  },
+  "contractBoundaryTests": [
+    {
+      "id": "CONTRACT-00-1",
+      "localDateTime": "2024-02-09T22:59:59+08:00",
+      "timeZone": "Asia/Shanghai",
+      "civilDayBoundary": "00:00:00",
+      "civilDate": "2024-02-09",
+      "expectedDayGanZhi": "癸卯",
+      "expectedHourBranch": "亥",
+      "evidenceKind": "project_convention_applied_to_external_day_anchor",
+      "externalSample": false,
+      "note": "非外部网站给出的该秒完整四柱；不计12外部样本指标，未验证时干流派。"
+    },
+    {
+      "id": "CONTRACT-00-2",
+      "localDateTime": "2024-02-09T23:00:00+08:00",
+      "timeZone": "Asia/Shanghai",
+      "civilDayBoundary": "00:00:00",
+      "civilDate": "2024-02-09",
+      "expectedDayGanZhi": "癸卯",
+      "expectedHourBranch": "子",
+      "evidenceKind": "project_convention_applied_to_external_day_anchor",
+      "externalSample": false,
+      "note": "非外部网站给出的该秒完整四柱；不计12外部样本指标，未验证时干流派。"
+    },
+    {
+      "id": "CONTRACT-00-3",
+      "localDateTime": "2024-02-09T23:59:59+08:00",
+      "timeZone": "Asia/Shanghai",
+      "civilDayBoundary": "00:00:00",
+      "civilDate": "2024-02-09",
+      "expectedDayGanZhi": "癸卯",
+      "expectedHourBranch": "子",
+      "evidenceKind": "project_convention_applied_to_external_day_anchor",
+      "externalSample": false,
+      "note": "非外部网站给出的该秒完整四柱；不计12外部样本指标，未验证时干流派。"
+    },
+    {
+      "id": "CONTRACT-00-4",
+      "localDateTime": "2024-02-10T00:00:00+08:00",
+      "timeZone": "Asia/Shanghai",
+      "civilDayBoundary": "00:00:00",
+      "civilDate": "2024-02-10",
+      "expectedDayGanZhi": "甲辰",
+      "expectedHourBranch": "子",
+      "evidenceKind": "project_convention_applied_to_external_day_anchor",
+      "externalSample": false,
+      "note": "非外部网站给出的该秒完整四柱；不计12外部样本指标，未验证时干流派。"
+    },
+    {
+      "id": "CONTRACT-00-5",
+      "localDateTime": "2024-02-10T00:00:01+08:00",
+      "timeZone": "Asia/Shanghai",
+      "civilDayBoundary": "00:00:00",
+      "civilDate": "2024-02-10",
+      "expectedDayGanZhi": "甲辰",
+      "expectedHourBranch": "子",
+      "evidenceKind": "project_convention_applied_to_external_day_anchor",
+      "externalSample": false,
+      "note": "非外部网站给出的该秒完整四柱；不计12外部样本指标，未验证时干流派。"
+    },
+    {
+      "id": "CONTRACT-00-6",
+      "localDateTime": "2024-02-10T23:00:00+08:00",
+      "timeZone": "Asia/Shanghai",
+      "civilDayBoundary": "00:00:00",
+      "civilDate": "2024-02-10",
+      "expectedDayGanZhi": "甲辰",
+      "expectedHourBranch": "子",
+      "evidenceKind": "project_convention_applied_to_external_day_anchor",
+      "externalSample": false,
+      "note": "非外部网站给出的该秒完整四柱；不计12外部样本指标，未验证时干流派。"
+    }
+  ],
+  "precisionPolicy": {
+    "allOfficialSolarTermValuesUsed": "minute",
+    "verifiedSecondPrecisionCount": 0,
+    "doNot": "不要给HH:MM补:00后当作官方秒级真值",
+    "recommendedCoarseAssertion": "使用原公布时刻前后至少2分钟的样本校验前后状态， minute内不宣称官方真值",
+    "roundingUnknown": true,
+    "disagreementHandling": "小满两官方值均保留，不擅定哪一源更准确；不能用其附近±1秒检验正确性"
+  },
+  "independence": {
+    "externalInstitutions": [
+      "香港天文台",
+      "台湾中央气象署/中央气象局"
+    ],
+    "independentOf6tail": true,
+    "claimedIndependence": "独立机构发布与独立公开日名算法；未审计两机构底层星历是否完全独立",
+    "lunarPythonAndJavascriptNotUsed": true
+  },
+  "counts": {
+    "fullyOpenedTwoAuthoritySolarTermSamples": 12,
+    "oneAuthorityJieBoundaryInputs": 13,
+    "indexedOfficialDayAnchorsCheckedWithIndependentAlgorithm": 12,
+    "directCwaDayWorkedExamples": 1,
+    "projectConventionMidnightCases": 6,
+    "verifiedFullFourPillarSamples": 0,
+    "verifiedSecondPrecisionSolarTerms": 0
+  },
+  "limitations": [
+    "两机构官方历法不替所有八字流派定义立春年界、节气月界或23点/0点日界",
+    "HKO全本年历被web读取大小限制阻断；其日名样本来自官方URL索引抽取，待原页视觉复核",
+    "日名第二来源是CWA独立公式及真实例题，并非另一份2024逐日表",
+    "2024小满公布到分钟的值相差一分钟",
+    "未核查秒级节气时刻、历史时区、真太阳时、时干或完整四柱",
+    "没有用同作者两套库互相证明"
+  ],
+  "nextSteps": [
+    "根接口用本文件独立资料校验日名与节气分钟级精度；官方农历年与八字年柱分字段",
+    "对minute精度交接设置明确不确定窗口，并在查询中保留计算器原始秒值及模型版本",
+    "如需秒级承诺，另接公开可复算星历并对太阳视黄经求根，说明TT/UTC与模型误差",
+    "按计划补原页日名视觉核对；不得将当前indexed状态悄悄改成fully_verified"
+  ]
+}

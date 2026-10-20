@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>时序研究室 · 排盘与规则</title>
+<meta name="description" content="本地八字、基础星位与印度占星研究，保留计算设置、依据和复盘记录。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
+<script src="/tradingview-chart.js" defer></script>
+<script src="/coinbase-feed.js" defer></script>
+<script src="/coinbase-calendar-backtest.js" defer></script>
+<script src="/coinbase-rule-compare.js" defer></script>
+<script src="/coinbase-intraday.js" defer></script>
+<script src="/coinbase-study.js" defer></script>
+<script src="/coinbase-forward.js" defer></script>
+<script src="/chart-candidates.js" defer></script><script src="/history-chart.js" defer></script><script src="/prospective.js" defer></script><script src="/month-interaction-future.js" defer></script><script src="/timing.js" defer></script><script src="/prediction.js" defer></script><script src="/exploration.js" defer></script><script src="/month-study.js" defer></script><script src="/rule-validation.js" defer></script><script src="/confluence-study.js" defer></script><script src="/app.js" defer></script>
+</head>
+<body>
+<header class="top"><a class="brand" href="/" aria-label="时序研究室首页"><span class="mark">时</span><span>时序研究室 <small>RESEARCH DESK</small></span></a><span class="local"><i></i>本机研究 · TradingView 图表</span></header>
+<main>
+<div class="page-heading"><div><p class="eyebrow">时间 / 结构 / 验证</p><h1>排盘与规则</h1></div><button id="export" class="quiet" disabled>导出本次计算 ↓</button></div>
+<form id="controls" class="controls">
+ <label>研究对象与盘版本<select id="profile" required><option>正在读取盘档案…</option></select></label>
+ <label>分析时刻 <span class="muted">北京时间 UTC+8</span><input id="at" type="datetime-local" step="1" min="1992-01-01T00:00" max="2099-12-31T23:59:59" required></label>
+ <div class="stepper"><button type="button" id="prev" class="quiet" title="前一天">← 前一天</button><button type="button" id="next" class="quiet" title="后一天">后一天 →</button></div>
+ <button id="compute" class="primary" type="submit">计算排盘</button>
+</form>
+<div id="notice" class="notice" role="status" aria-live="polite">正在读取本地计算服务…</div>
+<div class="layout">
+ <section class="workspace">
+ <nav class="tabs" aria-label="研究模块" role="tablist">
+  <button id="tab-bazi" role="tab" aria-selected="true" aria-controls="panel-bazi" data-tab="bazi">八字</button>
+  <button id="tab-chart" role="tab" aria-selected="false" aria-controls="panel-chart" data-tab="chart" tabindex="-1">K 线与时间</button>
+  <button id="tab-prediction" role="tab" aria-selected="false" aria-controls="panel-prediction" data-tab="prediction" tabindex="-1">预测账本</button>
+  <button id="tab-exploration" role="tab" aria-selected="false" aria-controls="panel-exploration" data-tab="exploration" tabindex="-1">历史回测</button>
+  <button id="tab-timing" role="tab" aria-selected="false" aria-controls="panel-timing" data-tab="timing" tabindex="-1">时间研究</button>
+  <button id="tab-prospective" role="tab" aria-selected="false" aria-controls="panel-prospective" data-tab="prospective" tabindex="-1">前瞻验证</button>
+  <button id="tab-features" role="tab" aria-selected="false" aria-controls="panel-features" data-tab="features" tabindex="-1">规则检查</button>
+  <button id="tab-indian" role="tab" aria-selected="false" aria-controls="panel-indian" data-tab="indian" tabindex="-1">印度占星</button>
+  <button id="tab-western" role="tab" aria-selected="false" aria-controls="panel-western" data-tab="western" tabindex="-1">基础星位</button>
+  <button id="tab-evidence" role="tab" aria-selected="false" aria-controls="panel-evidence" data-tab="evidence" tabindex="-1">规则与依据</button>
+  <button id="tab-research" role="tab" aria-selected="false" aria-controls="panel-research" data-tab="research" tabindex="-1">验证进展</button>
+ </nav>
+ <section id="panel-bazi" role="tabpanel" aria-labelledby="tab-bazi" class="panel"><div class="empty">计算后显示四柱与关系。</div></section>
+ <section id="panel-chart" role="tabpanel" aria-labelledby="tab-chart" class="panel" hidden><div id="tradingview-chart"></div><div id="coinbase-forward-chart"></div><div id="coinbase-feed"></div><details id="research-chart-details" class="research-chart-details"><summary>查看研究时间带、历史样本与未来候选</summary><p class="muted">以下研究图使用原有固定样本及只读旧缓存，与上方 TradingView 的 Coinbase USD 行情不是同一数据源。预测与规则结果不会画入 TradingView 内部图层。</p><div id="history-chart"></div></details></section>
+ <section id="panel-prediction" role="tabpanel" aria-labelledby="tab-prediction" class="panel" hidden><div id="prediction-ledger"></div></section>
+ <section id="panel-exploration" role="tabpanel" aria-labelledby="tab-exploration" class="panel" hidden><div class="history-study-switch" role="group" aria-label="选择历史研究"><button id="history-study-coinbase" type="button" class="quiet" aria-pressed="true" aria-controls="coinbase-study">Coinbase 多年复盘</button><button id="history-study-rules" type="button" class="quiet" aria-pressed="false" aria-controls="rule-validation">规则定义与结果（旧样本）</button><button id="history-study-month" type="button" class="quiet" aria-pressed="false" aria-controls="month-study">月度与寅月（旧样本）</button><button id="history-study-confluence" type="button" class="quiet" aria-pressed="false" aria-controls="confluence-study">跨规则共振（旧样本）</button><button id="history-study-previous" type="button" class="quiet" aria-pressed="false" aria-controls="historical-exploration">方向与时间（上一轮）</button></div><div id="coinbase-study"></div><div id="rule-validation" hidden></div><div id="month-study" hidden></div><div id="confluence-study" hidden></div><div id="historical-exploration" hidden></div></section>
+ <section id="panel-timing" role="tabpanel" aria-labelledby="tab-timing" class="panel" hidden><div id="timing-study"></div></section>
+ <section id="panel-prospective" role="tabpanel" aria-labelledby="tab-prospective" class="panel" hidden><div id="coinbase-forward"></div><details class="previous-study"><summary>查看此前的组合前瞻协议</summary><div id="month-interaction-future"></div></details><details class="previous-study"><summary>查看此前的八字前瞻协议</summary><div id="prospective-study"></div></details></section>
+ <section id="panel-features" role="tabpanel" aria-labelledby="tab-features" class="panel" hidden><div id="feature-result">计算后检查结构。</div><section id="calendar-accuracy-result" class="groups calendar-accuracy" aria-label="独立排盘对照"><p class="muted">正在读取排盘对照…</p></section><div id="definition-result" class="groups">正在读取规则定义…</div></section>
+ <section id="panel-indian" role="tabpanel" aria-labelledby="tab-indian" class="panel" hidden>
+  <div id="indian-result" class="empty">计算后显示恒星黄道位置。</div>
+  <div class="scenario-box"><label class="check"><input id="scenario" type="checkbox">以分析时刻作为假设起盘点，演算运限</label><p class="muted">这是算法研究设置；不会写入 BTC 或 ETH 的出生档案。</p><div id="dasa-result"></div></div>
+ </section>
+ <section id="panel-western" role="tabpanel" aria-labelledby="tab-western" class="panel" hidden><div class="empty">计算后显示回归黄道星位。</div></section>
+ <section id="panel-evidence" role="tabpanel" aria-labelledby="tab-evidence" class="panel" hidden><p><a href="/month-theory-notes" target="_blank" rel="noopener">查看月份规则研究说明 ↗</a></p></section>
+ <section id="panel-research" role="tabpanel" aria-labelledby="tab-research" class="panel" hidden><div id="structure-result">正在读取六冲检验…</div><details class="previous-study"><summary>查看上一轮金水日检验与事件依据</summary><div id="research-result">正在读取研究结果…</div></details></section>
+ </section>
+ <aside class="aside">
+  <section class="card"><p class="eyebrow">本次研究</p><h2 id="summary-title">读取中</h2><div id="summary" class="muted">等待计算</div><div class="divider"></div><p class="status-label">市场验证 <span class="tag amber">探索阶段</span></p><p id="study-note" class="small">点“验证进展”查看六冲规则的固定历史检验、判定与数据缺口。</p></section>
+  <section class="card"><h2>保留判断</h2><p class="muted">连同盘版本、计算结果和保存时间一起记录。</p>
+  <form id="save-form">
+   <label>记录类型<select id="judgement"><option value="observation">只记录观察</option><option value="up">候选判断：上涨</option><option value="down">候选判断：下跌</option><option value="range">候选判断：震荡</option><option value="volatility">候选判断：波动增大</option></select></label>
+   <div id="window-fields" hidden><label>验证窗口开始 <span class="muted">UTC+8</span><input id="window-start" type="datetime-local"></label><label>验证窗口结束 <span class="muted">UTC+8</span><input id="window-end" type="datetime-local"></label></div>
+   <label>判断依据<textarea id="note" rows="3" maxlength="4000" placeholder="记录你观察到的关系、条件与待验证之处。"></textarea></label>
+   <button id="save" type="submit" class="secondary" disabled>保存研究记录</button>
+  </form><p id="save-status" class="small" role="status" aria-live="polite">保存在这台电脑。</p></section>
+ </aside>
+</div>
+<section class="records-section"><div class="section-heading"><div><p class="eyebrow">不覆盖旧判断</p><h2>研究记录</h2></div><button id="refresh-records" class="quiet">刷新记录</button></div><div id="records"><div class="empty">还没有记录。完成一次计算后可以保存。</div></div></section>
+<footer><span>计算设置与判断均可追溯 · <a href="/licenses" target="_blank" rel="noopener">许可说明</a> · <a href="/source.zip" download>本版程序源码</a></span><span>基础关系 ≠ 行情方向 · 本页无交易执行</span></footer>
+</main>
+</body></html>

@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+.deps/
+venv/
+.env
+.env.*
+local_data/
+test_tmp/
+recovery_raw/
+*.sqlite3
+*.db
+*.log
+.pytest_cache/
+.coverage
+dist/
+build/

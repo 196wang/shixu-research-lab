@@ -1,0 +1,70 @@
+{
+  "id": "H-BZ-STRUCT-002",
+  "version": "0.1.0",
+  "status": "specification_frozen_not_run",
+  "registeredAtUtc": "2026-09-27T01:41:14.033304+00:00",
+  "registrationType": "retrospective_specification_after_prior_market_inspection",
+  "notProspectivePreregistration": true,
+  "scoringRun": false,
+  "reasonChosen": "单一可审计布尔结构；本轮未查看该分组的行情结果。历史行情和金水日结果已看过。",
+  "profile": "BTC-BZ-V01",
+  "profileUncertainty": "给定四柱条件研究，原始出生设置未核定",
+  "featureId": "BZ-S02",
+  "featureVersion": "0.1.0",
+  "featureAliasInProposal": "BZ-F02",
+  "asset": "BTC",
+  "symbol": "BTCUSDT",
+  "venue": "Binance spot",
+  "grouping": "在每日00:00+08:00计算原局四支与流日的六冲；存在至少一条为G1，否则G0；每日只一行",
+  "window": "[当日00:00+08:00,次日00:00+08:00)",
+  "calendarPolicyId": "BZ-CALENDAR-CIVIL-00-V01",
+  "outcome": "y = abs(close / open - 1)",
+  "outcomeMeaning": "收开绝对净变动，不是日内振幅或波动率",
+  "estimand": "(mean(y[G1]) - mean(y[G0])) * 10000，单位bp；双侧，不预设价格方向",
+  "periods": [
+    {
+      "start": "2020-01-01",
+      "end": "2024-12-31"
+    },
+    {
+      "start": "2025-01-01",
+      "end": "2026-09-26"
+    }
+  ],
+  "independentHoldout": false,
+  "data": {
+    "file": "daily_input.json",
+    "sha256": "182a156b7aed3988d376f2656773cfb93caa8f1e66b613787deabdb7e0b6c0cc",
+    "require": "沿用v0.6完整24小时且有效OHLC的日样本；不插值、不前填，未完成/异常日结果为null",
+    "perPeriodMinimumCoverage": 0.95,
+    "minimumObservedDaysPerGroup": 100,
+    "failure": "任一组未达100个完整日或完整日覆盖低于95%则该期数据不足，不计算效果支持状态"
+  },
+  "inference": {
+    "method": "paired moving block bootstrap on full calendar, retain missing mask",
+    "referenceImplementation": "masked_study.py v0.6块抽样方式；新评分代码实施前另附哈希",
+    "blockLengthCalendarDays": 30,
+    "replicates": 10000,
+    "seedResetEachPeriod": 20260927,
+    "lastBlock": "truncate to original calendar length",
+    "ci": "percentile 2.5%/97.5%, linear interpolation",
+    "invalidReplicate": "一组有效样本为空则该抽样无效；有效抽样少于9900则区间不可判定",
+    "sensitivityGrid": false
+  },
+  "practicalMarginBp": 10,
+  "marginReason": "人为预设研究门槛0.10个百分点；未按本结构结果调参，也不等同交易成本门槛",
+  "decisions": {
+    "supportedPositiveDifference": "95%区间下界 > +10bp",
+    "supportedNegativeDifference": "95%区间上界 < -10bp",
+    "noMaterialDifferenceAtChosenMargin": "95%区间整体落在[-10,+10]bp",
+    "otherwise": "未获支持/不确定；不得当成确定无效",
+    "acrossPeriods": "仅两期均越过同侧门槛可称分段一致；仍是探索结果，不构成独立验证"
+  },
+  "stoppingRule": "每个固定区间仅运行本规格一次，无提前停止；错误修复须新版本并保留原结果",
+  "multiplicity": "仅评分本项；其他四草案、其他盘、日界和参数不参与并行挑选",
+  "marketDirection": null,
+  "marketValidated": false,
+  "marketExecutionEnabled": false,
+  "forwardMonitoringStarted": false,
+  "automationCreated": false
+}

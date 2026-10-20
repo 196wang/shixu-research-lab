@@ -1,0 +1,84 @@
+{
+  "confluence": "same_target_date_without_direction_inference_from_time_only_events",
+  "directionHorizonDays": 1,
+  "directionReturn": "same_beijing_day_close_vs_open_ties_in_denominator",
+  "directionRuleIds": [
+    "DAY-STEM-METALWATER-UP",
+    "DAY-STEM-FIRE-DOWN",
+    "DAY-BRANCH-YIN-DOWN"
+  ],
+  "endDate": "2026-10-16",
+  "ethRole": "cross_asset_negative_control_only_no_eth_direction_prediction",
+  "gann": {
+    "availabilityOffsets": [
+      -272,
+      -5
+    ],
+    "knownBeforeTargetMinusDays": 3,
+    "lookbackDays": 90,
+    "multipliers": [
+      1,
+      2
+    ]
+  },
+  "independentBlindSample": false,
+  "marketType": "spot",
+  "matchedDirectionControl": "same_civil_year_and_jie_month_episode_other_eligible_days_without_rule_trigger",
+  "missingData": "exclude_and_report_never_score_as_wrong",
+  "monthBoundary": "exact_jie_exclude_daily_bar_with_interior_transition",
+  "monthConditionIds": [
+    "ALL",
+    "MONTH-STEM-METALWATER",
+    "MONTH-BRANCH-METALWATER",
+    "MONTH-BOTH-METALWATER",
+    "MONTH-STEM-FIRE",
+    "MONTH-BRANCH-FIRE",
+    "MONTH-BRANCH-寅",
+    "MONTH-BRANCH-申",
+    "MONTH-BRANCH-酉",
+    "MONTH-BRANCH-戌"
+  ],
+  "parameterSearch": false,
+  "pivot": {
+    "ambiguousExcluded": true,
+    "leftDays": 2,
+    "rightDays": 2,
+    "strictHighLow": true
+  },
+  "primarySymbol": "BTCUSD",
+  "provider": "Coinbase Exchange public hourly candles",
+  "registeredPrediction": false,
+  "reportBlocks": [
+    {
+      "end": "2025-12-31",
+      "id": "2023-2025",
+      "start": "2023-01-01"
+    },
+    {
+      "end": "2026-10-16",
+      "id": "2026-reviewed",
+      "start": "2026-01-01"
+    }
+  ],
+  "schemaVersion": 1,
+  "sourceInterval": "1h",
+  "sourceStartDate": "2022-01-01",
+  "startDate": "2023-01-01",
+  "status": "predeclared_retrospective_comparison",
+  "studyId": "CB-USD-HX-001",
+  "symbols": [
+    "BTCUSD",
+    "ETHUSD"
+  ],
+  "targetInterval": "complete_beijing_day_from_24_consecutive_hours",
+  "timezone": "UTC+8",
+  "timingCommonAvailability": "all_family_inputs_known_and_target_plus_minus_5_days_valid",
+  "timingControl": "all_common_eligible_dates_and_covered_date_fraction",
+  "timingRuleIds": [
+    "GANN-EQUAL-INTERVAL",
+    "ASTRO-MOON-PHASE",
+    "ASTRO-NAKSHATRA-INGRESS"
+  ],
+  "timingToleranceDays": 3,
+  "version": "1.0.0"
+}

@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "referenceVersion": "0.12.0",
+  "readAt": "2026-09-27",
+  "scope": "新增、独立编码的四柱公式与边界核验；不改旧107项证据，不评估市场规则",
+  "expectedValueMethod": "截图样例人工抄录；官方节气分钟人工抄录；年月日时公式只用标准库和本文件，不读待测库输出",
+  "policy": {
+    "id": "BZ-CALENDAR-CIVIL-00-V01",
+    "timezone": "Asia/Shanghai",
+    "utcOffset": "+08:00",
+    "supportedYears": [
+      1992,
+      2099
+    ],
+    "yearBoundary": "exact_lichun",
+    "monthBoundary": "exact_jie_not_zhongqi",
+    "dayBoundary": "00:00",
+    "lateZiHourStemReference": "next_day_late_zi",
+    "trueSolarTime": false
+  },
+  "sources": [
+    {
+      "id": "V12-USER-WENZHEN-01",
+      "title": "用户提供的问真八字基本排盘截图",
+      "kind": "user_supplied_screenshot",
+      "attachmentName": "499198ec5c61cb3eaf17bd3b967208dd.jpg",
+      "attachmentSha256": "469ccbd07bccc54b4840021afcf8020a7e9f35186ee94fc9f2eaf80f9a3ede53",
+      "note": "只记录可见公历时间与四柱；不导入截图姓名、不建个人档案。截图未显示时区/真太阳时设置，以本项目UTC+8解释。"
+    },
+    {
+      "id": "V12-HKO-STEMS",
+      "title": "香港天文台：天干和地支",
+      "url": "https://www.hko.gov.hk/tc/gts/time/stemsandbranches.htm",
+      "kind": "official_html_read",
+      "locator": "表二六十干支；表三时辰；表四年干月干；表五日干时干",
+      "readAt": "2026-09-27",
+      "note": "以公开表格独立编码月干、时干递推；不把官方表格解释为其认可本项目晚子时流派选择。"
+    },
+    {
+      "id": "V12-CWA-CAL24",
+      "title": "中央气象署：2024年日历资料表",
+      "url": "https://www.cwa.gov.tw/Data/astronomy/2024cal.pdf",
+      "kind": "official_pdf_text_read",
+      "locator": "第2页节气表，含2025年1月及立春",
+      "precision": "minute",
+      "readAt": "2026-09-27",
+      "note": "公布UTC+8分钟值；不提供完整四柱或秒级交节真值。"
+    },
+    {
+      "id": "V12-CWA-JDN16",
+      "title": "中央气象局：2016年天文日历求日名干支法",
+      "url": "https://www.cwa.gov.tw/Data/service/notice/download/publish_20151126104611.pdf",
+      "kind": "official_pdf_text_read",
+      "locator": "PDF第11页，印刷第6页；2016-10-10乙丑例题",
+      "precision": "day",
+      "readAt": "2026-09-27",
+      "note": "用公历ordinal换算JDN、再取六十甲子余数，独立于lunar-python。"
+    }
+  ],
+  "userScreenshotCases": [
+    {
+      "id": "V12-WZ-01",
+      "label": "问真截图单例",
+      "at": "2002-03-10T18:00:00+08:00",
+      "expected": {
+        "year": "壬午",
+        "month": "癸卯",
+        "day": "丁丑",
+        "hour": "己酉"
+      },
+      "evidenceTier": "user_screenshot_full_four_pillars_under_assumed_utc8",
+      "sourceIds": [
+        "V12-USER-WENZHEN-01"
+      ],
+      "officialFullChart": false,
+      "note": "仅一个非边界时刻；不是官方完整盘样本，也不检验起运/神煞/喜用。"
+    }
+  ],
+  "officialDayExamples": [
+    {
+      "id": "V12-CWA-DAY-01",
+      "date": "2016-10-10",
+      "jdn": 2457672,
+      "day": "乙丑",
+      "sourceIds": [
+        "V12-CWA-JDN16"
+      ]
+    }
+  ],
+  "jie": [
+    {
+      "id": "V12-JIE-01",
+      "name": "小寒",
+      "publishedAt": "2024-01-06T04:49:00+08:00",
+      "monthBranchAfter": "丑",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-02",
+      "name": "立春",
+      "publishedAt": "2024-02-04T16:27:00+08:00",
+      "monthBranchAfter": "寅",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-03",
+      "name": "惊蛰",
+      "publishedAt": "2024-03-05T10:23:00+08:00",
+      "monthBranchAfter": "卯",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-04",
+      "name": "清明",
+      "publishedAt": "2024-04-04T15:02:00+08:00",
+      "monthBranchAfter": "辰",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-05",
+      "name": "立夏",
+      "publishedAt": "2024-05-05T08:10:00+08:00",
+      "monthBranchAfter": "巳",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-06",
+      "name": "芒种",
+      "publishedAt": "2024-06-05T12:10:00+08:00",
+      "monthBranchAfter": "午",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-07",
+      "name": "小暑",
+      "publishedAt": "2024-07-06T22:20:00+08:00",
+      "monthBranchAfter": "未",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-08",
+      "name": "立秋",
+      "publishedAt": "2024-08-07T08:09:00+08:00",
+      "monthBranchAfter": "申",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-09",
+      "name": "白露",
+      "publishedAt": "2024-09-07T11:11:00+08:00",
+      "monthBranchAfter": "酉",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-10",
+      "name": "寒露",
+      "publishedAt": "2024-10-08T03:00:00+08:00",
+      "monthBranchAfter": "戌",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-11",
+      "name": "立冬",
+      "publishedAt": "2024-11-07T06:20:00+08:00",
+      "monthBranchAfter": "亥",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-12",
+      "name": "大雪",
+      "publishedAt": "2024-12-06T23:17:00+08:00",
+      "monthBranchAfter": "子",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-13",
+      "name": "小寒",
+      "publishedAt": "2025-01-05T10:33:00+08:00",
+      "monthBranchAfter": "丑",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-JIE-14",
+      "name": "立春",
+      "publishedAt": "2025-02-03T22:10:00+08:00",
+      "monthBranchAfter": "寅",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    }
+  ],
+  "zhongqi": [
+    {
+      "id": "V12-ZQ-01",
+      "name": "大寒",
+      "publishedAt": "2024-01-20T22:07:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-02",
+      "name": "雨水",
+      "publishedAt": "2024-02-19T12:13:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-03",
+      "name": "春分",
+      "publishedAt": "2024-03-20T11:06:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-04",
+      "name": "谷雨",
+      "publishedAt": "2024-04-19T22:00:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-05",
+      "name": "小满",
+      "publishedAt": "2024-05-20T20:59:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-06",
+      "name": "夏至",
+      "publishedAt": "2024-06-21T04:51:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-07",
+      "name": "大暑",
+      "publishedAt": "2024-07-22T15:44:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-08",
+      "name": "处暑",
+      "publishedAt": "2024-08-22T22:55:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-09",
+      "name": "秋分",
+      "publishedAt": "2024-09-22T20:44:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-10",
+      "name": "霜降",
+      "publishedAt": "2024-10-23T06:15:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-11",
+      "name": "小雪",
+      "publishedAt": "2024-11-22T03:56:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    },
+    {
+      "id": "V12-ZQ-12",
+      "name": "冬至",
+      "publishedAt": "2024-12-21T17:21:00+08:00",
+      "precision": "minute",
+      "sourceIds": [
+        "V12-CWA-CAL24"
+      ]
+    }
+  ],
+  "formulaCoverage": {
+    "start": "2024-01-01T00:00:00+08:00",
+    "endExclusive": "2025-02-04T00:00:00+08:00",
+    "initialMonthBranch": "子",
+    "guardSeconds": 120,
+    "boundarySampleOffsetSeconds": 180,
+    "ordinaryMonths": [
+      "2024-01-15T12:00:00+08:00",
+      "2024-02-15T12:00:00+08:00",
+      "2024-03-15T12:00:00+08:00",
+      "2024-04-15T12:00:00+08:00",
+      "2024-05-15T12:00:00+08:00",
+      "2024-06-15T12:00:00+08:00",
+      "2024-07-15T12:00:00+08:00",
+      "2024-08-15T12:00:00+08:00",
+      "2024-09-15T12:00:00+08:00",
+      "2024-10-15T12:00:00+08:00",
+      "2024-11-15T12:00:00+08:00",
+      "2024-12-15T12:00:00+08:00",
+      "2025-01-15T12:00:00+08:00"
+    ],
+    "hourCycleStart": "2024-02-10",
+    "hourCycleDays": 10,
+    "hourCycleHours": [
+      0,
+      12,
+      23
+    ],
+    "clockBoundaryTimes": [
+      "2024-02-09T22:59:59+08:00",
+      "2024-02-09T23:00:00+08:00",
+      "2024-02-09T23:00:01+08:00",
+      "2024-02-09T23:59:59+08:00",
+      "2024-02-10T00:00:00+08:00",
+      "2024-02-10T00:00:01+08:00",
+      "2024-02-10T00:59:59+08:00",
+      "2024-02-10T01:00:00+08:00"
+    ],
+    "exactLibraryBoundaryIds": [
+      "V12-JIE-02",
+      "V12-JIE-03",
+      "V12-JIE-13",
+      "V12-JIE-14"
+    ]
+  },
+  "frozenFilesBefore": {
+    "calendar_adapter.py": "574f0bcf4a17f017db24ea6d8930b472b4b37b03f4f664a477e51f7eeb7c9f13",
+    "calendar_reference.json": "d53fcc8d229e9be7acd1d2ac6c7cb47c885254f99d9b1bf53a05302cfffc70f3",
+    "calendar_validation.py": "0864be54c7c4eaf5b3b70e4126728871d1ed8dc95c8b4d4f998712103bf5025d",
+    "calendar_validation_evidence.json": "4a06fc7dc347177ec18ce12e6f7a3b3e7529b28b88ac4880db09f0357093085a",
+    "profiles.json": "6df88964a89cab7af741576752099ddcba4fcf27762b46585c3c2082e653d153"
+  },
+  "limitations": [
+    "完整四柱外部直接对照只有用户问真截图1例，按UTC+8解释；没有官方完整四柱样本。",
+    "公式对照覆盖所列2024/2025时点；不等于1992–2099所有日期、所有时辰已核验。",
+    "官方节气只到分钟，前后取3分钟并避开±120秒；这不是官方秒精度或天文误差保证。",
+    "库给出的交节秒仅用于检查前1秒/当秒/后1秒的程序切换，不独立证明该秒天文时刻正确。",
+    "采用00:00换日；23点后日柱仍当天，时干按次日日干起算。其他流派可能不同。",
+    "固定UTC+8，不处理真太阳时、出生地经度校正或历史夏令时。",
+    "BTC及ETH原局出生时地未确认；既定四柱与人物时辰假设未因本轮核验而确证。",
+    "不核验起运、大运、神煞、喜用、行情方向或预测有效性；不写入用户档案和历史评分。",
+    "旧107项证据独立保留，本轮与旧检查有重叠，不把两轮通过数相加成独立样本量。"
+  ]
+}

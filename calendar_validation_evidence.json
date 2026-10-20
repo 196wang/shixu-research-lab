@@ -1,0 +1,1873 @@
+{
+  "schemaVersion": 1,
+  "validationVersion": "0.4.0",
+  "generatedAt": "2026-09-27T01:03:25.770528+00:00",
+  "referenceFile": "calendar_reference.json",
+  "referenceSha256": "d53fcc8d229e9be7acd1d2ac6c7cb47c885254f99d9b1bf53a05302cfffc70f3",
+  "adapterVersion": "0.5.0",
+  "status": "passed",
+  "dependencyError": null,
+  "counts": {
+    "executedChecks": 107,
+    "passed": 107,
+    "failed": 0,
+    "byGroup": {
+      "civil_midnight": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0
+      },
+      "day_anchor": {
+        "total": 12,
+        "passed": 12,
+        "failed": 0
+      },
+      "independent_day_formula": {
+        "total": 12,
+        "passed": 12,
+        "failed": 0
+      },
+      "jie_month_transition": {
+        "total": 13,
+        "passed": 13,
+        "failed": 0
+      },
+      "late_zi_contract": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "official_formula_example": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "relation_acceptance": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0
+      },
+      "separate_year_fields": {
+        "total": 1,
+        "passed": 1,
+        "failed": 0
+      },
+      "solar_term_time": {
+        "total": 37,
+        "passed": 37,
+        "failed": 0
+      },
+      "utc_equivalence": {
+        "total": 6,
+        "passed": 6,
+        "failed": 0
+      },
+      "zhongqi_not_month_boundary": {
+        "total": 12,
+        "passed": 12,
+        "failed": 0
+      }
+    },
+    "externalReferenceScope": {
+      "fullyOpenedTwoAuthoritySolarTermSamples": 12,
+      "oneAuthorityJieBoundaryInputs": 13,
+      "indexedOfficialDayAnchorsCheckedWithIndependentAlgorithm": 12,
+      "directCwaDayWorkedExamples": 1,
+      "projectConventionMidnightCases": 6,
+      "verifiedFullFourPillarSamples": 0,
+      "verifiedSecondPrecisionSolarTerms": 0
+    },
+    "verifiedFullFourPillarSamples": 0,
+    "verifiedSecondPrecisionSolarTerms": 0
+  },
+  "sourceTiers": {
+    "official_indexed_day_table_plus_independent_published_algorithm": 12,
+    "direct_official_worked_example": 1,
+    "official_indexed_text_not_pdf_visual_collation": 12,
+    "opened_official_pdf_minute_table": 37,
+    "published_minute_plus_explicit_bazi_boundary_convention": 13,
+    "explicit_jie_not_zhongqi_convention": 12,
+    "project_civil_midnight_contract": 6,
+    "same_instant_timezone_contract": 6,
+    "adapter_engine_contract": 6,
+    "chosen_late_zi_hour_stem_contract_not_external_full_chart": 1,
+    "official_dates_plus_separate_year_boundary_policies": 1
+  },
+  "sources": [
+    {
+      "id": "HKO-ST24",
+      "institution": "香港天文台",
+      "title": "2024年二十四节气：十二中气表",
+      "url": "https://www.hko.gov.hk/tc/gts/astron2024/files/2024SolarTerms24.pdf",
+      "locator": "PDF第1页；网页抽取行23–164",
+      "readStatus": "official_pdf_text_read",
+      "precision": "minute",
+      "note": "本页实际列十二中气，不是十二月节交接。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "CWA-CAL24",
+      "institution": "中央气象署（编表时为中央气象局）",
+      "title": "中华民国113年日历资料表",
+      "url": "https://www.cwa.gov.tw/Data/astronomy/2024cal.pdf",
+      "locator": "PDF第1页公农历，第2页节气表；注明世界时+8",
+      "readStatus": "official_pdf_text_read",
+      "precision": "minute",
+      "note": "2023年2月出版；PDF后两页重复前两页，不作独立来源。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "CWA-CAL25",
+      "institution": "中央气象署",
+      "title": "中华民国114年日历资料表",
+      "url": "https://www.cwa.gov.tw/Data/astronomy/2025cal.pdf",
+      "locator": "PDF第1页公农历，第2页节气表",
+      "readStatus": "official_pdf_text_read",
+      "precision": "minute",
+      "note": "2024年2月出版；标准时UTC+8。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "CWA-JDN16",
+      "institution": "交通部中央气象局",
+      "title": "2016年天文日历：儒略日说明、求日名干支法",
+      "url": "https://www.cwa.gov.tw/Data/service/notice/download/publish_20151126104611.pdf",
+      "locator": "PDF页索引10（第11个PDF页面），印刷第6页；抽取行487–515",
+      "readStatus": "official_pdf_text_read",
+      "precision": "day",
+      "note": "列2016每月首日JDN，并举2016-10-10 JDN2457672为乙丑。日名余数1甲子、0对应60癸亥。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "HKO-ALM24-IDX",
+      "institution": "香港天文台",
+      "title": "香港天文台年历2024：一月、二月日表",
+      "url": "https://www.hko.gov.hk/tc/gts/astron2024/files/HKO_almanac_2024.pdf",
+      "locator": "搜索工具索引抽取的一月与二月日表（印刷页5–8）",
+      "readStatus": "official_pdf_indexed_text_read_not_full_fetch",
+      "precision": "day",
+      "note": "整本24,063,191 bytes超过web.open大小上限；只读到了官方文件的搜索索引表文。未冒称已打开整本或视觉校勘。节气文字在索引中存在行归属错位，日值需后续原页视觉复核。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "HKO-CONV24",
+      "institution": "香港天文台",
+      "title": "2024公历与农历日期对照表",
+      "url": "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2024.pdf",
+      "locator": "PDF第1页",
+      "readStatus": "official_pdf_text_read",
+      "precision": "day",
+      "note": "仅公农历及节气日期，不能单独验证日干支或交接时刻。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "HKO-YEAR",
+      "institution": "香港天文台",
+      "title": "今夕是何年？",
+      "url": "https://www.weather.gov.hk/sc/education/astronomy-and-time/time-service/00506-what-year-is-it-today.html",
+      "locator": "正文第15行起",
+      "readStatus": "official_html_read",
+      "precision": "convention",
+      "note": "官方农历年于正月初一香港标准时00:00换年，文中区分术数立春年界。",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "HKO-STEMS",
+      "institution": "香港天文台",
+      "title": "天干和地支",
+      "url": "https://www.weather.gov.hk/tc/gts/time/stemsandbranches.htm",
+      "locator": "已读取搜索工具原站抽取：六十干支、子时23至01时",
+      "readStatus": "official_indexed_text_read",
+      "precision": "convention",
+      "note": "子时范围不能证明所有命理流派都以23:00换日；本项目另定00:00民用日界。",
+      "accessedAt": "2026-09-27"
+    }
+  ],
+  "checks": [
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-01",
+      "passed": true,
+      "expected": "甲子",
+      "actual": "甲子",
+      "civilDateJDN": 2460311,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-02",
+      "passed": true,
+      "expected": "己巳",
+      "actual": "己巳",
+      "civilDateJDN": 2460316,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-03",
+      "passed": true,
+      "expected": "癸酉",
+      "actual": "癸酉",
+      "civilDateJDN": 2460320,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-04",
+      "passed": true,
+      "expected": "甲戌",
+      "actual": "甲戌",
+      "civilDateJDN": 2460321,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-05",
+      "passed": true,
+      "expected": "甲午",
+      "actual": "甲午",
+      "civilDateJDN": 2460341,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-06",
+      "passed": true,
+      "expected": "己亥",
+      "actual": "己亥",
+      "civilDateJDN": 2460346,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-07",
+      "passed": true,
+      "expected": "庚子",
+      "actual": "庚子",
+      "civilDateJDN": 2460347,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-08",
+      "passed": true,
+      "expected": "辛丑",
+      "actual": "辛丑",
+      "civilDateJDN": 2460348,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-09",
+      "passed": true,
+      "expected": "壬寅",
+      "actual": "壬寅",
+      "civilDateJDN": 2460349,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-10",
+      "passed": true,
+      "expected": "癸卯",
+      "actual": "癸卯",
+      "civilDateJDN": 2460350,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-11",
+      "passed": true,
+      "expected": "甲辰",
+      "actual": "甲辰",
+      "civilDateJDN": 2460351,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "independent_day_formula",
+      "id": "EXT-DAY-12",
+      "passed": true,
+      "expected": "乙巳",
+      "actual": "乙巳",
+      "civilDateJDN": 2460352,
+      "sourceIds": [
+        "CWA-JDN16",
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_day_table_plus_independent_published_algorithm"
+    },
+    {
+      "group": "official_formula_example",
+      "id": "EXT-CWA-ANCHOR",
+      "passed": true,
+      "expected": {
+        "jdn": 2457672,
+        "dayGanZhi": "乙丑"
+      },
+      "actual": {
+        "jdn": 2457672,
+        "dayGanZhi": "乙丑"
+      },
+      "sourceIds": [
+        "CWA-JDN16"
+      ],
+      "evidenceTier": "direct_official_worked_example"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-01",
+      "passed": true,
+      "date": "2024-01-01",
+      "expected": "甲子",
+      "actual": "甲子",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-02",
+      "passed": true,
+      "date": "2024-01-06",
+      "expected": "己巳",
+      "actual": "己巳",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-03",
+      "passed": true,
+      "date": "2024-01-10",
+      "expected": "癸酉",
+      "actual": "癸酉",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-04",
+      "passed": true,
+      "date": "2024-01-11",
+      "expected": "甲戌",
+      "actual": "甲戌",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-05",
+      "passed": true,
+      "date": "2024-01-31",
+      "expected": "甲午",
+      "actual": "甲午",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-06",
+      "passed": true,
+      "date": "2024-02-05",
+      "expected": "己亥",
+      "actual": "己亥",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-07",
+      "passed": true,
+      "date": "2024-02-06",
+      "expected": "庚子",
+      "actual": "庚子",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-08",
+      "passed": true,
+      "date": "2024-02-07",
+      "expected": "辛丑",
+      "actual": "辛丑",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-09",
+      "passed": true,
+      "date": "2024-02-08",
+      "expected": "壬寅",
+      "actual": "壬寅",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-10",
+      "passed": true,
+      "date": "2024-02-09",
+      "expected": "癸卯",
+      "actual": "癸卯",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-11",
+      "passed": true,
+      "date": "2024-02-10",
+      "expected": "甲辰",
+      "actual": "甲辰",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "day_anchor",
+      "id": "EXT-DAY-12",
+      "passed": true,
+      "date": "2024-02-11",
+      "expected": "乙巳",
+      "actual": "乙巳",
+      "sourceIds": [
+        "HKO-ALM24-IDX"
+      ],
+      "evidenceTier": "official_indexed_text_not_pdf_visual_collation"
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-01:HKO-ST24",
+      "passed": true,
+      "term": "大寒",
+      "publishedLocalMinute": "2024-01-20T22:07",
+      "libraryRawKey": "大寒",
+      "calculatedAt": "2024-01-20T22:07:22+08:00",
+      "deltaSeconds": 22.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-01:CWA-CAL24",
+      "passed": true,
+      "term": "大寒",
+      "publishedLocalMinute": "2024-01-20T22:07",
+      "libraryRawKey": "大寒",
+      "calculatedAt": "2024-01-20T22:07:22+08:00",
+      "deltaSeconds": 22.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-02:HKO-ST24",
+      "passed": true,
+      "term": "雨水",
+      "publishedLocalMinute": "2024-02-19T12:13",
+      "libraryRawKey": "雨水",
+      "calculatedAt": "2024-02-19T12:13:12+08:00",
+      "deltaSeconds": 12.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-02:CWA-CAL24",
+      "passed": true,
+      "term": "雨水",
+      "publishedLocalMinute": "2024-02-19T12:13",
+      "libraryRawKey": "雨水",
+      "calculatedAt": "2024-02-19T12:13:12+08:00",
+      "deltaSeconds": 12.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-03:HKO-ST24",
+      "passed": true,
+      "term": "春分",
+      "publishedLocalMinute": "2024-03-20T11:06",
+      "libraryRawKey": "春分",
+      "calculatedAt": "2024-03-20T11:06:25+08:00",
+      "deltaSeconds": 25.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-03:CWA-CAL24",
+      "passed": true,
+      "term": "春分",
+      "publishedLocalMinute": "2024-03-20T11:06",
+      "libraryRawKey": "春分",
+      "calculatedAt": "2024-03-20T11:06:25+08:00",
+      "deltaSeconds": 25.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-04:HKO-ST24",
+      "passed": true,
+      "term": "谷雨",
+      "publishedLocalMinute": "2024-04-19T22:00",
+      "libraryRawKey": "谷雨",
+      "calculatedAt": "2024-04-19T21:59:47+08:00",
+      "deltaSeconds": -13.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-04:CWA-CAL24",
+      "passed": true,
+      "term": "谷雨",
+      "publishedLocalMinute": "2024-04-19T22:00",
+      "libraryRawKey": "谷雨",
+      "calculatedAt": "2024-04-19T21:59:47+08:00",
+      "deltaSeconds": -13.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-05:HKO-ST24",
+      "passed": true,
+      "term": "小满",
+      "publishedLocalMinute": "2024-05-20T21:00",
+      "libraryRawKey": "小满",
+      "calculatedAt": "2024-05-20T20:59:31+08:00",
+      "deltaSeconds": -29.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-05:CWA-CAL24",
+      "passed": true,
+      "term": "小满",
+      "publishedLocalMinute": "2024-05-20T20:59",
+      "libraryRawKey": "小满",
+      "calculatedAt": "2024-05-20T20:59:31+08:00",
+      "deltaSeconds": 31.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-06:HKO-ST24",
+      "passed": true,
+      "term": "夏至",
+      "publishedLocalMinute": "2024-06-21T04:51",
+      "libraryRawKey": "夏至",
+      "calculatedAt": "2024-06-21T04:51:00+08:00",
+      "deltaSeconds": 0.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-06:CWA-CAL24",
+      "passed": true,
+      "term": "夏至",
+      "publishedLocalMinute": "2024-06-21T04:51",
+      "libraryRawKey": "夏至",
+      "calculatedAt": "2024-06-21T04:51:00+08:00",
+      "deltaSeconds": 0.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-07:HKO-ST24",
+      "passed": true,
+      "term": "大暑",
+      "publishedLocalMinute": "2024-07-22T15:44",
+      "libraryRawKey": "大暑",
+      "calculatedAt": "2024-07-22T15:44:26+08:00",
+      "deltaSeconds": 26.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-07:CWA-CAL24",
+      "passed": true,
+      "term": "大暑",
+      "publishedLocalMinute": "2024-07-22T15:44",
+      "libraryRawKey": "大暑",
+      "calculatedAt": "2024-07-22T15:44:26+08:00",
+      "deltaSeconds": 26.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-08:HKO-ST24",
+      "passed": true,
+      "term": "处暑",
+      "publishedLocalMinute": "2024-08-22T22:55",
+      "libraryRawKey": "处暑",
+      "calculatedAt": "2024-08-22T22:55:03+08:00",
+      "deltaSeconds": 3.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-08:CWA-CAL24",
+      "passed": true,
+      "term": "处暑",
+      "publishedLocalMinute": "2024-08-22T22:55",
+      "libraryRawKey": "处暑",
+      "calculatedAt": "2024-08-22T22:55:03+08:00",
+      "deltaSeconds": 3.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-09:HKO-ST24",
+      "passed": true,
+      "term": "秋分",
+      "publishedLocalMinute": "2024-09-22T20:44",
+      "libraryRawKey": "秋分",
+      "calculatedAt": "2024-09-22T20:43:42+08:00",
+      "deltaSeconds": -18.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-09:CWA-CAL24",
+      "passed": true,
+      "term": "秋分",
+      "publishedLocalMinute": "2024-09-22T20:44",
+      "libraryRawKey": "秋分",
+      "calculatedAt": "2024-09-22T20:43:42+08:00",
+      "deltaSeconds": -18.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-10:HKO-ST24",
+      "passed": true,
+      "term": "霜降",
+      "publishedLocalMinute": "2024-10-23T06:15",
+      "libraryRawKey": "霜降",
+      "calculatedAt": "2024-10-23T06:14:47+08:00",
+      "deltaSeconds": -13.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-10:CWA-CAL24",
+      "passed": true,
+      "term": "霜降",
+      "publishedLocalMinute": "2024-10-23T06:15",
+      "libraryRawKey": "霜降",
+      "calculatedAt": "2024-10-23T06:14:47+08:00",
+      "deltaSeconds": -13.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-11:HKO-ST24",
+      "passed": true,
+      "term": "小雪",
+      "publishedLocalMinute": "2024-11-22T03:56",
+      "libraryRawKey": "小雪",
+      "calculatedAt": "2024-11-22T03:56:31+08:00",
+      "deltaSeconds": 31.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-11:CWA-CAL24",
+      "passed": true,
+      "term": "小雪",
+      "publishedLocalMinute": "2024-11-22T03:56",
+      "libraryRawKey": "小雪",
+      "calculatedAt": "2024-11-22T03:56:31+08:00",
+      "deltaSeconds": 31.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-12:HKO-ST24",
+      "passed": true,
+      "term": "冬至",
+      "publishedLocalMinute": "2024-12-21T17:21",
+      "libraryRawKey": "DONG_ZHI",
+      "calculatedAt": "2024-12-21T17:20:35+08:00",
+      "deltaSeconds": -25.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "HKO-ST24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-ST-12:CWA-CAL24",
+      "passed": true,
+      "term": "冬至",
+      "publishedLocalMinute": "2024-12-21T17:21",
+      "libraryRawKey": "DONG_ZHI",
+      "calculatedAt": "2024-12-21T17:20:35+08:00",
+      "deltaSeconds": -25.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-01:CWA-CAL24",
+      "passed": true,
+      "term": "小寒",
+      "publishedLocalMinute": "2024-01-06T04:49",
+      "libraryRawKey": "小寒",
+      "calculatedAt": "2024-01-06T04:49:22+08:00",
+      "deltaSeconds": 22.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-02:CWA-CAL24",
+      "passed": true,
+      "term": "立春",
+      "publishedLocalMinute": "2024-02-04T16:27",
+      "libraryRawKey": "立春",
+      "calculatedAt": "2024-02-04T16:27:07+08:00",
+      "deltaSeconds": 7.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-03:CWA-CAL24",
+      "passed": true,
+      "term": "惊蛰",
+      "publishedLocalMinute": "2024-03-05T10:23",
+      "libraryRawKey": "惊蛰",
+      "calculatedAt": "2024-03-05T10:22:45+08:00",
+      "deltaSeconds": -15.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-04:CWA-CAL24",
+      "passed": true,
+      "term": "清明",
+      "publishedLocalMinute": "2024-04-04T15:02",
+      "libraryRawKey": "清明",
+      "calculatedAt": "2024-04-04T15:02:17+08:00",
+      "deltaSeconds": 17.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-05:CWA-CAL24",
+      "passed": true,
+      "term": "立夏",
+      "publishedLocalMinute": "2024-05-05T08:10",
+      "libraryRawKey": "立夏",
+      "calculatedAt": "2024-05-05T08:10:05+08:00",
+      "deltaSeconds": 5.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-06:CWA-CAL24",
+      "passed": true,
+      "term": "芒种",
+      "publishedLocalMinute": "2024-06-05T12:10",
+      "libraryRawKey": "芒种",
+      "calculatedAt": "2024-06-05T12:09:54+08:00",
+      "deltaSeconds": -6.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-07:CWA-CAL24",
+      "passed": true,
+      "term": "小暑",
+      "publishedLocalMinute": "2024-07-06T22:20",
+      "libraryRawKey": "小暑",
+      "calculatedAt": "2024-07-06T22:20:03+08:00",
+      "deltaSeconds": 3.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-08:CWA-CAL24",
+      "passed": true,
+      "term": "立秋",
+      "publishedLocalMinute": "2024-08-07T08:09",
+      "libraryRawKey": "立秋",
+      "calculatedAt": "2024-08-07T08:09:16+08:00",
+      "deltaSeconds": 16.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-09:CWA-CAL24",
+      "passed": true,
+      "term": "白露",
+      "publishedLocalMinute": "2024-09-07T11:11",
+      "libraryRawKey": "白露",
+      "calculatedAt": "2024-09-07T11:11:20+08:00",
+      "deltaSeconds": 20.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-10:CWA-CAL24",
+      "passed": true,
+      "term": "寒露",
+      "publishedLocalMinute": "2024-10-08T03:00",
+      "libraryRawKey": "寒露",
+      "calculatedAt": "2024-10-08T02:59:57+08:00",
+      "deltaSeconds": -3.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-11:CWA-CAL24",
+      "passed": true,
+      "term": "立冬",
+      "publishedLocalMinute": "2024-11-07T06:20",
+      "libraryRawKey": "立冬",
+      "calculatedAt": "2024-11-07T06:20:04+08:00",
+      "deltaSeconds": 4.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-12:CWA-CAL24",
+      "passed": true,
+      "term": "大雪",
+      "publishedLocalMinute": "2024-12-06T23:17",
+      "libraryRawKey": "大雪",
+      "calculatedAt": "2024-12-06T23:17:03+08:00",
+      "deltaSeconds": 3.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "solar_term_time",
+      "id": "EXT-JIE-13:CWA-CAL25",
+      "passed": true,
+      "term": "立春",
+      "publishedLocalMinute": "2025-02-03T22:10",
+      "libraryRawKey": "立春",
+      "calculatedAt": "2025-02-03T22:10:28+08:00",
+      "deltaSeconds": 28.0,
+      "toleranceSeconds": 120,
+      "sourceIds": [
+        "CWA-CAL25"
+      ],
+      "evidenceTier": "opened_official_pdf_minute_table",
+      "sourcePrecision": "minute",
+      "secondPrecisionVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-01",
+      "passed": true,
+      "term": "小寒",
+      "centerPublishedMinute": "2024-01-06T04:49",
+      "beforeAt": "2024-01-06T04:47:00+08:00",
+      "afterAt": "2024-01-06T04:51:00+08:00",
+      "expectedMonthBranches": [
+        "子",
+        "丑"
+      ],
+      "actualMonthBranches": [
+        "子",
+        "丑"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-02",
+      "passed": true,
+      "term": "立春",
+      "centerPublishedMinute": "2024-02-04T16:27",
+      "beforeAt": "2024-02-04T16:25:00+08:00",
+      "afterAt": "2024-02-04T16:29:00+08:00",
+      "expectedMonthBranches": [
+        "丑",
+        "寅"
+      ],
+      "actualMonthBranches": [
+        "丑",
+        "寅"
+      ],
+      "lichunYearCheck": {
+        "expected": [
+          "癸卯",
+          "甲辰"
+        ],
+        "actual": [
+          "癸卯",
+          "甲辰"
+        ]
+      },
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-03",
+      "passed": true,
+      "term": "惊蛰",
+      "centerPublishedMinute": "2024-03-05T10:23",
+      "beforeAt": "2024-03-05T10:21:00+08:00",
+      "afterAt": "2024-03-05T10:25:00+08:00",
+      "expectedMonthBranches": [
+        "寅",
+        "卯"
+      ],
+      "actualMonthBranches": [
+        "寅",
+        "卯"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-04",
+      "passed": true,
+      "term": "清明",
+      "centerPublishedMinute": "2024-04-04T15:02",
+      "beforeAt": "2024-04-04T15:00:00+08:00",
+      "afterAt": "2024-04-04T15:04:00+08:00",
+      "expectedMonthBranches": [
+        "卯",
+        "辰"
+      ],
+      "actualMonthBranches": [
+        "卯",
+        "辰"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-05",
+      "passed": true,
+      "term": "立夏",
+      "centerPublishedMinute": "2024-05-05T08:10",
+      "beforeAt": "2024-05-05T08:08:00+08:00",
+      "afterAt": "2024-05-05T08:12:00+08:00",
+      "expectedMonthBranches": [
+        "辰",
+        "巳"
+      ],
+      "actualMonthBranches": [
+        "辰",
+        "巳"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-06",
+      "passed": true,
+      "term": "芒种",
+      "centerPublishedMinute": "2024-06-05T12:10",
+      "beforeAt": "2024-06-05T12:08:00+08:00",
+      "afterAt": "2024-06-05T12:12:00+08:00",
+      "expectedMonthBranches": [
+        "巳",
+        "午"
+      ],
+      "actualMonthBranches": [
+        "巳",
+        "午"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-07",
+      "passed": true,
+      "term": "小暑",
+      "centerPublishedMinute": "2024-07-06T22:20",
+      "beforeAt": "2024-07-06T22:18:00+08:00",
+      "afterAt": "2024-07-06T22:22:00+08:00",
+      "expectedMonthBranches": [
+        "午",
+        "未"
+      ],
+      "actualMonthBranches": [
+        "午",
+        "未"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-08",
+      "passed": true,
+      "term": "立秋",
+      "centerPublishedMinute": "2024-08-07T08:09",
+      "beforeAt": "2024-08-07T08:07:00+08:00",
+      "afterAt": "2024-08-07T08:11:00+08:00",
+      "expectedMonthBranches": [
+        "未",
+        "申"
+      ],
+      "actualMonthBranches": [
+        "未",
+        "申"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-09",
+      "passed": true,
+      "term": "白露",
+      "centerPublishedMinute": "2024-09-07T11:11",
+      "beforeAt": "2024-09-07T11:09:00+08:00",
+      "afterAt": "2024-09-07T11:13:00+08:00",
+      "expectedMonthBranches": [
+        "申",
+        "酉"
+      ],
+      "actualMonthBranches": [
+        "申",
+        "酉"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-10",
+      "passed": true,
+      "term": "寒露",
+      "centerPublishedMinute": "2024-10-08T03:00",
+      "beforeAt": "2024-10-08T02:58:00+08:00",
+      "afterAt": "2024-10-08T03:02:00+08:00",
+      "expectedMonthBranches": [
+        "酉",
+        "戌"
+      ],
+      "actualMonthBranches": [
+        "酉",
+        "戌"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-11",
+      "passed": true,
+      "term": "立冬",
+      "centerPublishedMinute": "2024-11-07T06:20",
+      "beforeAt": "2024-11-07T06:18:00+08:00",
+      "afterAt": "2024-11-07T06:22:00+08:00",
+      "expectedMonthBranches": [
+        "戌",
+        "亥"
+      ],
+      "actualMonthBranches": [
+        "戌",
+        "亥"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-12",
+      "passed": true,
+      "term": "大雪",
+      "centerPublishedMinute": "2024-12-06T23:17",
+      "beforeAt": "2024-12-06T23:15:00+08:00",
+      "afterAt": "2024-12-06T23:19:00+08:00",
+      "expectedMonthBranches": [
+        "亥",
+        "子"
+      ],
+      "actualMonthBranches": [
+        "亥",
+        "子"
+      ],
+      "lichunYearCheck": null,
+      "sourceIds": [
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "jie_month_transition",
+      "id": "EXT-JIE-13",
+      "passed": true,
+      "term": "立春",
+      "centerPublishedMinute": "2025-02-03T22:10",
+      "beforeAt": "2025-02-03T22:08:00+08:00",
+      "afterAt": "2025-02-03T22:12:00+08:00",
+      "expectedMonthBranches": [
+        "丑",
+        "寅"
+      ],
+      "actualMonthBranches": [
+        "丑",
+        "寅"
+      ],
+      "lichunYearCheck": {
+        "expected": [
+          "甲辰",
+          "乙巳"
+        ],
+        "actual": [
+          "甲辰",
+          "乙巳"
+        ]
+      },
+      "sourceIds": [
+        "CWA-CAL25"
+      ],
+      "evidenceTier": "published_minute_plus_explicit_bazi_boundary_convention",
+      "fullFourPillarsExternallyVerified": false
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-01",
+      "passed": true,
+      "term": "大寒",
+      "monthPillars": [
+        "乙丑",
+        "乙丑"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-02",
+      "passed": true,
+      "term": "雨水",
+      "monthPillars": [
+        "丙寅",
+        "丙寅"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-03",
+      "passed": true,
+      "term": "春分",
+      "monthPillars": [
+        "丁卯",
+        "丁卯"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-04",
+      "passed": true,
+      "term": "谷雨",
+      "monthPillars": [
+        "戊辰",
+        "戊辰"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-05",
+      "passed": true,
+      "term": "小满",
+      "monthPillars": [
+        "己巳",
+        "己巳"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-06",
+      "passed": true,
+      "term": "夏至",
+      "monthPillars": [
+        "庚午",
+        "庚午"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-07",
+      "passed": true,
+      "term": "大暑",
+      "monthPillars": [
+        "辛未",
+        "辛未"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-08",
+      "passed": true,
+      "term": "处暑",
+      "monthPillars": [
+        "壬申",
+        "壬申"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-09",
+      "passed": true,
+      "term": "秋分",
+      "monthPillars": [
+        "癸酉",
+        "癸酉"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-10",
+      "passed": true,
+      "term": "霜降",
+      "monthPillars": [
+        "甲戌",
+        "甲戌"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-11",
+      "passed": true,
+      "term": "小雪",
+      "monthPillars": [
+        "乙亥",
+        "乙亥"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "zhongqi_not_month_boundary",
+      "id": "EXT-ST-12",
+      "passed": true,
+      "term": "冬至",
+      "monthPillars": [
+        "丙子",
+        "丙子"
+      ],
+      "evidenceTier": "explicit_jie_not_zhongqi_convention"
+    },
+    {
+      "group": "civil_midnight",
+      "id": "CONTRACT-00-1",
+      "passed": true,
+      "at": "2024-02-09T22:59:59+08:00",
+      "expectedDay": "癸卯",
+      "actualDay": "癸卯",
+      "expectedHourBranch": "亥",
+      "actualHour": "癸亥",
+      "evidenceTier": "project_civil_midnight_contract",
+      "externalFullChartSample": false
+    },
+    {
+      "group": "utc_equivalence",
+      "id": "CONTRACT-00-1",
+      "passed": true,
+      "localAt": "2024-02-09T22:59:59+08:00",
+      "utcAt": "2024-02-09T14:59:59+00:00",
+      "evidenceTier": "same_instant_timezone_contract"
+    },
+    {
+      "group": "relation_acceptance",
+      "id": "CONTRACT-00-1",
+      "passed": true,
+      "at": "2024-02-09T22:59:59+08:00",
+      "expectedHourReference": "same_day",
+      "hourChecks": [
+        {
+          "check": "day_hour_stem",
+          "result": "pass",
+          "expected": "癸亥",
+          "hourStemReference": "same_day",
+          "referenceDayStem": "癸"
+        }
+      ],
+      "evidenceTier": "adapter_engine_contract"
+    },
+    {
+      "group": "civil_midnight",
+      "id": "CONTRACT-00-2",
+      "passed": true,
+      "at": "2024-02-09T23:00:00+08:00",
+      "expectedDay": "癸卯",
+      "actualDay": "癸卯",
+      "expectedHourBranch": "子",
+      "actualHour": "甲子",
+      "evidenceTier": "project_civil_midnight_contract",
+      "externalFullChartSample": false
+    },
+    {
+      "group": "utc_equivalence",
+      "id": "CONTRACT-00-2",
+      "passed": true,
+      "localAt": "2024-02-09T23:00:00+08:00",
+      "utcAt": "2024-02-09T15:00:00+00:00",
+      "evidenceTier": "same_instant_timezone_contract"
+    },
+    {
+      "group": "relation_acceptance",
+      "id": "CONTRACT-00-2",
+      "passed": true,
+      "at": "2024-02-09T23:00:00+08:00",
+      "expectedHourReference": "next_day_late_zi",
+      "hourChecks": [
+        {
+          "check": "day_hour_stem",
+          "result": "pass",
+          "expected": "甲子",
+          "hourStemReference": "next_day_late_zi",
+          "referenceDayStem": "甲"
+        }
+      ],
+      "evidenceTier": "adapter_engine_contract"
+    },
+    {
+      "group": "civil_midnight",
+      "id": "CONTRACT-00-3",
+      "passed": true,
+      "at": "2024-02-09T23:59:59+08:00",
+      "expectedDay": "癸卯",
+      "actualDay": "癸卯",
+      "expectedHourBranch": "子",
+      "actualHour": "甲子",
+      "evidenceTier": "project_civil_midnight_contract",
+      "externalFullChartSample": false
+    },
+    {
+      "group": "utc_equivalence",
+      "id": "CONTRACT-00-3",
+      "passed": true,
+      "localAt": "2024-02-09T23:59:59+08:00",
+      "utcAt": "2024-02-09T15:59:59+00:00",
+      "evidenceTier": "same_instant_timezone_contract"
+    },
+    {
+      "group": "relation_acceptance",
+      "id": "CONTRACT-00-3",
+      "passed": true,
+      "at": "2024-02-09T23:59:59+08:00",
+      "expectedHourReference": "next_day_late_zi",
+      "hourChecks": [
+        {
+          "check": "day_hour_stem",
+          "result": "pass",
+          "expected": "甲子",
+          "hourStemReference": "next_day_late_zi",
+          "referenceDayStem": "甲"
+        }
+      ],
+      "evidenceTier": "adapter_engine_contract"
+    },
+    {
+      "group": "civil_midnight",
+      "id": "CONTRACT-00-4",
+      "passed": true,
+      "at": "2024-02-10T00:00:00+08:00",
+      "expectedDay": "甲辰",
+      "actualDay": "甲辰",
+      "expectedHourBranch": "子",
+      "actualHour": "甲子",
+      "evidenceTier": "project_civil_midnight_contract",
+      "externalFullChartSample": false
+    },
+    {
+      "group": "utc_equivalence",
+      "id": "CONTRACT-00-4",
+      "passed": true,
+      "localAt": "2024-02-10T00:00:00+08:00",
+      "utcAt": "2024-02-09T16:00:00+00:00",
+      "evidenceTier": "same_instant_timezone_contract"
+    },
+    {
+      "group": "relation_acceptance",
+      "id": "CONTRACT-00-4",
+      "passed": true,
+      "at": "2024-02-10T00:00:00+08:00",
+      "expectedHourReference": "same_day",
+      "hourChecks": [
+        {
+          "check": "day_hour_stem",
+          "result": "pass",
+          "expected": "甲子",
+          "hourStemReference": "same_day",
+          "referenceDayStem": "甲"
+        }
+      ],
+      "evidenceTier": "adapter_engine_contract"
+    },
+    {
+      "group": "civil_midnight",
+      "id": "CONTRACT-00-5",
+      "passed": true,
+      "at": "2024-02-10T00:00:01+08:00",
+      "expectedDay": "甲辰",
+      "actualDay": "甲辰",
+      "expectedHourBranch": "子",
+      "actualHour": "甲子",
+      "evidenceTier": "project_civil_midnight_contract",
+      "externalFullChartSample": false
+    },
+    {
+      "group": "utc_equivalence",
+      "id": "CONTRACT-00-5",
+      "passed": true,
+      "localAt": "2024-02-10T00:00:01+08:00",
+      "utcAt": "2024-02-09T16:00:01+00:00",
+      "evidenceTier": "same_instant_timezone_contract"
+    },
+    {
+      "group": "relation_acceptance",
+      "id": "CONTRACT-00-5",
+      "passed": true,
+      "at": "2024-02-10T00:00:01+08:00",
+      "expectedHourReference": "same_day",
+      "hourChecks": [
+        {
+          "check": "day_hour_stem",
+          "result": "pass",
+          "expected": "甲子",
+          "hourStemReference": "same_day",
+          "referenceDayStem": "甲"
+        }
+      ],
+      "evidenceTier": "adapter_engine_contract"
+    },
+    {
+      "group": "civil_midnight",
+      "id": "CONTRACT-00-6",
+      "passed": true,
+      "at": "2024-02-10T23:00:00+08:00",
+      "expectedDay": "甲辰",
+      "actualDay": "甲辰",
+      "expectedHourBranch": "子",
+      "actualHour": "丙子",
+      "evidenceTier": "project_civil_midnight_contract",
+      "externalFullChartSample": false
+    },
+    {
+      "group": "utc_equivalence",
+      "id": "CONTRACT-00-6",
+      "passed": true,
+      "localAt": "2024-02-10T23:00:00+08:00",
+      "utcAt": "2024-02-10T15:00:00+00:00",
+      "evidenceTier": "same_instant_timezone_contract"
+    },
+    {
+      "group": "relation_acceptance",
+      "id": "CONTRACT-00-6",
+      "passed": true,
+      "at": "2024-02-10T23:00:00+08:00",
+      "expectedHourReference": "next_day_late_zi",
+      "hourChecks": [
+        {
+          "check": "day_hour_stem",
+          "result": "pass",
+          "expected": "丙子",
+          "hourStemReference": "next_day_late_zi",
+          "referenceDayStem": "乙"
+        }
+      ],
+      "evidenceTier": "adapter_engine_contract"
+    },
+    {
+      "group": "late_zi_contract",
+      "id": "23_then_00",
+      "passed": true,
+      "lateZi": {
+        "pillars": {
+          "year": "甲辰",
+          "month": "丙寅",
+          "day": "癸卯",
+          "hour": "甲子"
+        },
+        "reference": "next_day_late_zi"
+      },
+      "midnight": {
+        "pillars": {
+          "year": "甲辰",
+          "month": "丙寅",
+          "day": "甲辰",
+          "hour": "甲子"
+        },
+        "reference": "same_day"
+      },
+      "evidenceTier": "chosen_late_zi_hour_stem_contract_not_external_full_chart"
+    },
+    {
+      "group": "separate_year_fields",
+      "id": "2024_lichun_vs_new_year",
+      "passed": true,
+      "expectedBaziAndLunarYears": [
+        [
+          "甲辰",
+          "癸卯"
+        ],
+        [
+          "甲辰",
+          "甲辰"
+        ]
+      ],
+      "actualBaziAndLunarYears": [
+        [
+          "甲辰",
+          "癸卯"
+        ],
+        [
+          "甲辰",
+          "甲辰"
+        ]
+      ],
+      "sourceIds": [
+        "HKO-YEAR",
+        "HKO-CONV24",
+        "CWA-CAL24"
+      ],
+      "evidenceTier": "official_dates_plus_separate_year_boundary_policies"
+    }
+  ],
+  "eligibleForDayOnlyHypothesis": true,
+  "eligibilityMeaning": "仅日历日期层可供预先冻结的日级研究假设；不表示行情预测有效或完整四柱已外部验证",
+  "limits": [
+    "两机构官方历法不替所有八字流派定义立春年界、节气月界或23点/0点日界",
+    "HKO全本年历被web读取大小限制阻断；其日名样本来自官方URL索引抽取，待原页视觉复核",
+    "日名第二来源是CWA独立公式及真实例题，并非另一份2024逐日表",
+    "2024小满公布到分钟的值相差一分钟",
+    "未核查秒级节气时刻、历史时区、真太阳时、时干或完整四柱",
+    "没有用同作者两套库互相证明",
+    "120秒是当前公布分钟资料的核对容差，不是官方秒精度或天体模型误差保证。",
+    "日名HKO证据仍为官方PDF索引文本，未升级为原页逐字视觉校勘。",
+    "月界与晚子时时干的项目规则检查不是新增外部完整八字样本。"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "capturedAtUtc": "2026-10-17T05:47:58.522587+00:00",
+  "coverage": {
+    "BTCUSD": {
+      "missingDates": [
+        "2023-03-05",
+        "2025-10-26",
+        "2026-05-08"
+      ],
+      "missingDays": 3,
+      "spanDays": 1750
+    },
+    "ETHUSD": {
+      "missingDates": [
+        "2023-03-05",
+        "2025-10-26",
+        "2026-05-08"
+      ],
+      "missingDays": 3,
+      "spanDays": 1750
+    }
+  },
+  "implementationSha256": {
+    "astro_events.py": "a07226f63ceccef36b183eba4967dfbdd41141bd02e1ce5ee3d6d32085cd6c2b",
+    "build_coinbase_study.py": "5e355a9a7d0d3413eff48aa6d91115ab7674bff028f5e7d91fbf542d49376747",
+    "calendar_adapter.py": "574f0bcf4a17f017db24ea6d8930b472b4b37b03f4f664a477e51f7eeb7c9f13",
+    "calendar_browser.py": "dc7e47226a0603f8c99c50dea156c41fc172ed9ad609b175a2599142a13291e7",
+    "coinbase_feed.py": "fe39adc3d4ec845dc12c37ce87a17001d45e8a44d6e59daf35739b6f011cb906",
+    "coinbase_study.py": "23991b5db2be5a84c2c09799fd24c8e06a3ecf308bd6e151ffaa6b5aee36bfe8",
+    "coinbase_study_protocol.json": "a675e05476d59c64c8cf0da5a7adae0cd1eed00c43ba2de9e8294540533c1425",
+    "exploration_generators.py": "b28bbf784cd765617e58e74df600eb254f0de1b61ea572a58e3e2efb74161c91",
+    "gann_timing.py": "0a8e3d43096c536e1262fa8d3349d892141cc15aba6fdcc3221f692422f7e505",
+    "month_study.py": "d5c0bbfcd2fe56bd2b49b4d0ac9fc78f86bd9ddf1b0fa91735362c01e3188317"
+  },
+  "independentBlindSample": false,
+  "protocolSha256": "f43c71b125105748fd913575bb6ba3a1ed825c2d57ddb961ef9786f982ab4b4b",
+  "rawRequestCount": 351,
+  "rawRequestManifestSha256": "eca2174df3fe1f24487ba084f1d4c18d7136b063ae100df937fa0d6459f16e5b",
+  "registeredPrediction": false,
+  "snapshotSha256": {
+    "BTCUSD": "bbcca542795b2a09010adc8acca8d8c0319f4cd59db05b9abdd008f302219704",
+    "ETHUSD": "83a0bfeea5450a9d39a936f70f1f4862e69fd076cadb4ae325fdaba4512042de"
+  },
+  "studyId": "CB-USD-HX-001"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "REG-BZ-STRUCT-002-20260927-V01",
+  "registeredAtUtc": "2026-09-27T01:45:09.876332+00:00",
+  "status": "specification_frozen_not_run",
+  "notProspectivePreregistration": true,
+  "priorMarketDataAndOtherStudyResultsAlreadySeen": true,
+  "featureImplementationFrozen": true,
+  "scorerImplementationComplete": false,
+  "nextExecutionGate": "实现独立评分器并附加代码与测试哈希，随后运行本规格；此登记不允许原地覆盖。",
+  "oldRegistrationHashesVerified": 18,
+  "oldResultsUnchanged": true,
+  "inputHashes": {
+    "structure_study_protocol.json": "b25eccd445374f81f47b9798b233b893e3ef7a5ab02ccf731b7b732c946a3bd6",
+    "bazi_features.py": "cf180b174ea3adf7a1d98f4d0db559d6a78fbc2b6f1835b2ee8a584045cb381b",
+    "bazi_engine.py": "7180fbb1a387797b3618d76ad6624734b994b6b9e7f33410af0764e98080f4a0",
+    "calendar_adapter.py": "574f0bcf4a17f017db24ea6d8930b472b4b37b03f4f664a477e51f7eeb7c9f13",
+    "profiles.json": "6df88964a89cab7af741576752099ddcba4fcf27762b46585c3c2082e653d153",
+    "daily_input.json": "182a156b7aed3988d376f2656773cfb93caa8f1e66b613787deabdb7e0b6c0cc",
+    "test_bazi_features.py": "7f051f7573f390fc804449fcfe91a2c767ce657d97b0c511ad7ca8a6f3db5714",
+    "test_v07_integration.py": "c7c1cea819308443008d7cf8c345894377cdcf8905a00f261c0f8c165a8763c3",
+    "definition_catalog.json": "637bc32b5e5fa3376ea5b7375c3cd1f9a66f93e0eec1cb1eaae7726e6af85399",
+    "boundary_comparison.json": "6b4ed6a788f6710e783aa1e0ac3a7e5f6fc9e4c8af7063a8b69352410f627970",
+    "来源溯源/v0.7/profile_evidence_audit.json": "05a311274933b4c53d3d7b2ede3ae930f7d22f013603005b7e1a0b35667b8352",
+    "来源溯源/v0.7/bazi_definition_sources.json": "09768a871ca5c73b01c0d79f4fb4b86ccc2771d33bfd0610ad6ec59ccfc916e3"
+  },
+  "noNewMarketScoringRun": true,
+  "marketDirection": null,
+  "marketValidated": false
+}

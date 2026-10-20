@@ -1,0 +1,154 @@
+Metadata-Version: 2.4
+Name: pysweph
+Version: 2.10.3.6
+Summary: Community fork of Pyswisseph, a Python extension to the Swiss Ephemeris
+Author-email: Stanislas Marquis <stan@astrorigin.com>
+Maintainer-email: sailorfe <sudopisces@gmail.com>
+License: /* Copyright (C) 1997 - 2021 Astrodienst AG, Switzerland.  All rights reserved.
+        
+          License conditions
+          ------------------
+        
+          This file is part of Swiss Ephemeris.
+        
+          Swiss Ephemeris is distributed with NO WARRANTY OF ANY KIND.  No author
+          or distributor accepts any responsibility for the consequences of using it,
+          or for whether it serves any particular purpose or works at all, unless he
+          or she says so in writing.
+        
+          Swiss Ephemeris is made available by its authors under a dual licensing
+          system. The software developer, who uses any part of Swiss Ephemeris
+          in his or her software, must choose between one of the two license models,
+          which are
+          a) GNU Affero General Public License (AGPL)
+          b) Swiss Ephemeris Professional License
+        
+          The choice must be made before the software developer distributes software
+          containing parts of Swiss Ephemeris to others, and before any public
+          service using the developed software is activated.
+        
+          If the developer choses the AGPL software license, he or she must fulfill
+          the conditions of that license, which includes the obligation to place his
+          or her whole software project under the AGPL or a compatible license.
+          See https://www.gnu.org/licenses/agpl-3.0.html
+        
+          If the developer choses the Swiss Ephemeris Professional license,
+          he must follow the instructions as found in http://www.astro.com/swisseph/
+          and purchase the Swiss Ephemeris Professional Edition from Astrodienst
+          and sign the corresponding license contract.
+        
+          The License grants you the right to use, copy, modify and redistribute
+          Swiss Ephemeris, but only under certain conditions described in the License.
+          Among other things, the License requires that the copyright notices and
+          this notice be preserved on all copies.
+        
+          Authors of the Swiss Ephemeris: Dieter Koch and Alois Treindl
+        
+          The authors of Swiss Ephemeris have no control or influence over any of
+          the derived works, i.e. over software or services created by other
+          programmers which use Swiss Ephemeris functions.
+        
+          The names of the authors or of the copyright holder (Astrodienst) must not
+          be used for promoting any software, product or service which uses or contains
+          the Swiss Ephemeris. This copyright notice is the ONLY place where the
+          names of the authors can legally appear, except in cases where they have
+          given special permission in writing.
+        */
+        
+Project-URL: Homepage, https://sailorfe.github.io/pysweph
+Project-URL: Documentation, https://sailorfe.github.io/pysweph
+Project-URL: Repository, https://github.com/sailorfe/pysweph
+Project-URL: Issues, https://github.com/sailorfe/pysweph/issues
+Project-URL: Original Project, https://github.com/astrorigin/pyswisseph
+Keywords: astrology,ephemeris,swisseph,astronomy
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Religion
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Religion
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# pysweph
+[![pypi](https://img.shields.io/pypi/v/pysweph.svg)](https://pypi.org/project/pysweph/)
+
+> [!CAUTION]
+> This fork introduces **breaking changes** from `pyswisseph`. Refer to the [Migration Guide](docs/concepts/migration_guide.md) for details.
+
+Modern Python bindings for the [Swiss Ephemeris](https://www.astro.com/swisseph/swephinfo_e.htm), a high-precision astronomical computation library for astrology developed and maintained since 1997.
+
+`pysweph` continues the work of [`pyswisseph`](https://github.com/astrorigin/pyswisseph) with updated documentation, bug fixes, and ongoing community maintenance.
+
+## Background
+
+In mid-2025, the documentation for `pywisseph` (`https://astrorigin.com/pyswisseph`) became inaccessible, and the maintainer has been unresponsive to issues and pull requests. This fork, `pysweph`, aims to keep the Python interface stable, documented, and installable for users who rely on it.
+
+### Versioning
+
+This project follows the versioning scheme: `<swe_major>.<swe_minor>.<swe_patch>.<wrapper_increment>`
+
+- The first three numbers match the Swiss Ephemeris C library version, [v2.10.03](https://github.com/aloistr/swisseph/releases/tag/v2.10.03) (2022-09-09).
+- The fourth number increments for Python wrapper changes.
+
+`pysweph` starts from [`pyswisseph==2.10.3.2`](https://github.com/astrorigin/pyswisseph/releases/tag/v2.10.03.2) (2023-06-04). The first release of this fork is `2.10.3.3`.
+
+### Upstream
+
+`pysweph` links directly to the official [Swiss Ephemeris C library](https://github.com/aloistr/swisseph) maintained by Alois Treindl and Astrodienst.
+
+`pyswisseph` included the author's auxiliary repositories ([`swephelp`](https://github.com/astrorigin/swephelp), [`sqlite3`](https://github.com/astrorigin/sqlite3), and related utilities). These have been intentionally removed in `pysweph` to reduce complexity and depend only on the canonical Swiss Ephemeris source code.
+
+## Status
+As of 2026-02-06, the test suite is deprecated due to `calc` and `houses` function patches.
+
+### Changes
+#### [Documentation](https://sailorfe.github.io/pysweph)
+- Rebuilt with Sphinx and MyST Markdown, hosted on GitHub Pages with continuous integration via GitHub Actions.
+- Generated API reference directly from `pyswisseph.c` docstrings with `sphinx-autodoc`.
+- Includes original tutorials and conceptual guides intended for both astrologers and developers.
+
+#### C library parity
+- [2.10.3.3](https://github.com/sailorfe/pysweph/releases/tag/2.10.3.3): Exposed string errors in `swe.calc()`, `swe.calc_pctr()`, `swe.calc_ut()`, and `swe.deltat_ex()`.
+- [2.10.3.4](https://github.com/sailorfe/pysweph/releases/tag/v2.10.3.4): The `swe_houses` function family now returns house cusps as a 13 or 37-item tuple where index 0 is empty. **This is a breaking change**.
+
+## Installation
+
+Install from [PyPI](https://pypi.org/project/pysweph): `pip install pysweph`
+
+Build from source:
+```sh
+git clone https://github.com/sailorfe/pysweph.git
+cd pysweph
+python3 -m venv .venv
+source .venv/bin/activate
+pip install .
+```
+
+`pysweph` retains the same import name from `pyswisseph`:
+
+```py
+import swisseph as swe
+```
+
+The documentation includes a detailed `pyswisseph` to `pysweph` [Migration Guide](docs/concepts/migration_guide.md) for existing projects.
+
+## Credits
+
+- **Alois Treindl**, creator of the Swiss Ephemeris
+- **Stanislas Marquis**, author of the original Python bindings (`pyswisseph`)
+- **sailorfe**, maintainer of `pysweph` continuation
+
+## License
+
+`pysweph` is work derived from the original release of the Astrodienst Swiss Ephemeris library. To use 'pysweph', the licensing conditions imposed by Astrodienst for Swiss Ephemeris must be fulfilled. A copy of the license file is found in `libswe/LICENSE`.

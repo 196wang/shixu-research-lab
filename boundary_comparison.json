@@ -1,0 +1,73 @@
+[
+  {
+    "label": "BTC 创世块头时间",
+    "eventAtUtc": "2009-01-03T18:15:05Z",
+    "atResearchTimezone": "2009-01-04T02:15:05+08:00",
+    "midnight": {
+      "year": "戊子",
+      "month": "甲子",
+      "day": "己酉",
+      "hour": "乙丑"
+    },
+    "zi23": {
+      "year": "戊子",
+      "month": "甲子",
+      "day": "己酉",
+      "hour": "乙丑"
+    },
+    "sourceRefs": [
+      "BIRTH-SRC-BTC-CORE"
+    ],
+    "trueSolarTime": false,
+    "note": "两种日界此时相同；仍与给定原局不符。",
+    "sourceSettingConfirmed": false
+  },
+  {
+    "label": "BTC 白皮书公布邮件",
+    "eventAtUtc": "2008-10-31T18:10:00Z",
+    "atResearchTimezone": "2008-11-01T02:10:00+08:00",
+    "midnight": {
+      "year": "戊子",
+      "month": "壬戌",
+      "day": "乙巳",
+      "hour": "丁丑"
+    },
+    "zi23": {
+      "year": "戊子",
+      "month": "壬戌",
+      "day": "乙巳",
+      "hour": "丁丑"
+    },
+    "sourceRefs": [
+      "BIRTH-SRC-BTC-MAIL"
+    ],
+    "trueSolarTime": false,
+    "note": "两种日界此时相同；仍与给定原局不符。",
+    "sourceSettingConfirmed": false
+  },
+  {
+    "label": "ETH Frontier 官方时间线",
+    "eventAtUtc": "2015-07-30T15:26:13Z",
+    "atResearchTimezone": "2015-07-30T23:26:13+08:00",
+    "midnight": {
+      "year": "乙未",
+      "month": "癸未",
+      "day": "丁未",
+      "hour": "壬子"
+    },
+    "zi23": {
+      "year": "乙未",
+      "month": "癸未",
+      "day": "戊申",
+      "hour": "壬子"
+    },
+    "sourceRefs": [
+      "BIRTH-SRC-ETH-TIMELINE",
+      "BIRTH-SRC-ETH-LAUNCH",
+      "BIRTH-SRC-ETH-RELEASE-PROCESS"
+    ],
+    "trueSolarTime": false,
+    "note": "仅日界改变即与 ETH A 四柱相符；原始设置仍待证。",
+    "sourceSettingConfirmed": false
+  }
+]

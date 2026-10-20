@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "studyId": "CONFLUENCE-BTC-001",
+  "status": "historical_exploration",
+  "marketValidated": false,
+  "sourceStudyId": "HX-BTC-001",
+  "sourceDetailsSha256": "fea660e1af4ae94240e4ed9a57d2a25ea1ac733fb2baf8ddcd0e3a2e358be48d",
+  "sourceReportSha256": "94d57d2f39770d20a0bea042ed0c98126537555cc93d6c8750dcb67c34871a78",
+  "sourceRange": {
+    "endDate": "2026-09-26",
+    "startDate": "2021-01-01"
+  },
+  "protocol": {
+    "direction": "same_date_bazi_daily_open_to_close",
+    "timing": "same_target_date_gann_or_astronomy",
+    "directionEligibility": "both_generators_known_and_one_day_direction_and_timing_window_scored",
+    "directionControl": "same_civil_year_same_direction_other_bazi_trigger_dates",
+    "minimumContrastSample": 30,
+    "minimumComplementToSelectedRatio": 0.25,
+    "timingToleranceDays": 3,
+    "timingCoverage": "union_of_plus_minus_3_day_windows_on_common_timing_eligible_grid",
+    "densityPolicy": "report_coverage_and_pivot_recall_no_claim_of_exact_coverage_matching",
+    "multipleComparisons": 8,
+    "registeredPrediction": false
+  },
+  "eligibleBaziDays": 987,
+  "timingEligibleDays": 1643,
+  "pivotCount": 453,
+  "sets": [
+    {
+      "id": "bazi_only",
+      "label": "仅八字方向",
+      "triggerDays": 33,
+      "directionCorrect": 20,
+      "directionRatePct": 60.60606060606061,
+      "directionContrast": {
+        "matchedN": 33,
+        "complementN": 934,
+        "matchedRatePct": 60.60606060606061,
+        "baselineRatePct": 51.865412699218716,
+        "deltaPp": 8.740647906841893,
+        "comparisonReady": true,
+        "annual": [
+          {
+            "year": 2021,
+            "n": 1,
+            "correct": 1,
+            "ratePct": 100.0
+          },
+          {
+            "year": 2022,
+            "n": 7,
+            "correct": 3,
+            "ratePct": 42.857142857142854
+          },
+          {
+            "year": 2023,
+            "n": 8,
+            "correct": 7,
+            "ratePct": 87.5
+          },
+          {
+            "year": 2024,
+            "n": 7,
+            "correct": 3,
+            "ratePct": 42.857142857142854
+          },
+          {
+            "year": 2025,
+            "n": 5,
+            "correct": 2,
+            "ratePct": 40.0
+          },
+          {
+            "year": 2026,
+            "n": 5,
+            "correct": 4,
+            "ratePct": 80.0
+          }
+        ]
+      },
+      "timingExact": 10,
+      "timingWithin3": 31,
+      "timingWithin3Pct": 93.93939393939394,
+      "coveredDates": 229,
+      "coveragePct": 13.937918441874618,
+      "densityWarning": false,
+      "uniquePivotsCovered": 57,
+      "availablePivots": 453,
+      "pivotRecallPct": 12.582781456953644
+    },
+    {
+      "id": "bazi_astro_only",
+      "label": "八字 + 占星，无江恩",
+      "triggerDays": 864,
+      "directionCorrect": 446,
+      "directionRatePct": 51.620370370370374,
+      "directionContrast": {
+        "matchedN": 864,
+        "complementN": 123,
+        "matchedRatePct": 51.620370370370374,
+        "baselineRatePct": 59.36213173603525,
+        "deltaPp": -7.741761365664878,
+        "comparisonReady": false,
+        "annual": [
+          {
+            "year": 2021,
+            "n": 53,
+            "correct": 29,
+            "ratePct": 54.71698113207547
+          },
+          {
+            "year": 2022,
+            "n": 169,
+            "correct": 94,
+            "ratePct": 55.62130177514793
+          },
+          {
+            "year": 2023,
+            "n": 177,
+            "correct": 89,
+            "ratePct": 50.282485875706215
+          },
+          {
+            "year": 2024,
+            "n": 173,
+            "correct": 77,
+            "ratePct": 44.50867052023121
+          },
+          {
+            "year": 2025,
+            "n": 167,
+            "correct": 96,
+            "ratePct": 57.48502994011976
+          },
+          {
+            "year": 2026,
+            "n": 125,
+            "correct": 61,
+            "ratePct": 48.8
+          }
+        ]
+      },
+      "timingExact": 225,
+      "timingWithin3": 827,
+      "timingWithin3Pct": 95.7175925925926,
+      "coveredDates": 1643,
+      "coveragePct": 100.0,
+      "densityWarning": true,
+      "uniquePivotsCovered": 440,
+      "availablePivots": 453,
+      "pivotRecallPct": 97.13024282560706
+    },
+    {
+      "id": "bazi_gann_only",
+      "label": "八字 + 江恩，无占星",
+      "triggerDays": 3,
+      "directionCorrect": 3,
+      "directionRatePct": 100.0,
+      "directionContrast": {
+        "matchedN": 3,
+        "complementN": 174,
+        "matchedRatePct": 100.0,
+        "baselineRatePct": 52.921195652173914,
+        "deltaPp": 47.078804347826086,
+        "comparisonReady": false,
+        "annual": [
+          {
+            "year": 2025,
+            "n": 2,
+            "correct": 2,
+            "ratePct": 100.0
+          },
+          {
+            "year": 2026,
+            "n": 1,
+            "correct": 1,
+            "ratePct": 100.0
+          }
+        ]
+      },
+      "timingExact": 0,
+      "timingWithin3": 3,
+      "timingWithin3Pct": 100.0,
+      "coveredDates": 21,
+      "coveragePct": 1.278149726110773,
+      "densityWarning": false,
+      "uniquePivotsCovered": 5,
+      "availablePivots": 453,
+      "pivotRecallPct": 1.1037527593818985
+    },
+    {
+      "id": "three_families",
+      "label": "八字 + 江恩 + 占星",
+      "triggerDays": 87,
+      "directionCorrect": 50,
+      "directionRatePct": 57.47126436781609,
+      "directionContrast": {
+        "matchedN": 87,
+        "complementN": 900,
+        "matchedRatePct": 57.47126436781609,
+        "baselineRatePct": 53.26234114447917,
+        "deltaPp": 4.208923223336917,
+        "comparisonReady": true,
+        "annual": [
+          {
+            "year": 2021,
+            "n": 5,
+            "correct": 3,
+            "ratePct": 60.0
+          },
+          {
+            "year": 2022,
+            "n": 22,
+            "correct": 12,
+            "ratePct": 54.54545454545454
+          },
+          {
+            "year": 2023,
+            "n": 12,
+            "correct": 4,
+            "ratePct": 33.33333333333333
+          },
+          {
+            "year": 2024,
+            "n": 18,
+            "correct": 15,
+            "ratePct": 83.33333333333334
+          },
+          {
+            "year": 2025,
+            "n": 22,
+            "correct": 12,
+            "ratePct": 54.54545454545454
+          },
+          {
+            "year": 2026,
+            "n": 8,
+            "correct": 4,
+            "ratePct": 50.0
+          }
+        ]
+      },
+      "timingExact": 21,
+      "timingWithin3": 82,
+      "timingWithin3Pct": 94.25287356321839,
+      "coveredDates": 564,
+      "coveragePct": 34.327449786975045,
+      "densityWarning": false,
+      "uniquePivotsCovered": 140,
+      "availablePivots": 453,
+      "pivotRecallPct": 30.90507726269316
+    },
+    {
+      "id": "gann",
+      "label": "八字 + 江恩",
+      "triggerDays": 90,
+      "directionCorrect": 53,
+      "directionRatePct": 58.88888888888889,
+      "directionContrast": {
+        "matchedN": 90,
+        "complementN": 897,
+        "matchedRatePct": 58.88888888888889,
+        "baselineRatePct": 53.121351220787616,
+        "deltaPp": 5.767537668101276,
+        "comparisonReady": true,
+        "annual": [
+          {
+            "year": 2021,
+            "n": 5,
+            "correct": 3,
+            "ratePct": 60.0
+          },
+          {
+            "year": 2022,
+            "n": 22,
+            "correct": 12,
+            "ratePct": 54.54545454545454
+          },
+          {
+            "year": 2023,
+            "n": 12,
+            "correct": 4,
+            "ratePct": 33.33333333333333
+          },
+          {
+            "year": 2024,
+            "n": 18,
+            "correct": 15,
+            "ratePct": 83.33333333333334
+          },
+          {
+            "year": 2025,
+            "n": 24,
+            "correct": 14,
+            "ratePct": 58.333333333333336
+          },
+          {
+            "year": 2026,
+            "n": 9,
+            "correct": 5,
+            "ratePct": 55.55555555555556
+          }
+        ]
+      },
+      "timingExact": 21,
+      "timingWithin3": 85,
+      "timingWithin3Pct": 94.44444444444444,
+      "coveredDates": 582,
+      "coveragePct": 35.423006695069994,
+      "densityWarning": false,
+      "uniquePivotsCovered": 144,
+      "availablePivots": 453,
+      "pivotRecallPct": 31.788079470198678
+    },
+    {
+      "id": "moon_phase",
+      "label": "八字 + 月相",
+      "triggerDays": 138,
+      "directionCorrect": 69,
+      "directionRatePct": 50.0,
+      "directionContrast": {
+        "matchedN": 138,
+        "complementN": 849,
+        "matchedRatePct": 50.0,
+        "baselineRatePct": 53.10449959404798,
+        "deltaPp": -3.1044995940479794,
+        "comparisonReady": true,
+        "annual": [
+          {
+            "year": 2021,
+            "n": 11,
+            "correct": 7,
+            "ratePct": 63.63636363636363
+          },
+          {
+            "year": 2022,
+            "n": 28,
+            "correct": 14,
+            "ratePct": 50.0
+          },
+          {
+            "year": 2023,
+            "n": 26,
+            "correct": 14,
+            "ratePct": 53.84615384615385
+          },
+          {
+            "year": 2024,
+            "n": 27,
+            "correct": 9,
+            "ratePct": 33.33333333333333
+          },
+          {
+            "year": 2025,
+            "n": 28,
+            "correct": 18,
+            "ratePct": 64.28571428571429
+          },
+          {
+            "year": 2026,
+            "n": 18,
+            "correct": 7,
+            "ratePct": 38.88888888888889
+          }
+        ]
+      },
+      "timingExact": 35,
+      "timingWithin3": 132,
+      "timingWithin3Pct": 95.65217391304348,
+      "coveredDates": 950,
+      "coveragePct": 57.821059038344494,
+      "densityWarning": false,
+      "uniquePivotsCovered": 249,
+      "availablePivots": 453,
+      "pivotRecallPct": 54.966887417218544
+    },
+    {
+      "id": "nakshatra",
+      "label": "八字 + 月亮换宿",
+      "triggerDays": 947,
+      "directionCorrect": 494,
+      "directionRatePct": 52.16473072861668,
+      "directionContrast": {
+        "matchedN": 927,
+        "complementN": 40,
+        "matchedRatePct": 52.21143473570658,
+        "baselineRatePct": 61.01761956130889,
+        "deltaPp": -8.806184825602308,
+        "comparisonReady": false,
+        "annual": [
+          {
+            "year": 2021,
+            "n": 37,
+            "correct": 21,
+            "ratePct": 56.75675675675676
+          },
+          {
+            "year": 2022,
+            "n": 190,
+            "correct": 106,
+            "ratePct": 55.78947368421052
+          },
+          {
+            "year": 2023,
+            "n": 188,
+            "correct": 93,
+            "ratePct": 49.46808510638298
+          },
+          {
+            "year": 2024,
+            "n": 191,
+            "correct": 92,
+            "ratePct": 48.167539267015705
+          },
+          {
+            "year": 2025,
+            "n": 188,
+            "correct": 107,
+            "ratePct": 56.91489361702128
+          },
+          {
+            "year": 2026,
+            "n": 133,
+            "correct": 65,
+            "ratePct": 48.87218045112782
+          }
+        ]
+      },
+      "timingExact": 245,
+      "timingWithin3": 905,
+      "timingWithin3Pct": 95.5649419218585,
+      "coveredDates": 1643,
+      "coveragePct": 100.0,
+      "densityWarning": true,
+      "uniquePivotsCovered": 440,
+      "availablePivots": 453,
+      "pivotRecallPct": 97.13024282560706
+    },
+    {
+      "id": "gann_moon_phase",
+      "label": "八字 + 江恩 + 月相",
+      "triggerDays": 10,
+      "directionCorrect": 4,
+      "directionRatePct": 40.0,
+      "directionContrast": {
+        "matchedN": 10,
+        "complementN": 620,
+        "matchedRatePct": 40.0,
+        "baselineRatePct": 53.46943995440403,
+        "deltaPp": -13.46943995440403,
+        "comparisonReady": false,
+        "annual": [
+          {
+            "year": 2021,
+            "n": 1,
+            "correct": 1,
+            "ratePct": 100.0
+          },
+          {
+            "year": 2022,
+            "n": 1,
+            "correct": 0,
+            "ratePct": 0.0
+          },
+          {
+            "year": 2023,
+            "n": 4,
+            "correct": 1,
+            "ratePct": 25.0
+          },
+          {
+            "year": 2024,
+            "n": 3,
+            "correct": 1,
+            "ratePct": 33.33333333333333
+          },
+          {
+            "year": 2025,
+            "n": 1,
+            "correct": 1,
+            "ratePct": 100.0
+          }
+        ]
+      },
+      "timingExact": 2,
+      "timingWithin3": 10,
+      "timingWithin3Pct": 100.0,
+      "coveredDates": 70,
+      "coveragePct": 4.26049908703591,
+      "densityWarning": false,
+      "uniquePivotsCovered": 14,
+      "availablePivots": 453,
+      "pivotRecallPct": 3.090507726269316
+    }
+  ],
+  "limitations": [
+    "已查看过同一历史区间，按年拆开仍不是独立盲测。",
+    "八字、江恩、月相与换宿的日期有重叠；各组并非独立样本。",
+    "时间规则不判断涨跌或高低；±3天匹配受信号覆盖率影响。",
+    "对照按年份和八字方向匹配，尚未做到时间覆盖率完全匹配或多重检验校正。"
+  ]
+}

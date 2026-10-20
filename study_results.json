@@ -1,0 +1,1200 @@
+{
+  "version": "0.6.0",
+  "hypothesisId": "H-BZ-DAY-001",
+  "hypothesisVersion": "0.2.0",
+  "runAtUtc": "2026-09-27T01:25:49.869538+00:00",
+  "python": "3.12.14",
+  "prospective": false,
+  "marketValidated": false,
+  "tradingBacktest": false,
+  "priorKnowledge": {
+    "oldProtocolVersion": "0.1.0",
+    "oldProtocolOutcome": "data_validation_failed",
+    "oldOutcomePreserved": true,
+    "resultsAlreadySeen": true,
+    "knownOldDeltaBp": {
+      "2020_2024": 26.4778,
+      "2025_2026": 18.0937
+    },
+    "amendmentReason": "Official-source recovery can repair the recent missing archive but does not supply 18 historical complete days. Introduce a separate calendar-mask exploratory estimator rather than rewriting the old gap-free gate.",
+    "registrationMeaning": "Freeze this revision, data hash and implementation hash before its first scoring run. This is an after-data-inspection amendment, not prospective preregistration.",
+    "unrecoveredDataCause": "Use verified gap records. An absent or partial official bar alone does not prove the precise exchange outage cause."
+  },
+  "periods": [
+    {
+      "name": "historical_exploration",
+      "start": "2020-01-01",
+      "end": "2024-12-31",
+      "groups": {
+        "0": {
+          "n": 1091,
+          "mean": 0.000805196615504785,
+          "median": 0.0011325073984578139,
+          "stdev": 0.03352633889833394,
+          "stdevDefinition": "sample_standard_deviation_ddof_1",
+          "upRatio": 0.5197066911090742,
+          "upDefinition": "strictly_positive_return; zero_is_not_up"
+        },
+        "1": {
+          "n": 718,
+          "mean": 0.003452978688288407,
+          "median": 0.001572304415405291,
+          "stdev": 0.03263133400254342,
+          "stdevDefinition": "sample_standard_deviation_ddof_1",
+          "upRatio": 0.5376044568245125,
+          "upDefinition": "strictly_positive_return; zero_is_not_up"
+        }
+      },
+      "delta": 0.002647782072783622,
+      "deltaBp": 26.47782072783622,
+      "expectedDays": 1827,
+      "observedDays": 1809,
+      "missingDays": 18,
+      "missingByGroup": {
+        "0": {
+          "expected": 1098,
+          "observed": 1091,
+          "missing": 7,
+          "missingRate": 0.006375227686703097
+        },
+        "1": {
+          "expected": 729,
+          "observed": 718,
+          "missing": 11,
+          "missingRate": 0.015089163237311385
+        }
+      },
+      "coverage": 0.9901477832512315,
+      "consecutiveMissingRuns": [
+        {
+          "start": "2020-02-09",
+          "end": "2020-02-09",
+          "days": 1
+        },
+        {
+          "start": "2020-02-19",
+          "end": "2020-02-20",
+          "days": 2
+        },
+        {
+          "start": "2020-03-04",
+          "end": "2020-03-04",
+          "days": 1
+        },
+        {
+          "start": "2020-04-25",
+          "end": "2020-04-25",
+          "days": 1
+        },
+        {
+          "start": "2020-06-28",
+          "end": "2020-06-28",
+          "days": 1
+        },
+        {
+          "start": "2020-11-30",
+          "end": "2020-11-30",
+          "days": 1
+        },
+        {
+          "start": "2020-12-21",
+          "end": "2020-12-22",
+          "days": 2
+        },
+        {
+          "start": "2020-12-25",
+          "end": "2020-12-25",
+          "days": 1
+        },
+        {
+          "start": "2021-02-11",
+          "end": "2021-02-11",
+          "days": 1
+        },
+        {
+          "start": "2021-03-06",
+          "end": "2021-03-06",
+          "days": 1
+        },
+        {
+          "start": "2021-04-20",
+          "end": "2021-04-20",
+          "days": 1
+        },
+        {
+          "start": "2021-04-25",
+          "end": "2021-04-25",
+          "days": 1
+        },
+        {
+          "start": "2021-08-13",
+          "end": "2021-08-13",
+          "days": 1
+        },
+        {
+          "start": "2021-09-29",
+          "end": "2021-09-29",
+          "days": 1
+        },
+        {
+          "start": "2021-12-24",
+          "end": "2021-12-24",
+          "days": 1
+        },
+        {
+          "start": "2023-03-24",
+          "end": "2023-03-24",
+          "days": 1
+        }
+      ],
+      "missingByReason": {
+        "hour_count_not_24": 18,
+        "upstream_source_errors": 18,
+        "open:not_a_price": 18,
+        "high:not_a_price": 18,
+        "low:not_a_price": 18,
+        "close:not_a_price": 18
+      },
+      "missingRateGroupDifference": 0.008713935550608287,
+      "bootstrap": {
+        "method": "moving_block_calendar_grid_paired_G_mask_return",
+        "blockDays": 30,
+        "seed": 20260927,
+        "replicatesRequested": 10000,
+        "replicatesValid": 10000,
+        "replicatesInvalid": 0,
+        "calendarSlotsPerReplicate": 1827,
+        "blocksPerReplicate": 61,
+        "finalBlockWidth": 27,
+        "randomDrawCount": 610000,
+        "available": true,
+        "ci95": [
+          -1.4033184099215864e-05,
+          0.005365786086266297
+        ],
+        "ci95Bp": [
+          -0.14033184099215865,
+          53.65786086266297
+        ],
+        "validObservedDaysRange": [
+          1785,
+          1825
+        ],
+        "sampledGroupCountRanges": {
+          "0": [
+            1075,
+            1098
+          ],
+          "1": [
+            699,
+            731
+          ]
+        },
+        "testOnly": false,
+        "unavailableReasons": [],
+        "quantileDefinition": "linear interpolation at (M-1)*p"
+      },
+      "yearly": [
+        {
+          "year": "2020",
+          "partialYear": false,
+          "groups": {
+            "0": {
+              "n": 216,
+              "mean": 0.0036032744469936887,
+              "median": 0.003527475639430595,
+              "stdev": 0.031675666998522874,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5555555555555556,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 140,
+              "mean": 0.0052050227160794806,
+              "median": 0.002002051723476875,
+              "stdev": 0.03394274392567943,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5785714285714286,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.001601748269085792,
+          "deltaBp": 16.017482690857918,
+          "expectedDays": 366,
+          "observedDays": 356,
+          "missingDays": 10,
+          "missingByGroup": {
+            "0": {
+              "expected": 221,
+              "observed": 216,
+              "missing": 5,
+              "missingRate": 0.02262443438914027
+            },
+            "1": {
+              "expected": 145,
+              "observed": 140,
+              "missing": 5,
+              "missingRate": 0.034482758620689655
+            }
+          },
+          "coverage": 0.9726775956284153,
+          "consecutiveMissingRuns": [
+            {
+              "start": "2020-02-09",
+              "end": "2020-02-09",
+              "days": 1
+            },
+            {
+              "start": "2020-02-19",
+              "end": "2020-02-20",
+              "days": 2
+            },
+            {
+              "start": "2020-03-04",
+              "end": "2020-03-04",
+              "days": 1
+            },
+            {
+              "start": "2020-04-25",
+              "end": "2020-04-25",
+              "days": 1
+            },
+            {
+              "start": "2020-06-28",
+              "end": "2020-06-28",
+              "days": 1
+            },
+            {
+              "start": "2020-11-30",
+              "end": "2020-11-30",
+              "days": 1
+            },
+            {
+              "start": "2020-12-21",
+              "end": "2020-12-22",
+              "days": 2
+            },
+            {
+              "start": "2020-12-25",
+              "end": "2020-12-25",
+              "days": 1
+            }
+          ],
+          "missingByReason": {
+            "hour_count_not_24": 10,
+            "upstream_source_errors": 10,
+            "open:not_a_price": 10,
+            "high:not_a_price": 10,
+            "low:not_a_price": 10,
+            "close:not_a_price": 10
+          },
+          "missingRateGroupDifference": 0.011858324231549384,
+          "bootstrap": null
+        },
+        {
+          "year": "2021",
+          "partialYear": false,
+          "groups": {
+            "0": {
+              "n": 215,
+              "mean": 0.0010946843144779444,
+              "median": -0.0008821475338280227,
+              "stdev": 0.048957886725565794,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.49767441860465117,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 143,
+              "mean": 0.0034851014688372225,
+              "median": 0.0033713584463173967,
+              "stdev": 0.04447655880845939,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5384615384615384,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.002390417154359278,
+          "deltaBp": 23.90417154359278,
+          "expectedDays": 365,
+          "observedDays": 358,
+          "missingDays": 7,
+          "missingByGroup": {
+            "0": {
+              "expected": 217,
+              "observed": 215,
+              "missing": 2,
+              "missingRate": 0.009216589861751152
+            },
+            "1": {
+              "expected": 148,
+              "observed": 143,
+              "missing": 5,
+              "missingRate": 0.033783783783783786
+            }
+          },
+          "coverage": 0.9808219178082191,
+          "consecutiveMissingRuns": [
+            {
+              "start": "2021-02-11",
+              "end": "2021-02-11",
+              "days": 1
+            },
+            {
+              "start": "2021-03-06",
+              "end": "2021-03-06",
+              "days": 1
+            },
+            {
+              "start": "2021-04-20",
+              "end": "2021-04-20",
+              "days": 1
+            },
+            {
+              "start": "2021-04-25",
+              "end": "2021-04-25",
+              "days": 1
+            },
+            {
+              "start": "2021-08-13",
+              "end": "2021-08-13",
+              "days": 1
+            },
+            {
+              "start": "2021-09-29",
+              "end": "2021-09-29",
+              "days": 1
+            },
+            {
+              "start": "2021-12-24",
+              "end": "2021-12-24",
+              "days": 1
+            }
+          ],
+          "missingByReason": {
+            "hour_count_not_24": 7,
+            "upstream_source_errors": 7,
+            "open:not_a_price": 7,
+            "high:not_a_price": 7,
+            "low:not_a_price": 7,
+            "close:not_a_price": 7
+          },
+          "missingRateGroupDifference": 0.024567193922032632,
+          "bootstrap": null
+        },
+        {
+          "year": "2022",
+          "partialYear": false,
+          "groups": {
+            "0": {
+              "n": 221,
+              "mean": -0.004988202126723659,
+              "median": -0.0023605785184359924,
+              "stdev": 0.032426756819500864,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.4434389140271493,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 144,
+              "mean": 0.0015824051315156248,
+              "median": 0.0006360982255675159,
+              "stdev": 0.030170065397330477,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5277777777777778,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.006570607258239284,
+          "deltaBp": 65.70607258239284,
+          "expectedDays": 365,
+          "observedDays": 365,
+          "missingDays": 0,
+          "missingByGroup": {
+            "0": {
+              "expected": 221,
+              "observed": 221,
+              "missing": 0,
+              "missingRate": 0.0
+            },
+            "1": {
+              "expected": 144,
+              "observed": 144,
+              "missing": 0,
+              "missingRate": 0.0
+            }
+          },
+          "coverage": 1.0,
+          "consecutiveMissingRuns": [],
+          "missingByReason": {},
+          "missingRateGroupDifference": 0.0,
+          "bootstrap": null
+        },
+        {
+          "year": "2023",
+          "partialYear": false,
+          "groups": {
+            "0": {
+              "n": 217,
+              "mean": 0.0020867164638206878,
+              "median": 0.0008289794524642879,
+              "stdev": 0.022710913924423554,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5207373271889401,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 147,
+              "mean": 0.004150381371621878,
+              "median": 3.71030376328262e-05,
+              "stdev": 0.025915827203505767,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5034013605442177,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.0020636649078011903,
+          "deltaBp": 20.636649078011903,
+          "expectedDays": 365,
+          "observedDays": 364,
+          "missingDays": 1,
+          "missingByGroup": {
+            "0": {
+              "expected": 217,
+              "observed": 217,
+              "missing": 0,
+              "missingRate": 0.0
+            },
+            "1": {
+              "expected": 148,
+              "observed": 147,
+              "missing": 1,
+              "missingRate": 0.006756756756756757
+            }
+          },
+          "coverage": 0.9972602739726028,
+          "consecutiveMissingRuns": [
+            {
+              "start": "2023-03-24",
+              "end": "2023-03-24",
+              "days": 1
+            }
+          ],
+          "missingByReason": {
+            "hour_count_not_24": 1,
+            "upstream_source_errors": 1,
+            "open:not_a_price": 1,
+            "high:not_a_price": 1,
+            "low:not_a_price": 1,
+            "close:not_a_price": 1
+          },
+          "missingRateGroupDifference": 0.006756756756756757,
+          "bootstrap": null
+        },
+        {
+          "year": "2024",
+          "partialYear": false,
+          "groups": {
+            "0": {
+              "n": 222,
+              "mean": 0.002317028363554798,
+              "median": 0.0037859224226325875,
+              "stdev": 0.025508127386177748,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.581081081081081,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 144,
+              "mean": 0.0028763444953441666,
+              "median": 0.001732050779863045,
+              "stdev": 0.025522156515887625,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5416666666666666,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.0005593161317893687,
+          "deltaBp": 5.593161317893688,
+          "expectedDays": 366,
+          "observedDays": 366,
+          "missingDays": 0,
+          "missingByGroup": {
+            "0": {
+              "expected": 222,
+              "observed": 222,
+              "missing": 0,
+              "missingRate": 0.0
+            },
+            "1": {
+              "expected": 144,
+              "observed": 144,
+              "missing": 0,
+              "missingRate": 0.0
+            }
+          },
+          "coverage": 1.0,
+          "consecutiveMissingRuns": [],
+          "missingByReason": {},
+          "missingRateGroupDifference": 0.0,
+          "bootstrap": null
+        }
+      ],
+      "leaveOneYearOutDescriptive": [
+        {
+          "excludedYear": "2020",
+          "groups": {
+            "0": {
+              "n": 875,
+              "mean": 0.00011447111653152436,
+              "median": 0.0006093604419007055,
+              "stdev": 0.03394955896321469,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5108571428571429,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 578,
+              "mean": 0.003028608162525863,
+              "median": 0.0012500451722410825,
+              "stdev": 0.03232169654055789,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.527681660899654,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.0029141370459943384,
+          "deltaBp": 29.141370459943385
+        },
+        {
+          "excludedYear": "2021",
+          "groups": {
+            "0": {
+              "n": 876,
+              "mean": 0.0007341465524006421,
+              "median": 0.0012627343023346826,
+              "stdev": 0.028530147787061148,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5251141552511416,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 575,
+              "mean": 0.0034449898924301795,
+              "median": 0.0011464541619232572,
+              "stdev": 0.028994921036247602,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5373913043478261,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.0027108433400295376,
+          "deltaBp": 27.108433400295375
+        },
+        {
+          "excludedYear": "2022",
+          "groups": {
+            "0": {
+              "n": 870,
+              "mean": 0.002276853077611091,
+              "median": 0.002068630784670719,
+              "stdev": 0.03365953945602683,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.539080459770115,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 574,
+              "mean": 0.003922251496956143,
+              "median": 0.001763718220727463,
+              "stdev": 0.03322856680055417,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5400696864111498,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.001645398419345052,
+          "deltaBp": 16.45398419345052
+        },
+        {
+          "excludedYear": "2023",
+          "groups": {
+            "0": {
+              "n": 874,
+              "mean": 0.00048701605819980695,
+              "median": 0.0011602317908646312,
+              "stdev": 0.03571110751420672,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5194508009153318,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 571,
+              "mean": 0.003273437191878564,
+              "median": 0.001704645193511882,
+              "stdev": 0.034164630863633895,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5464098073555166,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.002786421133678757,
+          "deltaBp": 27.864211336787573
+        },
+        {
+          "excludedYear": "2024",
+          "groups": {
+            "0": {
+              "n": 869,
+              "mean": 0.00041897492612952286,
+              "median": 0.00025424340822027304,
+              "stdev": 0.0352859105613818,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5040276179516686,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 574,
+              "mean": 0.003597639531117624,
+              "median": 0.001503859869070628,
+              "stdev": 0.03420136290854968,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5365853658536586,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.003178664604988101,
+          "deltaBp": 31.78664604988101
+        }
+      ],
+      "gateErrors": [],
+      "extremeDays": {
+        "lowest": [
+          {
+            "date": "2020-03-12",
+            "group": 0,
+            "mask": 1,
+            "return": -0.21168283891005765,
+            "errors": [],
+            "dayGanzhi": "甲寅",
+            "sourceRefs": [
+              "BTCUSDT-1h-2020-03.zip"
+            ]
+          },
+          {
+            "date": "2021-01-11",
+            "group": 0,
+            "mask": 1,
+            "return": -0.20396896335988618,
+            "errors": [],
+            "dayGanzhi": "己未",
+            "sourceRefs": [
+              "BTCUSDT-1h-2021-01.zip"
+            ]
+          },
+          {
+            "date": "2022-06-13",
+            "group": 0,
+            "mask": 1,
+            "return": -0.1716668292137727,
+            "errors": [],
+            "dayGanzhi": "丁酉",
+            "sourceRefs": [
+              "BTCUSDT-1h-2022-06.zip"
+            ]
+          },
+          {
+            "date": "2020-03-13",
+            "group": 0,
+            "mask": 1,
+            "return": -0.1499902970093589,
+            "errors": [],
+            "dayGanzhi": "乙卯",
+            "sourceRefs": [
+              "BTCUSDT-1h-2020-03.zip"
+            ]
+          },
+          {
+            "date": "2021-12-04",
+            "group": 0,
+            "mask": 1,
+            "return": -0.13883973529052887,
+            "errors": [],
+            "dayGanzhi": "丙戌",
+            "sourceRefs": [
+              "BTCUSDT-1h-2021-12.zip"
+            ]
+          }
+        ],
+        "highest": [
+          {
+            "date": "2023-03-13",
+            "group": 1,
+            "mask": 1,
+            "return": 0.1779078065913901,
+            "errors": [],
+            "dayGanzhi": "庚午",
+            "sourceRefs": [
+              "BTCUSDT-1h-2023-03.zip"
+            ]
+          },
+          {
+            "date": "2021-01-29",
+            "group": 0,
+            "mask": 1,
+            "return": 0.16296529934859735,
+            "errors": [],
+            "dayGanzhi": "丁丑",
+            "sourceRefs": [
+              "BTCUSDT-1h-2021-01.zip"
+            ]
+          },
+          {
+            "date": "2021-02-08",
+            "group": 0,
+            "mask": 1,
+            "return": 0.15282249047496488,
+            "errors": [],
+            "dayGanzhi": "丁亥",
+            "sourceRefs": [
+              "BTCUSDT-1h-2021-02.zip"
+            ]
+          },
+          {
+            "date": "2021-06-09",
+            "group": 0,
+            "mask": 1,
+            "return": 0.1467220728428257,
+            "errors": [],
+            "dayGanzhi": "戊子",
+            "sourceRefs": [
+              "BTCUSDT-1h-2021-06.zip"
+            ]
+          },
+          {
+            "date": "2021-01-14",
+            "group": 1,
+            "mask": 1,
+            "return": 0.14051231618018165,
+            "errors": [],
+            "dayGanzhi": "壬戌",
+            "sourceRefs": [
+              "BTCUSDT-1h-2021-01.zip"
+            ]
+          }
+        ],
+        "removedFromMainEstimate": false
+      },
+      "gapFreeOnly": false,
+      "originalAlgorithmCrosscheck": null,
+      "status": "exploratory_diagnostic",
+      "marketValidated": false,
+      "screeningOnly": {
+        "effectExceeds10Bp": true,
+        "intervalLowerAboveZero": false
+      }
+    },
+    {
+      "name": "contaminated_historical_review",
+      "start": "2025-01-01",
+      "end": "2026-09-26",
+      "groups": {
+        "0": {
+          "n": 378,
+          "mean": -0.0007040724063799625,
+          "median": 0.0004376385818648965,
+          "stdev": 0.021024681858719762,
+          "stdevDefinition": "sample_standard_deviation_ddof_1",
+          "upRatio": 0.5105820105820106,
+          "upDefinition": "strictly_positive_return; zero_is_not_up"
+        },
+        "1": {
+          "n": 256,
+          "mean": 0.0011177617751777114,
+          "median": 0.001714466811335455,
+          "stdev": 0.02197724862042675,
+          "stdevDefinition": "sample_standard_deviation_ddof_1",
+          "upRatio": 0.5390625,
+          "upDefinition": "strictly_positive_return; zero_is_not_up"
+        }
+      },
+      "delta": 0.0018218341815576739,
+      "deltaBp": 18.21834181557674,
+      "expectedDays": 634,
+      "observedDays": 634,
+      "missingDays": 0,
+      "missingByGroup": {
+        "0": {
+          "expected": 378,
+          "observed": 378,
+          "missing": 0,
+          "missingRate": 0.0
+        },
+        "1": {
+          "expected": 256,
+          "observed": 256,
+          "missing": 0,
+          "missingRate": 0.0
+        }
+      },
+      "coverage": 1.0,
+      "consecutiveMissingRuns": [],
+      "missingByReason": {},
+      "missingRateGroupDifference": 0.0,
+      "bootstrap": {
+        "method": "moving_block_calendar_grid_paired_G_mask_return",
+        "blockDays": 30,
+        "seed": 20260927,
+        "replicatesRequested": 10000,
+        "replicatesValid": 10000,
+        "replicatesInvalid": 0,
+        "calendarSlotsPerReplicate": 634,
+        "blocksPerReplicate": 22,
+        "finalBlockWidth": 4,
+        "randomDrawCount": 220000,
+        "available": true,
+        "ci95": [
+          -0.0009145080308944713,
+          0.005344305815433105
+        ],
+        "ci95Bp": [
+          -9.145080308944713,
+          53.443058154331055
+        ],
+        "validObservedDaysRange": [
+          634,
+          634
+        ],
+        "sampledGroupCountRanges": {
+          "0": [
+            378,
+            382
+          ],
+          "1": [
+            252,
+            256
+          ]
+        },
+        "testOnly": false,
+        "unavailableReasons": [],
+        "quantileDefinition": "linear interpolation at (M-1)*p"
+      },
+      "yearly": [
+        {
+          "year": "2025",
+          "partialYear": false,
+          "groups": {
+            "0": {
+              "n": 217,
+              "mean": -0.0022488292757203328,
+              "median": -0.0002238380299150662,
+              "stdev": 0.01965176103867689,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.48847926267281105,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 148,
+              "mean": 0.0032668548041667857,
+              "median": 0.0027077581999833352,
+              "stdev": 0.02131850458048021,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5743243243243243,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.0055156840798871185,
+          "deltaBp": 55.15684079887119,
+          "expectedDays": 365,
+          "observedDays": 365,
+          "missingDays": 0,
+          "missingByGroup": {
+            "0": {
+              "expected": 217,
+              "observed": 217,
+              "missing": 0,
+              "missingRate": 0.0
+            },
+            "1": {
+              "expected": 148,
+              "observed": 148,
+              "missing": 0,
+              "missingRate": 0.0
+            }
+          },
+          "coverage": 1.0,
+          "consecutiveMissingRuns": [],
+          "missingByReason": {},
+          "missingRateGroupDifference": 0.0,
+          "bootstrap": null
+        },
+        {
+          "year": "2026",
+          "partialYear": true,
+          "groups": {
+            "0": {
+              "n": 161,
+              "mean": 0.0013779912001222756,
+              "median": 0.001040318692750755,
+              "stdev": 0.022640516478213364,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5403726708074534,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 108,
+              "mean": -0.0018272916349184277,
+              "median": -0.0007856194913471479,
+              "stdev": 0.022617549260123843,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.49074074074074076,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": -0.0032052828350407035,
+          "deltaBp": -32.05282835040703,
+          "expectedDays": 269,
+          "observedDays": 269,
+          "missingDays": 0,
+          "missingByGroup": {
+            "0": {
+              "expected": 161,
+              "observed": 161,
+              "missing": 0,
+              "missingRate": 0.0
+            },
+            "1": {
+              "expected": 108,
+              "observed": 108,
+              "missing": 0,
+              "missingRate": 0.0
+            }
+          },
+          "coverage": 1.0,
+          "consecutiveMissingRuns": [],
+          "missingByReason": {},
+          "missingRateGroupDifference": 0.0,
+          "bootstrap": null
+        }
+      ],
+      "leaveOneYearOutDescriptive": [
+        {
+          "excludedYear": "2025",
+          "groups": {
+            "0": {
+              "n": 161,
+              "mean": 0.0013779912001222756,
+              "median": 0.001040318692750755,
+              "stdev": 0.022640516478213364,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5403726708074534,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 108,
+              "mean": -0.0018272916349184277,
+              "median": -0.0007856194913471479,
+              "stdev": 0.022617549260123843,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.49074074074074076,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": -0.0032052828350407035,
+          "deltaBp": -32.05282835040703
+        },
+        {
+          "excludedYear": "2026",
+          "groups": {
+            "0": {
+              "n": 217,
+              "mean": -0.0022488292757203328,
+              "median": -0.0002238380299150662,
+              "stdev": 0.01965176103867689,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.48847926267281105,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            },
+            "1": {
+              "n": 148,
+              "mean": 0.0032668548041667857,
+              "median": 0.0027077581999833352,
+              "stdev": 0.02131850458048021,
+              "stdevDefinition": "sample_standard_deviation_ddof_1",
+              "upRatio": 0.5743243243243243,
+              "upDefinition": "strictly_positive_return; zero_is_not_up"
+            }
+          },
+          "delta": 0.0055156840798871185,
+          "deltaBp": 55.15684079887119
+        }
+      ],
+      "gateErrors": [],
+      "extremeDays": {
+        "lowest": [
+          {
+            "date": "2026-02-05",
+            "group": 1,
+            "mask": 1,
+            "return": -0.08966449445671011,
+            "errors": [],
+            "dayGanzhi": "庚戌",
+            "sourceRefs": [
+              "BTCUSDT-1h-2026-02.zip"
+            ]
+          },
+          {
+            "date": "2025-03-04",
+            "group": 1,
+            "mask": 1,
+            "return": -0.07830610588859624,
+            "errors": [],
+            "dayGanzhi": "壬申",
+            "sourceRefs": [
+              "BTCUSDT-1h-2025-03.zip"
+            ]
+          },
+          {
+            "date": "2025-11-21",
+            "group": 0,
+            "mask": 1,
+            "return": -0.07719393861436112,
+            "errors": [],
+            "dayGanzhi": "甲午",
+            "sourceRefs": [
+              "BTCUSDT-1h-2025-11.zip"
+            ]
+          },
+          {
+            "date": "2025-02-25",
+            "group": 0,
+            "mask": 1,
+            "return": -0.07519500614637109,
+            "errors": [],
+            "dayGanzhi": "乙丑",
+            "sourceRefs": [
+              "BTCUSDT-1h-2025-02.zip"
+            ]
+          },
+          {
+            "date": "2025-12-01",
+            "group": 0,
+            "mask": 1,
+            "return": -0.07390405304034076,
+            "errors": [],
+            "dayGanzhi": "甲辰",
+            "sourceRefs": [
+              "BTCUSDT-1h-2025-11.zip",
+              "BTCUSDT-1h-2025-12.zip"
+            ]
+          }
+        ],
+        "highest": [
+          {
+            "date": "2026-03-04",
+            "group": 0,
+            "mask": 1,
+            "return": 0.08373556791191307,
+            "errors": [],
+            "dayGanzhi": "丁丑",
+            "sourceRefs": [
+              "BTCUSDT-1h-2026-03.zip"
+            ]
+          },
+          {
+            "date": "2025-12-02",
+            "group": 0,
+            "mask": 1,
+            "return": 0.07288964637395816,
+            "errors": [],
+            "dayGanzhi": "乙巳",
+            "sourceRefs": [
+              "BTCUSDT-1h-2025-12.zip"
+            ]
+          },
+          {
+            "date": "2026-08-21",
+            "group": 0,
+            "mask": 1,
+            "return": 0.06555933393348276,
+            "errors": [],
+            "dayGanzhi": "丁卯",
+            "sourceRefs": [
+              "BTCUSDT-1h-2026-08.zip"
+            ]
+          },
+          {
+            "date": "2025-03-05",
+            "group": 1,
+            "mask": 1,
+            "return": 0.06458030693480332,
+            "errors": [],
+            "dayGanzhi": "癸酉",
+            "sourceRefs": [
+              "BTCUSDT-1h-2025-03.zip"
+            ]
+          },
+          {
+            "date": "2026-09-21",
+            "group": 0,
+            "mask": 1,
+            "return": 0.06198969250543801,
+            "errors": [],
+            "dayGanzhi": "戊戌",
+            "sourceRefs": [
+              "BTCUSDT-1h-2026-09-20.zip",
+              "BTCUSDT-1h-2026-09-21.zip"
+            ]
+          }
+        ],
+        "removedFromMainEstimate": false
+      },
+      "gapFreeOnly": true,
+      "originalAlgorithmCrosscheck": {
+        "method": "moving_block_bootstrap_paired_G_r",
+        "blockLength": 30,
+        "replicatesRequested": 10000,
+        "seed": 20260927,
+        "rng": "Python random.Random Mersenne Twister",
+        "startCall": "randrange(N-29)",
+        "candidateStarts": [
+          0,
+          604
+        ],
+        "blocksPerReplicate": 22,
+        "replicatesValid": 10000,
+        "replicatesInvalidMissingGroup": 0,
+        "randomDrawCount": 220000,
+        "minimumValidReplicates": 9900,
+        "protocolRun": true,
+        "ci95": [
+          -0.0009145080308944713,
+          0.005344305815433105
+        ],
+        "ci95Bp": [
+          -9.145080308944713,
+          53.443058154331055
+        ],
+        "available": true,
+        "unavailableReasons": [],
+        "quantileDefinition": "sorted index (M-1)*p; adjacent linear interpolation"
+      },
+      "status": "exploratory_diagnostic",
+      "marketValidated": false,
+      "screeningOnly": {
+        "effectExceeds10Bp": true,
+        "intervalLowerAboveZero": false
+      }
+    }
+  ],
+  "limits": [
+    "研究对象为来源可核验且24小时完整日期的组均值差；不恢复被剔除日期的真实收益。",
+    "30日区块同时抽取分组、缺失标记与收益；不会证明缺失随机、平稳或因果。",
+    "已看过旧描述统计后新增此缺失数据方案，属于后验探索修订，不是事前预注册。",
+    "2025–2026已受案例阅读影响；2026仅到9月26日，不是干净样本外。",
+    "没有纳入费用、滑点、下单时点、杠杆或资产头寸；不是可执行交易策略回测。",
+    "原无缺口协议2020–2024依旧未通过；新结果不能覆写该历史记录。",
+    "单一日干分组不代表完整八字、占星或江恩体系；样本内差异不验证这些理论。"
+  ],
+  "registrationSha256": "991019de83aa3f9f65259d2c75f27a554b90e02165d2cbd62ee38ef41314b4e1"
+}

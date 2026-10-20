@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "version": "0.8.0",
+  "scorerVersion": "0.8.0",
+  "status": "exploration_completed",
+  "hypothesisId": "H-BZ-STRUCT-002",
+  "hypothesisVersion": "0.1.0",
+  "featureId": "BZ-S02",
+  "featureVersion": "0.1.0",
+  "runAtUtc": "2026-09-27T01:56:38.118710+00:00",
+  "python": "3.12.14",
+  "profile": "BTC-BZ-V01",
+  "profilePillars": {
+    "year": "戊子",
+    "month": "甲子",
+    "day": "戊申",
+    "hour": "辛酉"
+  },
+  "calendarPolicyId": "BZ-CALENDAR-CIVIL-00-V01",
+  "featureEvaluatedAt": "each date 00:00:00+08:00",
+  "outcome": "abs(close / open - 1)",
+  "outcomeMeaning": "收开绝对净变动，不是日内振幅或波动率",
+  "estimand": "(mean(y[G1]) - mean(y[G0])) * 10000",
+  "unit": "bp",
+  "groupMeaning": {
+    "0": "原局四支与流日无六冲",
+    "1": "原局四支与流日至少一条六冲"
+  },
+  "groupIndependentCrosscheck": "BTC原局子子申酉；G1流日支仅寅、卯、午；每天等权只计一次",
+  "periods": [
+    {
+      "start": "2020-01-01",
+      "end": "2024-12-31",
+      "expectedDays": 1827,
+      "observedDays": 1809,
+      "missingDays": 18,
+      "coverage": 0.9901477832512315,
+      "groups": {
+        "0": {
+          "n": 1359,
+          "meanAbsoluteReturn": 0.022367177956267734,
+          "meanAbsoluteReturnBp": 223.67177956267733
+        },
+        "1": {
+          "n": 450,
+          "meanAbsoluteReturn": 0.022427028114950367,
+          "meanAbsoluteReturnBp": 224.27028114950366
+        }
+      },
+      "missingByGroup": {
+        "0": {
+          "expected": 1370,
+          "observed": 1359,
+          "missing": 11,
+          "missingRate": 0.008029197080291928
+        },
+        "1": {
+          "expected": 457,
+          "observed": 450,
+          "missing": 7,
+          "missingRate": 0.015317286652078765
+        }
+      },
+      "missingByReason": {
+        "hour_count_not_24": 18,
+        "upstream_source_errors": 18,
+        "open:not_a_price": 18,
+        "high:not_a_price": 18,
+        "low:not_a_price": 18,
+        "close:not_a_price": 18
+      },
+      "delta": 5.985015868263319e-05,
+      "deltaBp": 0.5985015868263319,
+      "bootstrap": {
+        "method": "moving_block_calendar_grid_paired_G_mask_absolute_net_change",
+        "blockDays": 30,
+        "seed": 20260927,
+        "replicatesRequested": 10000,
+        "replicatesValid": 10000,
+        "replicatesInvalid": 0,
+        "calendarSlotsPerReplicate": 1827,
+        "blocksPerReplicate": 61,
+        "finalBlockWidth": 27,
+        "randomDrawCount": 610000,
+        "available": true,
+        "ci95": [
+          -0.0022836620791050477,
+          0.002981035851076082
+        ],
+        "ci95Bp": [
+          -22.83662079105048,
+          29.81035851076082
+        ],
+        "validObservedDaysRange": [
+          1785,
+          1825
+        ],
+        "sampledGroupCountRanges": {
+          "0": [
+            1329,
+            1390
+          ],
+          "1": [
+            421,
+            477
+          ]
+        },
+        "testOnly": false,
+        "unavailableReasons": [],
+        "quantileDefinition": "linear interpolation at (M-1)*p",
+        "outcome": "abs(close / open - 1)",
+        "minimumValidReplicates": 9900,
+        "internalNumericFieldMeaning": "legacy return slot contains absoluteReturn, not signed return",
+        "startSampling": "randrange(N-30+1), independently for every block including truncated final block",
+        "rng": "Python random.Random Mersenne Twister",
+        "seedResetEachPeriod": true
+      },
+      "gateErrors": [],
+      "decision": "uncertain",
+      "dataGatePassed": true,
+      "marketValidated": false,
+      "independentHoldout": false,
+      "outcome": "abs(close / open - 1)",
+      "practicalMarginBp": 10,
+      "interpretation": "G1减G0的收开绝对净变动差异；正负差异不表示价格涨跌方向"
+    },
+    {
+      "start": "2025-01-01",
+      "end": "2026-09-26",
+      "expectedDays": 634,
+      "observedDays": 634,
+      "missingDays": 0,
+      "coverage": 1.0,
+      "groups": {
+        "0": {
+          "n": 475,
+          "meanAbsoluteReturn": 0.01555890745076228,
+          "meanAbsoluteReturnBp": 155.5890745076228
+        },
+        "1": {
+          "n": 159,
+          "meanAbsoluteReturn": 0.016031750325515307,
+          "meanAbsoluteReturnBp": 160.31750325515307
+        }
+      },
+      "missingByGroup": {
+        "0": {
+          "expected": 475,
+          "observed": 475,
+          "missing": 0,
+          "missingRate": 0.0
+        },
+        "1": {
+          "expected": 159,
+          "observed": 159,
+          "missing": 0,
+          "missingRate": 0.0
+        }
+      },
+      "missingByReason": {},
+      "delta": 0.0004728428747530263,
+      "deltaBp": 4.7284287475302635,
+      "bootstrap": {
+        "method": "moving_block_calendar_grid_paired_G_mask_absolute_net_change",
+        "blockDays": 30,
+        "seed": 20260927,
+        "replicatesRequested": 10000,
+        "replicatesValid": 10000,
+        "replicatesInvalid": 0,
+        "calendarSlotsPerReplicate": 634,
+        "blocksPerReplicate": 22,
+        "finalBlockWidth": 4,
+        "randomDrawCount": 220000,
+        "available": true,
+        "ci95": [
+          -0.0018738455988409923,
+          0.003670656006437751
+        ],
+        "ci95Bp": [
+          -18.73845598840992,
+          36.70656006437751
+        ],
+        "validObservedDaysRange": [
+          634,
+          634
+        ],
+        "sampledGroupCountRanges": {
+          "0": [
+            461,
+            491
+          ],
+          "1": [
+            143,
+            173
+          ]
+        },
+        "testOnly": false,
+        "unavailableReasons": [],
+        "quantileDefinition": "linear interpolation at (M-1)*p",
+        "outcome": "abs(close / open - 1)",
+        "minimumValidReplicates": 9900,
+        "internalNumericFieldMeaning": "legacy return slot contains absoluteReturn, not signed return",
+        "startSampling": "randrange(N-30+1), independently for every block including truncated final block",
+        "rng": "Python random.Random Mersenne Twister",
+        "seedResetEachPeriod": true
+      },
+      "gateErrors": [],
+      "decision": "uncertain",
+      "dataGatePassed": true,
+      "marketValidated": false,
+      "independentHoldout": false,
+      "outcome": "abs(close / open - 1)",
+      "practicalMarginBp": 10,
+      "interpretation": "G1减G0的收开绝对净变动差异；正负差异不表示价格涨跌方向"
+    }
+  ],
+  "overallDecision": "no_consistent_directional_support",
+  "headline": "按预设标准，未发现两段历史一致支持六冲日绝对变动差异的证据。",
+  "practicalMarginBp": 10,
+  "prospective": false,
+  "independentHoldout": false,
+  "priorMarketDataAndOtherStudyResultsAlreadySeen": true,
+  "marketValidated": false,
+  "marketDirection": null,
+  "marketExecutionEnabled": false,
+  "tradingBacktest": false,
+  "forwardMonitoringStarted": false,
+  "limitations": [
+    "给定BTC四柱的条件研究；原盘出生时区与日界尚未证实。",
+    "历史行情及其他假设结果已看过；两段均非独立留出集。",
+    "缺失日保留日历位置且不填值；已观察日之外的变化仍未知。",
+    "差异为绝对净变动，不是涨跌信号，也不是日内最高最低振幅。",
+    "10bp是预先固定的研究门槛，不代表交易成本或可获得的利润。",
+    "观察性关联不能建立因果，也不验证整个八字理论。",
+    "此条件等价于寅卯午日的12日循环分组；不是独立机制识别。"
+  ],
+  "gridFile": "structure_grid.json",
+  "gridSha256": "bdc891fe8087cc4ea98d0f3b4451a6a9dbe7f6f91ec8c0b62bcfbb95307e5244",
+  "dataSha256": "182a156b7aed3988d376f2656773cfb93caa8f1e66b613787deabdb7e0b6c0cc",
+  "protocolSha256": "b25eccd445374f81f47b9798b233b893e3ef7a5ab02ccf731b7b732c946a3bd6",
+  "priorRegistrationSha256": "9022ad8f6d520f33cd03cead7e02ca779ca94f595fb39d5d8733031065a9c26b",
+  "executionRegistrationSha256": "137f0c9950544df77bbfb99361a18a99e59c38cb2d1cfc606e64147096862030",
+  "verification": {
+    "oldRegistrationFileCount": 18,
+    "structureRegistrationFileCount": 12,
+    "executionRegistrationFileCount": 56,
+    "runtimeFilesVerified": 35,
+    "remainingIncompleteDays": 18
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "sourceTitle": "USNO Dates of Primary Phases of the Moon",
+  "sourceUrl": "https://aa.usno.navy.mil/calculated/moon/phases?date=2026-09-01&nump=8",
+  "retrievedOn": "2026-09-27",
+  "sourceTimeScale": "Universal Time, published to minute",
+  "transcription": "Eight displayed timestamps manually transcribed from the official source; source page text not reproduced.",
+  "comparisonToleranceSeconds": 120,
+  "toleranceMeaning": "Project check tolerance selected before running comparison; not a precision guarantee. UT is represented as UTC to minute precision for this coarse comparison, without a DUT1 correction.",
+  "scope": "Eight moon-phase examples only; no independent nakshatra, natal-chart or financial-predictive validation.",
+  "rows": [
+    {"phaseDeg": 270, "atUt": "2026-09-04T07:51:00+00:00"},
+    {"phaseDeg": 0, "atUt": "2026-09-11T03:27:00+00:00"},
+    {"phaseDeg": 90, "atUt": "2026-09-18T20:44:00+00:00"},
+    {"phaseDeg": 180, "atUt": "2026-09-26T16:49:00+00:00"},
+    {"phaseDeg": 270, "atUt": "2026-10-03T13:25:00+00:00"},
+    {"phaseDeg": 0, "atUt": "2026-10-10T15:50:00+00:00"},
+    {"phaseDeg": 90, "atUt": "2026-10-18T16:12:00+00:00"},
+    {"phaseDeg": 180, "atUt": "2026-10-26T04:12:00+00:00"}
+  ]
+}
