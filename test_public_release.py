@@ -1,12 +1,17 @@
 """Checks for the published plan and an explicitly synthetic scoring example."""
 from datetime import date, datetime, timedelta, timezone
+from http.server import ThreadingHTTPServer
 from pathlib import Path
 import hashlib
 import json
+import threading
 import unittest
+from unittest.mock import Mock
+from urllib.request import urlopen
 
+from app_server import Handler
 from coinbase_feed import local_open, ms
-from coinbase_forward import CoinbaseForward, digest, verify
+from coinbase_forward import CoinbaseForward, CoinbaseForwardError, digest, verify
 
 
 ROOT = Path(__file__).resolve().parent
@@ -66,6 +71,83 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertEqual(row['timeStatus'], expected['timeStatus'])
         self.assertEqual(row['timing']['hit'], expected['timingHit'])
         self.assertEqual(row['timing']['errorDays'], expected['errorDays'])
+
+    def test_public_replay_uses_cached_prices_without_writing_registration(self):
+        target = date(2026, 10, 19)
+        opened = ms(local_open(target))
+        bar = {'symbol': 'BTCUSD', 'open_ms': opened, 'close_ms': opened + 86400000 - 1,
+               'open': '100', 'high': '101', 'low': '89', 'close': '90',
+               'is_closed': 1, 'conflicted': 0, 'request_id': 'synthetic-source-a',
+               'body_sha256': 'a' * 64, 'updated': '2026-10-20T00:00:00+00:00'}
+        state = {'symbol': 'BTCUSD', 'provider': 'Coinbase Exchange', 'product': 'BTC-USD',
+                 'marketType': 'spot', 'dayTimezone': 'UTC+8',
+                 'last_success': '2026-10-20T00:00:00+00:00'}
+        market = Mock()
+        market.path = ROOT / 'unused_local_registration_for_test' / 'market.sqlite3'
+        market._snapshot.return_value = (state, {opened: bar}, {})
+        store = ROOT / 'unused_local_registration_for_test'
+        self.assertFalse(store.exists())
+        study = CoinbaseForward(store, market, base=ROOT,
+                                clock=lambda: datetime(2026, 10, 22, tzinfo=timezone.utc))
+        first = study.preview_public()
+        self.assertEqual(first['mode'], 'public_read_only')
+        self.assertEqual(first['registrationSha256'],
+                         'ccf4191d4e4b1c66a318d1300e669bbf01d4bb804d4c935387c5a32c74fec690')
+        self.assertEqual(first['rows'][0]['directionStatus'], 'scored')
+        self.assertEqual(first['rows'][0]['directionResults']['DAY-STEM-FIRE-DOWN'], 'correct')
+        self.assertEqual(first['rows'][0]['timeStatus'], 'late_registration')
+        self.assertFalse(store.exists())
+        market.refresh.assert_not_called()
+        bar['request_id'], bar['body_sha256'] = 'synthetic-source-b', 'b' * 64
+        second = study.preview_public()
+        self.assertEqual(first['priceInputSha256'], second['priceInputSha256'])
+        self.assertNotEqual(first['rawCacheSnapshotSha256'], second['rawCacheSnapshotSha256'])
+        self.assertFalse(store.exists())
+        market._snapshot.return_value = ({**state, 'provider': 'other'}, {opened: bar}, {})
+        with self.assertRaises(CoinbaseForwardError):
+            study.preview_public()
+
+    def test_status_exposes_separate_market_and_registration_paths(self):
+        market = Mock()
+        market.path = ROOT / 'unused_local_market_for_test' / 'coinbase_market.sqlite3'
+        study = CoinbaseForward(ROOT / 'unused_local_registration_for_test', market, base=ROOT,
+                                clock=lambda: datetime(2026, 10, 22, tzinfo=timezone.utc))
+        sources = study.status()['dataSources']
+        self.assertEqual(sources['marketCachePath'], str(market.path.resolve()))
+        self.assertEqual(sources['localRegistrationPath'], str(
+            (ROOT / 'unused_local_registration_for_test/coinbase_forward/registration.json').resolve()))
+        self.assertFalse(sources['marketAndRegistrationSameDirectory'])
+
+    def test_public_review_http_route_reads_without_local_record(self):
+        market = Mock()
+        market.path = ROOT / 'unused_local_market_for_test' / 'coinbase_market.sqlite3'
+        market._snapshot.return_value = ({'symbol': 'BTCUSD', 'provider': 'Coinbase Exchange',
+                                          'product': 'BTC-USD', 'marketType': 'spot',
+                                          'dayTimezone': 'UTC+8', 'last_success': None}, {}, {})
+        store = ROOT / 'unused_local_registration_for_test'
+        study = CoinbaseForward(store, market, base=ROOT,
+                                clock=lambda: datetime(2026, 10, 22, tzinfo=timezone.utc))
+        server = ThreadingHTTPServer(('127.0.0.1', 0), Handler)
+        server.coinbase_forward = study
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            origin = f'http://127.0.0.1:{server.server_port}'
+            with urlopen(origin + '/api/coinbase-forward-public-review', timeout=5) as response:
+                self.assertEqual(response.status, 200)
+                replay = json.load(response)
+            self.assertEqual(replay['mode'], 'public_read_only')
+            self.assertEqual(len(replay['rows']), 30)
+            with urlopen(origin + '/api/coinbase-forward-status', timeout=5) as response:
+                status = json.load(response)
+            self.assertIsNone(status['registration'])
+            self.assertEqual(status['evaluationCount'], 0)
+            self.assertEqual(replay['registrationSha256'], status['publicRegistration']['contentSha256'])
+            self.assertFalse(store.exists())
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(5)
 
 
 if __name__ == '__main__':

@@ -415,6 +415,10 @@ class Handler(BaseHTTPRequestHandler):
                 if route.query:
                     raise ValueError('前瞻计划状态不接受查询参数')
                 return self.send(200, self.server.coinbase_forward.status())
+            if route.path == '/api/coinbase-forward-public-review':
+                if route.query:
+                    raise ValueError('公开计划只读复核不接受查询参数')
+                return self.send(200, self.server.coinbase_forward.preview_public())
             if route.path == '/api/coinbase-history':
                 args = parse_qs(route.query, keep_blank_values=True, strict_parsing=True)
                 if set(args) != {'symbol'} or len(args['symbol']) != 1:

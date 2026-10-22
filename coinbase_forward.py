@@ -265,15 +265,51 @@ class CoinbaseForward:
                 json.dump(result, output, ensure_ascii=False, sort_keys=True, indent=2)
             return {'created': True, 'evaluation': result}
 
+    def preview_public(self):
+        """Score the sealed public plan against this machine's existing cache, without writes."""
+        with self.lock:
+            registration = self._public_registration()
+            if not registration:
+                raise CoinbaseForwardError('公开封存计划不存在', 404)
+            asof = self.now()
+            snapshot = self.market._snapshot('BTCUSD')
+            state = snapshot[0]
+            if (state.get('symbol') != 'BTCUSD' or state.get('provider') != 'Coinbase Exchange' or
+                    state.get('product') != 'BTC-USD' or state.get('marketType') != 'spot'):
+                raise CoinbaseForwardError('只读复核必须使用 Coinbase BTC/USD 现货缓存', 503)
+            first = date.fromisoformat(registration['startDate']) - 5 * DAY
+            last = date.fromisoformat(registration['endDate']) + 5 * DAY
+            index = inspect(snapshot, first, last, asof)
+            price_inputs = [{'date': day.isoformat(), 'valid': index[day]['valid'],
+                             'prices': {key: str(value) for key, value in index[day]['prices'].items()}
+                             if index[day]['prices'] else None,
+                             'reasons': index[day]['reasons']} for day in days(first, last)]
+            score = self._score(registration, snapshot, asof)
+            return {'mode': 'public_read_only', 'registrationSha256': registration['contentSha256'],
+                    'evaluatedAtUtc': asof.isoformat(), 'marketAsOfUtc': state.get('last_success'),
+                    'marketProvider': state['provider'], 'product': state['product'],
+                    'dayTimezone': state.get('dayTimezone'),
+                    'priceInputSha256': digest(price_inputs),
+                    'rawCacheSnapshotSha256': snapshot_hash(snapshot),
+                    'scoreImplementationSha256': self._files(), **score}
+
     def status(self):
         with self.lock:
             registration = self._registration()
             history = self._evaluations() if registration else []
             if registration and any(e['registrationSha256'] != registration['contentSha256'] for e in history):
                 raise CoinbaseForwardError('评价引用的原登记哈希不符', 503)
+            market_path = getattr(self.market, 'path', None)
+            market_path = Path(market_path).resolve() if market_path is not None else None
+            registration_path = (self.directory / 'registration.json').resolve()
             return {'studyId': 'CB-USD-FWD-001', 'nowUtc': self.now().isoformat(),
                     'protocol': self.protocol(), 'registration': registration,
                     'publicRegistration': self._public_registration(),
+                    'dataSources': {'marketCachePath': str(market_path) if market_path else None,
+                                    'localRegistrationPath': str(registration_path),
+                                    'publicPlanPath': str((self.base / PUBLIC_REGISTRATION).resolve()),
+                                    'marketAndRegistrationSameDirectory': bool(market_path and
+                                        market_path.parent == registration_path.parent.parent)},
                     'latestEvaluation': history[-1] if history else None,
                     'evaluationCount': len(history), 'lastAutoError': self.last_auto_error,
                     'implementationChangedSinceRegistration': bool(registration and

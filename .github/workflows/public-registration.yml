@@ -12,7 +12,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Verify sealed plan and synthetic scorer
+      - name: Verify sealed plan, read-only replay, and HTTP route
         run: python -m unittest test_coinbase_forward test_public_release -q
       - name: Check browser script syntax
         run: node --check web/coinbase-forward.js
+      - name: Check public replay view
+        run: node test_public_replay_ui.cjs
