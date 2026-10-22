@@ -1,4 +1,5 @@
 """Checks for the published plan and an explicitly synthetic scoring example."""
+from contextlib import ExitStack
 from datetime import date, datetime, timedelta, timezone
 from http.server import ThreadingHTTPServer
 from pathlib import Path
@@ -6,10 +7,10 @@ import hashlib
 import json
 import threading
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 from urllib.request import urlopen
 
-from app_server import Handler
+from app_server import Handler, make_server
 from coinbase_feed import local_open, ms
 from coinbase_forward import CoinbaseForward, CoinbaseForwardError, digest, verify
 
@@ -148,6 +149,28 @@ class PublicReleaseTests(unittest.TestCase):
             server.shutdown()
             server.server_close()
             thread.join(5)
+
+    def test_server_never_inherits_neighboring_legacy_registration(self):
+        store = ROOT / 'unused_local_registration_for_test'
+        original_exists = Path.exists
+
+        def pretend_legacy_exists(path):
+            if path.name == 'registration.json' and '时序研究室_v0.5' in path.parts:
+                return True
+            return original_exists(path)
+
+        with ExitStack() as stack:
+            for service in ('Store', 'MarketFeed', 'CoinbaseMarketFeed', 'MarketMultiframe',
+                            'ProspectiveStudy', 'MonthInteractionProspective',
+                            'PredictionLedger', 'ScoringMarketRouter'):
+                stack.enter_context(patch('app_server.' + service))
+            stack.enter_context(patch.object(Path, 'exists', pretend_legacy_exists))
+            server = make_server(0, store)
+            try:
+                self.assertEqual(server.coinbase_forward.directory, store / 'coinbase_forward')
+                self.assertFalse((store / 'coinbase_forward/registration.json').exists())
+            finally:
+                server.server_close()
 
 
 if __name__ == '__main__':

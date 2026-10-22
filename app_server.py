@@ -571,14 +571,9 @@ def make_server(port=8766, data_dir=None):
     server.store = Store(store_dir / 'research.sqlite3')
     server.market = MarketFeed(store_dir)
     server.coinbase = CoinbaseMarketFeed(store_dir)
-    # The registered BTC cohort was sealed in v0.5. Keep reading and appending
-    # to that same chain when this newer UI is run beside the original folder.
-    forward_store_dir = store_dir
-    original_forward_store = HERE.parent / '时序研究室_v0.5' / 'local_data'
-    if not (store_dir / 'coinbase_forward' / 'registration.json').exists() and \
-            (original_forward_store / 'coinbase_forward' / 'registration.json').exists():
-        forward_store_dir = original_forward_store
-    server.coinbase_forward = CoinbaseForward(forward_store_dir, server.coinbase)
+    # Use only the configured data directory. Public plans are reviewed separately
+    # and must never silently append to a neighboring legacy registration chain.
+    server.coinbase_forward = CoinbaseForward(store_dir, server.coinbase)
     server.multiframe = MarketMultiframe(store_dir, server.market)
     server.prospective = ProspectiveStudy(store_dir, server.market)
     server.month_interaction = MonthInteractionProspective(store_dir, server.market)
