@@ -1,0 +1,18 @@
+name: Public registration checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify sealed plan and synthetic scorer
+        run: python -m unittest test_coinbase_forward test_public_release -q
+      - name: Check browser script syntax
+        run: node --check web/coinbase-forward.js

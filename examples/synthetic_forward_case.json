@@ -1,0 +1,11 @@
+{
+  "description": "Synthetic candles for scorer verification; these are not Coinbase prices or evidence of predictive skill.",
+  "targetDate": "2026-10-25",
+  "registeredAtUtc": "2026-10-20T00:00:00+00:00",
+  "neighborDaysEachSide": 5,
+  "ordinaryCandle": {"open": "100", "high": "111", "low": "90", "close": "100"},
+  "targetCandle": {"open": "100", "high": "120", "low": "90", "close": "110"},
+  "directionRuleId": "DAY-STEM-METALWATER-UP",
+  "timeRuleId": "ASTRO-MOON-PHASE",
+  "expected": {"directionStatus": "scored", "directionResult": "correct", "timeStatus": "scored", "timingHit": true, "errorDays": 0}
+}

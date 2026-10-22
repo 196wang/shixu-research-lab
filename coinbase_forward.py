@@ -20,6 +20,7 @@ HERE = Path(__file__).resolve().parent
 LOCAL = timezone(timedelta(hours=8))
 DAY = timedelta(days=1)
 PROTOCOL = HERE / 'coinbase_forward_protocol.json'
+PUBLIC_REGISTRATION = Path('public_data/coinbase_forward_registration.json')
 RULES = {'DAY-STEM-METALWATER-UP': 'up', 'DAY-STEM-FIRE-DOWN': 'down',
          'DAY-BRANCH-YIN-DOWN': 'down'}
 SOURCES = ('coinbase_forward.py', 'coinbase_study.py', 'exploration_generators.py',
@@ -84,6 +85,20 @@ class CoinbaseForward:
         verify(value)
         if value.get('studyId') != 'CB-USD-FWD-001':
             raise CoinbaseForwardError('前瞻登记编号不符', 503)
+        return value
+
+    def _public_registration(self):
+        """Published, sealed plan for display only; never authorizes local scoring."""
+        path = self.base / PUBLIC_REGISTRATION
+        if not path.exists():
+            return None
+        value = json.loads(path.read_text(encoding='utf-8'))
+        verify(value)
+        if (value.get('studyId') != 'CB-USD-FWD-001' or
+                value.get('protocolSha256') != digest(value.get('protocol')) or
+                value.get('scheduleSha256') != digest(value.get('schedule')) or
+                value.get('protocol') != self.protocol()):
+            raise CoinbaseForwardError('公开前瞻登记与协议或计划哈希不符', 503)
         return value
 
     def _evaluations(self):
@@ -258,6 +273,7 @@ class CoinbaseForward:
                 raise CoinbaseForwardError('评价引用的原登记哈希不符', 503)
             return {'studyId': 'CB-USD-FWD-001', 'nowUtc': self.now().isoformat(),
                     'protocol': self.protocol(), 'registration': registration,
+                    'publicRegistration': self._public_registration(),
                     'latestEvaluation': history[-1] if history else None,
                     'evaluationCount': len(history), 'lastAutoError': self.last_auto_error,
                     'implementationChangedSinceRegistration': bool(registration and

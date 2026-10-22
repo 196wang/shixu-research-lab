@@ -1,0 +1,3 @@
+# Preserve the sealed registration's original bytes across platforms.
+public_data/coinbase_forward_registration.json -text
+source_bundle.zip binary
