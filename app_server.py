@@ -1,7 +1,7 @@
 """Loopback research desk. Calculations and append-only notes remain on this computer."""
 import argparse
 from contextlib import contextmanager
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from functools import lru_cache
 import hashlib
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -30,6 +30,7 @@ from coinbase_calendar_backtest import read_calendar as read_coinbase_calendar
 from coinbase_rule_compare import read_comparison as read_coinbase_rule_comparison
 from coinbase_intraday import inspect_intraday
 from coinbase_forward import CoinbaseForward, CoinbaseForwardError
+from jie_observation import jie_windows
 from chart_candidates import chart_candidates, parse_chart_candidates_query, parse_chart_candidate_options, ChartCandidatesError, candidate_root_conflict
 from calendar_accuracy import load_accuracy_evidence, CalendarAccuracyEvidenceError
 from bazi_features import calculate_features
@@ -415,6 +416,13 @@ class Handler(BaseHTTPRequestHandler):
                 if route.query:
                     raise ValueError('前瞻计划状态不接受查询参数')
                 return self.send(200, self.server.coinbase_forward.status())
+            if route.path == '/api/coinbase-forward-jie-windows':
+                if route.query:
+                    raise ValueError('交节观察窗口不接受查询参数')
+                protocol = self.server.coinbase_forward.protocol()
+                first = date.fromisoformat(protocol['startDate']) - timedelta(days=30)
+                last = date.fromisoformat(protocol['endDate'])
+                return self.send(200, jie_windows(first, last))
             if route.path == '/api/coinbase-forward-public-review':
                 if route.query:
                     raise ValueError('公开计划只读复核不接受查询参数')

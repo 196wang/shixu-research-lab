@@ -42,11 +42,17 @@ const review = {
     marketEvidence: {status: 'complete', open: '100', high: '101', low: '89', close: '90',
       candleSha256: 'd'.repeat(64), sourceRequestIds: ['request-1'], missingReasons: []}}],
 };
+const jie = {radiusDays: 2, events: [{term: '立冬', date: '2026-11-07',
+  atLocal: '2026-11-07T17:52:05+08:00', beforeMonth: '戊戌', afterMonth: '己亥'}],
+  days: ['2026-11-05', '2026-11-06', '2026-11-07', '2026-11-08', '2026-11-09']
+    .map((date, index) => ({date, eventDate: '2026-11-07', term: '立冬', offsetDays: index - 2,
+      atLocal: '2026-11-07T17:52:05+08:00', beforeMonth: '戊戌', afterMonth: '己亥'}))};
 const requests = [];
 const context = {window: {}, document: {getElementById: element}, Intl, Date, Number,
   Map, Set, String, fetch: async (url, options) => {
     requests.push([url, options]);
     return {ok: true, json: async () => url.endsWith('-status') ? status :
+      url.endsWith('-jie-windows') ? jie :
       url.endsWith('-refresh-market') ? {range: {start: '2026-10-14', end: '2026-10-22'}, complete: 9, missing: 0} : review};
   }};
 vm.runInNewContext(fs.readFileSync(path.join(root, 'web/coinbase-forward.js'), 'utf8'), context);
@@ -58,8 +64,9 @@ vm.runInNewContext(fs.readFileSync(path.join(root, 'web/coinbase-forward.js'), '
   assert.equal(element('#cb-forward-evaluate').disabled, true);
   await view.preview();
   assert.deepEqual(requests.map(([url]) => url), [
-    '/api/coinbase-forward-status', '/api/coinbase-forward-public-review']);
-  assert.equal(requests[1][1].method, undefined);
+    '/api/coinbase-forward-status', '/api/coinbase-forward-jie-windows',
+    '/api/coinbase-forward-public-review']);
+  assert.equal(requests[2][1].method, undefined);
   assert.match(element('#cb-forward-metrics').innerHTML, /公开计划只读复核/);
   assert.match(element('#cb-forward-schedule').innerHTML, /下跌 -10\.0%/);
   assert.match(element('#cb-forward-schedule').innerHTML, /开 100 · 高 101 · 低 89 · 收 90/);
@@ -68,6 +75,8 @@ vm.runInNewContext(fs.readFileSync(path.join(root, 'web/coinbase-forward.js'), '
   assert.match(element('#cb-forward-overview').innerHTML, /每日自动补线与审计 · 1 份本机记录/);
   assert.match(element('#cb-forward-overview').innerHTML, /public_forward_audit/);
   assert.match(element('#cb-forward-overview').innerHTML, /当前评分模块哈希/);
+  assert.match(element('#cb-forward-overview').innerHTML, /立冬/);
+  assert.match(element('#cb-forward-schedule').innerHTML, /立冬交节当天/);
   assert.match(element('#cb-forward-status').textContent, /没有写入登记或评价文件/);
   const wholeMetrics = element('#cb-forward-metrics').innerHTML;
   element('#cb-filter-actual').value = 'down';
@@ -82,11 +91,16 @@ vm.runInNewContext(fs.readFileSync(path.join(root, 'web/coinbase-forward.js'), '
   assert.match(element('#cb-forward-schedule').innerHTML, /没有符合筛选条件的日期/);
   element('#cb-filter-clear').listeners.click();
   assert.match(element('#cb-filter-count').textContent, /显示 30 \/ 30 日/);
-  assert.equal(requests.length, 2, 'client-side filters must not fetch or score again');
+  element('#cb-filter-jie').value = 'near';
+  element('#cb-filter-jie').listeners.change();
+  assert.match(element('#cb-filter-count').textContent, /显示 5 \/ 30 日/);
+  assert.equal(element('#cb-forward-metrics').innerHTML, wholeMetrics);
+  element('#cb-filter-clear').listeners.click();
+  assert.equal(requests.length, 3, 'client-side filters must not fetch or score again');
   await view.refreshMarket();
-  assert.equal(requests[2][0], '/api/coinbase-forward-refresh-market');
-  assert.equal(requests[2][1].method, 'POST');
-  assert.equal(requests[3][0], '/api/coinbase-forward-public-review');
+  assert.equal(requests[3][0], '/api/coinbase-forward-refresh-market');
+  assert.equal(requests[3][1].method, 'POST');
+  assert.equal(requests[4][0], '/api/coinbase-forward-public-review');
   assert.match(element('#cb-forward-status').textContent, /行情更新完成/);
   console.log('public replay UI: OK');
 })().catch(error => { console.error(error); process.exitCode = 1; });
