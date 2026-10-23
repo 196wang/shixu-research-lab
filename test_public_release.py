@@ -1,12 +1,14 @@
 """Checks for the published plan and an explicitly synthetic scoring example."""
-from contextlib import ExitStack
+from contextlib import ExitStack, contextmanager
 from datetime import date, datetime, timedelta, timezone
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 import hashlib
 import json
+import shutil
 import threading
 import unittest
+import uuid
 from unittest.mock import Mock, patch
 from urllib.request import Request, urlopen
 
@@ -16,6 +18,20 @@ from coinbase_forward import CoinbaseForward, CoinbaseForwardError, digest, veri
 
 
 ROOT = Path(__file__).resolve().parent
+
+
+@contextmanager
+def audit_test_directory():
+    # tempfile.TemporaryDirectory uses restrictive Windows ACLs in the local
+    # sandbox. A normal workspace directory also works on GitHub Actions.
+    directory = ROOT / ('test_public_audit_' + uuid.uuid4().hex)
+    directory.mkdir()
+    try:
+        yield directory
+    finally:
+        if directory.resolve().parent != ROOT.resolve():
+            raise AssertionError('audit test directory escaped the workspace')
+        shutil.rmtree(directory)
 
 
 class PublicReleaseTests(unittest.TestCase):
@@ -123,6 +139,51 @@ class PublicReleaseTests(unittest.TestCase):
         market.refresh_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
                                                      date(2026, 10, 22))
         self.assertFalse((ROOT / 'unused_local_registration_for_test').exists())
+
+    def test_public_auto_audit_waits_for_close_then_appends_once_per_input(self):
+        with audit_test_directory() as base:
+            market = Mock()
+            market.path = base / 'coinbase_market.sqlite3'
+            market._snapshot.return_value = ({'symbol': 'BTCUSD'}, {}, {})
+            fresh = [False]
+            market.refresh_range.side_effect = lambda *_: fresh.__setitem__(0, True)
+            now = [datetime(2026, 10, 22, 16, 19, tzinfo=timezone.utc)]
+            study = CoinbaseForward(base, market, base=ROOT, clock=lambda: now[0])
+            review = {'mode': 'public_read_only', 'priceInputSha256': 'a' * 64,
+                      'rawCacheSnapshotSha256': 'b' * 64,
+                      'scoreImplementationSha256': {'coinbase_forward.py': 'c' * 64},
+                      'summary': {'directionScoredDays': 4, 'directionMissingDays': 0},
+                      'rows': []}
+            study.preview_public = Mock(return_value=review)
+
+            def fake_inspect(_snapshot, first, last, _now):
+                return {day: {'valid': fresh[0] or day != first}
+                        for day in (first + timedelta(days=i)
+                                    for i in range((last - first).days + 1))}
+
+            with patch('coinbase_forward.inspect', fake_inspect):
+                self.assertIsNone(study.auto_public_tick())
+                market.refresh_range.assert_not_called()
+                now[0] = datetime(2026, 10, 22, 16, 21, tzinfo=timezone.utc)
+                first = study.auto_public_tick()
+                self.assertTrue(first['created'])
+                market.refresh_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
+                                                             date(2026, 10, 22))
+                again = study.auto_public_tick()
+                self.assertFalse(again['created'])
+            self.assertFalse((base / 'coinbase_forward/registration.json').exists())
+            self.assertEqual(len(list((base / 'public_forward_audit').glob('*.json'))), 1)
+            status = study.status()
+            self.assertEqual(status['publicAudit']['count'], 1)
+            self.assertEqual(status['publicAudit']['recent'][0]['scoredDays'], 4)
+            audit_path = next((base / 'public_forward_audit').glob('*.json'))
+            record = json.loads(audit_path.read_text(encoding='utf-8'))
+            self.assertEqual(record['registrationSha256'], status['publicRegistration']['contentSha256'])
+            verify(record)
+            record['review']['summary']['directionScoredDays'] = 99
+            audit_path.write_text(json.dumps(record), encoding='utf-8')
+            with self.assertRaises(CoinbaseForwardError):
+                study.status()
 
     def test_status_exposes_separate_market_and_registration_paths(self):
         market = Mock()

@@ -57,10 +57,13 @@ class CoinbaseForward:
     def __init__(self, data_dir, market, clock=None, base=HERE):
         self.base = Path(base)
         self.directory = Path(data_dir) / 'coinbase_forward'
+        self.public_audit_directory = Path(data_dir) / 'public_forward_audit'
         self.market = market
         self.clock = clock or (lambda: datetime.now(timezone.utc))
         self.lock = RLock()
         self.last_auto_error = None
+        self.last_public_auto_error = None
+        self.last_public_auto_attempt = None
 
     def now(self):
         value = self.clock()
@@ -108,6 +111,20 @@ class CoinbaseForward:
             verify(item)
             if item.get('previousSha256') != previous or item.get('studyId') != 'CB-USD-FWD-001':
                 raise CoinbaseForwardError('前瞻评价链不连续', 503)
+            previous = item['contentSha256']
+            result.append(item)
+        return result
+
+    def _public_audits(self, registration):
+        previous, result = None, []
+        for path in sorted(self.public_audit_directory.glob('public-review-*.json')):
+            item = json.loads(path.read_text(encoding='utf-8'))
+            verify(item)
+            if (item.get('previousSha256') != previous or
+                    item.get('registrationSha256') != registration['contentSha256'] or
+                    item.get('studyId') != registration['studyId'] or
+                    item.get('review', {}).get('mode') != 'public_read_only'):
+                raise CoinbaseForwardError('公开计划本机审计链不连续', 503)
             previous = item['contentSha256']
             result.append(item)
         return result
@@ -324,10 +341,58 @@ class CoinbaseForward:
             raise CoinbaseForwardError('本期尚无已经收盘的行情日期', 409)
         return self.market.refresh_range('BTCUSD', first, last)
 
+    def auto_public_tick(self):
+        """While the server runs, append an audit only for a new observed input."""
+        with self.lock:
+            registration = self._public_registration()
+            if not registration:
+                return None
+            now = self.now()
+            local = now.astimezone(LOCAL)
+            first_day = date.fromisoformat(registration['startDate'])
+            last_day = date.fromisoformat(registration['endDate'])
+            # The final timing label needs the five days after the final target.
+            if ((local.hour == 0 and local.minute < 20) or local.date() < first_day or
+                    local.date() > last_day + 6 * DAY):
+                return None
+            self.last_public_auto_attempt = now.isoformat()
+            history = self._public_audits(registration)
+            first = first_day - 5 * DAY
+            last = min(last_day + 5 * DAY, local.date() - DAY)
+            snapshot = self.market._snapshot('BTCUSD')
+            index = inspect(snapshot, first, last, now)
+            missing = [day for day in days(first, last) if not index[day]['valid']]
+            if missing:
+                self.market.refresh_range('BTCUSD', missing[0], last)
+            review = self.preview_public()
+            key = digest({'localDate': local.date().isoformat(),
+                          'priceInputSha256': review['priceInputSha256'],
+                          'rawCacheSnapshotSha256': review['rawCacheSnapshotSha256'],
+                          'scoreImplementationSha256': review['scoreImplementationSha256']})
+            if history and history[-1]['inputSha256'] == key:
+                self.last_public_auto_error = None
+                return {'created': False, 'audit': history[-1]}
+            audit = seal({'studyId': registration['studyId'],
+                          'registrationSha256': registration['contentSha256'],
+                          'createdAtUtc': now.isoformat(),
+                          'observedLocalDate': local.date().isoformat(),
+                          'inputSha256': key,
+                          'previousSha256': history[-1]['contentSha256'] if history else None,
+                          'review': review})
+            self.public_audit_directory.mkdir(parents=True, exist_ok=True)
+            filename = ('public-review-' + now.strftime('%Y%m%dT%H%M%S%fZ') + '-' +
+                        audit['contentSha256'][:8] + '.json')
+            with (self.public_audit_directory / filename).open('x', encoding='utf-8') as output:
+                json.dump(audit, output, ensure_ascii=False, sort_keys=True, indent=2)
+            self.last_public_auto_error = None
+            return {'created': True, 'audit': audit}
+
     def status(self):
         with self.lock:
             registration = self._registration()
             history = self._evaluations() if registration else []
+            public = self._public_registration()
+            audits = self._public_audits(public) if public else []
             if registration and any(e['registrationSha256'] != registration['contentSha256'] for e in history):
                 raise CoinbaseForwardError('评价引用的原登记哈希不符', 503)
             market_path = getattr(self.market, 'path', None)
@@ -335,12 +400,23 @@ class CoinbaseForward:
             registration_path = (self.directory / 'registration.json').resolve()
             return {'studyId': 'CB-USD-FWD-001', 'nowUtc': self.now().isoformat(),
                     'protocol': self.protocol(), 'registration': registration,
-                    'publicRegistration': self._public_registration(),
+                    'publicRegistration': public,
                     'dataSources': {'marketCachePath': str(market_path) if market_path else None,
                                     'localRegistrationPath': str(registration_path),
                                     'publicPlanPath': str((self.base / PUBLIC_REGISTRATION).resolve()),
+                                    'publicAuditDirectory': str(self.public_audit_directory.resolve()),
                                     'marketAndRegistrationSameDirectory': bool(market_path and
                                         market_path.parent == registration_path.parent.parent)},
+                    'publicAudit': {'count': len(audits),
+                                    'lastAttemptUtc': self.last_public_auto_attempt,
+                                    'lastError': self.last_public_auto_error,
+                                    'recent': [{'createdAtUtc': item['createdAtUtc'],
+                                                'observedLocalDate': item['observedLocalDate'],
+                                                'contentSha256': item['contentSha256'],
+                                                'priceInputSha256': item['review']['priceInputSha256'],
+                                                'scoredDays': item['review']['summary']['directionScoredDays'],
+                                                'missingDays': item['review']['summary']['directionMissingDays']}
+                                               for item in audits[-7:]]},
                     'latestEvaluation': history[-1] if history else None,
                     'evaluationCount': len(history), 'lastAutoError': self.last_auto_error,
                     'implementationChangedSinceRegistration': bool(registration and

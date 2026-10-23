@@ -10,7 +10,7 @@ ARCHIVE = ROOT / 'source_bundle.zip'
 
 def main():
     names = subprocess.check_output(
-        ['git', 'ls-files', '--cached', '--others', '--exclude-standard', '-z'], cwd=ROOT
+        ['git', 'ls-files', '--cached', '-z'], cwd=ROOT
     ).decode('utf-8').split('\0')
     with zipfile.ZipFile(ARCHIVE, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as output:
         for name in sorted(set(names)):

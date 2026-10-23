@@ -593,6 +593,10 @@ def start_coinbase_forward_worker(server):
                 server.coinbase_forward.auto_tick()
             except Exception as exc:
                 server.coinbase_forward.last_auto_error = type(exc).__name__ + ': ' + str(exc)
+            try:
+                server.coinbase_forward.auto_public_tick()
+            except Exception as exc:
+                server.coinbase_forward.last_public_auto_error = type(exc).__name__ + ': ' + str(exc)
             # Check shortly after 00:20 Beijing if the server started earlier that night.
             beijing = datetime.now(timezone.utc).astimezone(timezone(timedelta(hours=8)))
             delay = max(60, (20 - beijing.minute) * 60) if beijing.hour == 0 and beijing.minute < 20 else 3600

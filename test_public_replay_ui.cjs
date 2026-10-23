@@ -22,7 +22,11 @@ const status = {
   dataSources: {marketCachePath: 'C:/cache/coinbase_market.sqlite3',
     localRegistrationPath: 'C:/cache/coinbase_forward/registration.json',
     publicPlanPath: 'C:/repo/public_data/coinbase_forward_registration.json',
+    publicAuditDirectory: 'C:/cache/public_forward_audit',
     marketAndRegistrationSameDirectory: true},
+  publicAudit: {count: 1, lastAttemptUtc: '2026-10-22T00:21:00+08:00', lastError: null,
+    recent: [{createdAtUtc: '2026-10-22T00:21:00+08:00', observedLocalDate: '2026-10-22',
+      contentSha256: 'f'.repeat(64), scoredDays: 1, missingDays: 2}]},
 };
 const review = {
   mode: 'public_read_only', evaluatedAtUtc: '2026-10-22T00:00:00+00:00',
@@ -61,6 +65,8 @@ vm.runInNewContext(fs.readFileSync(path.join(root, 'web/coinbase-forward.js'), '
   assert.match(element('#cb-forward-schedule').innerHTML, /开 100 · 高 101 · 低 89 · 收 90/);
   assert.match(element('#cb-forward-schedule').innerHTML, /request-1/);
   assert.match(element('#cb-forward-overview').innerHTML, /coinbase_market\.sqlite3/);
+  assert.match(element('#cb-forward-overview').innerHTML, /每日自动补线与审计 · 1 份本机记录/);
+  assert.match(element('#cb-forward-overview').innerHTML, /public_forward_audit/);
   assert.match(element('#cb-forward-overview').innerHTML, /当前评分模块哈希/);
   assert.match(element('#cb-forward-status').textContent, /没有写入登记或评价文件/);
   const wholeMetrics = element('#cb-forward-metrics').innerHTML;
