@@ -1,0 +1,3222 @@
+{
+  "studyType": "exploratory_retrospective_not_prediction",
+  "snapshotSha256": "537791fefe602f655ce9b5c172adc49640ada5a8abcc18fe10b00d477baf0cac",
+  "data": "Coinbase Exchange BTC/USD; complete Beijing 00:00-24:00 daily candles",
+  "dateCoverage": [
+    "2022-01-01",
+    "2026-10-16"
+  ],
+  "event": "12 exact Jie transitions per year, using their Beijing calendar date",
+  "control": "same Gregorian month, valid five-day window, center farther than two days from any Jie",
+  "metrics": "fixed five-day offsets; complete two-day before/after sign reversal; strict two-neighbor high/low pivot",
+  "limits": [
+    "All hypotheses were inspected after observing at least some prices.",
+    "Calendar-day event candle mixes old and new months.",
+    "Controls overlap in time and are descriptive, not independent or causal.",
+    "All 12 named terms are multiple exploratory comparisons with 4-5 observations each.",
+    "Only 10 valid events in incomplete 2026; no out-of-sample accuracy is inferred."
+  ],
+  "all": {
+    "jie": {
+      "n": 57,
+      "reversalCount": 31,
+      "reversalPct": 54.385964912280706,
+      "dayUpCount": 27,
+      "dayUpPct": 47.368421052631575,
+      "dayMeanPct": -0.02199353631608883,
+      "dayMeanAbsPct": 1.7201895364418271,
+      "dayMeanRangePct": 3.8285040441346316,
+      "pivotCount": 19,
+      "pivotPct": 33.33333333333333,
+      "highPivotCount": 10,
+      "lowPivotCount": 9,
+      "ambiguousPivotCount": 0,
+      "before2UpCount": 33,
+      "after2UpCount": 28,
+      "after2MeanPct": -0.2556423559864989,
+      "offsets": {
+        "-2": {
+          "upCount": 34,
+          "upPct": 59.64912280701754,
+          "meanPct": -0.04856620806279167,
+          "meanAbsPct": 1.5963091642013303
+        },
+        "-1": {
+          "upCount": 28,
+          "upPct": 49.122807017543856,
+          "meanPct": 0.11022890122373251,
+          "meanAbsPct": 2.063452080813266
+        },
+        "0": {
+          "upCount": 27,
+          "upPct": 47.368421052631575,
+          "meanPct": -0.02199353631608883,
+          "meanAbsPct": 1.7201895364418271
+        },
+        "1": {
+          "upCount": 33,
+          "upPct": 57.89473684210527,
+          "meanPct": -0.0009820509229612228,
+          "meanAbsPct": 1.9015395322301694
+        },
+        "2": {
+          "upCount": 26,
+          "upPct": 45.614035087719294,
+          "meanPct": -0.2614058677046557,
+          "meanAbsPct": 1.7449858117914034
+        }
+      }
+    },
+    "sameMonthNonJie": {
+      "n": 1422,
+      "reversalCount": 684,
+      "reversalPct": 48.10126582278481,
+      "dayUpCount": 739,
+      "dayUpPct": 51.9690576652602,
+      "dayMeanPct": 0.06697785960428658,
+      "dayMeanAbsPct": 1.7497492903359297,
+      "dayMeanRangePct": 3.737548312717169,
+      "pivotCount": 394,
+      "pivotPct": 27.70745428973277,
+      "highPivotCount": 193,
+      "lowPivotCount": 189,
+      "ambiguousPivotCount": 12,
+      "before2UpCount": 721,
+      "after2UpCount": 727,
+      "after2MeanPct": 0.12430362667312445,
+      "offsets": {
+        "-2": {
+          "upCount": 733,
+          "upPct": 51.54711673699015,
+          "meanPct": 0.05049083962266024,
+          "meanAbsPct": 1.7583707395015158
+        },
+        "-1": {
+          "upCount": 735,
+          "upPct": 51.68776371308017,
+          "meanPct": 0.06278311069362658,
+          "meanAbsPct": 1.7522116011427018
+        },
+        "0": {
+          "upCount": 739,
+          "upPct": 51.9690576652602,
+          "meanPct": 0.06697785960428658,
+          "meanAbsPct": 1.7497492903359297
+        },
+        "1": {
+          "upCount": 748,
+          "upPct": 52.601969057665265,
+          "meanPct": 0.06284084718744988,
+          "meanAbsPct": 1.7373701006620037
+        },
+        "2": {
+          "upCount": 744,
+          "upPct": 52.320675105485236,
+          "meanPct": 0.06175315608613668,
+          "meanAbsPct": 1.7402730503408927
+        }
+      }
+    }
+  },
+  "pre2026": {
+    "jie": {
+      "n": 47,
+      "reversalCount": 23,
+      "reversalPct": 48.93617021276596,
+      "dayUpCount": 23,
+      "dayUpPct": 48.93617021276596,
+      "dayMeanPct": 0.21283416250125914,
+      "dayMeanAbsPct": 1.5965626405075575,
+      "dayMeanRangePct": 3.878970676774866,
+      "pivotCount": 15,
+      "pivotPct": 31.914893617021278,
+      "highPivotCount": 6,
+      "lowPivotCount": 9,
+      "ambiguousPivotCount": 0,
+      "before2UpCount": 25,
+      "after2UpCount": 24,
+      "after2MeanPct": -0.045875949293363465,
+      "offsets": {
+        "-2": {
+          "upCount": 28,
+          "upPct": 59.57446808510638,
+          "meanPct": -0.05381104148522559,
+          "meanAbsPct": 1.7629322470418438
+        },
+        "-1": {
+          "upCount": 22,
+          "upPct": 46.808510638297875,
+          "meanPct": -0.018778514146267914,
+          "meanAbsPct": 2.0506884922235153
+        },
+        "0": {
+          "upCount": 23,
+          "upPct": 48.93617021276596,
+          "meanPct": 0.21283416250125914,
+          "meanAbsPct": 1.5965626405075575
+        },
+        "1": {
+          "upCount": 27,
+          "upPct": 57.446808510638306,
+          "meanPct": 0.20883474419947917,
+          "meanAbsPct": 1.7808019639561505
+        },
+        "2": {
+          "upCount": 21,
+          "upPct": 44.680851063829785,
+          "meanPct": -0.2689506733289177,
+          "meanAbsPct": 1.7958287655036853
+        }
+      }
+    },
+    "sameMonthNonJie": {
+      "n": 1188,
+      "reversalCount": 563,
+      "reversalPct": 47.39057239057239,
+      "dayUpCount": 618,
+      "dayUpPct": 52.02020202020202,
+      "dayMeanPct": 0.06825186550680208,
+      "dayMeanAbsPct": 1.7736985021855542,
+      "dayMeanRangePct": 3.8280073340446132,
+      "pivotCount": 320,
+      "pivotPct": 26.936026936026934,
+      "highPivotCount": 154,
+      "lowPivotCount": 155,
+      "ambiguousPivotCount": 11,
+      "before2UpCount": 604,
+      "after2UpCount": 605,
+      "after2MeanPct": 0.1302154524778966,
+      "offsets": {
+        "-2": {
+          "upCount": 614,
+          "upPct": 51.68350168350169,
+          "meanPct": 0.05703157310714331,
+          "meanAbsPct": 1.7888268388880388
+        },
+        "-1": {
+          "upCount": 614,
+          "upPct": 51.68350168350169,
+          "meanPct": 0.05505350292119091,
+          "meanAbsPct": 1.78481694483392
+        },
+        "0": {
+          "upCount": 618,
+          "upPct": 52.02020202020202,
+          "meanPct": 0.06825186550680208,
+          "meanAbsPct": 1.7736985021855542
+        },
+        "1": {
+          "upCount": 627,
+          "upPct": 52.77777777777778,
+          "meanPct": 0.06790342320451023,
+          "meanAbsPct": 1.764514592752814
+        },
+        "2": {
+          "upCount": 624,
+          "upPct": 52.52525252525253,
+          "meanPct": 0.06295088059229155,
+          "meanAbsPct": 1.76384371617694
+        }
+      }
+    }
+  },
+  "years": {
+    "2022": {
+      "jie": {
+        "n": 12,
+        "reversalCount": 5,
+        "reversalPct": 41.66666666666667,
+        "dayUpCount": 4,
+        "dayUpPct": 33.33333333333333,
+        "dayMeanPct": -0.2057289848461888,
+        "dayMeanAbsPct": 2.905754472345116,
+        "dayMeanRangePct": 4.996537146182233,
+        "pivotCount": 4,
+        "pivotPct": 33.33333333333333,
+        "highPivotCount": 2,
+        "lowPivotCount": 2,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 6,
+        "after2UpCount": 5,
+        "after2MeanPct": -1.5250021756391527,
+        "offsets": {
+          "-2": {
+            "upCount": 7,
+            "upPct": 58.333333333333336,
+            "meanPct": -0.48756946346533814,
+            "meanAbsPct": 1.2605074447460862
+          },
+          "-1": {
+            "upCount": 5,
+            "upPct": 41.66666666666667,
+            "meanPct": -0.33468867487644116,
+            "meanAbsPct": 1.435740793214585
+          },
+          "0": {
+            "upCount": 4,
+            "upPct": 33.33333333333333,
+            "meanPct": -0.2057289848461888,
+            "meanAbsPct": 2.905754472345116
+          },
+          "1": {
+            "upCount": 6,
+            "upPct": 50.0,
+            "meanPct": -0.6644638579393596,
+            "meanAbsPct": 3.6585766917533724
+          },
+          "2": {
+            "upCount": 4,
+            "upPct": 33.33333333333333,
+            "meanPct": -0.9378412256068538,
+            "meanAbsPct": 3.361881371662302
+          }
+        }
+      },
+      "sameMonthNonJie": {
+        "n": 303,
+        "reversalCount": 140,
+        "reversalPct": 46.2046204620462,
+        "dayUpCount": 148,
+        "dayUpPct": 48.84488448844885,
+        "dayMeanPct": -0.17977607968073056,
+        "dayMeanAbsPct": 2.173858659996069,
+        "dayMeanRangePct": 4.801784574792241,
+        "pivotCount": 88,
+        "pivotPct": 29.042904290429046,
+        "highPivotCount": 42,
+        "lowPivotCount": 41,
+        "ambiguousPivotCount": 5,
+        "before2UpCount": 137,
+        "after2UpCount": 141,
+        "after2MeanPct": -0.4103470870771774,
+        "offsets": {
+          "-2": {
+            "upCount": 144,
+            "upPct": 47.524752475247524,
+            "meanPct": -0.28216159476111746,
+            "meanAbsPct": 2.329532470179965
+          },
+          "-1": {
+            "upCount": 144,
+            "upPct": 47.524752475247524,
+            "meanPct": -0.23776946650209105,
+            "meanAbsPct": 2.251655010409965
+          },
+          "0": {
+            "upCount": 148,
+            "upPct": 48.84488448844885,
+            "meanPct": -0.17977607968073056,
+            "meanAbsPct": 2.173858659996069
+          },
+          "1": {
+            "upCount": 149,
+            "upPct": 49.17491749174918,
+            "meanPct": -0.20741515591287712,
+            "meanAbsPct": 2.1413439223724278
+          },
+          "2": {
+            "upCount": 150,
+            "upPct": 49.504950495049506,
+            "meanPct": -0.19901927968221153,
+            "meanAbsPct": 2.0914510504247166
+          }
+        }
+      }
+    },
+    "2023": {
+      "jie": {
+        "n": 11,
+        "reversalCount": 6,
+        "reversalPct": 54.54545454545454,
+        "dayUpCount": 5,
+        "dayUpPct": 45.45454545454545,
+        "dayMeanPct": 0.046433321702672656,
+        "dayMeanAbsPct": 0.7506144771779732,
+        "dayMeanRangePct": 2.9486900875862028,
+        "pivotCount": 6,
+        "pivotPct": 54.54545454545454,
+        "highPivotCount": 3,
+        "lowPivotCount": 3,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 6,
+        "after2UpCount": 4,
+        "after2MeanPct": 0.22662586227687098,
+        "offsets": {
+          "-2": {
+            "upCount": 5,
+            "upPct": 45.45454545454545,
+            "meanPct": 0.5757194950023277,
+            "meanAbsPct": 1.2701905758993326
+          },
+          "-1": {
+            "upCount": 6,
+            "upPct": 54.54545454545454,
+            "meanPct": 0.027481760649125542,
+            "meanAbsPct": 1.296152845806333
+          },
+          "0": {
+            "upCount": 5,
+            "upPct": 45.45454545454545,
+            "meanPct": 0.046433321702672656,
+            "meanAbsPct": 0.7506144771779732
+          },
+          "1": {
+            "upCount": 7,
+            "upPct": 63.63636363636363,
+            "meanPct": 0.5000094806347135,
+            "meanAbsPct": 1.1676581966262416
+          },
+          "2": {
+            "upCount": 4,
+            "upPct": 36.36363636363637,
+            "meanPct": -0.26955284991108647,
+            "meanAbsPct": 0.8463227572794287
+          }
+        }
+      },
+      "sameMonthNonJie": {
+        "n": 279,
+        "reversalCount": 134,
+        "reversalPct": 48.028673835125446,
+        "dayUpCount": 142,
+        "dayUpPct": 50.89605734767025,
+        "dayMeanPct": 0.2608971258921111,
+        "dayMeanAbsPct": 1.4459710440317268,
+        "dayMeanRangePct": 3.144512832687718,
+        "pivotCount": 71,
+        "pivotPct": 25.448028673835125,
+        "highPivotCount": 35,
+        "lowPivotCount": 34,
+        "ambiguousPivotCount": 2,
+        "before2UpCount": 151,
+        "after2UpCount": 159,
+        "after2MeanPct": 0.659306211755384,
+        "offsets": {
+          "-2": {
+            "upCount": 141,
+            "upPct": 50.53763440860215,
+            "meanPct": 0.23418193413803304,
+            "meanAbsPct": 1.4595968015498588
+          },
+          "-1": {
+            "upCount": 142,
+            "upPct": 50.89605734767025,
+            "meanPct": 0.24293588309709543,
+            "meanAbsPct": 1.4436482020933759
+          },
+          "0": {
+            "upCount": 142,
+            "upPct": 50.89605734767025,
+            "meanPct": 0.2608971258921111,
+            "meanAbsPct": 1.4459710440317268
+          },
+          "1": {
+            "upCount": 147,
+            "upPct": 52.68817204301075,
+            "meanPct": 0.32143186252485184,
+            "meanAbsPct": 1.4656780716279751
+          },
+          "2": {
+            "upCount": 147,
+            "upPct": 52.68817204301075,
+            "meanPct": 0.3328919466393703,
+            "meanAbsPct": 1.4667156623351536
+          }
+        }
+      }
+    },
+    "2024": {
+      "jie": {
+        "n": 12,
+        "reversalCount": 6,
+        "reversalPct": 50.0,
+        "dayUpCount": 8,
+        "dayUpPct": 66.66666666666666,
+        "dayMeanPct": 0.5591835547171318,
+        "dayMeanAbsPct": 1.4123272951111183,
+        "dayMeanRangePct": 3.956301407142032,
+        "pivotCount": 3,
+        "pivotPct": 25.0,
+        "highPivotCount": 1,
+        "lowPivotCount": 2,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 8,
+        "after2UpCount": 8,
+        "after2MeanPct": 0.5059985937703448,
+        "offsets": {
+          "-2": {
+            "upCount": 8,
+            "upPct": 66.66666666666666,
+            "meanPct": -0.5249339505352123,
+            "meanAbsPct": 2.7807325529389124
+          },
+          "-1": {
+            "upCount": 8,
+            "upPct": 66.66666666666666,
+            "meanPct": 1.931055879624488,
+            "meanAbsPct": 3.179783821003617
+          },
+          "0": {
+            "upCount": 8,
+            "upPct": 66.66666666666666,
+            "meanPct": 0.5591835547171318,
+            "meanAbsPct": 1.4123272951111183
+          },
+          "1": {
+            "upCount": 6,
+            "upPct": 50.0,
+            "meanPct": 0.19767367359219182,
+            "meanAbsPct": 1.1537234391784872
+          },
+          "2": {
+            "upCount": 7,
+            "upPct": 58.333333333333336,
+            "meanPct": 0.3095349272047564,
+            "meanAbsPct": 1.1558160709625775
+          }
+        }
+      },
+      "sameMonthNonJie": {
+        "n": 306,
+        "reversalCount": 141,
+        "reversalPct": 46.07843137254902,
+        "dayUpCount": 171,
+        "dayUpPct": 55.88235294117647,
+        "dayMeanPct": 0.20659454502646618,
+        "dayMeanAbsPct": 1.964107481818675,
+        "dayMeanRangePct": 3.9859375104293773,
+        "pivotCount": 79,
+        "pivotPct": 25.816993464052292,
+        "highPivotCount": 38,
+        "lowPivotCount": 41,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 167,
+        "after2UpCount": 158,
+        "after2MeanPct": 0.2978329039981665,
+        "offsets": {
+          "-2": {
+            "upCount": 174,
+            "upPct": 56.86274509803921,
+            "meanPct": 0.2842364182465807,
+            "meanAbsPct": 1.8643057313023175
+          },
+          "-1": {
+            "upCount": 172,
+            "upPct": 56.209150326797385,
+            "meanPct": 0.2376208651146864,
+            "meanAbsPct": 1.9155049501351955
+          },
+          "0": {
+            "upCount": 171,
+            "upPct": 55.88235294117647,
+            "meanPct": 0.20659454502646618,
+            "meanAbsPct": 1.964107481818675
+          },
+          "1": {
+            "upCount": 170,
+            "upPct": 55.55555555555556,
+            "meanPct": 0.13680175497813046,
+            "meanAbsPct": 1.9839740869804672
+          },
+          "2": {
+            "upCount": 170,
+            "upPct": 55.55555555555556,
+            "meanPct": 0.1626243325301417,
+            "meanAbsPct": 2.021274299985845
+          }
+        }
+      }
+    },
+    "2025": {
+      "jie": {
+        "n": 12,
+        "reversalCount": 6,
+        "reversalPct": 50.0,
+        "dayUpCount": 6,
+        "dayUpPct": 50.0,
+        "dayMeanPct": 0.43758202169820537,
+        "dayMeanAbsPct": 1.2470586371185568,
+        "dayMeanRangePct": 3.536830683756607,
+        "pivotCount": 2,
+        "pivotPct": 16.666666666666664,
+        "highPivotCount": 0,
+        "lowPivotCount": 2,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 5,
+        "after2UpCount": 7,
+        "after2MeanPct": 0.6315824067160026,
+        "offsets": {
+          "-2": {
+            "upCount": 8,
+            "upPct": 66.66666666666666,
+            "meanPct": 0.2740006310979499,
+            "meanAbsPct": 1.6992366086545014
+          },
+          "-1": {
+            "upCount": 3,
+            "upPct": 25.0,
+            "meanPct": -1.695107999082628,
+            "meanAbsPct": 2.228198538334761
+          },
+          "0": {
+            "upCount": 6,
+            "upPct": 50.0,
+            "meanPct": 0.43758202169820537,
+            "meanAbsPct": 1.2470586371185568
+          },
+          "1": {
+            "upCount": 8,
+            "upPct": 66.66666666666666,
+            "meanPct": 0.8263842418799737,
+            "meanAbsPct": 1.092154214322342
+          },
+          "2": {
+            "upCount": 6,
+            "upPct": 50.0,
+            "meanPct": -0.17799372638433436,
+            "meanAbsPct": 1.7401693614250777
+          }
+        }
+      },
+      "sameMonthNonJie": {
+        "n": 300,
+        "reversalCount": 148,
+        "reversalPct": 49.333333333333336,
+        "dayUpCount": 157,
+        "dayUpPct": 52.33333333333333,
+        "dayMeanPct": -0.001509535122184731,
+        "dayMeanAbsPct": 1.4801061196542102,
+        "dayMeanRangePct": 3.3190534272389627,
+        "pivotCount": 82,
+        "pivotPct": 27.333333333333332,
+        "highPivotCount": 39,
+        "lowPivotCount": 39,
+        "ambiguousPivotCount": 4,
+        "before2UpCount": 149,
+        "after2UpCount": 147,
+        "after2MeanPct": 0.013159410749782798,
+        "offsets": {
+          "-2": {
+            "upCount": 155,
+            "upPct": 51.66666666666667,
+            "meanPct": 0.0031178948531330993,
+            "meanAbsPct": 1.4719096157451366
+          },
+          "-1": {
+            "upCount": 156,
+            "upPct": 52.0,
+            "meanPct": -0.010144620962250953,
+            "meanAbsPct": 1.4972956639435195
+          },
+          "0": {
+            "upCount": 157,
+            "upPct": 52.33333333333333,
+            "meanPct": -0.001509535122184731,
+            "meanAbsPct": 1.4801061196542102
+          },
+          "1": {
+            "upCount": 161,
+            "upPct": 53.666666666666664,
+            "meanPct": 0.03991744113606113,
+            "meanAbsPct": 1.437986250370898
+          },
+          "2": {
+            "upCount": 157,
+            "upPct": 52.33333333333333,
+            "meanPct": -0.025171369930850705,
+            "meanAbsPct": 1.4467102031744634
+          }
+        }
+      }
+    },
+    "2026": {
+      "jie": {
+        "n": 10,
+        "reversalCount": 8,
+        "reversalPct": 80.0,
+        "dayUpCount": 4,
+        "dayUpPct": 40.0,
+        "dayMeanPct": -1.1256837207576242,
+        "dayMeanAbsPct": 2.301235947332895,
+        "dayMeanRangePct": 3.5913108707255295,
+        "pivotCount": 4,
+        "pivotPct": 40.0,
+        "highPivotCount": 4,
+        "lowPivotCount": 0,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 8,
+        "after2UpCount": 4,
+        "after2MeanPct": -1.2415444674442355,
+        "offsets": {
+          "-2": {
+            "upCount": 6,
+            "upPct": 60.0,
+            "meanPct": -0.02391549097735222,
+            "meanAbsPct": 0.8131806748509159
+          },
+          "-1": {
+            "upCount": 6,
+            "upPct": 60.0,
+            "meanPct": 0.7165637534627345,
+            "meanAbsPct": 2.1234409471850944
+          },
+          "0": {
+            "upCount": 4,
+            "upPct": 40.0,
+            "meanPct": -1.1256837207576242,
+            "meanAbsPct": 2.301235947332895
+          },
+          "1": {
+            "upCount": 6,
+            "upPct": 60.0,
+            "meanPct": -0.9871209879984311,
+            "meanAbsPct": 2.4690061031180583
+          },
+          "2": {
+            "upCount": 5,
+            "upPct": 50.0,
+            "meanPct": -0.22594528127062424,
+            "meanAbsPct": 1.5060239293436781
+          }
+        }
+      },
+      "sameMonthNonJie": {
+        "n": 234,
+        "reversalCount": 121,
+        "reversalPct": 51.70940170940172,
+        "dayUpCount": 121,
+        "dayUpPct": 51.70940170940172,
+        "dayMeanPct": 0.06050982963766941,
+        "dayMeanAbsPct": 1.6281609840224514,
+        "dayMeanRangePct": 3.278294819823991,
+        "pivotCount": 74,
+        "pivotPct": 31.62393162393162,
+        "highPivotCount": 39,
+        "lowPivotCount": 34,
+        "ambiguousPivotCount": 1,
+        "before2UpCount": 117,
+        "after2UpCount": 122,
+        "after2MeanPct": 0.0942897418181274,
+        "offsets": {
+          "-2": {
+            "upCount": 119,
+            "upPct": 50.85470085470085,
+            "meanPct": 0.01728403885528463,
+            "meanAbsPct": 1.6037474656930137
+          },
+          "-1": {
+            "upCount": 121,
+            "upPct": 51.70940170940172,
+            "meanPct": 0.1020257347690692,
+            "meanAbsPct": 1.5866767793257486
+          },
+          "0": {
+            "upCount": 121,
+            "upPct": 51.70940170940172,
+            "meanPct": 0.06050982963766941,
+            "meanAbsPct": 1.6281609840224514
+          },
+          "1": {
+            "upCount": 121,
+            "upPct": 51.70940170940172,
+            "meanPct": 0.03713853817775885,
+            "meanAbsPct": 1.5995596023548122
+          },
+          "2": {
+            "upCount": 120,
+            "upPct": 51.28205128205128,
+            "meanPct": 0.05567240090104273,
+            "meanAbsPct": 1.6206065930194224
+          }
+        }
+      }
+    }
+  },
+  "terms": {
+    "大雪": {
+      "jie": {
+        "n": 4,
+        "reversalCount": 2,
+        "reversalPct": 50.0,
+        "dayUpCount": 0,
+        "dayUpPct": 0,
+        "dayMeanPct": -0.8282378420057891,
+        "dayMeanAbsPct": 0.8282378420057891,
+        "dayMeanRangePct": 4.53609221495334,
+        "pivotCount": 3,
+        "pivotPct": 75.0,
+        "highPivotCount": 0,
+        "lowPivotCount": 3,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 2,
+        "after2UpCount": 4,
+        "after2MeanPct": 1.753963806406611,
+        "offsets": {
+          "-2": {
+            "upCount": 3,
+            "upPct": 75.0,
+            "meanPct": 0.047180591992532585,
+            "meanAbsPct": 1.398678715648129
+          },
+          "-1": {
+            "upCount": 2,
+            "upPct": 50.0,
+            "meanPct": 1.9949420088619736,
+            "meanAbsPct": 2.6747903609817634
+          },
+          "0": {
+            "upCount": 0,
+            "upPct": 0,
+            "meanPct": -0.8282378420057891,
+            "meanAbsPct": 0.8282378420057891
+          },
+          "1": {
+            "upCount": 4,
+            "upPct": 100,
+            "meanPct": 0.3942157521703187,
+            "meanAbsPct": 0.3942157521703187
+          },
+          "2": {
+            "upCount": 4,
+            "upPct": 100,
+            "meanPct": 1.3524615189288896,
+            "meanAbsPct": 1.3524615189288896
+          }
+        }
+      },
+      "dates": [
+        "2022-12-07",
+        "2023-12-07",
+        "2024-12-06",
+        "2025-12-07"
+      ],
+      "dayPctByYear": {
+        "2022": -0.8591905957105823,
+        "2023": -0.2612527203833077,
+        "2024": -1.9398316142159298,
+        "2025": -0.2526764377133367
+      },
+      "after2PctByYear": {
+        "2022": 2.0389983526005038,
+        "2023": 0.8922891761592753,
+        "2024": 0.5494551367325907,
+        "2025": 3.5351125601340745
+      }
+    },
+    "寒露": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 3,
+        "reversalPct": 60.0,
+        "dayUpCount": 1,
+        "dayUpPct": 20.0,
+        "dayMeanPct": -1.0933028406181085,
+        "dayMeanAbsPct": 1.1961873607254914,
+        "dayMeanRangePct": 2.383156535688625,
+        "pivotCount": 0,
+        "pivotPct": 0,
+        "highPivotCount": 0,
+        "lowPivotCount": 0,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 2,
+        "after2UpCount": 1,
+        "after2MeanPct": -1.0968113036733775,
+        "offsets": {
+          "-2": {
+            "upCount": 5,
+            "upPct": 100,
+            "meanPct": 0.9451869128580555,
+            "meanAbsPct": 0.9451869128580555
+          },
+          "-1": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -1.1705134351229434,
+            "meanAbsPct": 1.7681292523473828
+          },
+          "0": {
+            "upCount": 1,
+            "upPct": 20.0,
+            "meanPct": -1.0933028406181085,
+            "meanAbsPct": 1.1961873607254914
+          },
+          "1": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.0124640018152333,
+            "meanAbsPct": 1.0133532055402499
+          },
+          "2": {
+            "upCount": 1,
+            "upPct": 20.0,
+            "meanPct": -1.110875849761848,
+            "meanAbsPct": 1.1924723432187192
+          }
+        }
+      },
+      "dates": [
+        "2022-10-08",
+        "2023-10-08",
+        "2024-10-08",
+        "2025-10-08",
+        "2026-10-08"
+      ],
+      "dayPctByYear": {
+        "2022": -0.45095615576349446,
+        "2023": -0.15908850299435465,
+        "2024": -2.169474959498043,
+        "2025": 0.2572113002684572,
+        "2026": -2.944205885103108
+      },
+      "after2PctByYear": {
+        "2022": -1.1350791959269932,
+        "2023": -1.7972261746630156,
+        "2024": -2.4544052467897433,
+        "2025": -2.586148285035935,
+        "2026": 2.4888023840487996
+      }
+    },
+    "小寒": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 2,
+        "reversalPct": 40.0,
+        "dayUpCount": 3,
+        "dayUpPct": 60.0,
+        "dayMeanPct": 0.6966355162152557,
+        "dayMeanAbsPct": 0.9574046378832951,
+        "dayMeanRangePct": 2.5634614594518856,
+        "pivotCount": 0,
+        "pivotPct": 0,
+        "highPivotCount": 0,
+        "lowPivotCount": 0,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 4,
+        "after2UpCount": 2,
+        "after2MeanPct": -2.250144798672795,
+        "offsets": {
+          "-2": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.5025765846758001,
+            "meanAbsPct": 1.2081566492859293
+          },
+          "-1": {
+            "upCount": 4,
+            "upPct": 80.0,
+            "meanPct": 0.3865312981060273,
+            "meanAbsPct": 0.9037526191303555
+          },
+          "0": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.6966355162152557,
+            "meanAbsPct": 0.9574046378832951
+          },
+          "1": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -0.7274666949170351,
+            "meanAbsPct": 2.5883130162475485
+          },
+          "2": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -1.550931952379957,
+            "meanAbsPct": 2.636593448204077
+          }
+        }
+      },
+      "dates": [
+        "2022-01-05",
+        "2023-01-05",
+        "2024-01-06",
+        "2025-01-05",
+        "2026-01-05"
+      ],
+      "dayPctByYear": {
+        "2022": -0.5901948854040396,
+        "2023": -0.061727918766058903,
+        "2024": 0.864322106795474,
+        "2025": 0.3612167884445036,
+        "2026": 2.909561490006399
+      },
+      "after2PctByYear": {
+        "2022": -11.388027419668203,
+        "2023": 0.5956694138693744,
+        "2024": 2.5074006346915514,
+        "2025": -0.10290477160803782,
+        "2026": -2.8628618506486596
+      }
+    },
+    "小暑": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 1,
+        "reversalPct": 20.0,
+        "dayUpCount": 3,
+        "dayUpPct": 60.0,
+        "dayMeanPct": 0.9604248194064884,
+        "dayMeanAbsPct": 1.206101208244285,
+        "dayMeanRangePct": 2.9469856834855275,
+        "pivotCount": 2,
+        "pivotPct": 40.0,
+        "highPivotCount": 1,
+        "lowPivotCount": 1,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 3,
+        "after2UpCount": 2,
+        "after2MeanPct": -0.13279054191758274,
+        "offsets": {
+          "-2": {
+            "upCount": 1,
+            "upPct": 20.0,
+            "meanPct": -1.3074000429271195,
+            "meanAbsPct": 1.4922596232479195
+          },
+          "-1": {
+            "upCount": 4,
+            "upPct": 80.0,
+            "meanPct": 0.5999257980972503,
+            "meanAbsPct": 1.5761789237049475
+          },
+          "0": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.9604248194064884,
+            "meanAbsPct": 1.206101208244285
+          },
+          "1": {
+            "upCount": 1,
+            "upPct": 20.0,
+            "meanPct": 0.028392711443747602,
+            "meanAbsPct": 2.043288902068111
+          },
+          "2": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": -0.12745751244660625,
+            "meanAbsPct": 1.3809399829157238
+          }
+        }
+      },
+      "dates": [
+        "2022-07-07",
+        "2023-07-07",
+        "2024-07-06",
+        "2025-07-07",
+        "2026-07-07"
+      ],
+      "dayPctByYear": {
+        "2022": 3.6996387954548844,
+        "2023": -0.03163795133412176,
+        "2024": 1.1054624239429083,
+        "2025": -0.58255302076037,
+        "2026": 0.6112138497291412
+      },
+      "after2PctByYear": {
+        "2022": 3.2020808998195647,
+        "2023": -0.1300185190851197,
+        "2024": -2.7612769835377393,
+        "2025": 0.7172380224047786,
+        "2026": -1.691976129189398
+      }
+    },
+    "惊蛰": {
+      "jie": {
+        "n": 4,
+        "reversalCount": 2,
+        "reversalPct": 50.0,
+        "dayUpCount": 2,
+        "dayUpPct": 50.0,
+        "dayMeanPct": 0.19638222981791043,
+        "dayMeanAbsPct": 3.249978384668964,
+        "dayMeanRangePct": 6.747586075188955,
+        "pivotCount": 2,
+        "pivotPct": 50.0,
+        "highPivotCount": 2,
+        "lowPivotCount": 0,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 2,
+        "after2UpCount": 2,
+        "after2MeanPct": -1.1488269734187448,
+        "offsets": {
+          "-2": {
+            "upCount": 2,
+            "upPct": 50.0,
+            "meanPct": -0.5420672046714784,
+            "meanAbsPct": 2.2833021218077567
+          },
+          "-1": {
+            "upCount": 2,
+            "upPct": 50.0,
+            "meanPct": 0.7917367156788369,
+            "meanAbsPct": 6.906870336368067
+          },
+          "0": {
+            "upCount": 2,
+            "upPct": 50.0,
+            "meanPct": 0.19638222981791043,
+            "meanAbsPct": 3.249978384668964
+          },
+          "1": {
+            "upCount": 1,
+            "upPct": 25.0,
+            "meanPct": -0.7010659213880832,
+            "meanAbsPct": 2.1128061974091508
+          },
+          "2": {
+            "upCount": 2,
+            "upPct": 50.0,
+            "meanPct": -0.43617089993238684,
+            "meanAbsPct": 1.332477867270953
+          }
+        }
+      },
+      "dates": [
+        "2022-03-05",
+        "2024-03-05",
+        "2025-03-05",
+        "2026-03-05"
+      ],
+      "dayPctByYear": {
+        "2022": -3.7154688799617746,
+        "2024": 0.370032951598151,
+        "2025": 6.522688277375598,
+        "2026": -2.3917234297403325
+      },
+      "after2PctByYear": {
+        "2022": -0.23131023039121834,
+        "2024": 0.8069626957165252,
+        "2025": 0.1288382131037713,
+        "2026": -5.2997985721040575
+      }
+    },
+    "清明": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 1,
+        "reversalPct": 20.0,
+        "dayUpCount": 4,
+        "dayUpPct": 80.0,
+        "dayMeanPct": 0.7852767531907603,
+        "dayMeanAbsPct": 0.8345060683217542,
+        "dayMeanRangePct": 3.6123781526157885,
+        "pivotCount": 1,
+        "pivotPct": 20.0,
+        "highPivotCount": 1,
+        "lowPivotCount": 0,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 1,
+        "after2UpCount": 2,
+        "after2MeanPct": -0.8089074076242752,
+        "offsets": {
+          "-2": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -0.6427452492794923,
+            "meanAbsPct": 1.4460456784069482
+          },
+          "-1": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -0.9938782496284588,
+            "meanAbsPct": 1.911060094882018
+          },
+          "0": {
+            "upCount": 4,
+            "upPct": 80.0,
+            "meanPct": 0.7852767531907603,
+            "meanAbsPct": 0.8345060683217542
+          },
+          "1": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.25510392735484416,
+            "meanAbsPct": 1.7757185132409554
+          },
+          "2": {
+            "upCount": 0,
+            "upPct": 0,
+            "meanPct": -1.055984662720043,
+            "meanAbsPct": 1.055984662720043
+          }
+        }
+      },
+      "dates": [
+        "2022-04-05",
+        "2023-04-05",
+        "2024-04-04",
+        "2025-04-04",
+        "2026-04-05"
+      ],
+      "dayPctByYear": {
+        "2022": 0.2630845690933243,
+        "2023": 0.010699760789014627,
+        "2024": 2.7860485126116665,
+        "2025": 0.9896242112872808,
+        "2026": -0.12307328782748485
+      },
+      "after2PctByYear": {
+        "2022": -5.327359758912783,
+        "2023": -0.2682777120141122,
+        "2024": 0.6502232810989809,
+        "2025": -0.3788975836873514,
+        "2026": 1.2797747353938898
+      }
+    },
+    "白露": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 4,
+        "reversalPct": 80.0,
+        "dayUpCount": 3,
+        "dayUpPct": 60.0,
+        "dayMeanPct": -0.6595793047341347,
+        "dayMeanAbsPct": 1.6934726343328617,
+        "dayMeanRangePct": 3.5628594795535613,
+        "pivotCount": 4,
+        "pivotPct": 80.0,
+        "highPivotCount": 2,
+        "lowPivotCount": 2,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 4,
+        "after2UpCount": 2,
+        "after2MeanPct": 2.572284188798304,
+        "offsets": {
+          "-2": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": -0.49597957642321866,
+            "meanAbsPct": 1.2558021239656214
+          },
+          "-1": {
+            "upCount": 1,
+            "upPct": 20.0,
+            "meanPct": -0.6795984263934947,
+            "meanAbsPct": 0.9644108667431488
+          },
+          "0": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": -0.6595793047341347,
+            "meanAbsPct": 1.6934726343328617
+          },
+          "1": {
+            "upCount": 4,
+            "upPct": 80.0,
+            "meanPct": 0.30238377925383314,
+            "meanAbsPct": 1.098800986123847
+          },
+          "2": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": 2.2446958321095867,
+            "meanAbsPct": 3.2191982046930043
+          }
+        }
+      },
+      "dates": [
+        "2022-09-07",
+        "2023-09-08",
+        "2024-09-07",
+        "2025-09-07",
+        "2026-09-07"
+      ],
+      "dayPctByYear": {
+        "2022": -4.76167648716607,
+        "2023": 0.28868432004671124,
+        "2024": 1.4587680637490812,
+        "2025": 0.837280940201025,
+        "2026": -1.120953360501421
+      },
+      "after2PctByYear": {
+        "2022": 12.7191074578263,
+        "2023": -0.25514272663223986,
+        "2024": 1.0991963760253398,
+        "2025": -0.40613672200694584,
+        "2026": -0.29560344122093435
+      }
+    },
+    "立冬": {
+      "jie": {
+        "n": 4,
+        "reversalCount": 3,
+        "reversalPct": 75.0,
+        "dayUpCount": 2,
+        "dayUpPct": 50.0,
+        "dayMeanPct": 0.08778544034899222,
+        "dayMeanAbsPct": 1.8065380172567544,
+        "dayMeanRangePct": 3.4187548376067163,
+        "pivotCount": 0,
+        "pivotPct": 0,
+        "highPivotCount": 0,
+        "lowPivotCount": 0,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 2,
+        "after2UpCount": 3,
+        "after2MeanPct": -2.2863224874058607,
+        "offsets": {
+          "-2": {
+            "upCount": 4,
+            "upPct": 100,
+            "meanPct": 1.1804024740138044,
+            "meanAbsPct": 1.1804024740138044
+          },
+          "-1": {
+            "upCount": 1,
+            "upPct": 25.0,
+            "meanPct": 0.9707645431564904,
+            "meanAbsPct": 2.4613355771143537
+          },
+          "0": {
+            "upCount": 2,
+            "upPct": 50.0,
+            "meanPct": 0.08778544034899222,
+            "meanAbsPct": 1.8065380172567544
+          },
+          "1": {
+            "upCount": 3,
+            "upPct": 75.0,
+            "meanPct": 0.1832249055990106,
+            "meanAbsPct": 3.194766407727535
+          },
+          "2": {
+            "upCount": 1,
+            "upPct": 25.0,
+            "meanPct": -2.6602522375345234,
+            "meanAbsPct": 3.6687192080297435
+          }
+        }
+      },
+      "dates": [
+        "2022-11-07",
+        "2023-11-08",
+        "2024-11-07",
+        "2025-11-07"
+      ],
+      "dayPctByYear": {
+        "2022": -2.2194070063097557,
+        "2023": 1.397972505178129,
+        "2024": 2.3906744100333643,
+        "2025": -1.2180981475057688
+      },
+      "after2PctByYear": {
+        "2022": -17.68206079269109,
+        "2023": 5.320120263352894,
+        "2024": 0.2254765976138023,
+        "2025": 2.9911739821009493
+      }
+    },
+    "立夏": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 5,
+        "reversalPct": 100,
+        "dayUpCount": 2,
+        "dayUpPct": 40.0,
+        "dayMeanPct": -1.2963334658717351,
+        "dayMeanAbsPct": 2.5580083555112267,
+        "dayMeanRangePct": 4.351937552390846,
+        "pivotCount": 2,
+        "pivotPct": 40.0,
+        "highPivotCount": 2,
+        "lowPivotCount": 0,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 4,
+        "after2UpCount": 1,
+        "after2MeanPct": -0.9594635275342723,
+        "offsets": {
+          "-2": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.8745286753438472,
+            "meanAbsPct": 1.6360062439057892
+          },
+          "-1": {
+            "upCount": 4,
+            "upPct": 80.0,
+            "meanPct": 1.4535824084792843,
+            "meanAbsPct": 1.8550260576940103
+          },
+          "0": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -1.2963334658717351,
+            "meanAbsPct": 2.5580083555112267
+          },
+          "1": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": -0.29006582129650627,
+            "meanAbsPct": 1.1971081474263845
+          },
+          "2": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -0.6632337856916847,
+            "meanAbsPct": 1.7326760907997216
+          }
+        }
+      },
+      "dates": [
+        "2022-05-05",
+        "2023-05-06",
+        "2024-05-05",
+        "2025-05-05",
+        "2026-05-05"
+      ],
+      "dayPctByYear": {
+        "2022": -5.2791445607172465,
+        "2023": -2.573447459206444,
+        "2024": 1.2452203769449104,
+        "2025": -1.783262533533715,
+        "2026": 1.908966847153819
+      },
+      "after2PctByYear": {
+        "2022": -2.571720531301935,
+        "2023": -2.500095195475612,
+        "2024": -1.0741810083779537,
+        "2025": 3.392674429740823,
+        "2026": -2.0439953322566837
+      }
+    },
+    "立春": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 3,
+        "reversalPct": 60.0,
+        "dayUpCount": 1,
+        "dayUpPct": 20.0,
+        "dayMeanPct": 0.05871148472754745,
+        "dayMeanAbsPct": 2.7280798359887513,
+        "dayMeanRangePct": 5.701318122807778,
+        "pivotCount": 1,
+        "pivotPct": 20.0,
+        "highPivotCount": 0,
+        "lowPivotCount": 1,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 3,
+        "after2UpCount": 2,
+        "after2MeanPct": -0.782884216861067,
+        "offsets": {
+          "-2": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.15349520255675145,
+            "meanAbsPct": 2.700651502155507
+          },
+          "-1": {
+            "upCount": 0,
+            "upPct": 0,
+            "meanPct": -1.2482896903603038,
+            "meanAbsPct": 1.2482896903603038
+          },
+          "0": {
+            "upCount": 1,
+            "upPct": 20.0,
+            "meanPct": 0.05871148472754745,
+            "meanAbsPct": 2.7280798359887513
+          },
+          "1": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -0.9780656781563657,
+            "meanAbsPct": 3.4706388324279644
+          },
+          "2": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": 0.23675471105326346,
+            "meanAbsPct": 1.0972664172709141
+          }
+        }
+      },
+      "dates": [
+        "2022-02-04",
+        "2023-02-04",
+        "2024-02-04",
+        "2025-02-03",
+        "2026-02-04"
+      ],
+      "dayPctByYear": {
+        "2022": 6.966978301790746,
+        "2023": -0.7858418024298666,
+        "2024": -0.4218642894175531,
+        "2025": -0.27938116086154674,
+        "2026": -5.186333625444043
+      },
+      "after2PctByYear": {
+        "2022": 5.182290295536376,
+        "2023": -1.6296102135274766,
+        "2024": 0.6649822747490767,
+        "2025": -0.8749816719170145,
+        "2026": -7.2571017691462965
+      }
+    },
+    "立秋": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 1,
+        "reversalPct": 20.0,
+        "dayUpCount": 3,
+        "dayUpPct": 60.0,
+        "dayMeanPct": 0.5232278713477255,
+        "dayMeanAbsPct": 1.0754493718866287,
+        "dayMeanRangePct": 2.652451416816111,
+        "pivotCount": 2,
+        "pivotPct": 40.0,
+        "highPivotCount": 1,
+        "lowPivotCount": 1,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 3,
+        "after2UpCount": 4,
+        "after2MeanPct": 1.4588359068155152,
+        "offsets": {
+          "-2": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -1.808278814953284,
+            "meanAbsPct": 2.061173013927004
+          },
+          "-1": {
+            "upCount": 4,
+            "upPct": 80.0,
+            "meanPct": 1.3597258726730637,
+            "meanAbsPct": 1.5743050528461298
+          },
+          "0": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.5232278713477255,
+            "meanAbsPct": 1.0754493718866287
+          },
+          "1": {
+            "upCount": 4,
+            "upPct": 80.0,
+            "meanPct": 2.165031434151487,
+            "meanAbsPct": 2.3431135883801586
+          },
+          "2": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": -0.6774675843004806,
+            "meanAbsPct": 1.2450316699089845
+          }
+        }
+      },
+      "dates": [
+        "2022-08-07",
+        "2023-08-08",
+        "2024-08-07",
+        "2025-08-07",
+        "2026-08-07"
+      ],
+      "dayPctByYear": {
+        "2022": -0.7928621721148651,
+        "2023": 2.4088517267751826,
+        "2024": -0.587691579232393,
+        "2025": 1.1398224353237085,
+        "2026": 0.44801894598699443
+      },
+      "after2PctByYear": {
+        "2022": 0.2673691113972816,
+        "2023": -0.24478161779505436,
+        "2024": 6.634198061580782,
+        "2025": 0.15368452216963482,
+        "2026": 0.48370945672493204
+      }
+    },
+    "芒种": {
+      "jie": {
+        "n": 5,
+        "reversalCount": 4,
+        "reversalPct": 80.0,
+        "dayUpCount": 3,
+        "dayUpPct": 60.0,
+        "dayMeanPct": 0.20946898980389766,
+        "dayMeanAbsPct": 2.6531478473973293,
+        "dayMeanRangePct": 4.108451198125467,
+        "pivotCount": 2,
+        "pivotPct": 40.0,
+        "highPivotCount": 1,
+        "lowPivotCount": 1,
+        "ambiguousPivotCount": 0,
+        "before2UpCount": 3,
+        "after2UpCount": 3,
+        "after2MeanPct": 0.43050736595785866,
+        "offsets": {
+          "-2": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.6765488471649483,
+            "meanAbsPct": 1.5627360749666381
+          },
+          "-1": {
+            "upCount": 2,
+            "upPct": 40.0,
+            "meanPct": -1.4568307160577152,
+            "meanAbsPct": 2.087804143991588
+          },
+          "0": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": 0.20946898980389766,
+            "meanAbsPct": 2.6531478473973293
+          },
+          "1": {
+            "upCount": 3,
+            "upPct": 60.0,
+            "meanPct": -0.6800728292759932,
+            "meanAbsPct": 1.5857847901231088
+          },
+          "2": {
+            "upCount": 4,
+            "upPct": 80.0,
+            "meanPct": 1.1196432071351115,
+            "meanAbsPct": 1.2497485593071418
+          }
+        }
+      },
+      "dates": [
+        "2022-06-06",
+        "2023-06-06",
+        "2024-06-05",
+        "2025-06-05",
+        "2026-06-05"
+      ],
+      "dayPctByYear": {
+        "2022": 5.2704512586546075,
+        "2023": 0.2775545810545151,
+        "2024": 1.608536253293945,
+        "2025": -0.7408883921473709,
+        "2026": -5.368308751836208
+      },
+      "after2PctByYear": {
+        "2022": -3.374314295957638,
+        "2023": 2.5099577908566673,
+        "2024": -0.7760486942590746,
+        "2025": 1.0093361851932852,
+        "2026": 2.7836058439560536
+      }
+    }
+  },
+  "majorityTransfer2026": {
+    "reversal": {
+      "evaluated": 8,
+      "matches": 5,
+      "tiesAbstained": [
+        "立春",
+        "寒露"
+      ],
+      "checks": [
+        {
+          "term": "小寒",
+          "date": "2026-01-05",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        },
+        {
+          "term": "惊蛰",
+          "date": "2026-03-05",
+          "priorTrue": 1,
+          "priorN": 3,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        },
+        {
+          "term": "清明",
+          "date": "2026-04-05",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        },
+        {
+          "term": "立夏",
+          "date": "2026-05-05",
+          "priorTrue": 4,
+          "priorN": 4,
+          "expected": true,
+          "observed": true,
+          "matched": true
+        },
+        {
+          "term": "芒种",
+          "date": "2026-06-05",
+          "priorTrue": 3,
+          "priorN": 4,
+          "expected": true,
+          "observed": true,
+          "matched": true
+        },
+        {
+          "term": "小暑",
+          "date": "2026-07-07",
+          "priorTrue": 0,
+          "priorN": 4,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        },
+        {
+          "term": "立秋",
+          "date": "2026-08-07",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        },
+        {
+          "term": "白露",
+          "date": "2026-09-07",
+          "priorTrue": 3,
+          "priorN": 4,
+          "expected": true,
+          "observed": true,
+          "matched": true
+        }
+      ]
+    },
+    "dayPct": {
+      "evaluated": 7,
+      "matches": 2,
+      "tiesAbstained": [
+        "小寒",
+        "小暑",
+        "立秋"
+      ],
+      "checks": [
+        {
+          "term": "立春",
+          "date": "2026-02-04",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        },
+        {
+          "term": "惊蛰",
+          "date": "2026-03-05",
+          "priorTrue": 2,
+          "priorN": 3,
+          "expected": true,
+          "observed": false,
+          "matched": false
+        },
+        {
+          "term": "清明",
+          "date": "2026-04-05",
+          "priorTrue": 4,
+          "priorN": 4,
+          "expected": true,
+          "observed": false,
+          "matched": false
+        },
+        {
+          "term": "立夏",
+          "date": "2026-05-05",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        },
+        {
+          "term": "芒种",
+          "date": "2026-06-05",
+          "priorTrue": 3,
+          "priorN": 4,
+          "expected": true,
+          "observed": false,
+          "matched": false
+        },
+        {
+          "term": "白露",
+          "date": "2026-09-07",
+          "priorTrue": 3,
+          "priorN": 4,
+          "expected": true,
+          "observed": false,
+          "matched": false
+        },
+        {
+          "term": "寒露",
+          "date": "2026-10-08",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        }
+      ]
+    },
+    "after2Pct": {
+      "evaluated": 5,
+      "matches": 2,
+      "tiesAbstained": [
+        "小寒",
+        "立春",
+        "芒种",
+        "小暑",
+        "白露"
+      ],
+      "checks": [
+        {
+          "term": "惊蛰",
+          "date": "2026-03-05",
+          "priorTrue": 2,
+          "priorN": 3,
+          "expected": true,
+          "observed": false,
+          "matched": false
+        },
+        {
+          "term": "清明",
+          "date": "2026-04-05",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        },
+        {
+          "term": "立夏",
+          "date": "2026-05-05",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        },
+        {
+          "term": "立秋",
+          "date": "2026-08-07",
+          "priorTrue": 3,
+          "priorN": 4,
+          "expected": true,
+          "observed": true,
+          "matched": true
+        },
+        {
+          "term": "寒露",
+          "date": "2026-10-08",
+          "priorTrue": 0,
+          "priorN": 4,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        }
+      ]
+    },
+    "pivot": {
+      "evaluated": 8,
+      "matches": 5,
+      "tiesAbstained": [
+        "立夏",
+        "芒种"
+      ],
+      "checks": [
+        {
+          "term": "小寒",
+          "date": "2026-01-05",
+          "priorTrue": 0,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        },
+        {
+          "term": "立春",
+          "date": "2026-02-04",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        },
+        {
+          "term": "惊蛰",
+          "date": "2026-03-05",
+          "priorTrue": 1,
+          "priorN": 3,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        },
+        {
+          "term": "清明",
+          "date": "2026-04-05",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        },
+        {
+          "term": "小暑",
+          "date": "2026-07-07",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        },
+        {
+          "term": "立秋",
+          "date": "2026-08-07",
+          "priorTrue": 1,
+          "priorN": 4,
+          "expected": false,
+          "observed": true,
+          "matched": false
+        },
+        {
+          "term": "白露",
+          "date": "2026-09-07",
+          "priorTrue": 3,
+          "priorN": 4,
+          "expected": true,
+          "observed": true,
+          "matched": true
+        },
+        {
+          "term": "寒露",
+          "date": "2026-10-08",
+          "priorTrue": 0,
+          "priorN": 4,
+          "expected": false,
+          "observed": false,
+          "matched": true
+        }
+      ]
+    }
+  },
+  "excluded": [
+    {
+      "term": "惊蛰",
+      "date": "2023-03-06",
+      "reason": "incomplete five-day window"
+    }
+  ],
+  "events": [
+    {
+      "before2Pct": -0.9720156206615872,
+      "dayPct": -0.5901948854040396,
+      "after2Pct": -11.388027419668203,
+      "dayRangePct": 3.329066693045362,
+      "reversal": false,
+      "dayOpen": "46906.54",
+      "dayHigh": "47076.55",
+      "dayLow": "45515",
+      "dayClose": "46629.7",
+      "term": "小寒",
+      "date": "2022-01-05",
+      "year": 2022,
+      "atLocal": "2022-01-05T17:14:04+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -1.4203020036802938,
+        "-1": 0.4547666536439592,
+        "0": -0.5901948854040396,
+        "1": -7.921261308168472,
+        "2": -3.769730512963645
+      }
+    },
+    {
+      "before2Pct": -4.431431420553367,
+      "dayPct": 6.966978301790746,
+      "after2Pct": 5.182290295536376,
+      "dayRangePct": 9.830586308705062,
+      "reversal": true,
+      "dayOpen": "36932.08",
+      "dayHigh": "39895",
+      "dayLow": "36264.36",
+      "dayClose": "39505.13",
+      "term": "立春",
+      "date": "2022-02-04",
+      "year": 2022,
+      "atLocal": "2022-02-04T04:50:47+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -3.131690111326557,
+        "-1": -1.3417611092012924,
+        "0": 6.966978301790746,
+        "1": 5.816309379644967,
+        "2": -0.5991695305058075
+      }
+    },
+    {
+      "before2Pct": -7.816014084092181,
+      "dayPct": -3.7154688799617746,
+      "after2Pct": -0.23131023039121834,
+      "dayRangePct": 5.848415043957189,
+      "reversal": false,
+      "dayOpen": "40685.04",
+      "dayHigh": "40956.44",
+      "dayLow": "38577.01",
+      "dayClose": "39173.4",
+      "term": "惊蛰",
+      "date": "2022-03-05",
+      "year": 2022,
+      "atLocal": "2022-03-05T22:43:45+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -3.5850993204923993,
+        "-1": -4.388214964957496,
+        "0": -3.7154688799617746,
+        "1": -0.7792201161529134,
+        "2": 0.5594312748893784
+      }
+    },
+    {
+      "before2Pct": -1.4308224211197085,
+      "dayPct": 0.2630845690933243,
+      "after2Pct": -5.327359758912783,
+      "dayRangePct": 4.534583463305727,
+      "reversal": false,
+      "dayOpen": "45650.72",
+      "dayHigh": "47200",
+      "dayLow": "45129.93",
+      "dayClose": "45770.82",
+      "term": "清明",
+      "date": "2022-04-05",
+      "year": 2022,
+      "atLocal": "2022-04-05T03:20:14+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.24508888304898344,
+        "-1": -1.672406933469701,
+        "0": 0.2630845690933243,
+        "1": -3.50849899302998,
+        "2": -1.883018391092999
+      }
+    },
+    {
+      "before2Pct": 0.696315223175736,
+      "dayPct": -5.2791445607172465,
+      "after2Pct": -2.571720531301935,
+      "dayRangePct": 9.058677980806005,
+      "reversal": true,
+      "dayOpen": "38960.1",
+      "dayHigh": "40038.27",
+      "dayLow": "36509",
+      "dayClose": "36903.34",
+      "term": "立夏",
+      "date": "2022-05-05",
+      "year": 2022,
+      "atLocal": "2022-05-05T20:25:57+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": -0.9558083689641028,
+        "-1": 1.6694467292685269,
+        "0": -5.2791445607172465,
+        "1": -2.497716329510822,
+        "2": -0.07490020485692393
+      }
+    },
+    {
+      "before2Pct": 1.5998797383970798,
+      "dayPct": 5.2704512586546075,
+      "after2Pct": -3.374314295957638,
+      "dayRangePct": 6.725093267692472,
+      "reversal": true,
+      "dayOpen": "29940.7",
+      "dayHigh": "31745",
+      "dayLow": "29731.46",
+      "dayClose": "31518.71",
+      "term": "芒种",
+      "date": "2022-06-06",
+      "year": 2022,
+      "atLocal": "2022-06-06T00:25:49+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": 1.2758792348185846,
+        "-1": 0.3273814909160851,
+        "0": 5.2704512586546075,
+        "1": -5.208463547037156,
+        "2": 1.924694930331465
+      }
+    },
+    {
+      "before2Pct": 1.7555744861563662,
+      "dayPct": 3.6996387954548844,
+      "after2Pct": 3.2020808998195647,
+      "dayRangePct": 4.474116986550471,
+      "reversal": false,
+      "dayOpen": "20127.1",
+      "dayHigh": "21010",
+      "dayLow": "20109.49",
+      "dayClose": "20871.73",
+      "term": "小暑",
+      "date": "2022-07-07",
+      "year": 2022,
+      "atLocal": "2022-07-07T10:38:01+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -1.395561644805193,
+        "-1": 3.1956816664632877,
+        "0": 3.6996387954548844,
+        "1": 5.179204033779646,
+        "2": -1.8797662067542398
+      }
+    },
+    {
+      "before2Pct": 1.1936780195802439,
+      "dayPct": -0.7928621721148651,
+      "after2Pct": 0.2673691113972816,
+      "dayRangePct": 1.7777348789549388,
+      "reversal": false,
+      "dayOpen": "23207.06",
+      "dayHigh": "23264.69",
+      "dayLow": "22852.13",
+      "dayClose": "23023.06",
+      "term": "立秋",
+      "date": "2022-08-07",
+      "year": 2022,
+      "atLocal": "2022-08-07T20:29:08+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.2324129258214685,
+        "-1": 0.9590361697370036,
+        "0": -0.7928621721148651,
+        "1": 4.223789162343345,
+        "2": -3.7871807150183185
+      }
+    },
+    {
+      "before2Pct": 0.13409444816648325,
+      "dayPct": -4.76167648716607,
+      "after2Pct": 12.7191074578263,
+      "dayRangePct": 6.697299694863956,
+      "reversal": false,
+      "dayOpen": "19817.39",
+      "dayHigh": "19854.23",
+      "dayLow": "18527",
+      "dayClose": "18873.75",
+      "term": "白露",
+      "date": "2022-09-07",
+      "year": 2022,
+      "atLocal": "2022-09-07T23:32:18+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": 0.3213921570410701,
+        "-1": -0.18679821612488134,
+        "0": -4.76167648716607,
+        "1": 1.9981741817860064,
+        "2": 10.506429582103134
+      }
+    },
+    {
+      "before2Pct": -2.1285274465118813,
+      "dayPct": -0.45095615576349446,
+      "after2Pct": -1.1350791959269932,
+      "dayRangePct": 1.6515649899889673,
+      "reversal": false,
+      "dayOpen": "19578.4",
+      "dayHigh": "19648.35",
+      "dayLow": "19325",
+      "dayClose": "19490.11",
+      "term": "寒露",
+      "date": "2022-10-08",
+      "year": 2022,
+      "atLocal": "2022-10-08T15:22:28+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.04558880794764885,
+        "-1": -2.162077617322206,
+        "0": -0.45095615576349446,
+        "1": 0.27121225103602975,
+        "2": -1.3992082888149304
+      }
+    },
+    {
+      "before2Pct": 1.918160899245575,
+      "dayPct": -2.2194070063097557,
+      "after2Pct": -17.68206079269109,
+      "dayRangePct": 3.318847682225207,
+      "reversal": true,
+      "dayOpen": "21241.71",
+      "dayHigh": "21280",
+      "dayLow": "20575.02",
+      "dayClose": "20770.27",
+      "term": "立冬",
+      "date": "2022-11-07",
+      "year": 2022,
+      "atLocal": "2022-11-07T18:45:30+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 2.1880919435227106,
+        "-1": -0.2743585975787525,
+        "0": -2.2194070063097557,
+        "1": -6.023083004257049,
+        "2": -12.405361733608073
+      }
+    },
+    {
+      "before2Pct": -0.26963373381067274,
+      "dayPct": -0.8591905957105823,
+      "after2Pct": 2.0389983526005038,
+      "dayRangePct": 2.71245876409145,
+      "reversal": true,
+      "dayOpen": "16984.59",
+      "dayHigh": "17140.22",
+      "dayLow": "16679.52",
+      "dayClose": "16838.66",
+      "term": "大雪",
+      "date": "2022-12-07",
+      "year": 2022,
+      "atLocal": "2022-12-07T11:46:16+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": 0.3291739354840225,
+        "-1": -0.5969593698918274,
+        "0": -0.8591905957105823,
+        "1": 0.4759879942940828,
+        "2": 1.5536850890087137
+      }
+    },
+    {
+      "before2Pct": 0.7091740728254347,
+      "dayPct": -0.061727918766058903,
+      "after2Pct": 0.5956694138693744,
+      "dayRangePct": 1.4122042030777302,
+      "reversal": false,
+      "dayOpen": "16848.13",
+      "dayHigh": "16988",
+      "dayLow": "16750.07",
+      "dayClose": "16837.73",
+      "term": "小寒",
+      "date": "2023-01-05",
+      "year": 2023,
+      "atLocal": "2023-01-05T23:04:51+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -0.34364815784502895,
+        "-1": 1.0562102511595879,
+        "0": -0.061727918766058903,
+        "1": -0.021441485532639762,
+        "2": 0.6186778449289387
+      }
+    },
+    {
+      "before2Pct": 2.735870363174062,
+      "dayPct": -0.7858418024298666,
+      "after2Pct": -1.6296102135274766,
+      "dayRangePct": 2.168498137469373,
+      "reversal": true,
+      "dayOpen": "23610.35",
+      "dayHigh": "23720",
+      "dayLow": "23208.01",
+      "dayClose": "23424.81",
+      "term": "立春",
+      "date": "2023-02-04",
+      "year": 2023,
+      "atLocal": "2023-02-04T10:42:33+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 3.7654662402648578,
+        "-1": -0.9921921327496794,
+        "0": -0.7858418024298666,
+        "1": -1.370609213724705,
+        "2": -0.26152096820758586
+      }
+    },
+    {
+      "before2Pct": -0.37535998351315486,
+      "dayPct": 0.010699760789014627,
+      "after2Pct": -0.2682777120141122,
+      "dayRangePct": 3.322525386074119,
+      "reversal": false,
+      "dayOpen": "28038.01",
+      "dayHigh": "28799.99",
+      "dayLow": "27868.42",
+      "dayClose": "28041.01",
+      "term": "清明",
+      "date": "2023-04-05",
+      "year": 2023,
+      "atLocal": "2023-04-05T09:13:04+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": -0.29303235365704167,
+        "-1": -0.0970951275705267,
+        "0": 0.010699760789014627,
+        "1": 0.26107323211157957,
+        "2": -0.5310863365678732
+      }
+    },
+    {
+      "before2Pct": 3.767559514035075,
+      "dayPct": -2.573447459206444,
+      "after2Pct": -2.500095195475612,
+      "dayRangePct": 4.955089397504009,
+      "reversal": true,
+      "dayOpen": "29383.93",
+      "dayHigh": "29850",
+      "dayLow": "28394",
+      "dayClose": "28627.75",
+      "term": "立夏",
+      "date": "2023-05-06",
+      "year": 2023,
+      "atLocal": "2023-05-06T02:18:46+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": 1.9829242013795823,
+        "-1": 1.7545864490852034,
+        "0": -2.573447459206444,
+        "1": 1.2459603057573874,
+        "2": -3.698692859846544
+      }
+    },
+    {
+      "before2Pct": -4.7582762979247555,
+      "dayPct": 0.2775545810545151,
+      "after2Pct": 2.5099577908566673,
+      "dayRangePct": 3.0466384778500597,
+      "reversal": true,
+      "dayOpen": "25998.49",
+      "dayHigh": "26144",
+      "dayLow": "25351.92",
+      "dayClose": "26070.65",
+      "term": "芒种",
+      "date": "2023-06-06",
+      "year": 2023,
+      "atLocal": "2023-06-06T06:18:21+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": -0.4452496693581814,
+        "-1": -4.327706628129505,
+        "0": 0.2775545810545151,
+        "1": 1.0848574458578084,
+        "2": 1.4055351030921772
+      }
+    },
+    {
+      "before2Pct": -1.825528989431352,
+      "dayPct": -0.03163795133412176,
+      "after2Pct": -0.1300185190851197,
+      "dayRangePct": 2.493149495568714,
+      "reversal": false,
+      "dayOpen": "30406.52",
+      "dayHigh": "30473.95",
+      "dayLow": "29715.87",
+      "dayClose": "30396.9",
+      "term": "小暑",
+      "date": "2023-07-07",
+      "year": 2023,
+      "atLocal": "2023-07-07T16:30:41+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": -1.9786224558826997,
+        "-1": 0.1657531191139275,
+        "0": -0.03163795133412176,
+        "1": -0.6054480786243567,
+        "2": 0.47965591614246883
+      }
+    },
+    {
+      "before2Pct": -0.6574806216782113,
+      "dayPct": 2.4088517267751826,
+      "after2Pct": -0.24478161779505436,
+      "dayRangePct": 3.4669101266297178,
+      "reversal": false,
+      "dayOpen": "28817.88",
+      "dayHigh": "29659.62",
+      "dayLow": "28660.53",
+      "dayClose": "29512.06",
+      "term": "立秋",
+      "date": "2023-08-08",
+      "year": 2023,
+      "atLocal": "2023-08-08T02:22:53+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": -0.12165097855095724,
+        "-1": -0.5364479504326649,
+        "0": 2.4088517267751826,
+        "1": 0.7822575343876834,
+        "2": -1.0190674205053445
+      }
+    },
+    {
+      "before2Pct": 0.06689711596510162,
+      "dayPct": 0.28868432004671124,
+      "after2Pct": -0.25514272663223986,
+      "dayRangePct": 3.1846508146519326,
+      "reversal": true,
+      "dayOpen": "25758.24",
+      "dayHigh": "26460.41",
+      "dayLow": "25640.1",
+      "dayClose": "25832.6",
+      "term": "白露",
+      "date": "2023-09-08",
+      "year": 2023,
+      "atLocal": "2023-09-08T05:26:43+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": -0.637387329639618,
+        "-1": 0.7120311008741353,
+        "0": 0.28868432004671124,
+        "1": 0.22076755727259353,
+        "2": -0.4693259745080672
+      }
+    },
+    {
+      "before2Pct": 1.4574807109881505,
+      "dayPct": -0.15908850299435465,
+      "after2Pct": -1.7972261746630156,
+      "dayRangePct": 1.4354446895628215,
+      "reversal": true,
+      "dayOpen": "27959.28",
+      "dayHigh": "28109.94",
+      "dayLow": "27708.6",
+      "dayClose": "27914.8",
+      "term": "寒露",
+      "date": "2023-10-08",
+      "year": 2023,
+      "atLocal": "2023-10-08T21:15:34+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 1.4532349873753228,
+        "-1": 0.004936081323728244,
+        "0": -0.15908850299435465,
+        "1": -1.6745691600717028,
+        "2": -0.12474597216969824
+      }
+    },
+    {
+      "before2Pct": -0.5052436210844693,
+      "dayPct": 1.397972505178129,
+      "after2Pct": 5.320120263352894,
+      "dayRangePct": 3.9878574852212814,
+      "reversal": true,
+      "dayOpen": "34737.45",
+      "dayHigh": "35963",
+      "dayLow": "34577.72",
+      "dayClose": "35223.07",
+      "term": "立冬",
+      "date": "2023-11-08",
+      "year": 2023,
+      "atLocal": "2023-11-08T00:35:35+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.5243764294112508,
+        "-1": -1.0242491294822653,
+        "0": 1.397972505178129,
+        "1": 5.354842189837804,
+        "2": -0.032876307742720795
+      }
+    },
+    {
+      "before2Pct": 6.095032986694587,
+      "dayPct": -0.2612527203833077,
+      "after2Pct": 0.8922891761592753,
+      "dayRangePct": 2.9626227498384727,
+      "reversal": false,
+      "dayOpen": "43785.19",
+      "dayHigh": "44143.72",
+      "dayLow": "42846.53",
+      "dayClose": "43670.8",
+      "term": "大雪",
+      "date": "2023-12-07",
+      "year": 2023,
+      "atLocal": "2023-12-07T17:32:55+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 2.4265035315281174,
+        "-1": 3.58647333394844,
+        "0": -0.2612527203833077,
+        "1": 0.222413959710397,
+        "2": 0.6683656263622979
+      }
+    },
+    {
+      "before2Pct": 1.169791953824748,
+      "dayPct": 0.864322106795474,
+      "after2Pct": 2.5074006346915514,
+      "dayRangePct": 3.053317783806436,
+      "reversal": false,
+      "dayOpen": "43525.44",
+      "dayHigh": "44443.37",
+      "dayLow": "43114.4",
+      "dayClose": "43901.64",
+      "term": "小寒",
+      "date": "2024-01-06",
+      "year": 2024,
+      "atLocal": "2024-01-06T04:49:22+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 2.4951083371414464,
+        "-1": -1.2930533025608206,
+        "0": 0.864322106795474,
+        "1": 0.40347012093397877,
+        "2": 2.095475894631361
+      }
+    },
+    {
+      "before2Pct": 1.4411876826633911,
+      "dayPct": -0.4218642894175531,
+      "after2Pct": 0.6649822747490767,
+      "dayRangePct": 1.2533447463560097,
+      "reversal": false,
+      "dayOpen": "43108.65",
+      "dayHigh": "43257.12",
+      "dayLow": "42716.82",
+      "dayClose": "42926.79",
+      "term": "立春",
+      "date": "2024-02-04",
+      "year": 2024,
+      "atLocal": "2024-02-04T16:27:07+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 1.6921277667179653,
+        "-1": -0.24233240777102086,
+        "0": -0.4218642894175531,
+        "1": -0.7713943475807793,
+        "2": 1.444018235683533
+      }
+    },
+    {
+      "before2Pct": 7.583032184521355,
+      "dayPct": 0.370032951598151,
+      "after2Pct": 0.8069626957165252,
+      "dayRangePct": 6.30685112508232,
+      "reversal": false,
+      "dayOpen": "66540.02",
+      "dayHigh": "69324.58",
+      "dayLow": "65128",
+      "dayClose": "66786.24",
+      "term": "惊蛰",
+      "date": "2024-03-05",
+      "year": 2024,
+      "atLocal": "2024-03-05T10:22:45+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": 0.5715925719321223,
+        "-1": 6.971607717041801,
+        "0": 0.370032951598151,
+        "1": -0.4210728351953112,
+        "2": 1.233182659787754
+      }
+    },
+    {
+      "before2Pct": -3.4966496462049843,
+      "dayPct": 2.7860485126116665,
+      "after2Pct": 0.6502232810989809,
+      "dayRangePct": 4.47331891398397,
+      "reversal": true,
+      "dayOpen": "65851.33",
+      "dayHigh": "68019.69",
+      "dayLow": "65073.95",
+      "dayClose": "67685.98",
+      "term": "清明",
+      "date": "2024-04-04",
+      "year": 2024,
+      "atLocal": "2024-04-04T15:02:17+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -4.889494017434737,
+        "-1": 1.4572881355932203,
+        "0": 2.7860485126116665,
+        "1": 0.8268329719093969,
+        "2": -0.17423987105282437
+      }
+    },
+    {
+      "before2Pct": 7.329048194486333,
+      "dayPct": 1.2452203769449104,
+      "after2Pct": -1.0741810083779537,
+      "dayRangePct": 2.7162544193489735,
+      "reversal": true,
+      "dayOpen": "63632.11",
+      "dayHigh": "64636.75",
+      "dayLow": "62908.34",
+      "dayClose": "64424.47",
+      "term": "立夏",
+      "date": "2024-05-05",
+      "year": 2024,
+      "atLocal": "2024-05-05T08:10:05+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 4.072602437488993,
+        "-1": 3.1067872748845193,
+        "0": 1.2452203769449104,
+        "1": -1.2202185922964048,
+        "2": 0.1478573103105412
+      }
+    },
+    {
+      "before2Pct": 3.4958859965281097,
+      "dayPct": 1.608536253293945,
+      "after2Pct": -0.7760486942590746,
+      "dayRangePct": 2.406717029441066,
+      "reversal": true,
+      "dayOpen": "70474.01",
+      "dayHigh": "71778.48",
+      "dayLow": "70082.37",
+      "dayClose": "71607.61",
+      "term": "芒种",
+      "date": "2024-06-05",
+      "year": 2024,
+      "atLocal": "2024-06-05T12:09:54+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 2.214993155932399,
+        "-1": 1.2500520789185974,
+        "0": 1.608536253293945,
+        "1": -0.45618050146059874,
+        "2": -0.32526338043007547
+      }
+    },
+    {
+      "before2Pct": -5.660740323110477,
+      "dayPct": 1.1054624239429083,
+      "after2Pct": -2.7612769835377393,
+      "dayRangePct": 2.8650449384576477,
+      "reversal": false,
+      "dayOpen": "56697.54",
+      "dayHigh": "57450",
+      "dayLow": "55825.59",
+      "dayClose": "57324.31",
+      "term": "小暑",
+      "date": "2024-07-06",
+      "year": 2024,
+      "atLocal": "2024-07-06T22:20:03+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -3.3147929163448,
+        "-1": -2.440632814019243,
+        "0": 1.1054624239429083,
+        "1": -0.8763892998096429,
+        "2": -1.8912275316515852
+      }
+    },
+    {
+      "before2Pct": -4.412238750804394,
+      "dayPct": -0.587691579232393,
+      "after2Pct": 6.634198061580782,
+      "dayRangePct": 3.8457612629662865,
+      "reversal": true,
+      "dayOpen": "56430.96",
+      "dayHigh": "57757.15",
+      "dayLow": "55586.95",
+      "dayClose": "56099.32",
+      "term": "立秋",
+      "date": "2024-08-07",
+      "year": 2024,
+      "atLocal": "2024-08-07T08:09:16+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -7.887645165732731,
+        "-1": 3.773007889312401,
+        "0": -0.587691579232393,
+        "1": 6.004653888852841,
+        "2": 0.5938835226876218
+      }
+    },
+    {
+      "before2Pct": -7.1248403751733855,
+      "dayPct": 1.4587680637490812,
+      "after2Pct": 1.0991963760253398,
+      "dayRangePct": 4.273422751596051,
+      "reversal": true,
+      "dayOpen": "53994.19",
+      "dayHigh": "54837.4",
+      "dayLow": "52530",
+      "dayClose": "54781.84",
+      "term": "白露",
+      "date": "2024-09-07",
+      "year": 2024,
+      "atLocal": "2024-09-07T11:11:20+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": -3.742066921332482,
+        "-1": -3.5163491239236895,
+        "0": 1.4587680637490812,
+        "1": -1.9910430171750346,
+        "2": 3.153305509903343
+      }
+    },
+    {
+      "before2Pct": 2.38431164859802,
+      "dayPct": -2.169474959498043,
+      "after2Pct": -2.4544052467897433,
+      "dayRangePct": 3.2191002672893467,
+      "reversal": true,
+      "dayOpen": "63638.9",
+      "dayHigh": "63898.6",
+      "dayLow": "61850",
+      "dayClose": "62258.27",
+      "term": "寒露",
+      "date": "2024-10-08",
+      "year": 2024,
+      "atLocal": "2024-10-08T02:59:57+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.8828454144548743,
+        "-1": 1.4891034617373704,
+        "0": -2.169474959498043,
+        "1": 0.013170943100562079,
+        "2": -2.467251229634702
+      }
+    },
+    {
+      "before2Pct": 8.429798752912545,
+      "dayPct": 2.3906744100333643,
+      "after2Pct": 0.2254765976138023,
+      "dayRangePct": 3.1296734339132253,
+      "reversal": false,
+      "dayOpen": "74396.58",
+      "dayHigh": "76509.56",
+      "dayLow": "74181.19",
+      "dayClose": "76175.16",
+      "term": "立冬",
+      "date": "2024-11-07",
+      "year": 2024,
+      "atLocal": "2024-11-07T06:20:04+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 1.4694807824852174,
+        "-1": 6.864200240541688,
+        "0": 2.3906744100333643,
+        "1": 0.4461616862540928,
+        "2": -0.21970484977774013
+      }
+    },
+    {
+      "before2Pct": 5.8972124725833845,
+      "dayPct": -1.9398316142159298,
+      "after2Pct": 0.5494551367325907,
+      "dayRangePct": 9.93281021346305,
+      "reversal": false,
+      "dayOpen": "101381.48",
+      "dayHigh": "102125.89",
+      "dayLow": "92055.86",
+      "dayClose": "99414.85",
+      "term": "大雪",
+      "date": "2024-12-06",
+      "year": 2024,
+      "atLocal": "2024-12-06T23:17:03+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": 0.13604114826918348,
+        "-1": 5.752991405739034,
+        "0": -1.9398316142159298,
+        "1": 0.4140930655732016,
+        "2": 0.12438285599985016
+      }
+    },
+    {
+      "before2Pct": 1.3356668864966452,
+      "dayPct": 0.3612167884445036,
+      "after2Pct": -0.10290477160803782,
+      "dayRangePct": 1.5473755894747083,
+      "reversal": true,
+      "dayOpen": "97650.5",
+      "dayHigh": "98761.02",
+      "dayLow": "97250",
+      "dayClose": "98003.23",
+      "term": "小寒",
+      "date": "2025-01-05",
+      "year": 2025,
+      "atLocal": "2025-01-05T10:32:47+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 1.144067159009717,
+        "-1": 0.19635110771227052,
+        "0": 0.3612167884445036,
+        "1": 4.248645682392305,
+        "2": -4.174212723182278
+      }
+    },
+    {
+      "before2Pct": -5.83839048443415,
+      "dayPct": -0.27938116086154674,
+      "after2Pct": -0.8749816719170145,
+      "dayRangePct": 8.573733398402792,
+      "reversal": false,
+      "dayOpen": "99319.51",
+      "dayHigh": "99693.4",
+      "dayLow": "91178.01",
+      "dayClose": "99042.03",
+      "term": "立春",
+      "date": "2025-02-03",
+      "year": 2025,
+      "atLocal": "2025-02-03T22:10:28+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": -3.2362006376703323,
+        "-1": -2.689218348093157,
+        "0": -0.27938116086154674,
+        "1": 0.41512350603402903,
+        "2": -1.2905887668307334
+      }
+    },
+    {
+      "before2Pct": -5.159479157229286,
+      "dayPct": 6.522688277375598,
+      "after2Pct": 0.1288382131037713,
+      "dayRangePct": 10.84319781049735,
+      "reversal": true,
+      "dayOpen": "82911.98",
+      "dayHigh": "90943.34",
+      "dayLow": "81953.03",
+      "dayClose": "88320.07",
+      "term": "惊蛰",
+      "date": "2025-03-05",
+      "year": 2025,
+      "atLocal": "2025-03-05T16:07:18+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 2.910877262340434,
+        "-1": -7.842052276420966,
+        "0": 6.522688277375598,
+        "1": 2.823480552042135,
+        "2": -2.626910641875692
+      }
+    },
+    {
+      "before2Pct": -3.83519462941198,
+      "dayPct": 0.9896242112872808,
+      "after2Pct": -0.3788975836873514,
+      "dayRangePct": 3.9325625553481274,
+      "reversal": false,
+      "dayOpen": "82014.97",
+      "dayHigh": "84720.67",
+      "dayLow": "81495.38",
+      "dayClose": "82826.61",
+      "term": "清明",
+      "date": "2025-04-04",
+      "year": 2025,
+      "atLocal": "2025-04-04T20:48:36+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 1.7631621897696563,
+        "-1": -5.492843800235964,
+        "0": 0.9896242112872808,
+        "1": -0.29303747168529803,
+        "2": -0.0861245513816555
+      }
+    },
+    {
+      "before2Pct": -1.9431915731455331,
+      "dayPct": -1.783262533533715,
+      "after2Pct": 3.392674429740823,
+      "dayRangePct": 2.380364818330326,
+      "reversal": true,
+      "dayOpen": "95471.08",
+      "dayHigh": "95772.57",
+      "dayLow": "93500.01",
+      "dayClose": "93768.58",
+      "term": "立夏",
+      "date": "2025-05-05",
+      "year": 2025,
+      "atLocal": "2025-05-05T13:57:13+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -0.9478855524407521,
+        "-1": -1.0036091230368147,
+        "0": -1.783262533533715,
+        "1": 0.8455690305769962,
+        "2": 2.5257484524595513
+      }
+    },
+    {
+      "before2Pct": 0.8165072551681584,
+      "dayPct": -0.7408883921473709,
+      "after2Pct": 1.0093361851932852,
+      "dayRangePct": 1.9830807307795442,
+      "reversal": false,
+      "dayOpen": "105353.25",
+      "dayHigh": "105999.68",
+      "dayLow": "103910.44",
+      "dayClose": "104572.7",
+      "term": "芒种",
+      "date": "2025-06-05",
+      "year": 2025,
+      "atLocal": "2025-06-05T17:56:32+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 2.1073399145779823,
+        "-1": -1.2641825867613727,
+        "0": -0.7408883921473709,
+        "1": 0.5828290349994821,
+        "2": 0.4192239721920564
+      }
+    },
+    {
+      "before2Pct": 1.2439826775458618,
+      "dayPct": -0.58255302076037,
+      "after2Pct": 0.7172380224047786,
+      "dayRangePct": 1.6335551861730813,
+      "reversal": false,
+      "dayOpen": "108944.59",
+      "dayHigh": "109741.64",
+      "dayLow": "107961.97",
+      "dayClose": "108309.93",
+      "term": "小暑",
+      "date": "2025-07-07",
+      "year": 2025,
+      "atLocal": "2025-07-07T04:04:59+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.4621489508019999,
+        "-1": 0.7782371120955605,
+        "0": -0.58255302076037,
+        "1": -0.028723128156393416,
+        "2": 0.7461754754992712
+      }
+    },
+    {
+      "before2Pct": 0.5217083522979745,
+      "dayPct": 1.1398224353237085,
+      "after2Pct": 0.15368452216963482,
+      "dayRangePct": 2.2365836604801195,
+      "reversal": false,
+      "dayOpen": "115417.1",
+      "dayHigh": "116850",
+      "dayLow": "114268.6",
+      "dayClose": "116732.65",
+      "term": "立秋",
+      "date": "2025-08-07",
+      "year": 2025,
+      "atLocal": "2025-08-07T13:51:35+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -1.6643334279170319,
+        "-1": 2.2239550157049663,
+        "0": 1.1398224353237085,
+        "1": -0.445205385571679,
+        "2": 0.6015594647584456
+      }
+    },
+    {
+      "before2Pct": 0.8122260725427664,
+      "dayPct": 0.837280940201025,
+      "after2Pct": -0.40613672200694584,
+      "dayRangePct": 1.2773797008737846,
+      "reversal": true,
+      "dayOpen": "110400.22",
+      "dayHigh": "111403.23",
+      "dayLow": "109993",
+      "dayClose": "111324.58",
+      "term": "白露",
+      "date": "2025-09-07",
+      "year": 2025,
+      "atLocal": "2025-09-07T16:51:57+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 1.1008966210241138,
+        "-1": -0.2870042254001991,
+        "0": 0.837280940201025,
+        "1": 1.1762361915041584,
+        "2": -1.563976851754026
+      }
+    },
+    {
+      "before2Pct": -0.7499519480751021,
+      "dayPct": 0.2572113002684572,
+      "after2Pct": -2.586148285035935,
+      "dayRangePct": 2.2590168732319134,
+      "reversal": false,
+      "dayOpen": "121911.44",
+      "dayHigh": "123390",
+      "dayLow": "120636",
+      "dayClose": "122225.01",
+      "term": "寒露",
+      "date": "2025-10-08",
+      "year": 2025,
+      "atLocal": "2025-10-08T08:41:13+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 1.811270600354766,
+        "-1": -2.515657189353399,
+        "0": 0.2572113002684572,
+        "1": -0.8276538492408387,
+        "2": -1.7671649918320875
+      }
+    },
+    {
+      "before2Pct": -1.1519535775039824,
+      "dayPct": -1.2180981475057688,
+      "after2Pct": 2.9911739821009493,
+      "dayRangePct": 3.2386407490671525,
+      "reversal": true,
+      "dayOpen": "101964.69",
+      "dayHigh": "102472.27",
+      "dayLow": "99170",
+      "dayClose": "100722.66",
+      "term": "立冬",
+      "date": "2025-11-07",
+      "year": 2025,
+      "atLocal": "2025-11-07T12:04:04+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.5396607406360389,
+        "-1": -1.6825343408547089,
+        "0": -1.2180981475057688,
+        "1": 0.9549787505611945,
+        "2": 2.0169339409904397
+      }
+    },
+    {
+      "before2Pct": -3.455286847824205,
+      "dayPct": -0.2526764377133367,
+      "after2Pct": 3.5351125601340745,
+      "dayRangePct": 2.5364771324203863,
+      "reversal": true,
+      "dayOpen": "89778.85",
+      "dayHigh": "90010.4",
+      "dayLow": "87733.18",
+      "dayClose": "89552",
+      "term": "大雪",
+      "date": "2025-12-07",
+      "year": 2025,
+      "atLocal": "2025-12-07T05:04:37+08:00",
+      "pivot": "low",
+      "daily": {
+        "-2": -2.702996247311193,
+        "-1": -0.762737334347752,
+        "0": -0.2526764377133367,
+        "1": 0.46436798910359345,
+        "2": 3.0634125043446963
+      }
+    },
+    {
+      "before2Pct": 2.1705046880300314,
+      "dayPct": 2.909561490006399,
+      "after2Pct": -2.8628618506486596,
+      "dayRangePct": 3.4753430278551916,
+      "reversal": true,
+      "dayOpen": "91291.42",
+      "dayHigh": "93999.99",
+      "dayLow": "90827.3",
+      "dayClose": "93947.6",
+      "term": "小寒",
+      "date": "2026-01-05",
+      "year": 2026,
+      "atLocal": "2026-01-05T16:23:10+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.6376575887531598,
+        "-1": 1.5183817805751396,
+        "0": 2.909561490006399,
+        "1": -0.34674648421034704,
+        "2": -2.5248702653141617
+      }
+    },
+    {
+      "before2Pct": 0.685466942593788,
+      "dayPct": -5.186333625444043,
+      "after2Pct": -7.2571017691462965,
+      "dayRangePct": 6.680428023105654,
+      "reversal": true,
+      "dayOpen": "78064.01",
+      "dayHigh": "78074.01",
+      "dayLow": "72859",
+      "dayClose": "74015.35",
+      "term": "立春",
+      "date": "2026-02-04",
+      "year": 2026,
+      "atLocal": "2026-02-04T04:02:08+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 1.6777727547978236,
+        "-1": -0.9759444539863698,
+        "0": -5.186333625444043,
+        "1": -8.97975771515534,
+        "2": 1.891034585126911
+      }
+    },
+    {
+      "before2Pct": 6.1828042510141366,
+      "dayPct": -2.3917234297403325,
+      "after2Pct": -5.2997985721040575,
+      "dayRangePct": 3.99188032121896,
+      "reversal": true,
+      "dayOpen": "73426.55",
+      "dayHigh": "74100",
+      "dayLow": "71168.9",
+      "dayClose": "71670.39",
+      "term": "惊蛰",
+      "date": "2026-03-05",
+      "year": 2026,
+      "atLocal": "2026-03-05T21:59:00+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": -2.0656393324660707,
+        "-1": 8.425606387052008,
+        "0": -2.3917234297403325,
+        "1": -4.427451286246243,
+        "2": -0.9103868925309879
+      }
+    },
+    {
+      "before2Pct": 0.7958858510678086,
+      "dayPct": -0.12307328782748485,
+      "after2Pct": 1.2797747353938898,
+      "dayRangePct": 1.7989004443670003,
+      "reversal": false,
+      "dayOpen": "67374.49",
+      "dayHigh": "67812",
+      "dayLow": "66600",
+      "dayClose": "67291.57",
+      "term": "清明",
+      "date": "2026-04-05",
+      "year": 2026,
+      "atLocal": "2026-04-05T02:40:00+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -0.0394509481243221,
+        "-1": 0.8356664775406777,
+        "0": -0.12307328782748485,
+        "1": 3.9891498974685224,
+        "2": -2.605454163504864
+      }
+    },
+    {
+      "before2Pct": 1.9653550241687652,
+      "dayPct": 1.908966847153819,
+      "after2Pct": -2.0439953322566837,
+      "dayRangePct": 2.649301145964918,
+      "reversal": true,
+      "dayOpen": "80026.01",
+      "dayHigh": "81735.3",
+      "dayLow": "79615.17",
+      "dayClose": "81553.68",
+      "term": "立夏",
+      "date": "2026-05-05",
+      "year": 2026,
+      "atLocal": "2026-05-05T19:48:44+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.22081065925551513,
+        "-1": 1.7407007121949867,
+        "0": 1.908966847153819,
+        "1": 0.17607647899031176,
+        "2": -2.2161816265250476
+      }
+    },
+    {
+      "before2Pct": -4.980465580021436,
+      "dayPct": -5.368308751836208,
+      "after2Pct": 2.7836058439560536,
+      "dayRangePct": 6.380726484864193,
+      "reversal": true,
+      "dayOpen": "63813.58",
+      "dayHigh": "64081.78",
+      "dayLow": "60010.01",
+      "dayClose": "60387.87",
+      "term": "芒种",
+      "date": "2026-06-05",
+      "year": 2026,
+      "atLocal": "2026-06-05T23:48:21+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": -1.7702184001460428,
+        "-1": -3.2696979352323807,
+        "0": -5.368308751836208,
+        "1": 0.5965934212604984,
+        "2": 2.1740254104899344
+      }
+    },
+    {
+      "before2Pct": 0.9863836907718538,
+      "dayPct": 0.6112138497291412,
+      "after2Pct": -1.691976129189398,
+      "dayRangePct": 3.269061810677723,
+      "reversal": true,
+      "dayOpen": "63499.87",
+      "dayHigh": "64658.85",
+      "dayLow": "62583",
+      "dayClose": "63887.99",
+      "term": "小暑",
+      "date": "2026-07-07",
+      "year": 2026,
+      "atLocal": "2026-07-07T09:56:57+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": -0.31017214840490503,
+        "-1": 1.3005899068327191,
+        "0": 0.6112138497291412,
+        "1": -3.526679969970515,
+        "2": 1.9078747845310537
+      }
+    },
+    {
+      "before2Pct": 0.7804164510202132,
+      "dayPct": 0.44801894598699443,
+      "after2Pct": 0.48370945672493204,
+      "dayRangePct": 1.9352671550494935,
+      "reversal": false,
+      "dayOpen": "64570.93",
+      "dayHigh": "65348.97",
+      "dayLow": "64099.35",
+      "dayClose": "64860.22",
+      "term": "立秋",
+      "date": "2026-08-07",
+      "year": 2026,
+      "atLocal": "2026-08-07T19:42:43+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": 0.3998225716128315,
+        "-1": 0.3790782390436129,
+        "0": 0.44801894598699443,
+        "1": 0.25966197074524466,
+        "2": 0.22346722657519252
+      }
+    },
+    {
+      "before2Pct": 0.3568238147789776,
+      "dayPct": -1.120953360501421,
+      "after2Pct": -0.29560344122093435,
+      "dayRangePct": 2.381544435782083,
+      "reversal": true,
+      "dayOpen": "79706.26",
+      "dayHigh": "80564.24",
+      "dayLow": "78666",
+      "dayClose": "78812.79",
+      "term": "白露",
+      "date": "2026-09-07",
+      "year": 2026,
+      "atLocal": "2026-09-07T22:41:16+08:00",
+      "pivot": "high",
+      "daily": {
+        "-2": 0.47726759079082304,
+        "-1": -0.11987166739283885,
+        "0": -1.120953360501421,
+        "1": 0.10778398288144206,
+        "2": -0.4029531051964512
+      }
+    },
+    {
+      "before2Pct": -2.1501021051286933,
+      "dayPct": -2.944205885103108,
+      "after2Pct": 2.4888023840487996,
+      "dayRangePct": 3.3506558583700765,
+      "reversal": true,
+      "dayOpen": "83417.4",
+      "dayHigh": "83655.03",
+      "dayLow": "80860",
+      "dayClose": "80961.42",
+      "term": "寒露",
+      "date": "2026-10-08",
+      "year": 2026,
+      "atLocal": "2026-10-08T14:29:17+08:00",
+      "pivot": null,
+      "daily": {
+        "-2": 0.5329947541576653,
+        "-1": -2.6688719120002102,
+        "0": -2.944205885103108,
+        "1": 2.280159824252116,
+        "2": 0.20399123364217822
+      }
+    }
+  ]
+}
