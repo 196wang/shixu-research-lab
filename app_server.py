@@ -544,6 +544,10 @@ class Handler(BaseHTTPRequestHandler):
                 if parsed_route.query or not isinstance(body, dict) or set(body) != {'symbol', 'days'}:
                     raise ValueError('Coinbase 更新只接受 symbol 与 days')
                 return self.send(200, self.server.coinbase.refresh(body['symbol'], body['days']))
+            if route == '/api/coinbase-forward-refresh-market':
+                if parsed_route.query or not isinstance(body, dict) or body:
+                    raise ValueError('公开计划行情更新只接受空 JSON 对象')
+                return self.send(200, self.server.coinbase_forward.refresh_public_market())
             if route in ('/api/coinbase-forward-register', '/api/coinbase-forward-evaluate'):
                 if parsed_route.query or not isinstance(body, dict) or body:
                     raise ValueError('前瞻计划操作只接受空 JSON 对象')

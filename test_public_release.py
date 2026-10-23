@@ -8,7 +8,7 @@ import json
 import threading
 import unittest
 from unittest.mock import Mock, patch
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 from app_server import Handler, make_server
 from coinbase_feed import local_open, ms
@@ -97,6 +97,11 @@ class PublicReleaseTests(unittest.TestCase):
         self.assertEqual(first['rows'][0]['directionStatus'], 'scored')
         self.assertEqual(first['rows'][0]['directionResults']['DAY-STEM-FIRE-DOWN'], 'correct')
         self.assertEqual(first['rows'][0]['timeStatus'], 'late_registration')
+        evidence = first['rows'][0]['marketEvidence']
+        self.assertEqual((evidence['open'], evidence['high'], evidence['low'], evidence['close']),
+                         ('100', '101', '89', '90'))
+        self.assertEqual(evidence['candleSha256'], 'a' * 64)
+        self.assertEqual(first['rows'][1]['marketEvidence']['status'], 'missing')
         self.assertFalse(store.exists())
         market.refresh.assert_not_called()
         bar['request_id'], bar['body_sha256'] = 'synthetic-source-b', 'b' * 64
@@ -107,6 +112,17 @@ class PublicReleaseTests(unittest.TestCase):
         market._snapshot.return_value = ({**state, 'provider': 'other'}, {opened: bar}, {})
         with self.assertRaises(CoinbaseForwardError):
             study.preview_public()
+
+    def test_explicit_public_market_refresh_only_fetches_closed_plan_span(self):
+        market = Mock()
+        study = CoinbaseForward(ROOT / 'unused_local_registration_for_test', market, base=ROOT,
+                                clock=lambda: datetime(2026, 10, 23, 12, tzinfo=timezone.utc))
+        market.refresh_range.return_value = {'range': {'start': '2026-10-14', 'end': '2026-10-22'}}
+        result = study.refresh_public_market()
+        self.assertEqual(result['range']['start'], '2026-10-14')
+        market.refresh_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
+                                                     date(2026, 10, 22))
+        self.assertFalse((ROOT / 'unused_local_registration_for_test').exists())
 
     def test_status_exposes_separate_market_and_registration_paths(self):
         market = Mock()
@@ -144,6 +160,15 @@ class PublicReleaseTests(unittest.TestCase):
             self.assertIsNone(status['registration'])
             self.assertEqual(status['evaluationCount'], 0)
             self.assertEqual(replay['registrationSha256'], status['publicRegistration']['contentSha256'])
+            market.refresh_range.return_value = {'complete': 8, 'missing': 0,
+                                                 'range': {'start': '2026-10-14', 'end': '2026-10-21'}}
+            request = Request(origin + '/api/coinbase-forward-refresh-market', data=b'{}',
+                              headers={'Origin': origin, 'Content-Type': 'application/json'},
+                              method='POST')
+            with urlopen(request, timeout=5) as response:
+                self.assertEqual(json.load(response)['complete'], 8)
+            market.refresh_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
+                                                         date(2026, 10, 21))
             self.assertFalse(store.exists())
         finally:
             server.shutdown()

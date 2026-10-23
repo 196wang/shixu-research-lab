@@ -285,6 +285,25 @@ class CoinbaseForward:
                              if index[day]['prices'] else None,
                              'reasons': index[day]['reasons']} for day in days(first, last)]
             score = self._score(registration, snapshot, asof)
+            # Show observed OHLC and the cached candle's provenance without
+            # changing the sealed scoring output or writing an evaluation.
+            today = asof.astimezone(LOCAL).date()
+            for row in score['rows']:
+                day = date.fromisoformat(row['date'])
+                observed = index[day]
+                candle = snapshot[1].get(ms(local_open(day)))
+                prices = observed['prices'] if day < today and observed['valid'] else None
+                row['marketEvidence'] = {
+                    'status': 'future' if day >= today else 'complete' if prices else 'missing',
+                    'open': str(prices['open']) if prices else None,
+                    'high': str(prices['high']) if prices else None,
+                    'low': str(prices['low']) if prices else None,
+                    'close': str(prices['close']) if prices else None,
+                    'missingReasons': observed['reasons'] if day < today and not prices else [],
+                    'candleSha256': candle.get('body_sha256') if prices and candle else None,
+                    'sourceRequestIds': json.loads(candle['source_request_ids'])
+                    if prices and candle and candle.get('source_request_ids') else [],
+                }
             return {'mode': 'public_read_only', 'registrationSha256': registration['contentSha256'],
                     'evaluatedAtUtc': asof.isoformat(), 'marketAsOfUtc': state.get('last_success'),
                     'marketProvider': state['provider'], 'product': state['product'],
@@ -292,6 +311,18 @@ class CoinbaseForward:
                     'priceInputSha256': digest(price_inputs),
                     'rawCacheSnapshotSha256': snapshot_hash(snapshot),
                     'scoreImplementationSha256': self._files(), **score}
+
+    def refresh_public_market(self):
+        """Explicitly fetch closed days needed for public replay; never save a review."""
+        registration = self._public_registration()
+        if not registration:
+            raise CoinbaseForwardError('公开封存计划不存在', 404)
+        yesterday = self.now().astimezone(LOCAL).date() - DAY
+        first = date.fromisoformat(registration['startDate']) - 5 * DAY
+        last = min(date.fromisoformat(registration['endDate']) + 5 * DAY, yesterday)
+        if last < first:
+            raise CoinbaseForwardError('本期尚无已经收盘的行情日期', 409)
+        return self.market.refresh_range('BTCUSD', first, last)
 
     def status(self):
         with self.lock:
