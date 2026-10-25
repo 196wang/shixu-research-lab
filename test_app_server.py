@@ -46,6 +46,16 @@ class ResearchDeskTests(unittest.TestCase):
         self.assertEqual(self.call('/local_data/research.sqlite3')[0], 404)
         self.assertEqual(self.call('/../profiles.json')[0], 404)
 
+    def test_bitstamp_2013_summary_is_separate_from_private_hourly_data(self):
+        status, body = self.call('/api/bitstamp-long-study')
+        self.assertEqual(status, 200)
+        report = json.loads(body)
+        self.assertEqual(report['source']['firstDay'], '2013-01-01')
+        self.assertEqual(report['source']['provider'], 'Bitstamp official public BTC/USD OHLC')
+        self.assertIn('2013-2021', report['dailyRules'])
+        self.assertEqual(self.call('/api/bitstamp-long-study?start=2014')[0], 400)
+        self.assertEqual(self.call('/local_data/bitstamp_btcusd_hourly_2013_2026_v1/daily.json')[0], 404)
+
     def test_wrong_host_and_cross_site_write_are_rejected(self):
         self.assertEqual(self.call('/health', host='untrusted.example')[0], 403)
         self.assertEqual(self.call('/api/records', {}, origin='https://example.com')[0], 403)

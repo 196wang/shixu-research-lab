@@ -1,10 +1,12 @@
 # 时序研究室
 
-一个本地运行的 BTC/ETH 时间规则研究网站。包含八字历法、江恩时间候选、月相和印度占星时间参考、TradingView 免费嵌入图，以及 Coinbase 历史行情的固定回测报告。
+一个本地运行的 BTC/ETH 时间规则研究网站。包含八字历法、江恩时间候选、月相和印度占星时间参考、TradingView 免费嵌入图，以及独立的 Bitstamp BTC/USD 2013–2026 长期复盘和 Coinbase 固定回测报告。
 
 交节换月附近的实际 BTC/USD 涨跌另见[交节事件研究](research/jie-event-study-2026-10-23.md)和[2022–2026 跨年份规律复核](research/jie-pattern-study-2026-10-23.md)：包含逐事件、逐年份、同月普通日期及节气前后每日对照。两份都是探索性复盘，不更改封存的前瞻计划。
 
 日干、寅日、庚戌日及不同定义的金水月另见[五行与月令跨年份复核](research/element-pattern-study-2026-10-24.md)：按完整北京时间日线与节气月分别统计，并保留逐月上涨、下跌日期。
+
+2013 年起的 BTC 长期结果见[Bitstamp 独立回测](research/bitstamp-long-study-2013-2026.md)。原始小时蜡烛仅保留在被 Git 忽略的本机 `local_data/`；可用 `python build_bitstamp_long_history.py` 重新采集，再运行 `python build_bitstamp_long_study.py` 生成报告。Bitstamp 与 Coinbase 是不同交易所，页面将它们分开展示。
 
 > 本项目是研究工具。页面中的候选日期、方向和历史符合率尚不能证明预测能力，也不构成交易建议。请保留失败样本、缺失数据和事前登记记录。
 

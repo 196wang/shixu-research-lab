@@ -259,6 +259,7 @@ class Handler(BaseHTTPRequestHandler):
                   '/tradingview-chart.js': ('tradingview-chart.js', 'text/javascript; charset=utf-8'),
                   '/coinbase-feed.js': ('coinbase-feed.js', 'text/javascript; charset=utf-8'),
                   '/coinbase-study.js': ('coinbase-study.js', 'text/javascript; charset=utf-8'),
+                  '/bitstamp-study.js': ('bitstamp-study.js', 'text/javascript; charset=utf-8'),
                   '/coinbase-forward.js': ('coinbase-forward.js', 'text/javascript; charset=utf-8'),
                   '/coinbase-calendar-backtest.js': ('coinbase-calendar-backtest.js', 'text/javascript; charset=utf-8'),
                   '/coinbase-rule-compare.js': ('coinbase-rule-compare.js', 'text/javascript; charset=utf-8'),
@@ -299,6 +300,14 @@ class Handler(BaseHTTPRequestHandler):
                 if route.query:
                     raise ValueError('固定共振报告不接受查询参数')
                 return self.send(200, read_confluence())
+            if route.path == '/api/bitstamp-long-study':
+                if route.query:
+                    raise ValueError('2013年长期回测不接受查询参数')
+                result = load('research/bitstamp-long-summary-2013-2026.json')
+                if (result.get('source', {}).get('firstDay') != '2013-01-01'
+                        or result.get('source', {}).get('provider') != 'Bitstamp official public BTC/USD OHLC'):
+                    raise ValueError('长期回测来源或日期不符')
+                return self.send(200, result)
             coinbase_study_routes = {'/api/coinbase-study': 'report',
                                      '/api/coinbase-study-details': 'details',
                                      '/api/coinbase-study-protocol': 'protocol',
