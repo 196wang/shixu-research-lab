@@ -308,6 +308,15 @@ class Handler(BaseHTTPRequestHandler):
                         or result.get('source', {}).get('provider') != 'Bitstamp official public BTC/USD OHLC'):
                     raise ValueError('长期回测来源或日期不符')
                 return self.send(200, result)
+            if route.path == '/api/pattern-screen-2013':
+                if route.query:
+                    raise ValueError('固定规律筛选不接受查询参数')
+                result = load('research/pattern-screen-2013-2026.json')
+                source = load('research/bitstamp-long-summary-2013-2026.json')['source']
+                if (result.get('dataThrough') != source['lastDay']
+                        or result.get('sourceDailySha256') != source['localDailySha256']):
+                    raise ValueError('规律筛选来源与长期回测不符')
+                return self.send(200, result)
             coinbase_study_routes = {'/api/coinbase-study': 'report',
                                      '/api/coinbase-study-details': 'details',
                                      '/api/coinbase-study-protocol': 'protocol',

@@ -8,6 +8,8 @@
 
 2013 年起的 BTC 长期结果见[Bitstamp 独立回测](research/bitstamp-long-study-2013-2026.md)。原始小时蜡烛仅保留在被 Git 忽略的本机 `local_data/`；可用 `python build_bitstamp_long_history.py` 重新采集，再运行 `python build_bitstamp_long_study.py` 生成报告。Bitstamp 与 Coinbase 是不同交易所，页面将它们分开展示。
 
+新增[2013–2026 波动与时间规律筛选](research/pattern-screen-2013-2026.md)：按时间分段复核五行组合、交节窗口和前一日大振幅，并以同年同月普通日期作对照；结果作为风险观察，不回填历史预测成绩。
+
 > 本项目是研究工具。页面中的候选日期、方向和历史符合率尚不能证明预测能力，也不构成交易建议。请保留失败样本、缺失数据和事前登记记录。
 
 ## 运行

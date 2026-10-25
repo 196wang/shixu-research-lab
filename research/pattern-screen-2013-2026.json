@@ -1,0 +1,1267 @@
+{
+  "type": "exploratory_fixed_screen_not_forecast",
+  "sourceDailySha256": "9caac223cf1755d313cba5b43f9198b5d81f5fc62c51ba75dcb1b2d7b1cc5a8c",
+  "dataThrough": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "splits": {
+    "develop_2013_2020": [
+      2013,
+      2020
+    ],
+    "check_2021_2023": [
+      2021,
+      2023
+    ],
+    "late_2024_2026": [
+      2024,
+      2026
+    ]
+  },
+  "dailyDirectionEligibleN": 4816,
+  "volatilityEligibleN": 4562,
+  "definitions": {
+    "highVol": "today high-low/open >= 1.5 * median of prior 30 strict days",
+    "previousHigh": "yesterday met its own prior-30-day highVol definition",
+    "nearbyJie": "calendar date is within 2 days of a Jie transition",
+    "calendarControl": "same year and exact solar-month episode non-trigger days",
+    "riskControl": "same Gregorian year/month non-trigger days"
+  },
+  "calendar": {
+    "metal_water_stem_in_metal_water_branch_month_up": {
+      "label": "金水日干 + 金水月支 → 收涨",
+      "direction": "up",
+      "splits": {
+        "develop_2013_2020": {
+          "n": 371,
+          "correct": 183,
+          "ratePct": 49.32614555256065,
+          "matchedControlPct": 53.767967757978866,
+          "liftPp": -4.4418222054182195,
+          "unmatchedTriggerDays": 0
+        },
+        "check_2021_2023": {
+          "n": 145,
+          "correct": 76,
+          "ratePct": 52.41379310344828,
+          "matchedControlPct": 48.2420554428668,
+          "liftPp": 4.171737660581478,
+          "unmatchedTriggerDays": 0
+        },
+        "late_2024_2026": {
+          "n": 114,
+          "correct": 67,
+          "ratePct": 58.771929824561404,
+          "matchedControlPct": 52.32231219073324,
+          "liftPp": 6.4496176338281614,
+          "unmatchedTriggerDays": 4
+        }
+      },
+      "years": {
+        "2013": {
+          "n": 46,
+          "correct": 26,
+          "ratePct": 56.52173913043478,
+          "matchedControlPct": 64.04822798684691,
+          "liftPp": -7.526488856412129,
+          "unmatchedTriggerDays": 0
+        },
+        "2014": {
+          "n": 46,
+          "correct": 18,
+          "ratePct": 39.130434782608695,
+          "matchedControlPct": 45.724637681159415,
+          "liftPp": -6.594202898550719,
+          "unmatchedTriggerDays": 0
+        },
+        "2015": {
+          "n": 47,
+          "correct": 21,
+          "ratePct": 44.680851063829785,
+          "matchedControlPct": 50.77924786936051,
+          "liftPp": -6.098396805530726,
+          "unmatchedTriggerDays": 0
+        },
+        "2016": {
+          "n": 45,
+          "correct": 27,
+          "ratePct": 60.0,
+          "matchedControlPct": 51.85185185185185,
+          "liftPp": 8.148148148148152,
+          "unmatchedTriggerDays": 0
+        },
+        "2017": {
+          "n": 49,
+          "correct": 25,
+          "ratePct": 51.02040816326531,
+          "matchedControlPct": 56.2994428540647,
+          "liftPp": -5.279034690799392,
+          "unmatchedTriggerDays": 0
+        },
+        "2018": {
+          "n": 44,
+          "correct": 16,
+          "ratePct": 36.36363636363637,
+          "matchedControlPct": 50.88383838383838,
+          "liftPp": -14.520202020202014,
+          "unmatchedTriggerDays": 0
+        },
+        "2019": {
+          "n": 49,
+          "correct": 21,
+          "ratePct": 42.857142857142854,
+          "matchedControlPct": 54.771139224920745,
+          "liftPp": -11.91399636777789,
+          "unmatchedTriggerDays": 0
+        },
+        "2020": {
+          "n": 45,
+          "correct": 29,
+          "ratePct": 64.44444444444444,
+          "matchedControlPct": 55.490196078431374,
+          "liftPp": 8.954248366013069,
+          "unmatchedTriggerDays": 0
+        },
+        "2021": {
+          "n": 51,
+          "correct": 29,
+          "ratePct": 56.86274509803921,
+          "matchedControlPct": 48.75048058439062,
+          "liftPp": 8.11226451364859,
+          "unmatchedTriggerDays": 0
+        },
+        "2022": {
+          "n": 44,
+          "correct": 23,
+          "ratePct": 52.27272727272727,
+          "matchedControlPct": 48.15062388591801,
+          "liftPp": 4.122103386809265,
+          "unmatchedTriggerDays": 0
+        },
+        "2023": {
+          "n": 50,
+          "correct": 24,
+          "ratePct": 48.0,
+          "matchedControlPct": 47.803921568627445,
+          "liftPp": 0.19607843137255543,
+          "unmatchedTriggerDays": 0
+        },
+        "2024": {
+          "n": 44,
+          "correct": 27,
+          "ratePct": 61.36363636363637,
+          "matchedControlPct": 60.037878787878796,
+          "liftPp": 1.3257575757575708,
+          "unmatchedTriggerDays": 0
+        },
+        "2025": {
+          "n": 46,
+          "correct": 26,
+          "ratePct": 56.52173913043478,
+          "matchedControlPct": 43.25529542920847,
+          "liftPp": 13.266443701226308,
+          "unmatchedTriggerDays": 4
+        },
+        "2026": {
+          "n": 24,
+          "correct": 14,
+          "ratePct": 58.333333333333336,
+          "matchedControlPct": 55.555555555555564,
+          "liftPp": 2.7777777777777715,
+          "unmatchedTriggerDays": 0
+        }
+      }
+    },
+    "metal_water_stem_in_other_branch_month_up": {
+      "label": "金水日干 + 非金水月支 → 收涨",
+      "direction": "up",
+      "splits": {
+        "develop_2013_2020": {
+          "n": 737,
+          "correct": 405,
+          "ratePct": 54.952510176390774,
+          "matchedControlPct": 54.928960134126264,
+          "liftPp": 0.023550042264510296,
+          "unmatchedTriggerDays": 0
+        },
+        "check_2021_2023": {
+          "n": 280,
+          "correct": 147,
+          "ratePct": 52.5,
+          "matchedControlPct": 49.08416875522139,
+          "liftPp": 3.4158312447786088,
+          "unmatchedTriggerDays": 0
+        },
+        "late_2024_2026": {
+          "n": 277,
+          "correct": 144,
+          "ratePct": 51.985559566787,
+          "matchedControlPct": 54.69661802272367,
+          "liftPp": -2.7110584559366657,
+          "unmatchedTriggerDays": 0
+        }
+      },
+      "years": {
+        "2013": {
+          "n": 80,
+          "correct": 50,
+          "ratePct": 62.5,
+          "matchedControlPct": 63.16952614379086,
+          "liftPp": -0.6695261437908613,
+          "unmatchedTriggerDays": 0
+        },
+        "2014": {
+          "n": 94,
+          "correct": 49,
+          "ratePct": 52.12765957446808,
+          "matchedControlPct": 43.969526967188514,
+          "liftPp": 8.158132607279569,
+          "unmatchedTriggerDays": 0
+        },
+        "2015": {
+          "n": 91,
+          "correct": 45,
+          "ratePct": 49.45054945054945,
+          "matchedControlPct": 52.94775400038558,
+          "liftPp": -3.497204549836127,
+          "unmatchedTriggerDays": 0
+        },
+        "2016": {
+          "n": 95,
+          "correct": 59,
+          "ratePct": 62.10526315789474,
+          "matchedControlPct": 60.869136204805095,
+          "liftPp": 1.236126953089645,
+          "unmatchedTriggerDays": 0
+        },
+        "2017": {
+          "n": 92,
+          "correct": 51,
+          "ratePct": 55.43478260869565,
+          "matchedControlPct": 65.76049565516519,
+          "liftPp": -10.325713046469538,
+          "unmatchedTriggerDays": 0
+        },
+        "2018": {
+          "n": 95,
+          "correct": 49,
+          "ratePct": 51.578947368421055,
+          "matchedControlPct": 42.221679068672714,
+          "liftPp": 9.357268299748341,
+          "unmatchedTriggerDays": 0
+        },
+        "2019": {
+          "n": 93,
+          "correct": 49,
+          "ratePct": 52.68817204301075,
+          "matchedControlPct": 57.426271772621526,
+          "liftPp": -4.738099729610774,
+          "unmatchedTriggerDays": 0
+        },
+        "2020": {
+          "n": 97,
+          "correct": 53,
+          "ratePct": 54.63917525773196,
+          "matchedControlPct": 54.571794353480215,
+          "liftPp": 0.06738090425174192,
+          "unmatchedTriggerDays": 0
+        },
+        "2021": {
+          "n": 92,
+          "correct": 49,
+          "ratePct": 53.26086956521739,
+          "matchedControlPct": 49.89287477004532,
+          "liftPp": 3.3679947951720735,
+          "unmatchedTriggerDays": 0
+        },
+        "2022": {
+          "n": 96,
+          "correct": 51,
+          "ratePct": 53.125,
+          "matchedControlPct": 44.48314413484692,
+          "liftPp": 8.641855865153083,
+          "unmatchedTriggerDays": 0
+        },
+        "2023": {
+          "n": 92,
+          "correct": 47,
+          "ratePct": 51.08695652173913,
+          "matchedControlPct": 53.076531909483855,
+          "liftPp": -1.989575387744722,
+          "unmatchedTriggerDays": 0
+        },
+        "2024": {
+          "n": 97,
+          "correct": 49,
+          "ratePct": 50.51546391752577,
+          "matchedControlPct": 56.65386429485883,
+          "liftPp": -6.138400377333056,
+          "unmatchedTriggerDays": 0
+        },
+        "2025": {
+          "n": 91,
+          "correct": 53,
+          "ratePct": 58.24175824175824,
+          "matchedControlPct": 52.258663249375324,
+          "liftPp": 5.983094992382917,
+          "unmatchedTriggerDays": 0
+        },
+        "2026": {
+          "n": 89,
+          "correct": 42,
+          "ratePct": 47.19101123595506,
+          "matchedControlPct": 55.056179775280896,
+          "liftPp": -7.865168539325836,
+          "unmatchedTriggerDays": 0
+        }
+      }
+    },
+    "fire_stem_in_fire_earth_branch_month_down": {
+      "label": "火日干 + 火土月支 → 收跌",
+      "direction": "down",
+      "splits": {
+        "develop_2013_2020": {
+          "n": 275,
+          "correct": 117,
+          "ratePct": 42.54545454545455,
+          "matchedControlPct": 45.06717375544503,
+          "liftPp": -2.5217192099904864,
+          "unmatchedTriggerDays": 0
+        },
+        "check_2021_2023": {
+          "n": 108,
+          "correct": 64,
+          "ratePct": 59.25925925925926,
+          "matchedControlPct": 47.96356682769725,
+          "liftPp": 11.29569243156201,
+          "unmatchedTriggerDays": 0
+        },
+        "late_2024_2026": {
+          "n": 105,
+          "correct": 45,
+          "ratePct": 42.857142857142854,
+          "matchedControlPct": 46.71900997553171,
+          "liftPp": -3.861867118388858,
+          "unmatchedTriggerDays": 0
+        }
+      },
+      "years": {
+        "2013": {
+          "n": 29,
+          "correct": 14,
+          "ratePct": 48.275862068965516,
+          "matchedControlPct": 40.02716823406478,
+          "liftPp": 8.248693834900735,
+          "unmatchedTriggerDays": 0
+        },
+        "2014": {
+          "n": 35,
+          "correct": 16,
+          "ratePct": 45.714285714285715,
+          "matchedControlPct": 47.98654244306418,
+          "liftPp": -2.2722567287784656,
+          "unmatchedTriggerDays": 0
+        },
+        "2015": {
+          "n": 35,
+          "correct": 16,
+          "ratePct": 45.714285714285715,
+          "matchedControlPct": 47.918796992481205,
+          "liftPp": -2.20451127819549,
+          "unmatchedTriggerDays": 0
+        },
+        "2016": {
+          "n": 34,
+          "correct": 12,
+          "ratePct": 35.294117647058826,
+          "matchedControlPct": 41.26086956521739,
+          "liftPp": -5.966751918158565,
+          "unmatchedTriggerDays": 0
+        },
+        "2017": {
+          "n": 36,
+          "correct": 13,
+          "ratePct": 36.111111111111114,
+          "matchedControlPct": 40.03436539306105,
+          "liftPp": -3.923254281949937,
+          "unmatchedTriggerDays": 0
+        },
+        "2018": {
+          "n": 34,
+          "correct": 19,
+          "ratePct": 55.88235294117647,
+          "matchedControlPct": 54.41304347826087,
+          "liftPp": 1.4693094629156036,
+          "unmatchedTriggerDays": 0
+        },
+        "2019": {
+          "n": 37,
+          "correct": 15,
+          "ratePct": 40.54054054054054,
+          "matchedControlPct": 45.28495887191539,
+          "liftPp": -4.7444183313748525,
+          "unmatchedTriggerDays": 0
+        },
+        "2020": {
+          "n": 35,
+          "correct": 12,
+          "ratePct": 34.285714285714285,
+          "matchedControlPct": 43.037267080745345,
+          "liftPp": -8.75155279503106,
+          "unmatchedTriggerDays": 0
+        },
+        "2021": {
+          "n": 36,
+          "correct": 20,
+          "ratePct": 55.55555555555556,
+          "matchedControlPct": 49.2487922705314,
+          "liftPp": 6.306763285024154,
+          "unmatchedTriggerDays": 0
+        },
+        "2022": {
+          "n": 35,
+          "correct": 27,
+          "ratePct": 77.14285714285714,
+          "matchedControlPct": 48.27246376811594,
+          "liftPp": 28.870393374741198,
+          "unmatchedTriggerDays": 0
+        },
+        "2023": {
+          "n": 37,
+          "correct": 17,
+          "ratePct": 45.945945945945944,
+          "matchedControlPct": 46.42087739913827,
+          "liftPp": -0.4749314531923261,
+          "unmatchedTriggerDays": 0
+        },
+        "2024": {
+          "n": 36,
+          "correct": 16,
+          "ratePct": 44.44444444444444,
+          "matchedControlPct": 48.42325428194994,
+          "liftPp": -3.9788098375054943,
+          "unmatchedTriggerDays": 0
+        },
+        "2025": {
+          "n": 37,
+          "correct": 17,
+          "ratePct": 45.945945945945944,
+          "matchedControlPct": 42.43002884307232,
+          "liftPp": 3.5159171028736225,
+          "unmatchedTriggerDays": 0
+        },
+        "2026": {
+          "n": 32,
+          "correct": 12,
+          "ratePct": 37.5,
+          "matchedControlPct": 49.76086956521739,
+          "liftPp": -12.26086956521739,
+          "unmatchedTriggerDays": 0
+        }
+      }
+    },
+    "yin_day_in_yin_month_down": {
+      "label": "寅日 + 寅月 → 收跌",
+      "direction": "down",
+      "splits": {
+        "develop_2013_2020": {
+          "n": 20,
+          "correct": 7,
+          "ratePct": 35.0,
+          "matchedControlPct": 45.25437525437526,
+          "liftPp": -10.254375254375262,
+          "unmatchedTriggerDays": 0
+        },
+        "check_2021_2023": {
+          "n": 7,
+          "correct": 5,
+          "ratePct": 71.42857142857143,
+          "matchedControlPct": 48.08465608465609,
+          "liftPp": 23.34391534391534,
+          "unmatchedTriggerDays": 0
+        },
+        "late_2024_2026": {
+          "n": 7,
+          "correct": 2,
+          "ratePct": 28.571428571428573,
+          "matchedControlPct": 44.44444444444444,
+          "liftPp": -15.87301587301587,
+          "unmatchedTriggerDays": 0
+        }
+      },
+      "years": {
+        "2013": {
+          "n": 3,
+          "correct": 1,
+          "ratePct": 33.333333333333336,
+          "matchedControlPct": 28.571428571428573,
+          "liftPp": 4.761904761904763,
+          "unmatchedTriggerDays": 0
+        },
+        "2014": {
+          "n": 2,
+          "correct": 2,
+          "ratePct": 100.0,
+          "matchedControlPct": 59.25925925925926,
+          "liftPp": 40.74074074074074,
+          "unmatchedTriggerDays": 0
+        },
+        "2015": {
+          "n": 3,
+          "correct": 0,
+          "ratePct": 0.0,
+          "matchedControlPct": 57.6923076923077,
+          "liftPp": -57.6923076923077,
+          "unmatchedTriggerDays": 0
+        },
+        "2016": {
+          "n": 2,
+          "correct": 0,
+          "ratePct": 0.0,
+          "matchedControlPct": 33.333333333333336,
+          "liftPp": -33.333333333333336,
+          "unmatchedTriggerDays": 0
+        },
+        "2017": {
+          "n": 3,
+          "correct": 1,
+          "ratePct": 33.333333333333336,
+          "matchedControlPct": 26.923076923076923,
+          "liftPp": 6.410256410256412,
+          "unmatchedTriggerDays": 0
+        },
+        "2018": {
+          "n": 2,
+          "correct": 0,
+          "ratePct": 0.0,
+          "matchedControlPct": 42.30769230769231,
+          "liftPp": -42.30769230769231,
+          "unmatchedTriggerDays": 0
+        },
+        "2019": {
+          "n": 2,
+          "correct": 1,
+          "ratePct": 50.0,
+          "matchedControlPct": 55.55555555555556,
+          "liftPp": -5.555555555555557,
+          "unmatchedTriggerDays": 0
+        },
+        "2020": {
+          "n": 3,
+          "correct": 2,
+          "ratePct": 66.66666666666667,
+          "matchedControlPct": 61.53846153846154,
+          "liftPp": 5.128205128205131,
+          "unmatchedTriggerDays": 0
+        },
+        "2021": {
+          "n": 2,
+          "correct": 1,
+          "ratePct": 50.0,
+          "matchedControlPct": 44.44444444444444,
+          "liftPp": 5.555555555555557,
+          "unmatchedTriggerDays": 0
+        },
+        "2022": {
+          "n": 3,
+          "correct": 2,
+          "ratePct": 66.66666666666667,
+          "matchedControlPct": 48.0,
+          "liftPp": 18.66666666666667,
+          "unmatchedTriggerDays": 0
+        },
+        "2023": {
+          "n": 2,
+          "correct": 2,
+          "ratePct": 100.0,
+          "matchedControlPct": 51.851851851851855,
+          "liftPp": 48.148148148148145,
+          "unmatchedTriggerDays": 0
+        },
+        "2024": {
+          "n": 3,
+          "correct": 1,
+          "ratePct": 33.333333333333336,
+          "matchedControlPct": 30.76923076923077,
+          "liftPp": 2.5641025641025657,
+          "unmatchedTriggerDays": 0
+        },
+        "2025": {
+          "n": 2,
+          "correct": 0,
+          "ratePct": 0.0,
+          "matchedControlPct": 55.55555555555556,
+          "liftPp": -55.55555555555556,
+          "unmatchedTriggerDays": 0
+        },
+        "2026": {
+          "n": 2,
+          "correct": 1,
+          "ratePct": 50.0,
+          "matchedControlPct": 53.84615384615385,
+          "liftPp": -3.8461538461538467,
+          "unmatchedTriggerDays": 0
+        }
+      }
+    }
+  },
+  "risk": {
+    "previousHigh": {
+      "splits": {
+        "develop_2013_2020": {
+          "n": 631,
+          "highVolN": 312,
+          "highVolRatePct": 49.44532488114105,
+          "otherN": 1976,
+          "otherHighVolRatePct": 16.24493927125506,
+          "sameYearMonthControlPct": 22.259005744578964,
+          "sameYearMonthComparableN": 631,
+          "liftPp": 27.186319136562084,
+          "upRatePct": 54.04120443740095,
+          "otherUpRatePct": 53.188259109311744,
+          "medianRangePct": 5.800427932308887
+        },
+        "check_2021_2023": {
+          "n": 201,
+          "highVolN": 80,
+          "highVolRatePct": 39.80099502487562,
+          "otherN": 798,
+          "otherHighVolRatePct": 15.162907268170427,
+          "sameYearMonthControlPct": 19.236515798841655,
+          "sameYearMonthComparableN": 201,
+          "liftPp": 20.564479226033963,
+          "upRatePct": 50.74626865671642,
+          "otherUpRatePct": 50.0,
+          "medianRangePct": 4.67607275705098
+        },
+        "late_2024_2026": {
+          "n": 197,
+          "highVolN": 77,
+          "highVolRatePct": 39.08629441624365,
+          "otherN": 759,
+          "otherHighVolRatePct": 15.810276679841897,
+          "sameYearMonthControlPct": 19.651006529620517,
+          "sameYearMonthComparableN": 197,
+          "liftPp": 19.435287886623136,
+          "upRatePct": 59.390862944162436,
+          "otherUpRatePct": 52.700922266139656,
+          "medianRangePct": 3.921971935186694
+        }
+      },
+      "years": {
+        "2013": {
+          "n": 53,
+          "highVolN": 28,
+          "highVolRatePct": 52.83018867924528,
+          "otherN": 130,
+          "otherHighVolRatePct": 20.0,
+          "sameYearMonthControlPct": 23.459438950921843,
+          "sameYearMonthComparableN": 53,
+          "liftPp": 29.37074972832344,
+          "upRatePct": 60.37735849056604,
+          "otherUpRatePct": 54.61538461538461,
+          "medianRangePct": 7.287168414558905
+        },
+        "2014": {
+          "n": 73,
+          "highVolN": 42,
+          "highVolRatePct": 57.534246575342465,
+          "otherN": 228,
+          "otherHighVolRatePct": 13.596491228070175,
+          "sameYearMonthControlPct": 16.086066284100827,
+          "sameYearMonthComparableN": 73,
+          "liftPp": 41.44818029124164,
+          "upRatePct": 50.68493150684932,
+          "otherUpRatePct": 44.29824561403509,
+          "medianRangePct": 7.254041109558965
+        },
+        "2015": {
+          "n": 75,
+          "highVolN": 36,
+          "highVolRatePct": 48.0,
+          "otherN": 253,
+          "otherHighVolRatePct": 15.810276679841897,
+          "sameYearMonthControlPct": 23.903472602323177,
+          "sameYearMonthComparableN": 75,
+          "liftPp": 24.096527397676823,
+          "upRatePct": 53.333333333333336,
+          "otherUpRatePct": 49.80237154150198,
+          "medianRangePct": 4.767640752607873
+        },
+        "2016": {
+          "n": 100,
+          "highVolN": 53,
+          "highVolRatePct": 53.0,
+          "otherN": 266,
+          "otherHighVolRatePct": 17.669172932330827,
+          "sameYearMonthControlPct": 23.840746362714327,
+          "sameYearMonthComparableN": 100,
+          "liftPp": 29.159253637285673,
+          "upRatePct": 61.0,
+          "otherUpRatePct": 59.3984962406015,
+          "medianRangePct": 3.4727246392489484
+        },
+        "2017": {
+          "n": 105,
+          "highVolN": 56,
+          "highVolRatePct": 53.333333333333336,
+          "otherN": 260,
+          "otherHighVolRatePct": 18.846153846153847,
+          "sameYearMonthControlPct": 26.16836377468457,
+          "sameYearMonthComparableN": 105,
+          "liftPp": 27.164969558648767,
+          "upRatePct": 59.04761904761905,
+          "otherUpRatePct": 59.23076923076923,
+          "medianRangePct": 8.270622657974442
+        },
+        "2018": {
+          "n": 65,
+          "highVolN": 26,
+          "highVolRatePct": 40.0,
+          "otherN": 300,
+          "otherHighVolRatePct": 13.0,
+          "sameYearMonthControlPct": 20.124269011271664,
+          "sameYearMonthComparableN": 65,
+          "liftPp": 19.875730988728336,
+          "upRatePct": 36.92307692307692,
+          "otherUpRatePct": 48.333333333333336,
+          "medianRangePct": 6.049981205200327
+        },
+        "2019": {
+          "n": 82,
+          "highVolN": 36,
+          "highVolRatePct": 43.90243902439025,
+          "otherN": 283,
+          "otherHighVolRatePct": 16.25441696113074,
+          "sameYearMonthControlPct": 21.580182072390876,
+          "sameYearMonthComparableN": 82,
+          "liftPp": 22.32225695199937,
+          "upRatePct": 57.31707317073171,
+          "otherUpRatePct": 51.9434628975265,
+          "medianRangePct": 5.279521965449344
+        },
+        "2020": {
+          "n": 78,
+          "highVolN": 35,
+          "highVolRatePct": 44.87179487179487,
+          "otherN": 256,
+          "otherHighVolRatePct": 16.796875,
+          "sameYearMonthControlPct": 20.841459336344244,
+          "sameYearMonthComparableN": 78,
+          "liftPp": 24.030335535450625,
+          "upRatePct": 48.717948717948715,
+          "otherUpRatePct": 58.203125,
+          "medianRangePct": 4.848539719686852
+        },
+        "2021": {
+          "n": 69,
+          "highVolN": 25,
+          "highVolRatePct": 36.231884057971016,
+          "otherN": 296,
+          "otherHighVolRatePct": 14.864864864864865,
+          "sameYearMonthControlPct": 19.29943350678635,
+          "sameYearMonthComparableN": 69,
+          "liftPp": 16.932450551184665,
+          "upRatePct": 53.6231884057971,
+          "otherUpRatePct": 51.351351351351354,
+          "medianRangePct": 7.1841769084692375
+        },
+        "2022": {
+          "n": 48,
+          "highVolN": 19,
+          "highVolRatePct": 39.583333333333336,
+          "otherN": 253,
+          "otherHighVolRatePct": 11.462450592885375,
+          "sameYearMonthControlPct": 13.96279150658946,
+          "sameYearMonthComparableN": 48,
+          "liftPp": 25.620541826743874,
+          "upRatePct": 37.5,
+          "otherUpRatePct": 47.82608695652174,
+          "medianRangePct": 5.1974066775532055
+        },
+        "2023": {
+          "n": 84,
+          "highVolN": 36,
+          "highVolRatePct": 42.857142857142854,
+          "otherN": 249,
+          "otherHighVolRatePct": 19.27710843373494,
+          "sameYearMonthControlPct": 22.198390134316906,
+          "sameYearMonthComparableN": 84,
+          "liftPp": 20.658752722825948,
+          "upRatePct": 55.95238095238095,
+          "otherUpRatePct": 50.602409638554214,
+          "medianRangePct": 3.300719996375163
+        },
+        "2024": {
+          "n": 74,
+          "highVolN": 33,
+          "highVolRatePct": 44.5945945945946,
+          "otherN": 267,
+          "otherHighVolRatePct": 15.730337078651685,
+          "sameYearMonthControlPct": 19.037137080615338,
+          "sameYearMonthComparableN": 74,
+          "liftPp": 25.55745751397926,
+          "upRatePct": 67.56756756756756,
+          "otherUpRatePct": 53.93258426966292,
+          "medianRangePct": 4.736834948993214
+        },
+        "2025": {
+          "n": 68,
+          "highVolN": 23,
+          "highVolRatePct": 33.8235294117647,
+          "otherN": 258,
+          "otherHighVolRatePct": 17.05426356589147,
+          "sameYearMonthControlPct": 20.240321769733534,
+          "sameYearMonthComparableN": 68,
+          "liftPp": 13.58320764203117,
+          "upRatePct": 61.76470588235294,
+          "otherUpRatePct": 49.6124031007752,
+          "medianRangePct": 3.65547182799194
+        },
+        "2026": {
+          "n": 55,
+          "highVolN": 21,
+          "highVolRatePct": 38.18181818181818,
+          "otherN": 234,
+          "otherHighVolRatePct": 14.52991452991453,
+          "sameYearMonthControlPct": 19.748332036869584,
+          "sameYearMonthComparableN": 55,
+          "liftPp": 18.433486144948596,
+          "upRatePct": 45.45454545454545,
+          "otherUpRatePct": 54.7008547008547,
+          "medianRangePct": 3.326267103488148
+        }
+      }
+    },
+    "nearbyJie": {
+      "splits": {
+        "develop_2013_2020": {
+          "n": 424,
+          "highVolN": 97,
+          "highVolRatePct": 22.87735849056604,
+          "otherN": 2183,
+          "otherHighVolRatePct": 24.553366926248284,
+          "sameYearMonthControlPct": 24.3906697452124,
+          "sameYearMonthComparableN": 424,
+          "liftPp": -1.5133112546463607,
+          "upRatePct": 51.886792452830186,
+          "otherUpRatePct": 53.68758589097572,
+          "medianRangePct": 4.006400646909087
+        },
+        "check_2021_2023": {
+          "n": 163,
+          "highVolN": 29,
+          "highVolRatePct": 17.791411042944784,
+          "otherN": 836,
+          "otherHighVolRatePct": 20.574162679425836,
+          "sameYearMonthControlPct": 20.66383869531376,
+          "sameYearMonthComparableN": 163,
+          "liftPp": -2.8724276523689767,
+          "upRatePct": 50.306748466257666,
+          "otherUpRatePct": 50.119617224880386,
+          "medianRangePct": 3.999029884933574
+        },
+        "late_2024_2026": {
+          "n": 158,
+          "highVolN": 40,
+          "highVolRatePct": 25.31645569620253,
+          "otherN": 798,
+          "otherHighVolRatePct": 19.674185463659146,
+          "sameYearMonthControlPct": 19.547488578737568,
+          "sameYearMonthComparableN": 158,
+          "liftPp": 5.768967117464964,
+          "upRatePct": 55.063291139240505,
+          "otherUpRatePct": 53.88471177944862,
+          "medianRangePct": 3.079865585369679
+        }
+      },
+      "years": {
+        "2013": {
+          "n": 30,
+          "highVolN": 11,
+          "highVolRatePct": 36.666666666666664,
+          "otherN": 153,
+          "otherHighVolRatePct": 28.104575163398692,
+          "sameYearMonthControlPct": 30.23809523809524,
+          "sameYearMonthComparableN": 30,
+          "liftPp": 6.4285714285714235,
+          "upRatePct": 43.333333333333336,
+          "otherUpRatePct": 58.8235294117647,
+          "medianRangePct": 6.051237008711912
+        },
+        "2014": {
+          "n": 48,
+          "highVolN": 11,
+          "highVolRatePct": 22.916666666666668,
+          "otherN": 253,
+          "otherHighVolRatePct": 24.50592885375494,
+          "sameYearMonthControlPct": 21.2311872909699,
+          "sameYearMonthComparableN": 48,
+          "liftPp": 1.6854793756967688,
+          "upRatePct": 52.083333333333336,
+          "otherUpRatePct": 44.66403162055336,
+          "medianRangePct": 4.005389469500733
+        },
+        "2015": {
+          "n": 51,
+          "highVolN": 13,
+          "highVolRatePct": 25.49019607843137,
+          "otherN": 277,
+          "otherHighVolRatePct": 22.743682310469314,
+          "sameYearMonthControlPct": 23.6701860231272,
+          "sameYearMonthComparableN": 51,
+          "liftPp": 1.82001005530417,
+          "upRatePct": 50.98039215686274,
+          "otherUpRatePct": 50.541516245487365,
+          "medianRangePct": 3.1051807923564865
+        },
+        "2016": {
+          "n": 60,
+          "highVolN": 15,
+          "highVolRatePct": 25.0,
+          "otherN": 306,
+          "otherHighVolRatePct": 27.77777777777778,
+          "sameYearMonthControlPct": 27.68162393162393,
+          "sameYearMonthComparableN": 60,
+          "liftPp": -2.6816239316239283,
+          "upRatePct": 61.666666666666664,
+          "otherUpRatePct": 59.47712418300654,
+          "medianRangePct": 2.2950496380471925
+        },
+        "2017": {
+          "n": 60,
+          "highVolN": 15,
+          "highVolRatePct": 25.0,
+          "otherN": 305,
+          "otherHighVolRatePct": 29.508196721311474,
+          "sameYearMonthControlPct": 29.244147157190636,
+          "sameYearMonthComparableN": 60,
+          "liftPp": -4.2441471571906355,
+          "upRatePct": 56.666666666666664,
+          "otherUpRatePct": 59.67213114754098,
+          "medianRangePct": 5.523942281743406
+        },
+        "2018": {
+          "n": 60,
+          "highVolN": 6,
+          "highVolRatePct": 10.0,
+          "otherN": 305,
+          "otherHighVolRatePct": 19.34426229508197,
+          "sameYearMonthControlPct": 19.349498327759196,
+          "sameYearMonthComparableN": 60,
+          "liftPp": -9.349498327759196,
+          "upRatePct": 40.0,
+          "otherUpRatePct": 47.540983606557376,
+          "medianRangePct": 4.703325018311595
+        },
+        "2019": {
+          "n": 60,
+          "highVolN": 13,
+          "highVolRatePct": 21.666666666666668,
+          "otherN": 305,
+          "otherHighVolRatePct": 22.62295081967213,
+          "sameYearMonthControlPct": 22.644927536231886,
+          "sameYearMonthComparableN": 60,
+          "liftPp": -0.9782608695652186,
+          "upRatePct": 50.0,
+          "otherUpRatePct": 53.77049180327869,
+          "medianRangePct": 4.322048911797118
+        },
+        "2020": {
+          "n": 55,
+          "highVolN": 13,
+          "highVolRatePct": 23.636363636363637,
+          "otherN": 279,
+          "otherHighVolRatePct": 23.29749103942652,
+          "sameYearMonthControlPct": 23.145687645687648,
+          "sameYearMonthComparableN": 55,
+          "liftPp": 0.49067599067598877,
+          "upRatePct": 56.36363636363637,
+          "otherUpRatePct": 55.913978494623656,
+          "medianRangePct": 3.9688616401066334
+        },
+        "2021": {
+          "n": 60,
+          "highVolN": 13,
+          "highVolRatePct": 21.666666666666668,
+          "otherN": 305,
+          "otherHighVolRatePct": 18.360655737704917,
+          "sameYearMonthControlPct": 18.414158305462653,
+          "sameYearMonthComparableN": 60,
+          "liftPp": 3.252508361204015,
+          "upRatePct": 58.333333333333336,
+          "otherUpRatePct": 50.49180327868852,
+          "medianRangePct": 5.949020715191021
+        },
+        "2022": {
+          "n": 48,
+          "highVolN": 5,
+          "highVolRatePct": 10.416666666666666,
+          "otherN": 253,
+          "otherHighVolRatePct": 16.99604743083004,
+          "sameYearMonthControlPct": 17.075216450216452,
+          "sameYearMonthComparableN": 48,
+          "liftPp": -6.658549783549786,
+          "upRatePct": 43.75,
+          "otherUpRatePct": 46.640316205533594,
+          "medianRangePct": 3.869738986348303
+        },
+        "2023": {
+          "n": 55,
+          "highVolN": 11,
+          "highVolRatePct": 20.0,
+          "otherN": 278,
+          "otherHighVolRatePct": 26.258992805755394,
+          "sameYearMonthControlPct": 26.249923989054423,
+          "sameYearMonthComparableN": 55,
+          "liftPp": -6.249923989054423,
+          "upRatePct": 47.27272727272727,
+          "otherUpRatePct": 52.87769784172662,
+          "medianRangePct": 2.3582028867656026
+        },
+        "2024": {
+          "n": 58,
+          "highVolN": 18,
+          "highVolRatePct": 31.03448275862069,
+          "otherN": 283,
+          "otherHighVolRatePct": 20.141342756183747,
+          "sameYearMonthControlPct": 19.34460654288241,
+          "sameYearMonthComparableN": 58,
+          "liftPp": 11.68987621573828,
+          "upRatePct": 60.3448275862069,
+          "otherUpRatePct": 56.18374558303887,
+          "medianRangePct": 3.7664448350560424
+        },
+        "2025": {
+          "n": 50,
+          "highVolN": 10,
+          "highVolRatePct": 20.0,
+          "otherN": 276,
+          "otherHighVolRatePct": 20.652173913043477,
+          "sameYearMonthControlPct": 21.230533149714738,
+          "sameYearMonthComparableN": 50,
+          "liftPp": -1.2305331497147378,
+          "upRatePct": 50.0,
+          "otherUpRatePct": 52.53623188405797,
+          "medianRangePct": 2.6609696845815054
+        },
+        "2026": {
+          "n": 50,
+          "highVolN": 12,
+          "highVolRatePct": 24.0,
+          "otherN": 239,
+          "otherHighVolRatePct": 17.99163179916318,
+          "sameYearMonthControlPct": 18.099787169352386,
+          "sameYearMonthComparableN": 50,
+          "liftPp": 5.9002128306476145,
+          "upRatePct": 54.0,
+          "otherUpRatePct": 52.71966527196653,
+          "medianRangePct": 2.762646342928054
+        }
+      }
+    },
+    "jieAfterPreviousHigh": {
+      "develop_2013_2020": {
+        "n": 99,
+        "highVolN": 46,
+        "highVolRatePct": 46.464646464646464,
+        "otherN": 532,
+        "otherHighVolRatePct": 50.0,
+        "sameYearMonthControlPct": 45.36609448974396,
+        "sameYearMonthComparableN": 98,
+        "liftPp": 1.098551974902506,
+        "upRatePct": 41.41414141414141,
+        "otherUpRatePct": 56.390977443609025,
+        "medianRangePct": 5.425565615215387
+      },
+      "check_2021_2023": {
+        "n": 28,
+        "highVolN": 10,
+        "highVolRatePct": 35.714285714285715,
+        "otherN": 173,
+        "otherHighVolRatePct": 40.46242774566474,
+        "sameYearMonthControlPct": 31.76097711811998,
+        "sameYearMonthComparableN": 28,
+        "liftPp": 3.953308596165737,
+        "upRatePct": 60.714285714285715,
+        "otherUpRatePct": 49.13294797687861,
+        "medianRangePct": 4.021389931464887
+      },
+      "late_2024_2026": {
+        "n": 39,
+        "highVolN": 23,
+        "highVolRatePct": 58.97435897435897,
+        "otherN": 158,
+        "otherHighVolRatePct": 34.177215189873415,
+        "sameYearMonthControlPct": 33.04375804375805,
+        "sameYearMonthComparableN": 37,
+        "liftPp": 25.930600930600924,
+        "upRatePct": 58.97435897435897,
+        "otherUpRatePct": 59.49367088607595,
+        "medianRangePct": 5.20526196416421
+      }
+    },
+    "jieAfterPreviousCalm": {
+      "develop_2013_2020": {
+        "n": 325,
+        "highVolN": 51,
+        "highVolRatePct": 15.692307692307692,
+        "otherN": 1651,
+        "otherHighVolRatePct": 16.353725015142338,
+        "sameYearMonthControlPct": 17.394320103252664,
+        "sameYearMonthComparableN": 325,
+        "liftPp": -1.7020124109449721,
+        "upRatePct": 55.07692307692308,
+        "otherUpRatePct": 52.81647486371896,
+        "medianRangePct": 3.8418554505173783
+      },
+      "check_2021_2023": {
+        "n": 135,
+        "highVolN": 19,
+        "highVolRatePct": 14.074074074074074,
+        "otherN": 663,
+        "otherHighVolRatePct": 15.384615384615385,
+        "sameYearMonthControlPct": 16.09953056824925,
+        "sameYearMonthComparableN": 135,
+        "liftPp": -2.0254564941751756,
+        "upRatePct": 48.148148148148145,
+        "otherUpRatePct": 50.37707390648567,
+        "medianRangePct": 3.9294971665545715
+      },
+      "late_2024_2026": {
+        "n": 119,
+        "highVolN": 17,
+        "highVolRatePct": 14.285714285714286,
+        "otherN": 640,
+        "otherHighVolRatePct": 16.09375,
+        "sameYearMonthControlPct": 16.08553034645251,
+        "sameYearMonthComparableN": 119,
+        "liftPp": -1.799816060738225,
+        "upRatePct": 53.78151260504202,
+        "otherUpRatePct": 52.5,
+        "medianRangePct": 2.64688995215311
+      }
+    }
+  },
+  "volatilityThresholdSensitivity": {
+    "1.25": {
+      "develop_2013_2020": {
+        "n": 867,
+        "highVolN": 489,
+        "highVolRatePct": 56.40138408304498,
+        "otherN": 1740,
+        "otherHighVolRatePct": 21.839080459770116,
+        "sameYearMonthControlPct": 27.487588891560716,
+        "sameYearMonthComparableN": 867,
+        "liftPp": 28.913795191484265,
+        "upRatePct": 53.17185697808535,
+        "otherUpRatePct": 53.50574712643678,
+        "medianRangePct": 5.5401561995709905
+      },
+      "check_2021_2023": {
+        "n": 316,
+        "highVolN": 150,
+        "highVolRatePct": 47.46835443037975,
+        "otherN": 683,
+        "otherHighVolRatePct": 24.15812591508053,
+        "sameYearMonthControlPct": 28.60961732958535,
+        "sameYearMonthComparableN": 316,
+        "liftPp": 18.858737100794396,
+        "upRatePct": 52.21518987341772,
+        "otherUpRatePct": 49.194729136163986,
+        "medianRangePct": 4.479903101725574
+      },
+      "late_2024_2026": {
+        "n": 306,
+        "highVolN": 142,
+        "highVolRatePct": 46.40522875816993,
+        "otherN": 650,
+        "otherHighVolRatePct": 25.076923076923077,
+        "sameYearMonthControlPct": 29.310401515403647,
+        "sameYearMonthComparableN": 306,
+        "liftPp": 17.094827242766286,
+        "upRatePct": 56.86274509803921,
+        "otherUpRatePct": 52.76923076923077,
+        "medianRangePct": 3.710899387601269
+      }
+    },
+    "2.0": {
+      "develop_2013_2020": {
+        "n": 353,
+        "highVolN": 165,
+        "highVolRatePct": 46.742209631728045,
+        "otherN": 2254,
+        "otherHighVolRatePct": 8.429458740017747,
+        "sameYearMonthControlPct": 14.871388876010268,
+        "sameYearMonthComparableN": 353,
+        "liftPp": 31.870820755717777,
+        "upRatePct": 54.390934844192635,
+        "otherUpRatePct": 53.23868677905945,
+        "medianRangePct": 6.3557975466621475
+      },
+      "check_2021_2023": {
+        "n": 111,
+        "highVolN": 39,
+        "highVolRatePct": 35.13513513513514,
+        "otherN": 888,
+        "otherHighVolRatePct": 8.108108108108109,
+        "sameYearMonthControlPct": 13.515696985917755,
+        "sameYearMonthComparableN": 111,
+        "liftPp": 21.61943814921738,
+        "upRatePct": 51.351351351351354,
+        "otherUpRatePct": 50.0,
+        "medianRangePct": 5.2244775522447755
+      },
+      "late_2024_2026": {
+        "n": 83,
+        "highVolN": 26,
+        "highVolRatePct": 31.325301204819276,
+        "otherN": 873,
+        "otherHighVolRatePct": 6.643757159221077,
+        "sameYearMonthControlPct": 11.176887900399992,
+        "sameYearMonthComparableN": 83,
+        "liftPp": 20.148413304419286,
+        "upRatePct": 59.036144578313255,
+        "otherUpRatePct": 53.608247422680414,
+        "medianRangePct": 4.469443723224718
+      }
+    }
+  },
+  "coinbaseCrosscheck": {
+    "provider": "sealed Coinbase BTC/USD Beijing-day snapshot",
+    "snapshotSha256": "537791fefe602f655ce9b5c172adc49640ada5a8abcc18fe10b00d477baf0cac",
+    "eligibleN": 1623,
+    "2022-2023": {
+      "n": 131,
+      "highVolN": 52,
+      "highVolRatePct": 39.69465648854962,
+      "otherN": 536,
+      "otherHighVolRatePct": 14.738805970149254,
+      "sameYearMonthControlPct": 18.09458961218005,
+      "sameYearMonthComparableN": 131,
+      "liftPp": 21.600066876369567,
+      "upRatePct": 48.85496183206107,
+      "otherUpRatePct": 49.440298507462686,
+      "medianRangePct": 3.954157676584147
+    },
+    "2024-2026": {
+      "n": 190,
+      "highVolN": 74,
+      "highVolRatePct": 38.94736842105263,
+      "otherN": 766,
+      "otherHighVolRatePct": 15.013054830287206,
+      "sameYearMonthControlPct": 19.22201049027001,
+      "sameYearMonthComparableN": 190,
+      "liftPp": 19.72535793078262,
+      "upRatePct": 62.63157894736842,
+      "otherUpRatePct": 53.26370757180157,
+      "medianRangePct": 4.035913480574727
+    }
+  },
+  "limits": [
+    "All rules and cutoffs selected after known market history; the time splits are retrospective checks, not true blind tests.",
+    "Multiple comparisons and serial dependence can make apparent lifts unstable.",
+    "Volatility persistence is a market baseline, not evidence for astrology or a profitable trading signal.",
+    "The Jie risk window is known before the day, but adjacent ±2-day windows overlap.",
+    "No execution costs, drawdown, slippage or risk-adjusted returns are calculated."
+  ]
+}

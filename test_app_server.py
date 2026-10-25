@@ -56,6 +56,14 @@ class ResearchDeskTests(unittest.TestCase):
         self.assertEqual(self.call('/api/bitstamp-long-study?start=2014')[0], 400)
         self.assertEqual(self.call('/local_data/bitstamp_btcusd_hourly_2013_2026_v1/daily.json')[0], 404)
 
+    def test_pattern_screen_uses_same_sealed_bitstamp_daily_source(self):
+        status, body = self.call('/api/pattern-screen-2013')
+        self.assertEqual(status, 200)
+        result = json.loads(body)
+        self.assertEqual(result['dataThrough'], '2026-10-16')
+        self.assertIn('previousHigh', result['risk'])
+        self.assertEqual(self.call('/api/pattern-screen-2013?year=2013')[0], 400)
+
     def test_wrong_host_and_cross_site_write_are_rejected(self):
         self.assertEqual(self.call('/health', host='untrusted.example')[0], 403)
         self.assertEqual(self.call('/api/records', {}, origin='https://example.com')[0], 403)
