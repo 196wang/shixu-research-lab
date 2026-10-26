@@ -317,6 +317,15 @@ class Handler(BaseHTTPRequestHandler):
                         or result.get('sourceDailySha256') != source['localDailySha256']):
                     raise ValueError('规律筛选来源与长期回测不符')
                 return self.send(200, result)
+            if route.path == '/api/astro-pattern-screen-2013':
+                if route.query:
+                    raise ValueError('固定星象筛选不接受查询参数')
+                result = load('research/astro-pattern-screen-2013-2026.json')
+                source = load('research/bitstamp-long-summary-2013-2026.json')['source']
+                if (result.get('data', {}).get('lastDay') != source['lastDay']
+                        or result.get('data', {}).get('rawManifestSha256') != source['localRawManifestSha256']):
+                    raise ValueError('星象筛选来源与长期回测不符')
+                return self.send(200, result)
             coinbase_study_routes = {'/api/coinbase-study': 'report',
                                      '/api/coinbase-study-details': 'details',
                                      '/api/coinbase-study-protocol': 'protocol',

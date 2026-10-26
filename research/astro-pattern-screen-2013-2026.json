@@ -1,0 +1,537 @@
+{
+  "studyType": "exploratory_retrospective_not_prediction",
+  "data": {
+    "provider": "Bitstamp BTC/USD official hourly OHLC",
+    "firstDay": "2013-01-01",
+    "lastDay": "2026-10-16",
+    "capturedAtUtc": "2026-10-24T09:33:23.912758+00:00",
+    "rawManifestSha256": "61331385c2e052ae6d3ca5f54551da69dd194fd75aaea7ee403274433467005d",
+    "strictDays": 4979,
+    "thinDaysExcluded": 58,
+    "dayBoundary": "Asia/Shanghai UTC+08:00 midnight"
+  },
+  "astronomy": {
+    "engine": "Astronomy Engine 2.1.19",
+    "coordinates": "geocentric apparent tropical",
+    "stationDefinition": "centered 24h ecliptic longitude velocity zero, bisected <1min",
+    "stationTimeUncertainty": "numerical velocity approximates instantaneous speed",
+    "moonDefinition": "exact geocentric 0/180-degree lunar elongation",
+    "dates": "event UTC instant assigned to UTC+08:00 calendar date",
+    "calculationIsMarketBlind": true
+  },
+  "method": {
+    "splits": {
+      "2013-2020": [
+        2013,
+        2020
+      ],
+      "2021-2023": [
+        2021,
+        2023
+      ],
+      "2024-2026": [
+        2024,
+        2026
+      ]
+    },
+    "direction": "Beijing day open-to-close",
+    "range": "(daily high-low)/open",
+    "bigRange": "range >= 1.5 x prior 30 consecutive strict-day median",
+    "matchedControl": "equal weight per exposed day, controls in same Gregorian year/month",
+    "stationReversal": "opposite signs and each >=2%, seven-day close legs excluding D0",
+    "multipleTests": "six calendar screens and one reversal screen; no tuning or p-value claim",
+    "selection": "informed by publicly discussed claims; no blind holdout"
+  },
+  "stationCount": 88,
+  "moonEventCount": 344,
+  "sampleStations2026": [
+    {
+      "atUtc": "2026-02-26T06:47:41.993409+00:00",
+      "date": "2026-02-26",
+      "kind": "retrograde_start"
+    },
+    {
+      "atUtc": "2026-03-20T19:36:32.706299+00:00",
+      "date": "2026-03-21",
+      "kind": "direct_start"
+    },
+    {
+      "atUtc": "2026-06-29T17:37:25.220948+00:00",
+      "date": "2026-06-30",
+      "kind": "retrograde_start"
+    },
+    {
+      "atUtc": "2026-07-23T22:54:49.581299+00:00",
+      "date": "2026-07-24",
+      "kind": "direct_start"
+    },
+    {
+      "atUtc": "2026-10-24T07:11:14.945069+00:00",
+      "date": "2026-10-24",
+      "kind": "retrograde_start"
+    },
+    {
+      "atUtc": "2026-11-13T15:55:11.883545+00:00",
+      "date": "2026-11-13",
+      "kind": "direct_start"
+    }
+  ],
+  "outcomes": {
+    "mercuryRetrogradeFullDays": {
+      "2013-2020": {
+        "trigger": {
+          "days": 524,
+          "upRatePct": 49.04580152671756,
+          "meanReturnPct": 0.09060457391863243,
+          "medianReturnPct": -0.06574040873071896,
+          "meanRangePct": 6.005142528626391,
+          "bigRangeDays": 455,
+          "bigRangeRatePct": 26.153846153846157
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 56.40489632477938,
+          "meanReturnPct": 0.7244308041731065,
+          "meanRangePct": 5.655498008714931,
+          "bigRangeRatePct": 24.007023291937372
+        },
+        "unmatchedDays": 0
+      },
+      "2021-2023": {
+        "trigger": {
+          "days": 210,
+          "upRatePct": 51.90476190476191,
+          "meanReturnPct": 0.38200049387063456,
+          "medianReturnPct": 0.17834271142181946,
+          "meanRangePct": 5.156473022483292,
+          "bigRangeDays": 190,
+          "bigRangeRatePct": 23.157894736842106
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 48.18612476278286,
+          "meanReturnPct": -0.41722872339535455,
+          "meanRangePct": 5.331235186644471,
+          "bigRangeRatePct": 23.917917574732023
+        },
+        "unmatchedDays": 0
+      },
+      "2024-2026": {
+        "trigger": {
+          "days": 172,
+          "upRatePct": 55.23255813953488,
+          "meanReturnPct": 0.11456446196878513,
+          "medianReturnPct": 0.21858152116811524,
+          "meanRangePct": 3.7686936970259666,
+          "bigRangeDays": 150,
+          "bigRangeRatePct": 14.000000000000002
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 43.34119574633893,
+          "meanReturnPct": -0.6516215336540981,
+          "meanRangePct": 3.797410393154192,
+          "bigRangeRatePct": 19.795572819554128
+        },
+        "unmatchedDays": 0
+      }
+    },
+    "retrogradeStartDay": {
+      "2013-2020": {
+        "trigger": {
+          "days": 25,
+          "upRatePct": 56.00000000000001,
+          "meanReturnPct": -0.30733292175673954,
+          "medianReturnPct": 0.2511033681765529,
+          "meanRangePct": 6.022841931610207,
+          "bigRangeDays": 22,
+          "bigRangeRatePct": 22.727272727272727
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 51.10141215106732,
+          "meanReturnPct": 0.1391611402194459,
+          "meanRangePct": 5.572383764489637,
+          "bigRangeRatePct": 25.00232621784346
+        },
+        "unmatchedDays": 0
+      },
+      "2021-2023": {
+        "trigger": {
+          "days": 10,
+          "upRatePct": 30.0,
+          "meanReturnPct": -0.8938461002296005,
+          "medianReturnPct": -0.1905954270520427,
+          "meanRangePct": 5.148553105951896,
+          "bigRangeDays": 9,
+          "bigRangeRatePct": 22.22222222222222
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 49.666666666666664,
+          "meanReturnPct": -0.15071651705100575,
+          "meanRangePct": 5.500454557918843,
+          "bigRangeRatePct": 22.40886699507389
+        },
+        "unmatchedDays": 0
+      },
+      "2024-2026": {
+        "trigger": {
+          "days": 8,
+          "upRatePct": 12.5,
+          "meanReturnPct": -2.30735691733282,
+          "medianReturnPct": -1.6211589066651988,
+          "meanRangePct": 5.859245993149138,
+          "bigRangeDays": 8,
+          "bigRangeRatePct": 25.0
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 50.86332329866813,
+          "meanReturnPct": -0.1325008212118157,
+          "meanRangePct": 4.141303272461039,
+          "bigRangeRatePct": 28.572454844006568
+        },
+        "unmatchedDays": 0
+      }
+    },
+    "directStartDay": {
+      "2013-2020": {
+        "trigger": {
+          "days": 25,
+          "upRatePct": 56.00000000000001,
+          "meanReturnPct": 1.6907002934269135,
+          "medianReturnPct": 0.09006427314037779,
+          "meanRangePct": 6.373245188181315,
+          "bigRangeDays": 22,
+          "bigRangeRatePct": 27.27272727272727
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 55.64628352490421,
+          "meanReturnPct": 0.6584726085271835,
+          "meanRangePct": 6.553381289694785,
+          "bigRangeRatePct": 24.581736909323116
+        },
+        "unmatchedDays": 0
+      },
+      "2021-2023": {
+        "trigger": {
+          "days": 9,
+          "upRatePct": 66.66666666666666,
+          "meanReturnPct": 1.5923738446131805,
+          "medianReturnPct": 1.1549815498155036,
+          "meanRangePct": 5.415434587967538,
+          "bigRangeDays": 8,
+          "bigRangeRatePct": 12.5
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 49.8141052930325,
+          "meanReturnPct": 0.15885617328167698,
+          "meanRangePct": 5.225088232212591,
+          "bigRangeRatePct": 22.31304101035902
+        },
+        "unmatchedDays": 0
+      },
+      "2024-2026": {
+        "trigger": {
+          "days": 9,
+          "upRatePct": 66.66666666666666,
+          "meanReturnPct": 0.9011237318056567,
+          "medianReturnPct": 1.1137834278188263,
+          "meanRangePct": 4.621743485239674,
+          "bigRangeDays": 7,
+          "bigRangeRatePct": 28.57142857142857
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 51.20872103630724,
+          "meanReturnPct": -0.08050810813550627,
+          "meanRangePct": 3.8153538527194075,
+          "bigRangeRatePct": 18.528553183725595
+        },
+        "unmatchedDays": 0
+      }
+    },
+    "newMoonDay": {
+      "2013-2020": {
+        "trigger": {
+          "days": 97,
+          "upRatePct": 53.608247422680414,
+          "meanReturnPct": -0.004711724195178599,
+          "medianReturnPct": 0.06923732424370943,
+          "meanRangePct": 5.957896169848277,
+          "bigRangeDays": 89,
+          "bigRangeRatePct": 29.213483146067414
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 54.14196161174476,
+          "meanReturnPct": 0.36375706265043506,
+          "meanRangePct": 5.890218418424989,
+          "bigRangeRatePct": 23.20742650365346
+        },
+        "unmatchedDays": 0
+      },
+      "2021-2023": {
+        "trigger": {
+          "days": 37,
+          "upRatePct": 54.054054054054056,
+          "meanReturnPct": -0.1802185133174209,
+          "medianReturnPct": 0.06417970316887622,
+          "meanRangePct": 5.140267546987022,
+          "bigRangeDays": 34,
+          "bigRangeRatePct": 14.705882352941178
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 50.41093575576334,
+          "meanReturnPct": 0.08074027651825627,
+          "meanRangePct": 4.999895165707414,
+          "bigRangeRatePct": 18.870436411665796
+        },
+        "unmatchedDays": 0
+      },
+      "2024-2026": {
+        "trigger": {
+          "days": 35,
+          "upRatePct": 45.714285714285715,
+          "meanReturnPct": -0.11721939388706122,
+          "medianReturnPct": -0.1346254408705061,
+          "meanRangePct": 3.8148891005773202,
+          "bigRangeDays": 33,
+          "bigRangeRatePct": 33.33333333333333
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 53.969589250377425,
+          "meanReturnPct": 0.07177666750456373,
+          "meanRangePct": 3.5509054504708333,
+          "bigRangeRatePct": 21.01082390951742
+        },
+        "unmatchedDays": 0
+      }
+    },
+    "fullMoonDay": {
+      "2013-2020": {
+        "trigger": {
+          "days": 97,
+          "upRatePct": 51.546391752577314,
+          "meanReturnPct": 0.6167865190717832,
+          "medianReturnPct": 0.15497820225285341,
+          "meanRangePct": 5.6391214090557185,
+          "bigRangeDays": 88,
+          "bigRangeRatePct": 27.27272727272727
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 54.217088851820456,
+          "meanReturnPct": 0.378435335384073,
+          "meanRangePct": 5.872313116197119,
+          "bigRangeRatePct": 22.903092585449617
+        },
+        "unmatchedDays": 0
+      },
+      "2021-2023": {
+        "trigger": {
+          "days": 36,
+          "upRatePct": 44.44444444444444,
+          "meanReturnPct": 0.2806502877467948,
+          "medianReturnPct": -0.23596665697366848,
+          "meanRangePct": 5.17647288290318,
+          "bigRangeDays": 32,
+          "bigRangeRatePct": 21.875
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 50.17262431055534,
+          "meanReturnPct": 0.09930500213061305,
+          "meanRangePct": 4.979839218182457,
+          "bigRangeRatePct": 19.62242237313035
+        },
+        "unmatchedDays": 0
+      },
+      "2024-2026": {
+        "trigger": {
+          "days": 34,
+          "upRatePct": 61.76470588235294,
+          "meanReturnPct": 0.28329396813600843,
+          "medianReturnPct": 0.42041720476373445,
+          "meanRangePct": 3.615664596000178,
+          "bigRangeDays": 32,
+          "bigRangeRatePct": 21.875
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 54.05677449287997,
+          "meanReturnPct": 0.08377095410491402,
+          "meanRangePct": 3.52772857886379,
+          "bigRangeRatePct": 19.98313105531555
+        },
+        "unmatchedDays": 0
+      }
+    },
+    "new_moonNextDay": {
+      "2013-2020": {
+        "trigger": {
+          "days": 98,
+          "upRatePct": 58.16326530612245,
+          "meanReturnPct": -0.09286828254210562,
+          "medianReturnPct": 0.26655900644106945,
+          "meanRangePct": 6.001696010830452,
+          "bigRangeDays": 89,
+          "bigRangeRatePct": 19.101123595505616
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 53.910982194233426,
+          "meanReturnPct": 0.3699136768585906,
+          "meanRangePct": 5.935394080468293,
+          "bigRangeRatePct": 23.817447701343518
+        },
+        "unmatchedDays": 0
+      },
+      "2021-2023": {
+        "trigger": {
+          "days": 37,
+          "upRatePct": 51.35135135135135,
+          "meanReturnPct": 0.3017364737846715,
+          "medianReturnPct": 0.01588723415486548,
+          "meanRangePct": 5.105678356803925,
+          "bigRangeDays": 34,
+          "bigRangeRatePct": 32.35294117647059
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 50.268889579234404,
+          "meanReturnPct": 0.06884117444296471,
+          "meanRangePct": 5.0089838085510054,
+          "bigRangeRatePct": 18.342357135460585
+        },
+        "unmatchedDays": 0
+      },
+      "2024-2026": {
+        "trigger": {
+          "days": 35,
+          "upRatePct": 45.714285714285715,
+          "meanReturnPct": -0.6244220494931747,
+          "medianReturnPct": -0.11799142293117404,
+          "meanRangePct": 3.7389750045605363,
+          "bigRangeDays": 33,
+          "bigRangeRatePct": 15.151515151515152
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 54.93364088930591,
+          "meanReturnPct": 0.1305451698932735,
+          "meanRangePct": 3.579011005287354,
+          "bigRangeRatePct": 22.023692235514893
+        },
+        "unmatchedDays": 0
+      }
+    },
+    "full_moonNextDay": {
+      "2013-2020": {
+        "trigger": {
+          "days": 97,
+          "upRatePct": 48.45360824742268,
+          "meanReturnPct": -0.061228077403060945,
+          "medianReturnPct": -0.013306719893546592,
+          "meanRangePct": 5.614534325948324,
+          "bigRangeDays": 88,
+          "bigRangeRatePct": 23.863636363636363
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 54.21578747778534,
+          "meanReturnPct": 0.3893896667514689,
+          "meanRangePct": 5.868469157652799,
+          "bigRangeRatePct": 23.102635630563576
+        },
+        "unmatchedDays": 0
+      },
+      "2021-2023": {
+        "trigger": {
+          "days": 37,
+          "upRatePct": 45.94594594594595,
+          "meanReturnPct": -1.1339151762338284,
+          "medianReturnPct": -0.34760218860637737,
+          "meanRangePct": 4.874950661308142,
+          "bigRangeDays": 34,
+          "bigRangeRatePct": 17.647058823529413
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 50.69493138458655,
+          "meanReturnPct": 0.14337864151882154,
+          "meanRangePct": 4.911682362436398,
+          "bigRangeRatePct": 18.830809820315068
+        },
+        "unmatchedDays": 0
+      },
+      "2024-2026": {
+        "trigger": {
+          "days": 34,
+          "upRatePct": 55.88235294117647,
+          "meanReturnPct": 0.5996633753644594,
+          "medianReturnPct": 0.20858814917457114,
+          "meanRangePct": 3.014474233968489,
+          "bigRangeDays": 32,
+          "bigRangeRatePct": 9.375
+        },
+        "sameYearMonthControl": {
+          "upRatePct": 54.08681863550018,
+          "meanReturnPct": 0.07323224467539999,
+          "meanRangePct": 3.5644669603047467,
+          "bigRangeRatePct": 20.642218573253054
+        },
+        "unmatchedDays": 0
+      }
+    }
+  },
+  "stationReversal": {
+    "2013-2020": {
+      "station": {
+        "n": 49,
+        "materialReversals": 11,
+        "ratePct": 22.448979591836736
+      },
+      "sameStationMonthsControl": {
+        "n": 1255,
+        "materialReversals": 322,
+        "ratePct": 25.657370517928285
+      }
+    },
+    "2021-2023": {
+      "station": {
+        "n": 19,
+        "materialReversals": 7,
+        "ratePct": 36.84210526315789
+      },
+      "sameStationMonthsControl": {
+        "n": 555,
+        "materialReversals": 164,
+        "ratePct": 29.549549549549546
+      }
+    },
+    "2024-2026": {
+      "station": {
+        "n": 17,
+        "materialReversals": 7,
+        "ratePct": 41.17647058823529
+      },
+      "sameStationMonthsControl": {
+        "n": 410,
+        "materialReversals": 94,
+        "ratePct": 22.926829268292686
+      }
+    }
+  },
+  "sources": [
+    {
+      "role": "claim example",
+      "url": "https://medium.com/gains-associates/predicting-bitcoin-price-using-astrology-coincidence-or-fact-e76f4b18799a"
+    },
+    {
+      "role": "contrary replication",
+      "url": "https://astrolog-app.com/en/studies/mercury-retrograde"
+    },
+    {
+      "role": "moon study",
+      "url": "https://github.com/rangiho/Bitcoin-Returns-and-Lunar-Phases"
+    },
+    {
+      "role": "NASA apparent motion",
+      "url": "https://starchild.gsfc.nasa.gov/docs/StarChild/questions/question46.html"
+    },
+    {
+      "role": "ephemeris library",
+      "url": "https://github.com/cosinekitty/astronomy/blob/master/source/python/README.md"
+    },
+    {
+      "role": "Bitstamp public API",
+      "url": "https://www.bitstamp.net/api/"
+    }
+  ]
+}
