@@ -6,6 +6,7 @@
 <meta name="description" content="本地八字、基础星位与印度占星研究，保留计算设置、依据和复盘记录。">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css">
 <script src="/tradingview-chart.js" defer></script>
+<script src="/time-calendar.js" defer></script>
 <script src="/coinbase-feed.js" defer></script>
 <script src="/coinbase-calendar-backtest.js" defer></script>
 <script src="/coinbase-rule-compare.js" defer></script>
@@ -34,6 +35,7 @@
   <button id="tab-prediction" role="tab" aria-selected="false" aria-controls="panel-prediction" data-tab="prediction" tabindex="-1">预测账本</button>
   <button id="tab-exploration" role="tab" aria-selected="false" aria-controls="panel-exploration" data-tab="exploration" tabindex="-1">历史回测</button>
   <button id="tab-timing" role="tab" aria-selected="false" aria-controls="panel-timing" data-tab="timing" tabindex="-1">时间研究</button>
+  <button id="tab-calendar" role="tab" aria-selected="false" aria-controls="panel-calendar" data-tab="calendar" tabindex="-1">观时日历</button>
   <button id="tab-prospective" role="tab" aria-selected="false" aria-controls="panel-prospective" data-tab="prospective" tabindex="-1">前瞻验证</button>
   <button id="tab-features" role="tab" aria-selected="false" aria-controls="panel-features" data-tab="features" tabindex="-1">规则检查</button>
   <button id="tab-indian" role="tab" aria-selected="false" aria-controls="panel-indian" data-tab="indian" tabindex="-1">印度占星</button>
@@ -46,6 +48,7 @@
  <section id="panel-prediction" role="tabpanel" aria-labelledby="tab-prediction" class="panel" hidden><div id="prediction-ledger"></div></section>
  <section id="panel-exploration" role="tabpanel" aria-labelledby="tab-exploration" class="panel" hidden><div class="history-study-switch" role="group" aria-label="选择历史研究"><button id="history-study-bitstamp" type="button" class="quiet" aria-pressed="true" aria-controls="bitstamp-study">BTC 2013–2026 长期回测</button><button id="history-study-coinbase" type="button" class="quiet" aria-pressed="false" aria-controls="coinbase-study">Coinbase 多年复盘</button><button id="history-study-rules" type="button" class="quiet" aria-pressed="false" aria-controls="rule-validation">规则定义与结果（旧样本）</button><button id="history-study-month" type="button" class="quiet" aria-pressed="false" aria-controls="month-study">月度与寅月（旧样本）</button><button id="history-study-confluence" type="button" class="quiet" aria-pressed="false" aria-controls="confluence-study">跨规则共振（旧样本）</button><button id="history-study-previous" type="button" class="quiet" aria-pressed="false" aria-controls="historical-exploration">方向与时间（上一轮）</button></div><div id="bitstamp-study"></div><div id="coinbase-study" hidden></div><div id="rule-validation" hidden></div><div id="month-study" hidden></div><div id="confluence-study" hidden></div><div id="historical-exploration" hidden></div></section>
  <section id="panel-timing" role="tabpanel" aria-labelledby="tab-timing" class="panel" hidden><div id="timing-study"></div></section>
+ <section id="panel-calendar" role="tabpanel" aria-labelledby="tab-calendar" class="panel" hidden><div id="time-calendar"></div></section>
  <section id="panel-prospective" role="tabpanel" aria-labelledby="tab-prospective" class="panel" hidden><div id="coinbase-forward"></div><details class="previous-study"><summary>查看此前的组合前瞻协议</summary><div id="month-interaction-future"></div></details><details class="previous-study"><summary>查看此前的八字前瞻协议</summary><div id="prospective-study"></div></details></section>
  <section id="panel-features" role="tabpanel" aria-labelledby="tab-features" class="panel" hidden><div id="feature-result">计算后检查结构。</div><section id="calendar-accuracy-result" class="groups calendar-accuracy" aria-label="独立排盘对照"><p class="muted">正在读取排盘对照…</p></section><div id="definition-result" class="groups">正在读取规则定义…</div></section>
  <section id="panel-indian" role="tabpanel" aria-labelledby="tab-indian" class="panel" hidden>

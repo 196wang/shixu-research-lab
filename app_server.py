@@ -266,6 +266,7 @@ class Handler(BaseHTTPRequestHandler):
                   '/coinbase-intraday.js': ('coinbase-intraday.js', 'text/javascript; charset=utf-8'),
                   '/prospective.js': ('prospective.js', 'text/javascript; charset=utf-8'),
                   '/timing.js': ('timing.js', 'text/javascript; charset=utf-8'),
+                  '/time-calendar.js': ('time-calendar.js', 'text/javascript; charset=utf-8'),
                   '/prediction.js': ('prediction.js', 'text/javascript; charset=utf-8'),
                   '/exploration.js': ('exploration.js', 'text/javascript; charset=utf-8'),
                   '/rule-validation.js': ('rule-validation.js', 'text/javascript; charset=utf-8'),
