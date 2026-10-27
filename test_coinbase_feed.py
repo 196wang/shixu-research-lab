@@ -47,6 +47,18 @@ class CoinbaseFeedTests(unittest.TestCase):
         self.assertEqual(score['dataQuality']['usableDays'], 1)
         self.assertEqual(feed.history('BTCUSD')['rows'][-1]['close'], '110')
 
+    def test_event_window_keeps_missing_and_future_days_blank(self):
+        feed = CoinbaseMarketFeed(self.path, transport=self.transport(), clock=lambda: self.now)
+        feed.refresh('BTCUSD', 1)
+        window = feed.window('BTCUSD', '2026-10-16')
+        self.assertEqual(len(window['rows']), 7)
+        self.assertEqual(window['rows'][3]['status'], 'complete')
+        self.assertEqual(window['rows'][3]['close'], '110')
+        self.assertEqual(window['rows'][2]['status'], 'missing')
+        self.assertIsNone(window['rows'][2]['close'])
+        future = feed.window('BTCUSD', '2099-12-28')
+        self.assertTrue(all(row['status'] == 'future' and row['close'] is None for row in future['rows']))
+
     def test_missing_hour_is_not_scored_as_complete(self):
         missing = {int(datetime(2026, 10, 16, 0, 0, tzinfo=timezone.utc).timestamp())}
         feed = CoinbaseMarketFeed(self.path, transport=self.transport(missing), clock=lambda: self.now)

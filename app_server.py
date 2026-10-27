@@ -267,6 +267,7 @@ class Handler(BaseHTTPRequestHandler):
                   '/prospective.js': ('prospective.js', 'text/javascript; charset=utf-8'),
                   '/timing.js': ('timing.js', 'text/javascript; charset=utf-8'),
                   '/time-calendar.js': ('time-calendar.js', 'text/javascript; charset=utf-8'),
+                  '/calendar-price-window.js': ('calendar-price-window.js', 'text/javascript; charset=utf-8'),
                   '/prediction.js': ('prediction.js', 'text/javascript; charset=utf-8'),
                   '/exploration.js': ('exploration.js', 'text/javascript; charset=utf-8'),
                   '/rule-validation.js': ('rule-validation.js', 'text/javascript; charset=utf-8'),
@@ -460,6 +461,11 @@ class Handler(BaseHTTPRequestHandler):
                 if set(args) != {'symbol'} or len(args['symbol']) != 1:
                     raise ValueError('Coinbase 历史预览须指定唯一 symbol')
                 return self.send(200, self.server.coinbase.history(args['symbol'][0]))
+            if route.path == '/api/calendar-price-window':
+                args = parse_qs(route.query, keep_blank_values=True, strict_parsing=True)
+                if set(args) != {'symbol', 'date'} or any(len(values) != 1 for values in args.values()):
+                    raise ValueError('事件价格窗口须指定唯一 symbol 和 date')
+                return self.send(200, self.server.coinbase.window(args['symbol'][0], args['date'][0]))
             if route.path == '/api/market-history':
                 args = market_query(route.query)
                 with CALC_LOCK:

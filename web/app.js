@@ -140,10 +140,11 @@ async function init(){try{window.researchTiming=window.createTimingStudy({getCon
  if(document.modelContext?.registerTool){const controller=new AbortController();document.modelContext.registerTool({name:'set_research_calculation',title:'选择研究盘与时刻',description:'更新本页的盘版本和分析时刻并显示计算结果，不保存记录。',inputSchema:{type:'object',properties:{profile:{type:'string',enum:state.config.profiles.map(x=>x.id)},at:{type:'string'}},required:['profile','at'],additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute:async input=>{if(!input||!state.config.profiles.some(x=>x.id===input.profile)||typeof input.at!=='string'||!/(Z|[+-]\d{2}:\d{2})$/.test(input.at))throw new Error('需要有效盘版本与带时区时间');const dt=new Date(input.at);if(!Number.isFinite(dt.getTime()))throw new Error('时间无效');await api('/api/calculate?'+new URLSearchParams({profile:input.profile,at:input.at,scenario:String($('scenario').checked)}));$('profile').value=input.profile;$('at').value=new Date(dt.getTime()+8*3600000).toISOString().slice(0,19);markDirty();await run();if(state.dirty)throw new Error('计算失败');return{profile:state.result.input.profile,at:state.result.input.at,pillars:state.result.bazi.calendar.pillars,saved:false};}},{signal:controller.signal});window.addEventListener('pagehide',()=>controller.abort(),{once:true});}
  }catch(e){notify(e.message,true);}}
 window.researchTradingView=window.createTradingViewChart({getProfile:()=>$('profile').value});
+window.researchCalendarPriceWindow=window.createCalendarPriceWindow();
 window.researchTimeCalendar=window.createTimeCalendar({
  getContext:()=>({profile:$('profile').value}),
  selectAt:async(at,symbol)=>{const ok=await window.researchTiming.options.selectAt(at,symbol);if(ok)setTab('bazi');return ok;},
- openChart:async(at)=>{const ok=await window.researchTiming.options.selectAt(at,null);if(ok)setTab('chart');return ok;}
+ openChart:async(at,event,gann)=>{const profile=$('profile').value,asset=profile==='BTC-BZ-V01'?'BTC':profile.startsWith('ETH-')?'ETH':null;if(!asset)throw new Error('当前人物盘没有对应的 Coinbase 行情，请先选择 BTC 或 ETH 盘');const date=new Date(new Date(at).getTime()+8*3600000).toISOString().slice(0,10);setTab('chart');window.researchTradingView.showAsset(asset);await window.researchCalendarPriceWindow.show({date,profile,selectedEvent:event,gann});return true;}
 });
 $('profile').addEventListener('change',()=>window.researchTradingView.syncProfile());
 init();

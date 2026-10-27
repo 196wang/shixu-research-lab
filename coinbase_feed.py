@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib import error, parse, request
 import hashlib
 import json
+import re
 import sqlite3
 import threading
 import uuid
@@ -302,6 +303,33 @@ class CoinbaseMarketFeed:
         return {'symbol': symbol, 'available': True, 'provider': 'Coinbase Exchange',
                 'timezone': 'UTC+8', 'range': {'start': first.isoformat(), 'end': end.isoformat()},
                 'rows': rows, 'lastSuccessAtUtc': state['last_success']}
+
+    def window(self, symbol, center):
+        """Read seven calendar slots around an event without fetching or filling prices."""
+        if symbol not in SYMBOLS or type(center) is not str or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', center):
+            raise CoinbaseFeedError('需要有效资产与 YYYY-MM-DD 北京日期', 400)
+        try:
+            day = date.fromisoformat(center)
+        except ValueError as exc:
+            raise CoinbaseFeedError('日期无效', 400) from exc
+        if not date(1992, 1, 4) <= day <= date(2099, 12, 28):
+            raise CoinbaseFeedError('日期超出七日价格窗口支持范围', 400)
+        state, candles, gaps = self._snapshot(symbol)
+        today = datetime.now(LOCAL).date()
+        rows = []
+        for offset in range(-3, 4):
+            current = day + offset * DAY
+            opened = ms(local_open(current))
+            bar = candles.get(opened)
+            complete = bool(bar and bar['is_closed'] and not bar['conflicted'] and current < today)
+            rows.append({'date': current.isoformat(), 'status': 'future' if current >= today else 'complete' if complete else 'missing',
+                         'open': bar['open'] if complete else None, 'high': bar['high'] if complete else None,
+                         'low': bar['low'] if complete else None, 'close': bar['close'] if complete else None,
+                         'gaps': gaps.get(opened, []) if current < today and not complete else [],
+                         'sourceSha256': bar['body_sha256'] if complete else None})
+        return {'symbol': symbol, 'provider': 'Coinbase Exchange', 'timezone': 'UTC+8',
+                'centerDate': center, 'range': {'start': rows[0]['date'], 'end': rows[-1]['date']},
+                'lastSuccessAtUtc': state['last_success'], 'rows': rows}
 
 
 class ScoringMarketRouter:
