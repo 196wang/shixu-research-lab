@@ -339,7 +339,7 @@ class CoinbaseForward:
         last = min(date.fromisoformat(registration['endDate']) + 5 * DAY, yesterday)
         if last < first:
             raise CoinbaseForwardError('本期尚无已经收盘的行情日期', 409)
-        return self.market.refresh_range('BTCUSD', first, last)
+        return self.market.repair_range('BTCUSD', first, last)
 
     def auto_public_tick(self):
         """While the server runs, append an audit only for a new observed input."""
@@ -363,7 +363,7 @@ class CoinbaseForward:
             index = inspect(snapshot, first, last, now)
             missing = [day for day in days(first, last) if not index[day]['valid']]
             if missing:
-                self.market.refresh_range('BTCUSD', missing[0], last)
+                self.market.repair_range('BTCUSD', missing[0], last)
             review = self.preview_public()
             key = digest({'localDate': local.date().isoformat(),
                           'priceInputSha256': review['priceInputSha256'],
@@ -417,6 +417,7 @@ class CoinbaseForward:
                                                 'scoredDays': item['review']['summary']['directionScoredDays'],
                                                 'missingDays': item['review']['summary']['directionMissingDays']}
                                                for item in audits[-7:]]},
+                    'marketFeed': next(item for item in self.market.status()['symbols'] if item['symbol'] == 'BTCUSD'),
                     'latestEvaluation': history[-1] if history else None,
                     'evaluationCount': len(history), 'lastAutoError': self.last_auto_error,
                     'implementationChangedSinceRegistration': bool(registration and

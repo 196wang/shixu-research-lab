@@ -1,11 +1,12 @@
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import shutil
 import unittest
 import uuid
+from unittest.mock import patch
 
-from coinbase_feed import CoinbaseMarketFeed, ScoringMarketRouter, parse_page
+from coinbase_feed import CoinbaseFeedError, CoinbaseMarketFeed, ScoringMarketRouter, local_open, parse_page
 from prediction_ledger import PredictionLedger
 from prediction_scoring import score_prediction
 
@@ -58,6 +59,43 @@ class CoinbaseFeedTests(unittest.TestCase):
         self.assertIsNone(window['rows'][2]['close'])
         future = feed.window('BTCUSD', '2099-12-28')
         self.assertTrue(all(row['status'] == 'future' and row['close'] is None for row in future['rows']))
+
+    def test_repair_fetches_only_missing_days_and_keeps_prior_candles(self):
+        current = [self.now]
+        calls = []
+        def transport(product, start, end):
+            calls.append((start, end))
+            return 200, json.dumps(self.rows(start, end)).encode()
+        feed = CoinbaseMarketFeed(self.path, transport=transport, clock=lambda: current[0])
+        feed.refresh('BTCUSD', 1)
+        original = feed.window('BTCUSD', '2026-10-16')['rows'][3]['sourceSha256']
+        current[0] = datetime(2026, 10, 19, 0, 0, tzinfo=timezone.utc)
+        result = feed.repair_range('BTCUSD', date(2026, 10, 16), date(2026, 10, 18))
+        self.assertEqual((result['requestedDays'], result['complete'], result['missing']), (2, 3, 0))
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(calls[1][0], local_open(date(2026, 10, 17)).astimezone(timezone.utc))
+        self.assertEqual(feed.window('BTCUSD', '2026-10-16')['rows'][3]['sourceSha256'], original)
+        self.assertEqual(feed.repair_range('BTCUSD', date(2026, 10, 16), date(2026, 10, 18))['requestedDays'], 0)
+        self.assertEqual(len(calls), 2)
+
+    def test_failed_repair_records_error_without_losing_cached_day(self):
+        current = [self.now]
+        feed = CoinbaseMarketFeed(self.path, transport=self.transport(), clock=lambda: current[0])
+        feed.refresh('BTCUSD', 1)
+        current[0] = datetime(2026, 10, 19, 0, 0, tzinfo=timezone.utc)
+        attempts = []
+        def unavailable(*_):
+            attempts.append(1)
+            raise CoinbaseFeedError('Coinbase 网络代理无法连接；未写入不完整行情')
+        feed.transport = unavailable
+        with patch('coinbase_feed.clock_time.sleep'):
+            with self.assertRaises(CoinbaseFeedError):
+                feed.repair_range('BTCUSD', date(2026, 10, 16), date(2026, 10, 18))
+        self.assertEqual(len(attempts), 2)
+        status = next(item for item in feed.status()['symbols'] if item['symbol'] == 'BTCUSD')
+        self.assertIn('代理无法连接', status['lastError'])
+        self.assertIsNotNone(status['lastAttemptAtUtc'])
+        self.assertEqual(status['completeDays'], 1)
 
     def test_missing_hour_is_not_scored_as_complete(self):
         missing = {int(datetime(2026, 10, 16, 0, 0, tzinfo=timezone.utc).timestamp())}

@@ -16,6 +16,7 @@ import json
 import re
 import sqlite3
 import threading
+import time as clock_time
 import uuid
 
 LOCAL = timezone(timedelta(hours=8))
@@ -81,13 +82,22 @@ def default_transport(product, start, end):
     req = request.Request(url, headers={'Accept': 'application/json', 'User-Agent': 'LocalResearchDesk/0.20'}, method='GET')
     opener = request.build_opener(NoRedirect)
     try:
-        with opener.open(req, timeout=20) as response:
+        with opener.open(req, timeout=12) as response:
             body = response.read(MAX_BODY_BYTES + 1)
             status = response.status
     except error.HTTPError as exc:
         body, status = exc.read(MAX_BODY_BYTES + 1), exc.code
     except (OSError, error.URLError) as exc:
-        raise CoinbaseFeedError('Coinbase 行情请求失败：' + type(exc).__name__) from exc
+        reason = exc.reason if isinstance(exc, error.URLError) else exc
+        if isinstance(reason, TimeoutError):
+            category = '连接超时'
+        elif isinstance(reason, ConnectionRefusedError):
+            category = '网络代理无法连接' if request.getproxies().get('https') else '连接被拒绝'
+        elif isinstance(reason, OSError):
+            category = '网络连接失败'
+        else:
+            category = '网络请求失败'
+        raise CoinbaseFeedError('Coinbase ' + category + '；未写入不完整行情') from exc
     if len(body) > MAX_BODY_BYTES:
         raise CoinbaseFeedError('Coinbase 响应超过大小限制')
     return status, body
@@ -191,12 +201,26 @@ class CoinbaseMarketFeed:
         if not self.lock.acquire(blocking=False):
             raise CoinbaseFeedError('已有 Coinbase 更新正在进行', 409)
         try:
+            with self.connect() as db:
+                db.execute('UPDATE state SET last_attempt=? WHERE symbol=?',
+                           (self.clock().astimezone(UTC).isoformat(), symbol))
             start, end = local_open(first).astimezone(UTC), local_open(last + DAY).astimezone(UTC)
             pages, hours = [], {}
             cursor = start
             while cursor < end:
                 stop = min(end, cursor + PAGE_HOURS * HOUR)
-                status, body = self.transport(SYMBOLS[symbol], cursor, stop)
+                for attempt in range(2):
+                    try:
+                        status, body = self.transport(SYMBOLS[symbol], cursor, stop)
+                    except CoinbaseFeedError as exc:
+                        if attempt or exc.status_code < 500:
+                            raise
+                        clock_time.sleep(1)
+                        continue
+                    if status in (429, 500, 502, 503, 504) and not attempt:
+                        clock_time.sleep(1)
+                        continue
+                    break
                 if status != 200:
                     raise CoinbaseFeedError(f'Coinbase 返回 HTTP {status}')
                 identity = str(uuid.uuid4())
@@ -249,8 +273,48 @@ class CoinbaseMarketFeed:
                     'range': {'start': first.isoformat(), 'end': last.isoformat()},
                     'complete': len(bars) - conflicts, 'missing': len(gaps), 'conflicts': conflicts,
                     'requestCount': len(pages), 'lastSuccessAtUtc': finished}
+        except Exception as exc:
+            message = str(exc) if isinstance(exc, CoinbaseFeedError) else '内部更新失败：' + type(exc).__name__
+            with self.connect() as db:
+                db.execute('UPDATE state SET last_error=? WHERE symbol=?', (message, symbol))
+            raise
         finally:
             self.lock.release()
+
+    def repair_range(self, symbol, first, last):
+        """Fetch only absent completed days; keep valid cached candles and their provenance."""
+        if (symbol not in SYMBOLS or type(first) is not date or type(last) is not date
+                or first > last or not 1 <= (last - first).days + 1 <= MAX_DAYS
+                or last >= self.clock().astimezone(LOCAL).date()):
+            raise CoinbaseFeedError('缺口补齐仅支持 1–180 个已经收盘的北京时间日', 400)
+        _, candles, gaps = self._snapshot(symbol)
+        missing = []
+        for i in range((last - first).days + 1):
+            day = first + i * DAY
+            opened = ms(local_open(day))
+            bar = candles.get(opened)
+            if not (bar and bar['is_closed'] and not bar['conflicted']) and 'source_conflict' not in gaps.get(opened, []):
+                missing.append(day)
+        groups = []
+        for day in missing:
+            if groups and day == groups[-1][-1] + DAY:
+                groups[-1].append(day)
+            else:
+                groups.append([day])
+        requests = 0
+        for group in groups:
+            result = self.refresh_range(symbol, group[0], group[-1])
+            requests += result['requestCount']
+        state, candles, _ = self._snapshot(symbol)
+        complete = sum(bool((bar := candles.get(ms(local_open(first + i * DAY)))) and
+                            bar['is_closed'] and not bar['conflicted'])
+                       for i in range((last - first).days + 1))
+        count = (last - first).days + 1
+        return {'symbol': symbol, 'provider': 'Coinbase Exchange',
+                'range': {'start': first.isoformat(), 'end': last.isoformat()},
+                'days': count, 'requestedDays': len(missing), 'complete': complete,
+                'missing': count - complete, 'requestCount': requests,
+                'lastSuccessAtUtc': state['last_success']}
 
     def _snapshot(self, symbol):
         if symbol not in SYMBOLS:
@@ -274,7 +338,9 @@ class CoinbaseMarketFeed:
                             'range': {'start': state['range_start'], 'end': state['range_end']},
                             'completeDays': sum(r['is_closed'] and not r['conflicted'] for r in candles.values()),
                             'gapDays': len(gaps), 'lastSuccessAtUtc': state['last_success'],
-                            'generation': state['generation']})
+                            'generation': state['generation'],
+                            'lastAttemptAtUtc': state['last_attempt'],
+                            'lastError': state['last_error']})
         return {'provider': 'Coinbase Exchange', 'marketType': 'spot', 'timezone': 'UTC+8',
                 'manualOnly': True, 'symbols': symbols}
 
