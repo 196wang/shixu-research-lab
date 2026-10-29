@@ -4,7 +4,7 @@ import unittest
 from unittest.mock import Mock
 
 from coinbase_feed import local_open, ms
-from coinbase_forward import CoinbaseForward, CoinbaseForwardError, seal, verify
+from coinbase_forward import CoinbaseForward, CoinbaseForwardError, seal, verify, time_event_diagnostics
 
 
 class CoinbaseForwardTests(unittest.TestCase):
@@ -61,6 +61,21 @@ class CoinbaseForwardTests(unittest.TestCase):
         item['n'] = 2
         with self.assertRaises(CoinbaseForwardError):
             verify(item)
+
+    def test_time_diagnostic_requires_enough_unmarked_control_dates(self):
+        rows = [{'timeStatus': 'scored', 'timing': {'hit': hit},
+                 'timeEvents': [{'ruleId': 'ASTRO-MOON-PHASE'}] if event else []}
+                for hit, event in [(True, True), (False, True), (False, False), (False, False)]]
+        result = time_event_diagnostics(rows)
+        moon = next(item for item in result if item['ruleId'] == 'ASTRO-MOON-PHASE')
+        self.assertEqual((moon['eventDays'], moon['controlPoolDays']), (2, 2))
+        self.assertEqual((moon['eventHitPct'], moon['equalCountControlExpectedHitPct']), (50.0, 0.0))
+        dense = time_event_diagnostics([{**row, 'timeEvents': [{'ruleId': 'ASTRO-NAKSHATRA-INGRESS'}]}
+                                        for row in rows])
+        nakshatra = next(item for item in dense if item['ruleId'] == 'ASTRO-NAKSHATRA-INGRESS')
+        self.assertEqual(nakshatra['eventCoveragePct'], 100.0)
+        self.assertFalse(nakshatra['equalCountControlPossible'])
+        self.assertIsNone(nakshatra['equalCountControlExpectedHitPct'])
 
     def test_auto_tick_waits_until_0020_and_then_refreshes_missing_day(self):
         last = date(2026, 10, 16)

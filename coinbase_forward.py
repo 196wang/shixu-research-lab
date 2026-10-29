@@ -53,6 +53,28 @@ def days(first, last):
     return [first + i * DAY for i in range((last - first).days + 1)]
 
 
+def time_event_diagnostics(rows):
+    """Descriptive matched-count control; never changes the sealed scorer."""
+    eligible = [row for row in rows if row['timeStatus'] == 'scored']
+    result = []
+    for rule in (None, 'GANN-EQUAL-INTERVAL', 'ASTRO-MOON-PHASE', 'ASTRO-NAKSHATRA-INGRESS'):
+        has_event = lambda row: any(rule is None or event['ruleId'] == rule for event in row['timeEvents'])
+        marked = [row for row in eligible if has_event(row)]
+        control = [row for row in eligible if not has_event(row)]
+        # The expected hit rate of drawing exactly len(marked) distinct control
+        # dates uniformly from the pool equals the pool's own hit rate.
+        equal_count_available = bool(marked) and len(control) >= len(marked)
+        result.append({'ruleId': rule or 'ANY-TIME-EVENT', 'eligibleDays': len(eligible),
+                       'eventDays': len(marked), 'controlPoolDays': len(control),
+                       'eventCoveragePct': len(marked) / len(eligible) * 100 if eligible else None,
+                       'eventHitPct': sum(row['timing']['hit'] for row in marked) / len(marked) * 100 if marked else None,
+                       'equalCountControlPossible': equal_count_available,
+                       'equalCountControlExpectedHitPct':
+                       sum(row['timing']['hit'] for row in control) / len(control) * 100
+                       if equal_count_available else None})
+    return result
+
+
 class CoinbaseForward:
     def __init__(self, data_dir, market, clock=None, base=HERE):
         self.base = Path(base)
@@ -321,6 +343,14 @@ class CoinbaseForward:
                     'sourceRequestIds': json.loads(candle['source_request_ids'])
                     if prices and candle and candle.get('source_request_ids') else [],
                 }
+            intraday = self.market.intraday_paths('BTCUSD', [date.fromisoformat(row['date'])
+                for row in score['rows'] if row['marketEvidence']['status'] == 'complete'])
+            for row in score['rows']:
+                row['intradayEvidence'] = intraday.get(row['date'], {'status': 'unavailable',
+                    'reason': '尚无完整已收盘日线'})
+            score['diagnostics'] = {'timeEvents': time_event_diagnostics(score['rows']),
+                'intradayVerifiedDays': sum(row['intradayEvidence']['status'] == 'verified_hourly'
+                                            for row in score['rows'])}
             return {'mode': 'public_read_only', 'registrationSha256': registration['contentSha256'],
                     'evaluatedAtUtc': asof.isoformat(), 'marketAsOfUtc': state.get('last_success'),
                     'marketProvider': state['provider'], 'product': state['product'],
@@ -398,6 +428,8 @@ class CoinbaseForward:
             market_path = getattr(self.market, 'path', None)
             market_path = Path(market_path).resolve() if market_path is not None else None
             registration_path = (self.directory / 'registration.json').resolve()
+            market_status = self.market.status() if self.market is not None else None
+            market_symbols = market_status.get('symbols', []) if isinstance(market_status, dict) else []
             return {'studyId': 'CB-USD-FWD-001', 'nowUtc': self.now().isoformat(),
                     'protocol': self.protocol(), 'registration': registration,
                     'publicRegistration': public,
@@ -417,7 +449,7 @@ class CoinbaseForward:
                                                 'scoredDays': item['review']['summary']['directionScoredDays'],
                                                 'missingDays': item['review']['summary']['directionMissingDays']}
                                                for item in audits[-7:]]},
-                    'marketFeed': next(item for item in self.market.status()['symbols'] if item['symbol'] == 'BTCUSD'),
+                    'marketFeed': next((item for item in market_symbols if item.get('symbol') == 'BTCUSD'), None),
                     'latestEvaluation': history[-1] if history else None,
                     'evaluationCount': len(history), 'lastAutoError': self.last_auto_error,
                     'implementationChangedSinceRegistration': bool(registration and

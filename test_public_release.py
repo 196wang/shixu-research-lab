@@ -102,6 +102,7 @@ class PublicReleaseTests(unittest.TestCase):
         market = Mock()
         market.path = ROOT / 'unused_local_registration_for_test' / 'market.sqlite3'
         market._snapshot.return_value = (state, {opened: bar}, {})
+        market.intraday_paths.return_value = {}
         store = ROOT / 'unused_local_registration_for_test'
         self.assertFalse(store.exists())
         study = CoinbaseForward(store, market, base=ROOT,
@@ -133,11 +134,11 @@ class PublicReleaseTests(unittest.TestCase):
         market = Mock()
         study = CoinbaseForward(ROOT / 'unused_local_registration_for_test', market, base=ROOT,
                                 clock=lambda: datetime(2026, 10, 23, 12, tzinfo=timezone.utc))
-        market.refresh_range.return_value = {'range': {'start': '2026-10-14', 'end': '2026-10-22'}}
+        market.repair_range.return_value = {'range': {'start': '2026-10-14', 'end': '2026-10-22'}}
         result = study.refresh_public_market()
         self.assertEqual(result['range']['start'], '2026-10-14')
-        market.refresh_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
-                                                     date(2026, 10, 22))
+        market.repair_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
+                                                    date(2026, 10, 22))
         self.assertFalse((ROOT / 'unused_local_registration_for_test').exists())
 
     def test_public_auto_audit_waits_for_close_then_appends_once_per_input(self):
@@ -146,7 +147,7 @@ class PublicReleaseTests(unittest.TestCase):
             market.path = base / 'coinbase_market.sqlite3'
             market._snapshot.return_value = ({'symbol': 'BTCUSD'}, {}, {})
             fresh = [False]
-            market.refresh_range.side_effect = lambda *_: fresh.__setitem__(0, True)
+            market.repair_range.side_effect = lambda *_: fresh.__setitem__(0, True)
             now = [datetime(2026, 10, 22, 16, 19, tzinfo=timezone.utc)]
             study = CoinbaseForward(base, market, base=ROOT, clock=lambda: now[0])
             review = {'mode': 'public_read_only', 'priceInputSha256': 'a' * 64,
@@ -163,12 +164,12 @@ class PublicReleaseTests(unittest.TestCase):
 
             with patch('coinbase_forward.inspect', fake_inspect):
                 self.assertIsNone(study.auto_public_tick())
-                market.refresh_range.assert_not_called()
+                market.repair_range.assert_not_called()
                 now[0] = datetime(2026, 10, 22, 16, 21, tzinfo=timezone.utc)
                 first = study.auto_public_tick()
                 self.assertTrue(first['created'])
-                market.refresh_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
-                                                             date(2026, 10, 22))
+                market.repair_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
+                                                            date(2026, 10, 22))
                 again = study.auto_public_tick()
                 self.assertFalse(again['created'])
             self.assertFalse((base / 'coinbase_forward/registration.json').exists())
@@ -202,6 +203,7 @@ class PublicReleaseTests(unittest.TestCase):
         market._snapshot.return_value = ({'symbol': 'BTCUSD', 'provider': 'Coinbase Exchange',
                                           'product': 'BTC-USD', 'marketType': 'spot',
                                           'dayTimezone': 'UTC+8', 'last_success': None}, {}, {})
+        market.intraday_paths.return_value = {}
         store = ROOT / 'unused_local_registration_for_test'
         study = CoinbaseForward(store, market, base=ROOT,
                                 clock=lambda: datetime(2026, 10, 22, tzinfo=timezone.utc))
@@ -221,15 +223,15 @@ class PublicReleaseTests(unittest.TestCase):
             self.assertIsNone(status['registration'])
             self.assertEqual(status['evaluationCount'], 0)
             self.assertEqual(replay['registrationSha256'], status['publicRegistration']['contentSha256'])
-            market.refresh_range.return_value = {'complete': 8, 'missing': 0,
-                                                 'range': {'start': '2026-10-14', 'end': '2026-10-21'}}
+            market.repair_range.return_value = {'complete': 8, 'missing': 0,
+                                                'range': {'start': '2026-10-14', 'end': '2026-10-21'}}
             request = Request(origin + '/api/coinbase-forward-refresh-market', data=b'{}',
                               headers={'Origin': origin, 'Content-Type': 'application/json'},
                               method='POST')
             with urlopen(request, timeout=5) as response:
                 self.assertEqual(json.load(response)['complete'], 8)
-            market.refresh_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
-                                                         date(2026, 10, 21))
+            market.repair_range.assert_called_once_with('BTCUSD', date(2026, 10, 14),
+                                                        date(2026, 10, 21))
             self.assertFalse(store.exists())
         finally:
             server.shutdown()

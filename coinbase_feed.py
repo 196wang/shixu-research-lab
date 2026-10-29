@@ -330,6 +330,53 @@ class CoinbaseMarketFeed:
                 'SELECT * FROM gaps WHERE symbol=?', (symbol,))}
         return state, candles, gaps
 
+    def intraday_paths(self, symbol, days):
+        """Read verified cached hourly requests for the order of daily extremes."""
+        if symbol not in SYMBOLS or len(days) > MAX_DAYS or any(type(day) is not date for day in days):
+            raise CoinbaseFeedError('日内诊断日期无效', 400)
+        _, candles, _ = self._snapshot(symbol)
+        output = {}
+        with self.connect() as db:
+            for day in days:
+                candle = candles.get(ms(local_open(day)))
+                if not candle or not candle['is_closed'] or candle['conflicted']:
+                    output[day.isoformat()] = {'status': 'unavailable', 'reason': '缺少完整日线'}
+                    continue
+                try:
+                    refs = json.loads(candle['source_request_ids'])
+                    if not isinstance(refs, list) or not refs or len(refs) > 24 or any(type(ref) is not str for ref in refs):
+                        raise ValueError('invalid provenance')
+                    hours = {}
+                    for ref in refs:
+                        page = db.execute('SELECT * FROM requests WHERE id=? AND symbol=?', (ref, symbol)).fetchone()
+                        if not page or hashlib.sha256(page['body']).hexdigest() != page['body_sha256']:
+                            raise ValueError('missing or changed request')
+                        parsed = parse_page(page['body'], datetime.fromisoformat(page['start_utc']),
+                                            datetime.fromisoformat(page['end_utc']))
+                        for stamp, row in parsed.items():
+                            if stamp in hours and hours[stamp][0] != row:
+                                raise ValueError('conflicting hourly candle')
+                            hours[stamp] = (row, ref)
+                    reconstructed, reasons = aggregate(day, hours)
+                    if reasons or not reconstructed or reconstructed['body_sha256'] != candle['body_sha256']:
+                        raise ValueError('daily hash mismatch')
+                    first = int(local_open(day).timestamp())
+                    stamps = [first + i * 3600 for i in range(24)]
+                    high_stamp = min(stamps, key=lambda stamp: (-Decimal(hours[stamp][0]['high']), stamp))
+                    low_stamp = min(stamps, key=lambda stamp: (Decimal(hours[stamp][0]['low']), stamp))
+                    order = 'high_before_low' if high_stamp < low_stamp else 'low_before_high' if low_stamp < high_stamp else 'same_hour'
+                    opened = Decimal(candle['open'])
+                    output[day.isoformat()] = {'status': 'verified_hourly', 'extremeOrder': order,
+                        'highHourLocal': datetime.fromtimestamp(high_stamp, UTC).astimezone(LOCAL).strftime('%H:00'),
+                        'lowHourLocal': datetime.fromtimestamp(low_stamp, UTC).astimezone(LOCAL).strftime('%H:00'),
+                        'upsidePct': float((Decimal(candle['high']) / opened - 1) * 100),
+                        'downsidePct': float((Decimal(candle['low']) / opened - 1) * 100),
+                        'rangePct': float((Decimal(candle['high']) - Decimal(candle['low'])) / opened * 100),
+                        'candleSha256': candle['body_sha256']}
+                except (ValueError, KeyError, CoinbaseFeedError, TypeError):
+                    output[day.isoformat()] = {'status': 'unavailable', 'reason': '小时线来源无法复原验证'}
+        return output
+
     def status(self):
         symbols = []
         for symbol in SYMBOLS:

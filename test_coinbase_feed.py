@@ -48,6 +48,23 @@ class CoinbaseFeedTests(unittest.TestCase):
         self.assertEqual(score['dataQuality']['usableDays'], 1)
         self.assertEqual(feed.history('BTCUSD')['rows'][-1]['close'], '110')
 
+    def test_intraday_order_uses_verified_hourly_sources(self):
+        def fetch(product, start, end):
+            rows = self.rows(start, end)
+            rows[2][2] = 130
+            rows[17][1] = 80
+            return 200, json.dumps(rows).encode()
+        feed = CoinbaseMarketFeed(self.path, transport=fetch, clock=lambda: self.now)
+        feed.refresh('BTCUSD', 1)
+        path = feed.intraday_paths('BTCUSD', [date(2026, 10, 16)])['2026-10-16']
+        self.assertEqual((path['status'], path['extremeOrder']), ('verified_hourly', 'high_before_low'))
+        self.assertEqual((path['highHourLocal'], path['lowHourLocal']), ('02:00', '17:00'))
+        self.assertEqual((path['upsidePct'], path['downsidePct']), (30.0, -20.0))
+        with feed.connect() as db:
+            db.execute("UPDATE requests SET body=? WHERE symbol='BTCUSD'", (b'[]',))
+        self.assertEqual(feed.intraday_paths('BTCUSD', [date(2026, 10, 16)])['2026-10-16']['status'],
+                         'unavailable')
+
     def test_event_window_keeps_missing_and_future_days_blank(self):
         feed = CoinbaseMarketFeed(self.path, transport=self.transport(), clock=lambda: self.now)
         feed.refresh('BTCUSD', 1)
