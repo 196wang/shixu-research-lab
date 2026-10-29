@@ -1,0 +1,34 @@
+{
+  "id": "BITSTAMP-INTRADAY-PATH-001",
+  "status": "fixed_exploratory_definition_not_registered_prediction",
+  "source": "Bitstamp BTC/USD public hourly OHLC, existing verified local cache",
+  "firstDay": "2013-01-01",
+  "lastDay": "2026-10-16",
+  "timezone": "Asia/Shanghai",
+  "dayBoundary": "00:00 to 24:00 local",
+  "quality": "24 consecutive hourly bars, each with positive traded volume; exclude a day containing an exact Jie transition from directional attribution",
+  "outcomes": {
+    "upExcursionPct": "100 * (daily high - daily open) / daily open",
+    "downExcursionPct": "100 * (daily open - daily low) / daily open",
+    "upBias": "upExcursionPct > downExcursionPct; equality is neither direction",
+    "downBias": "downExcursionPct > upExcursionPct; equality is neither direction",
+    "highFirst": "every hour attaining the daily high precedes every hour attaining the daily low",
+    "lowFirst": "every hour attaining the daily low precedes every hour attaining the daily high",
+    "ambiguousOrder": "otherwise, including extremes in the same hour or interleaving ties"
+  },
+  "dayRules": {
+    "stem_metal_water_up": "day stem in 庚辛壬癸; favorable outcomes upBias and lowFirst",
+    "stem_fire_down": "day stem in 丙丁; favorable outcomes downBias and highFirst",
+    "branch_yin_down": "day branch 寅; favorable outcomes downBias and highFirst",
+    "gengxu_down": "day pillar 庚戌; favorable outcomes downBias and highFirst"
+  },
+  "control": "For each rule compare trigger dates with non-trigger dates in the same calendar year and exact solar-month episode; weight each control stratum by its trigger count; unmatched trigger dates are excluded from comparison and counted",
+  "monthView": "Show all 12 solar-month branches separately; never pool all metal or water months into one selected result",
+  "jieNear": "Civil dates within 2 days of any exact Jie instant, excluding the transition date itself; compare with farther eligible dates in the same year and exact solar-month episode",
+  "periods": {
+    "2013-2021": ["2013-01-01", "2021-12-31"],
+    "2022-2025": ["2022-01-01", "2025-12-31"],
+    "2026-to-10-16": ["2026-01-01", "2026-10-16"]
+  },
+  "interpretation": "Retrospective descriptive audit after outcomes were seen; no optimized threshold, trading return or prospective accuracy claim"
+}

@@ -310,6 +310,16 @@ class Handler(BaseHTTPRequestHandler):
                         or result.get('source', {}).get('provider') != 'Bitstamp official public BTC/USD OHLC'):
                     raise ValueError('长期回测来源或日期不符')
                 return self.send(200, result)
+            if route.path == '/api/bitstamp-intraday-path':
+                if route.query:
+                    raise ValueError('固定日内路径复核不接受查询参数')
+                result = load('research/bitstamp-intraday-path-2013-2026.json')
+                source = load('research/bitstamp-long-summary-2013-2026.json')['source']
+                if (result.get('protocolId') != 'BITSTAMP-INTRADAY-PATH-001'
+                        or result.get('source', {}).get('dailySha256') != source['localDailySha256']
+                        or result.get('source', {}).get('lastDay') != source['lastDay']):
+                    raise ValueError('日内路径复核来源与长期回测不符')
+                return self.send(200, result)
             if route.path == '/api/pattern-screen-2013':
                 if route.query:
                     raise ValueError('固定规律筛选不接受查询参数')

@@ -10,6 +10,8 @@
 
 2013 年起的 BTC 长期结果见[Bitstamp 独立回测](research/bitstamp-long-study-2013-2026.md)。原始小时蜡烛仅保留在被 Git 忽略的本机 `local_data/`；可用 `python build_bitstamp_long_history.py` 重新采集，再运行 `python build_bitstamp_long_study.py` 生成报告。Bitstamp 与 Coinbase 是不同交易所，页面将它们分开展示。
 
+同一份已核验小时缓存另有[日内路径复核](research/bitstamp-intraday-path-2013-2026.md)：固定“上冲/下探谁占优”和“高低点先后”的口径，按三个时期、十二个节气月支及交节附近对照普通日期。运行 `python build_intraday_path_study.py` 可复算；网站“历史回测”展示摘要与月支切换。它属于事后探索，结果不一致，未升级为前瞻规则。
+
 新增[2013–2026 波动与时间规律筛选](research/pattern-screen-2013-2026.md)：按时间分段复核五行组合、交节窗口和前一日大振幅，并以同年同月普通日期作对照；结果作为风险观察，不回填历史预测成绩。
 
 [水逆与月相独立筛选](research/astro-pattern-screen-2013-2026.md)将公开说法拆成完整水逆日、水逆起止日、新月和满月，按同年同月普通日对照；天文时刻另与公开星历核对。网站“历史回测”中的折叠表还展示精确时刻后的 24 小时，以及在昨日波动状态相同的日期中星象是否增加信息。这些事件未加入预测分数。
